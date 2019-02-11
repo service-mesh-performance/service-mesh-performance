@@ -3,7 +3,7 @@
 # service-mesh-benchmark-spec
 A common format for describing and capturing performance benchmark tests and results.
 
-This specification is currently being advanced through discussion in the Meshery project.
+This specification is currently being advanced through discussion in the [Meshery](https://layer5.io/meshery) project.
 
 ## Meshery
 
