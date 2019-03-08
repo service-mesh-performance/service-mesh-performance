@@ -1,7 +1,7 @@
 <img align="right" src="https://layer5.io/assets/images/cube-sh-small.png" />
 
 # service-mesh-benchmark-spec
-A common format for describing and capturing performance benchmark tests and results.
+A common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and types of tests.
 
 This specification is currently being advanced through discussion in the [Meshery](https://layer5.io/meshery) project.
 
