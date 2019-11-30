@@ -1,4 +1,4 @@
-<img align="right" src="https://layer5.io/assets/images/cube-sh-small.png" />
+<img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/assets/images/layer5/layer5-tag-community-white-bg.png" width="45%" />
 
 # service-mesh-benchmark-spec
 A common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and types of tests.
@@ -16,7 +16,7 @@ A service mesh playground to faciliate learning about functionality and performa
 - [Architecture](https://docs.google.com/presentation/d/1UbuYMpn-e-mWVYwEASy4dzyZlrSgZX6MUfNtokraT9o/edit?usp=sharing)
 
 ## Contributing
-Please do! Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Please do! Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the [Contributor Covenant](https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+) code of conduct.
 
 ## License
 
