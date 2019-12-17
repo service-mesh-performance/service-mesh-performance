@@ -8,7 +8,7 @@
 [![Website](https://img.shields.io/website/https/layer5.io/meshery.svg)](https://layer5.io/meshery/)
 [![Twitter Follow](https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=mesheryio)
 [![Slack](http://slack.layer5.io/badge.svg)](http://slack.layer5.io)
-><p align="center"><i>If you’re using Meshery or if you like the project, please ★ star this repository to show your support! 🤩</i></p>
+<p align="center"><i>If you’re using Meshery or if you like the project, please ★ star this repository to show your support! 🤩</i></p>
 
 # service-mesh-benchmark-spec
 A common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and types of tests.
@@ -22,8 +22,15 @@ A service mesh playground to faciliate learning about functionality and performa
 - Join the weekly [community meeting](https://layer5.io/assets/projects/meshery/Meshery-Community-Meeting.ics) to participate or visit the [project site](https://layer5.io/meshery) for more information.
 
 ### Other Meshery resources
-- [Performance benchmark design document](https://docs.google.com/document/d/1nV8TunLmVC8j5cBELT42YfEXYmhG3ZqFtHxeG3-w9t0/edit?usp=sharing)
-- [Architecture](https://docs.google.com/presentation/d/1UbuYMpn-e-mWVYwEASy4dzyZlrSgZX6MUfNtokraT9o/edit?usp=sharing)
+- [Functionality](#functionality)
+- [Running Meshery](#running)
+  - [Quick start](https://layer5.io/meshery/#getting-started)
+  - [Docs](https://meshery.layer5.io/docs)
+  - [Community Drive](https://drive.google.com/drive/u/0/folders/0ABH8aabN4WAKUk9PVA) (Request access!)
+    - [Architecture](https://drive.google.com/open?id=1SQMfyu5shjpGKlYONdVzOtd7UYTgLWBcgUvHMLCZ2tY)
+- [Contributing](CONTRIBUTING.md/#contributing)
+  - [Write an adapter](CONTRIBUTING.md/#adapter)
+  - [Build the project](CONTRIBUTING.md/#building)
 
 ## Contributing
 Please do! Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the [Contributor Covenant](https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+) code of conduct.
