@@ -1,4 +1,4 @@
-<img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/assets/images/layer5/layer5-tag-community-white-bg.png" width="45%" />s
+<img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/assets/images/layer5/layer5-tag-community-white-bg.png" width="45%" />
 # service-mesh-benchmark-spec
 A common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and types of tests.
 
