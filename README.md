@@ -1,4 +1,5 @@
-<a href="https://layer5.io/meshery"><img align="left" src="https://raw.githubusercontent.com/layer5io/meshery/master/ui/static/img/meshery-logo/meshery-logo-light-text.png"  width="25%" /></a>
+<p style="text-align:center;" align="center">
+  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/assets/images/layer5/layer5-tag-community-white-bg.png" width="45%" /></p>
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/layer5/meshery-istio.svg)](https://hub.docker.com/r/layer5/meshery-istio)
 [![Go Report Card](https://goreportcard.com/badge/github.com/layer5io/meshery-istio)](https://goreportcard.com/report/github.com/layer5io/meshery-istio)
@@ -8,29 +9,23 @@
 [![Website](https://img.shields.io/website/https/layer5.io/meshery.svg)](https://layer5.io/meshery/)
 [![Twitter Follow](https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=mesheryio)
 [![Slack](http://slack.layer5.io/badge.svg)](http://slack.layer5.io)
-<p align="center"><i>If you’re using Meshery or if you like the project, please ★ star this repository to show your support! 🤩</i></p>
+<p align="center"><i>If you’re using Meshery or if you like the project, please ★ star this repository to show your support! 🤩</i>
 
-# service-mesh-benchmark-spec
-A common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and types of tests.
+# Service Mesh Performance Specification
+A common format for describing and capturing:
 
-This specification is currently being advanced through discussion in the [Meshery](https://layer5.io/meshery) project.
+1. performance test configuration
+1. service mesh configuration
+1. environment configuration
+1. performance test results
+
+This specification is currently being advanced through the [Meshery](https://layer5.io/meshery) project.
 
 ## Meshery
 
 A service mesh playground to faciliate learning about functionality and performance of different service meshes. Meshery incorporates the collection and display of metrics from applications running in the playground.
 
 - Join the weekly [community meeting](https://layer5.io/assets/projects/meshery/Meshery-Community-Meeting.ics) to participate or visit the [project site](https://layer5.io/meshery) for more information.
-
-### Other Meshery resources
-- [Functionality](#functionality)
-- [Running Meshery](#running)
-  - [Quick start](https://layer5.io/meshery/#getting-started)
-  - [Docs](https://meshery.layer5.io/docs)
-  - [Community Drive](https://drive.google.com/drive/u/0/folders/0ABH8aabN4WAKUk9PVA) (Request access!)
-    - [Architecture](https://drive.google.com/open?id=1SQMfyu5shjpGKlYONdVzOtd7UYTgLWBcgUvHMLCZ2tY)
-- [Contributing](CONTRIBUTING.md/#contributing)
-  - [Write an adapter](CONTRIBUTING.md/#adapter)
-  - [Build the project](CONTRIBUTING.md/#building)
 
 ## Contributing
 Please do! Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the [Contributor Covenant](https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+) code of conduct.
