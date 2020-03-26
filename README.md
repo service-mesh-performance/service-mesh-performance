@@ -13,7 +13,7 @@
 
 <p align="center"><i>If you’re using Meshery or if you like the project, please <a href="https://github.com/layer5io/meshery/stargazers">★</a> star this repository to show your support! 🤩</i></p>
 
-# Service Mesh Performance Specification ([SMPS](https://layer5.io/performance)
+# Service Mesh Performance Specification ([SMPS](https://layer5.io/performance))
 A common format for describing and capturing:
 
 1. performance test configuration
