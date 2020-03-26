@@ -1,0 +1,17 @@
+start_time: 2020-03-17T14:53:05.499893378Z
+end_time: 2020-03-17T17:53:05.530905194Z
+exp_uuid: a0b57497-12f1-40a5-ae78-3fd3414c4a48
+endpoint_url: http://192.168.1.15/productpage
+env:
+  kubernetes: v1.15.5
+client:
+  connections: 1
+  rps: 0.9999971285438009
+  latencies_ms:
+    min: 0.012007082
+    average: 0.023581708206018594
+    p50: 0.021899077590884428
+    p90: 0.033029247910863514
+    p99: 0.055
+    max: 0.350472228
+metrics: {}
