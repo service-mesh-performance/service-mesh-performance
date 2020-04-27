@@ -21,6 +21,9 @@ profile: "full, ingress_only, telemetry, encryption"
 # location of posted results
 details_uri: "https://xxx.xxx"
 
+# URL of the service that is getting tested (getting load thrown at it)
+endpoint_url: "https://xxx.xxx"
+
 # environment: resource details and versions
 env : 
   kubernetes: gke-1.10.5
