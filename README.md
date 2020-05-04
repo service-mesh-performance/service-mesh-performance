@@ -21,9 +21,9 @@ A common format for describing and capturing:
 1. environment configuration
 1. performance test results
 
-<img src="assests/meshery_benchmark_screen.png" />
+<img src="" />
 
-This specification is currently being advanced through the [Meshery](https://layer5.io/meshery) project.
+This specification is currently being advanced through the [Meshery](https://layer5.io/meshery) project. See a [screenshot](assests/meshery_benchmark_screen.png) of its implementation.
 
 ## Example
 
