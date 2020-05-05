@@ -1,4 +1,5 @@
 # Common service mesh benchmark configuration and result summary
+SMPSVersion: smps/v1
 
 # All times in UTC
 start_time: "2019-01-01T12:00:00Z"
@@ -23,6 +24,13 @@ details_uri: "https://xxx.xxx"
 
 # URL of the service that is getting tested (getting load thrown at it)
 endpoint_url: "https://xxx.xxx"
+
+# Test labels (Helpful for categorizing test results)
+labels:
+  version: v1
+  app: project-xxx
+  environment: production
+  tool: wrk2
 
 # environment: resource details and versions
 env : 
