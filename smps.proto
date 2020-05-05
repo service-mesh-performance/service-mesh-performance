@@ -164,12 +164,14 @@ message SMPS {
     
     repeated Label labels = 12;
     
-    Config config = 13;
+    Env env = 13;
+
+    Config config = 14;
     
-    Client client = 14;
+    Client client = 15;
     
-    Metric metric = 15;
+    Metric metric = 16;
     
-    repeated IndividualWorkload individual_workloads = 16;
+    repeated IndividualWorkload individual_workloads = 17;
     
 }
