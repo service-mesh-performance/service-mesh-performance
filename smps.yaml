@@ -1,5 +1,5 @@
 # Common service mesh benchmark configuration and result summary
-smps_version: smps/v1
+smps_version: smps/v0.1.0
 
 # All times in UTC
 start_time: "2019-01-01T12:00:00Z"
