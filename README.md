@@ -21,9 +21,7 @@ A common format for describing and capturing:
 1. environment configuration
 1. performance test results
 
-<img src="" />
-
-This specification is currently being advanced through the [Meshery](https://layer5.io/meshery) project. See a [screenshot](assests/meshery_benchmark_screen.png) of its implementation.
+This specification is currently being advanced through the [Meshery](https://layer5.io/meshery) project. See a [screenshot](assets/meshery_benchmark_screen.png) of its implementation.
 
 ## Example
 
@@ -33,8 +31,8 @@ See the [sample results](example/service%20mesh%20performance%20specification%20
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
-<a href="https://meshery.io"><p style="text-align:center;" align="center"><a href="https://layer5.io/meshery"><img align="center" src="https://raw.githubusercontent.com/layer5io/service-mesh-performance-specification/master/assests/meshery-logo-light-text.svg"
-style="margin:10px;" width="125px" 
+<a href="https://meshery.io"><p style="text-align:center;" align="center"><a href="https://layer5.io/meshery"><img align="left" src="https://raw.githubusercontent.com/layer5io/service-mesh-performance-specification/master/assets/meshery-logo-light-text.svg"
+style="margin:10px;" width="155px" 
 alt="Meshery - the Service Mesh Management Plane" align="left" /></a>
 <a href="https://meshery.io">Meshery</a> is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. 
 <br /><br /><p align="center"><i>If you’re using Meshery or if you like the project, please <a href="https://github.com/layer5io/meshery/stargazers">★</a> star this repository to show your support! 🤩</i></p>
