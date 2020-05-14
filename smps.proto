@@ -1,0 +1,177 @@
+syntax = "proto3";
+package SMPS;
+
+import "google/protobuf/timestamp.proto";
+
+message SMPS {
+    
+    // Test labels (Helpful for categorizing test results)
+    message Label {
+        string key = 1;
+        string value = 2;
+    }
+    
+    // Environment: resource details and versions
+    message Env {
+        
+        message Node {
+            string type = 1;
+            int32 cores = 2;
+            int64 mem_mb = 3;
+        }
+        
+        string kubernetes = 1;
+        int32 node_count = 2;
+        Node node = 3;
+    }
+
+    message Config {
+        bool mesh_policy_enabled = 1;
+        bool mesh_telemetry_enabled = 2;
+        bool mtls_enabled = 3;
+        int32 proxy_concurrency = 4;
+    }
+    
+    // Is the client inside or outside the mesh
+    // A client inside the mesh will not use ingress_gateway
+    message Client {
+        
+        enum Protocol {
+            http = 0;
+            tcp = 1;
+            grpc = 2;
+        }
+        
+        // latency histogram in ms and average
+        message Latency {
+            int32 min = 1;
+            int32 average = 2;
+            int32 p50 = 3;
+            int32 p90 = 4;
+            int32 p99 = 5;
+            int32 max = 6;    
+        }  
+        
+        bool internal = 1;
+        Protocol protocol = 2;
+        int32 connections = 3;
+        int64 rps = 4;
+        Latency latencies_ms = 5;
+    }
+    
+    message Metric {
+        
+        message IngressGateway {
+            int32 count = 1;
+            // cpu in mCores
+            int32 cpu_mCores = 2;
+            // memory in MB
+            int32 mem_mb = 3;
+            // traffic sent thru ingress gateway
+            int32 rps = 4;
+            // Total bytes sent thru ingress
+            int32 bps = 5;
+        }
+        
+        message Sidecar {
+            int32 count = 1;
+            // cpu used by all sidecars except ingress / egress
+            int32 cpu_mCores = 2;
+            int32 mem_mb = 3;
+            // Total rps traversing all sidecars
+            int32 rps = 4;
+            // Total bytes sent thru sidecars
+            int32 bps = 5;
+        }
+        
+        message MeshTelemetry {
+            int32 count = 1;
+            // cpu used by all mesh_telemetry pods
+            int32 cpu_mCores = 2;
+            int32 mem_mb = 3;
+            // Total rps traversing all proxies (sidecars+ingress+egress)
+            int32 rps = 4;
+        }
+        
+        message MeshPolicy {
+            int32 count = 1;
+            // cpu used by all mesh_policy pods
+            int32 cpu_mCores = 2;
+            int32 mem_mb = 3;
+            // Total rps traversing all proxies (sidecars+ingress+egress)
+            int32 rps = 4;
+            int32 cache_hit_rate = 5;
+        }
+        
+        message MeshControlPlane {
+            int32 count = 1;
+            // cpu used by mesh_pilot pods
+            int32 cpu_mCores = 2;
+            int32 mem_mb = 3;
+            int32 endpoints = 4;
+            // services + service entries
+            int32 services = 5;  
+            int32 sidecars = 6;
+            int32 virtual_services = 7;
+            int32 destination_rules = 8;
+            // how long does it take a listener change to propagate to 90% proxies
+            int32 lds_latency_ms = 9;
+            // how long does it take for cluster change to propagate to 90% proxies
+            int32 cds_latency_ms = 10;
+        }
+        
+        IngressGateway ingress_gateway = 1;
+        Sidecar sidecar = 2;
+        MeshTelemetry mesh_telemetry = 3;
+        MeshPolicy mesh_policy = 4;
+        MeshControlPlane mesh_control_plane = 5;        
+    }
+
+    // additional individual workloads should be listed here
+    // Only sidecar metrics are measured
+    message IndividualWorkload {
+        string name = 1;
+        int32 count = 2;
+        int32 cpu_mCores = 3;
+        int32 mem_mb = 4;
+    }
+    
+    // Spec version
+    string smps_version = 1;
+
+    // All times in UTC
+    google.protobuf.Timestamp start_time = 2;
+    google.protobuf.Timestamp end_time = 3;
+    
+    // mesh details
+    string mesh_build = 4;
+    string proxy_build = 5;
+    
+    // benchmark identifier
+    string exp_group_uuid = 7;
+    
+    // individual performance experiment unique identifier
+    string exp_uuid = 8;
+    
+    // experiments have different standard mesh profiles
+    string profile = 9;
+    
+    // location of posted results
+    string details_uri = 10;
+    
+    // URL of the service that is getting tested (getting load thrown at it)
+    string endpoint_url = 11;
+    
+    repeated Label labels = 12;
+    
+    Env env = 13;
+
+    Config config = 14;
+    
+    Client client = 15;
+    
+    Metric metric = 16;
+    
+    repeated IndividualWorkload individual_workloads = 17;
+    
+}
