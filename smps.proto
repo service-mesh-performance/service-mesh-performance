@@ -15,10 +15,14 @@ message PerformanceTestConfig {
             tcp = 1;
             grpc = 2;
         }
-        
+
+        enum LoadGenerator {
+            fortio = 0;
+            wrk2 = 1;
+        }
         
         bool internal = 1;
-        string endpoint_url = 2;
+        LoadGenerator load_generator = 2;
         Protocol protocol = 3;
         int32 connections = 4;
         int64 rps = 5;
@@ -26,6 +30,8 @@ message PerformanceTestConfig {
         map<string, string> headers = 6;
         map<string, string> cookies = 7;
         string body = 8;
+        string content_type = 9;
+        string endpoint_url = 10;
     }
 
     // Spec version
@@ -33,7 +39,7 @@ message PerformanceTestConfig {
     string id = 2;
     map<string, string> labels = 3;
 
-    repeated Client client = 4;
+    repeated Client clients = 4;
     google.protobuf.Duration duration = 5;
 }
 
