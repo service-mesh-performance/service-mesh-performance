@@ -22,6 +22,10 @@ message PerformanceTestConfig {
         Protocol protocol = 3;
         int32 connections = 4;
         int64 rps = 5;
+
+        map<string, string> headers = 6;
+        map<string, string> cookies = 7;
+        string body = 8;
     }
 
     // Spec version
@@ -37,12 +41,12 @@ message PerformanceTestResult {
     
     // latency histogram in ms and average
     message Latency {
-        int32 min = 1;
-        int32 average = 2;
-        int32 p50 = 3;
-        int32 p90 = 4;
-        int32 p99 = 5;
-        int32 max = 6;    
+        double min = 1;
+        double average = 2;
+        double p50 = 3;
+        double p90 = 4;
+        double p99 = 5;
+        double max = 6;    
     }  
 
     // Spec version
@@ -54,11 +58,12 @@ message PerformanceTestResult {
     google.protobuf.Timestamp start_time = 4;
     google.protobuf.Timestamp end_time = 5;
     Latency latencies_ms = 6;
+    double actual_QPS = 7;
 
-    string details_uri = 7;
-    string testId = 8;
-    string meshConfigId = 9;
-    string envId = 10;
+    string details_uri = 8;
+    string testId = 9;
+    string meshConfigId = 10;
+    string envId = 11;
     
 }
 

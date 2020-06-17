@@ -1,4 +1,4 @@
-module github.com/layer5io/smps
+module github.com/layer5io/service-mesh-performance-specification
 
 go 1.14
 
