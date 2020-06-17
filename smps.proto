@@ -2,6 +2,9 @@ syntax = "proto3";
 package SMPS;
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+option go_package = "spec;spec";
 
 message PerformanceTestConfig {
 
@@ -24,7 +27,7 @@ message PerformanceTestConfig {
     // Spec version
     string smps_version = 1;
     string id = 2;
-    map labels = 3;
+    map<string, string> labels = 3;
 
     repeated Client client = 4;
     google.protobuf.Duration duration = 5;
@@ -45,7 +48,7 @@ message PerformanceTestResult {
     // Spec version
     string smps_version = 1;
     string id = 2;
-    map labels = 3;
+    map<string, string> labels = 3;
         
     // All times in UTC
     google.protobuf.Timestamp start_time = 4;
@@ -122,7 +125,7 @@ message ServiceMeshConfig {
 
     string smps_version = 1;
     string id = 2;
-    map labels = 3;
+    map<string, string> labels = 3;
     
     IngressGateway ingress_gateway = 4;
     Sidecar sidecar = 5;
@@ -160,7 +163,7 @@ message EnvironmentConfig {
 
     string smps_version = 1;
     string id = 2;
-    map labels = 3;
+    map<string, string> labels = 3;
     
     string kubernetes_version = 4;
     repeated Node node = 5;
