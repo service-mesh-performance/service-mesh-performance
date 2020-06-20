@@ -2,7 +2,6 @@ syntax = "proto3";
 package SMPS;
 
 import "google/protobuf/timestamp.proto";
-import "google/protobuf/duration.proto";
 
 option go_package = "spec;spec";
 
@@ -37,10 +36,11 @@ message PerformanceTestConfig {
     // Spec version
     string smps_version = 1;
     string id = 2;
-    map<string, string> labels = 3;
+    string name = 3;
+    map<string, string> labels = 4;
 
-    repeated Client clients = 4;
-    google.protobuf.Duration duration = 5;
+    repeated Client clients = 5;
+    string duration = 6;
 }
 
 message PerformanceTestResult {
