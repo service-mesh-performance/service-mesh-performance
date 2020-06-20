@@ -31,7 +31,7 @@ message PerformanceTestConfig {
         map<string, string> cookies = 7;
         string body = 8;
         string content_type = 9;
-        string endpoint_url = 10;
+        repeated string endpoint_url = 10;
     }
 
     // Spec version
