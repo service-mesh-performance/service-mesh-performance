@@ -2,7 +2,6 @@ syntax = "proto3";
 package SMPS;
 
 import "google/protobuf/timestamp.proto";
-import "google/protobuf/duration.proto";
 
 option go_package = "spec;spec";
 
@@ -13,36 +12,43 @@ message PerformanceTestConfig {
         enum Protocol {
             http = 0;
             tcp = 1;
-            grpc = 2;
+            udp = 2;
+            grpc = 3;
         }
         
-        
         bool internal = 1;
-        string endpoint_url = 2;
+        string load_generator = 2;
         Protocol protocol = 3;
         int32 connections = 4;
         int64 rps = 5;
+
+        map<string, string> headers = 6;
+        map<string, string> cookies = 7;
+        string body = 8;
+        string content_type = 9;
+        repeated string endpoint_url = 10;
     }
 
     // Spec version
     string smps_version = 1;
     string id = 2;
-    map<string, string> labels = 3;
+    string name = 3;
+    map<string, string> labels = 4;
 
-    repeated Client client = 4;
-    google.protobuf.Duration duration = 5;
+    repeated Client clients = 5;
+    string duration = 6;
 }
 
 message PerformanceTestResult {
     
     // latency histogram in ms and average
     message Latency {
-        int32 min = 1;
-        int32 average = 2;
-        int32 p50 = 3;
-        int32 p90 = 4;
-        int32 p99 = 5;
-        int32 max = 6;    
+        double min = 1;
+        double average = 2;
+        double p50 = 3;
+        double p90 = 4;
+        double p99 = 5;
+        double max = 6;    
     }  
 
     // Spec version
@@ -54,11 +60,12 @@ message PerformanceTestResult {
     google.protobuf.Timestamp start_time = 4;
     google.protobuf.Timestamp end_time = 5;
     Latency latencies_ms = 6;
+    double actual_QPS = 7;
 
-    string details_uri = 7;
-    string testId = 8;
-    string meshConfigId = 9;
-    string envId = 10;
+    string details_uri = 8;
+    string testId = 9;
+    string meshConfigId = 10;
+    string envId = 11;
     
 }
 
@@ -143,6 +150,7 @@ message ServiceMeshConfig {
     string exp_group_uuid = 15;
     string exp_uuid = 16;
     string profile = 17;
+    string service_mesh = 18;
    
 }
 
