@@ -2,7 +2,7 @@ syntax = "proto3";
 package SMPS;
 
 import "google/protobuf/timestamp.proto";
-import "service-meshes.proto";
+import "sm.proto";
 
 option go_package = "spec;spec";
 
