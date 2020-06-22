@@ -1,0 +1,19 @@
+syntax = "proto3";
+package SMPS;
+
+option go_package = "spec;spec";
+
+message ServiceMeshes {
+  
+    enum Type {
+        appmesh = 0;
+        consul = 1;
+        istio = 2;
+        kuma = 3;
+        linkerd = 4;
+        maesh = 5;
+        octarine = 6;
+        networkservicemesh = 7;
+        tanzu = 8;
+    }
+}
