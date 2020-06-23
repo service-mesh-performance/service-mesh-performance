@@ -2,6 +2,7 @@ syntax = "proto3";
 package SMPS;
 
 import "google/protobuf/timestamp.proto";
+import "sm.proto";
 
 option go_package = "spec;spec";
 
@@ -150,7 +151,7 @@ message ServiceMeshConfig {
     string exp_group_uuid = 15;
     string exp_uuid = 16;
     string profile = 17;
-    string service_mesh = 18;
+    ServiceMeshes Type = 18;
    
 }
 
