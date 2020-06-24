@@ -1,0 +1,21 @@
+syntax = "proto3";
+package SMPS;
+
+option go_package = "spec;spec";
+
+message ApplicationMetadata {
+
+    enum application_protocol {
+        http = 0;
+        https = 1;
+    }
+    string application_name = 1;
+    string application_version = 2;
+    string helmchart_name = 3;
+    string helmchart_version = 4;
+    string cnabspec_version = 5;
+    string compose_version = 6;
+    string cluster_name = 7;
+    string k8s_version_supported = 8;
+
+}
