@@ -36,7 +36,10 @@ message PerformanceTestConfig {
     string name = 3;
     map<string, string> labels = 4;
 
+    // Single or distributed load generators
     repeated Client clients = 5;
+
+    // Length of time the endpoint will be under load
     string duration = 6;
 }
 
@@ -81,6 +84,18 @@ message ServiceMeshConfig {
         // traffic sent thru ingress gateway
         int32 rps = 4;
         // Total bytes sent thru ingress
+        int32 bps = 5;
+    }
+
+    message EgressGateway {
+        int32 count = 1;
+        // cpu in mCores
+        int32 cpu_mCores = 2;
+        // memory in MB
+        int32 mem_mb = 3;
+        // traffic sent thru egress gateway
+        int32 rps = 4;
+        // Total bytes sent thru egress
         int32 bps = 5;
     }
     
