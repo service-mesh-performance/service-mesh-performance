@@ -1,2 +1,2 @@
 build:
-	protoc -I=./ --go_out=./ ./smps.proto sm.proto
+	protoc -I=./ --go_out=./ ./smps.proto sm.proto metadata.proto
