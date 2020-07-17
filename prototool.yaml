@@ -2,3 +2,10 @@ protoc:
   version: 3.11.0
 lint:
   group: uber2
+generate:
+  go_options:
+    import_path: /
+  plugins:
+    - name: go
+      type: go
+      output: ./
