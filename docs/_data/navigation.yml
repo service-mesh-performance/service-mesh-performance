@@ -1,0 +1,16 @@
+nav:
+
+  - title: "About"
+    section: timeline
+
+  - title: "Community"
+    section: team
+
+  - title: "Contact"
+    section: contact
+
+  - title: "Blog"
+    section: portfolio
+
+  - title: "Resources"
+    section: services
