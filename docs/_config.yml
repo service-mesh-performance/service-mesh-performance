@@ -24,7 +24,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: layer5
 github_username:  l5io
 logo:     #optional, defaults to site title
-  path: /assets/img/buttons/smps.png
+  path: /docs/assets/img/buttons/smps.png
   height: 100 #height in px, defaults to 52px
 
 analytics:
