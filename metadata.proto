@@ -5,7 +5,7 @@ package SMPS;
 option go_package = "spec;spec";
 
 message ApplicationMetadata {
-  enum application_protocol {
+  enum ApplicationProtocol {
     http = 0;
     https = 1;
   }
@@ -17,4 +17,5 @@ message ApplicationMetadata {
   string compose_version = 6;
   string cluster_name = 7;
   string k8s_version_supported = 8;
+  ApplicationProtocol application_protocol = 9;
 }

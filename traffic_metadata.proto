@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package SMPS;
+
+option go_package = "spec;spec";
+
+message TrafficMetadata {
+  string load_balance_name = 1;
+  string load_balance_ip = 2;
+  string host_endpoint = 3;
+  string prometheus_url = 4;
+  string http_headers = 5;
+  string user_agent = 6;
+  string ping_health_endpoint = 7;
+}
