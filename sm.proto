@@ -16,4 +16,5 @@ message ServiceMeshes {
     networkservicemesh = 7;
     tanzu = 8;
   }
+  Type type = 1;
 }

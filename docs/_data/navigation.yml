@@ -1,12 +1,12 @@
 nav:
 
-  - title: "About"
+  - title: ""
     section: timeline
 
-  - title: "Community"
+  - title: "Run SMPS"
     section: team
 
-  - title: "Contact"
+  - title: "Connect"
     section: contact
 
   - title: "Blog"
