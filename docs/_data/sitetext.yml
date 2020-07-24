@@ -11,22 +11,22 @@ services:
     list:
       - title: "Contributing"
         desc: "Want to contribute? You're very welcome"
-        icon: fas fa-shopping-cart #find more at https://fontawesome.com/icons
+        icon: fas fa-hands-helping #find more at https://fontawesome.com/icons
       - title: "Code of Conduct"
         desc: "A few rules to keep the meshiness in control"
-        icon: fas fa-laptop
-      - title: "[Learn Layer5]()"
-        desc: ""
-        icon: fab fa-markdown
+        icon: fas fa-clipboard-list
+      - title: "Learn Layer5"
+        desc: "A sample application for learning how to service mesh "
+        icon: fab fa-battle-net
 
 portfolio:
-    title: "Portfolio"
-    text: "Lorem ipsum dolor sit amet consectetur."
+    title: "Blog"
+    text: ""
     section: portfolio
 
 
 timeline:
-    title: "About"
+    title: "What is SMPS?"
     text: ""
     section: timeline
     events:
@@ -76,12 +76,11 @@ clients:
 team:
     title: "Run SMPS"
     text: ""
-    subtext: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported.
-    section: team
+    subtext:
 
 contact:
     title: "Contact Us"
-    text: "Lorem ipsum or call 123456789"
+    text: ""
     section: contact
 
 footer:
