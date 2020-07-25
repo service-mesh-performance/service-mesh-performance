@@ -18,7 +18,7 @@ GEM
     ffi (1.13.1)
     forwardable-extended (2.6.0)
     http_parser.rb (0.6.0)
-    i18n (1.8.4)
+    i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     jekyll (4.1.1)
       addressable (~> 2.4)
@@ -35,8 +35,14 @@ GEM
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
       terminal-table (~> 1.8)
+    jekyll-feed (0.15.0)
+      jekyll (>= 3.7, < 5.0)
+    jekyll-paginate (1.1.0)
     jekyll-sass-converter (2.1.0)
       sassc (> 2.0.1, < 3.0)
+    jekyll-seo (0.0.2)
+    jekyll-sitemap (1.4.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (2.3.0)
@@ -70,6 +76,10 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 2.0)
   jekyll-agency!
+  jekyll-feed
+  jekyll-paginate
+  jekyll-seo
+  jekyll-sitemap
   rake (~> 13.0)
 
 BUNDLED WITH
