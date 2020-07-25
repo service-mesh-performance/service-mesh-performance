@@ -35,6 +35,8 @@ logo:     #optional, defaults to site title
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jemoji
+  - jekyll-coffeescript
 
 
 analytics:

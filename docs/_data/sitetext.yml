@@ -9,13 +9,13 @@ services:
     text: ""
     section: services
     list:
-      - title: "Contributing"
+      - title: "[Contributing](https://github.com/layer5io/service-mesh-performance-specification/blob/master/CONTRIBUTING.md)"
         desc: "Want to contribute? You're very welcome"
         icon: fas fa-hands-helping #find more at https://fontawesome.com/icons
-      - title: "Code of Conduct"
+      - title: "[Code of Conduct](https://github.com/layer5io/service-mesh-performance-specification/blob/master/CODE_OF_CONDUCT.md)"
         desc: "A few rules to keep the meshiness in control"
         icon: fas fa-clipboard-list
-      - title: "Learn Layer5"
+      - title: "[Learn Layer5](https://github.com/layer5io/learn-layer5)"
         desc: "A sample application for learning how to service mesh "
         icon: fab fa-battle-net
 
@@ -30,25 +30,13 @@ timeline:
     text: ""
     section: timeline
     events:
-      - title: "Layer5"
-        year: "2019"
-        desc: ""
-        image: assets/img/timeline/1.jpg
-        alt:
-        align: left
-      - title: "Meshery - first release"
-        year: "February 2019"
-        desc: ""
-        image: assets/img/timeline/2.jpg
-        alt:
-        align: right
-      - title: "SMPS - up and running!"
-        year: "2020"
-        desc: ""
-        image: assets/img/timeline/3.jpg
-        alt: image alt text
-        #align: #default is left
-    end: "Be Part <br> of Our <br> Story!"
+#      - title: "SMPS - up and running!"
+#        year: "2020"
+#        desc: ""
+#        image: assets/img/timeline/3.jpg
+#        alt: image alt text
+#        align: #default is left
+    end: "Be Part <br> of the <br> community!"
 
 about:
     title: "About Us"
