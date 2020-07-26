@@ -26,9 +26,9 @@ This specification is currently being advanced through the [Meshery](https://lay
 
 ## Example
 
-See the [sample results](example/service%20mesh%20performance%20specification%20result.yaml) file.
+See the [sample results](img/readme/service%20mesh%20performance%20specification%20result.yaml) file.
 
-<a href="example/service mesh performance specification example.gif"><img src="example/service mesh performance specification example.gif" /></a>
+<a href="img/readme/service mesh performance specification example.gif"><img src="img/readme/service mesh performance specification example.gif" /></a>
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
