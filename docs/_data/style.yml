@@ -1,11 +1,11 @@
 #Color Customization
-highlight: "#FFE53B"
+highlight: "transparent"
 white: "#FFF"
 #black: "#000"
 
 #Image Customization
 header-image: "../img/bgnew2.jpg"
-contact-image: "../img/contact.png"
+contact-image: "../img/contact.jpg"
 
 #Font Awesome icon for portfolio grid when an item is hovered over
 #portfolio-icon: fas fa-expand-arrows-alt fa-3x #default: fas fa-plus fa-3x

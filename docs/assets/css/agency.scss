@@ -6,9 +6,20 @@
 @import "base/mixins.scss";
 
 // Custom colors
-$primary: {{ site.data.style.highlight | default: "#ffe53b" }} !default;
+$primary: {{ site.data.style.highlight | class: "btn" }};
 $white: {{ site.data.style.white | default: "#fff" }} !default;
 $black: {{ site.data.style.black | default: "#000" }} !default;
+.btn {
+        cursor: pointer;
+        border: 2px solid #000;
+        background-color: transparent;
+        height: auto;
+        width: 200px;
+        color: #3498db;
+        font-size: 4.0em;
+        box-shadow: 0 16px 15px rgba(0, 0, 0, 0.6);
+       }
+
 
 // Custom Images
 $header-image: "{{ site.data.style.header-image }}";

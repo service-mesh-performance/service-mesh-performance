@@ -17,11 +17,16 @@
   }
 }
 
-.image-background{
+#image-background{
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding-top: 10px;
   max-width: 90%;
   height: auto;
+}
+
+#team-bg {
+ background-color: #C0C0C0;
+ # background-image: linear-gradient(to top, #c6c9c9, #d4d6d7, #e3e4e4, #f1f1f2, #ffffff);
 }

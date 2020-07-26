@@ -3,14 +3,17 @@ nav:
   - title: "What is SMPS?"
     section: timeline
 
-  - title: "Run SMPS"
-    section: team
+  - title: "Partners"
+    section: clients
 
-  - title: "Stay meshy and connect!"
-    section: contact
+  - title: "Resources"
+    section: services
+
+  - title: "SMPS Live"
+    section: team
 
   - title: "Blog"
     section: portfolio
 
-  - title: "Resources"
-    section: services
+  - title: "Connect"
+    section: contact

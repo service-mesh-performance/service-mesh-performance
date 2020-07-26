@@ -1,7 +1,7 @@
 header:
     title: Service Mesh Performance Specification
     #text: It's nice to meet you
-    button: Run SMPS
+    button: SMPS in action
     buttonlink: "#team"
 
 services:
@@ -29,8 +29,7 @@ timeline:
     title: ""
     text: ""
     section: timeline
-    events:
-    end: "Be Part <br> of the <br> community!"
+
 
 about:
     title: "About Us"
@@ -38,6 +37,7 @@ about:
     section: about
 
 clients:
+    title: "Partners"
     section: clients
     max-height: 100px
     horizontal-scrolling: "" #"yes/no"
@@ -56,12 +56,13 @@ clients:
         logo: assets/img/partners/utaustin.png
 
 team:
-    title: "Run SMPS"
+    title: "SMPS Live"
     text: ""
     subtext:
+    section: team
 
 contact:
-    title: "Stay meshy and connect"
+    title: "Connect"
     text: ""
     section: contact
 

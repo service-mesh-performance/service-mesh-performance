@@ -15,10 +15,6 @@ a {
   }
 }
 
-.background{
- background-image: linear-gradient(to top, #00b39f, #46b8ab, #68bcb4, #85c0bd, #a0c4c3, #b0cacc, #c0d0d3, #d0d6d8, #dce0e2, #e8eaec, #f4f4f5, #ffffff);
- background-size: auto;
-}
 
 .text-primary {
   color: $primary !important;
@@ -36,7 +32,6 @@ h6 {
 
 a {
   color: #231f20;
-  text-decoration: underline;
  }
 
 .page-section {

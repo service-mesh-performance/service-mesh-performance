@@ -14,7 +14,7 @@ header.masthead {
       font-size: 22px;
       line-height: 22px;
       margin-bottom: 25px;
-      @include serif-font;
+      @include heading-font;
     }
     .intro-heading {
       font-size: 50px;
@@ -25,6 +25,7 @@ header.masthead {
     }
   }
 }
+
 @media(min-width:768px) {
   header.masthead {
     .intro-text {
@@ -34,7 +35,7 @@ header.masthead {
         font-size: 40px;
         line-height: 40px;
         margin-bottom: 25px;
-        @include serif-font;
+        @include heading-font;
       }
       .intro-heading {
         font-size: 75px;
@@ -45,9 +46,4 @@ header.masthead {
       }
     }
   }
-}
-
-.header-background{
-background-image: linear-gradient(to top, #00d3a9, #40a87a, #478054, #3f5a38, #2e3723, #28281a, #1d1a14, #0d0c0b, #0c0b0b, #0b0a0b, #0a0a0a, #090909);
-background-repeat:no-repeat;
 }

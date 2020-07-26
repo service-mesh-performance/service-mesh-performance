@@ -85,7 +85,7 @@
   .timeline-heading {
     h4 {
       margin-top: 0;
-      color: inherit;
+      color: black;
       &.subheading {
         text-transform: none;
       }
@@ -182,6 +182,22 @@
   padding-right: 10px;
 }
 
-code {
-  color: #fff;
+#timeline-bg {
+ background-image: linear-gradient(to bottom, #ffffff, #f1f1f2, #e3e4e4, #d4d6d7, #c6c9c9);
+}
+
+div.left {
+  text-align: left;
+}
+
+pre code {
+  color: white;
+  background-color: #000;
+  display: block;
+  float: center;
+  width: 100%;
+  height: auto;
+  padding-left: 8px;
+  padding-right: 20px;
+  @include serif-font;
 }
