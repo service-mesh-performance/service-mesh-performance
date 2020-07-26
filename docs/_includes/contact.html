@@ -3,45 +3,43 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">{{ site.data.sitetext.contact.title | markdownify | default: Contact Us }}</h2>
+          <h2 class="section-heading text-uppercase">{{ site.data.sitetext.contact.title | markdownify | default: Connect and stay meshy! }}</h2>
+            <div class="white-text"><h2>Connect and stay meshy!</h2></div>
           <h3 class="section-subheading text-muted">{{ site.data.sitetext.contact.text | default: "" }}</h3>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <form id="contactForm" action="https://formspree.io/{{ site.email }}" novalidate="novalidate" method="POST">
-		  <!--name="sentMessage"--> 
+          <form id="contactForm" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&id=6bb65defeb" novalidate="novalidate" method="POST">
+		  <!--name="sentMessage"-->
+        <a href="https://meshery.io/"><img class="image-right" src="assets/img/meshery-white.png"></a>
             <div class="row">
               <div class="col-md-6">
-                <div class="form-group">
-                  <input name="name" class="form-control" id="name" type="text" placeholder="Name*" required="required" data-validation-required-message="Please enter your name.">
+                <div class="form-group; center;">
+                  <input name="first_name" class="form-control" id="First Name" type="text" placeholder="First Name" required="required" data-validation-required-message="First Name">
                   <p class="help-block text-danger"></p>
                 </div>
-                <div class="form-group">
-                  <input name="_replyto" class="form-control" id="email" type="email" placeholder="Email*" required="required" data-validation-required-message="Please enter your email address.">
+                <div class="form-group; center;">
+                  <input name="last_name" class="form-control" id="Last Name" type="text" placeholder="Last Name" required="required" data-validation-required-message="Last Name">
                   <p class="help-block text-danger"></p>
                 </div>
-                <div class="form-group">
-                  <input name="phone" class="form-control" id="phone" type="tel" placeholder="Phone Number*" required="required" data-validation-required-message="Please enter your phone number.">
+                <div class="form-group; center;">
+                  <input name="_replyto" class="form-control" id="Email address" type="email" placeholder="Email address" required="required" data-validation-required-message="Email address">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <textarea name="message" class="form-control" id="message" placeholder="Message*" required="required" data-validation-required-message="Please enter a message."></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
               </div>
 			  <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
               <div class="clearfix"></div>
-              <div class="col-lg-12 text-center">
+              <div class="col-lg-12 text-center; center;">
                 <div id="success"></div>
-                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Sign up!</button>
               </div>
 			  <input type="text" name="_gotcha" style="display:none">
 			  <input type="hidden" name="_next" value="#"/>
             </div>
           </form>
+
         </div>
       </div>
     </div>

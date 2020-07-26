@@ -62,24 +62,25 @@ team:
 
 contact:
     title: "Stay meshy and connect"
+    text: ""
     section: contact
 
 footer:
     social:
-      - url: https://groups.google.com/u/1/a/meshery.dev/g/community/members
-        icon: "fab fa-envelop"
-      - url: https://twitter.com/layer5
-        icon: "fab fa-twitter-square"
-      - url: https://www.linkedin.com/company/layer5
-        icon: "fab fa-linkedin"
       - url: https://github.com/layer5io/service-mesh-performance-specification
         icon: "fab fa-github"
       - url: http://slack.layer5.io/
         icon: "fab fa-slack"
+      - url: https://twitter.com/layer5
+        icon: "fab fa-twitter-square"
+      - url: https://www.linkedin.com/company/layer5
+        icon: "fab fa-linkedin"
+      - url: https://groups.google.com/u/1/a/meshery.dev/g/community/members
+        icon: "fas fa-users"
       - url: https://www.youtube.com/embed/LxP-yHrKL4M
         icon: "fab fa-youtube"
       - url: https://calendar.google.com/calendar/b/1/r?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20
-        icon: "fab fa-calender"
+        icon: "far fa-calendar-alt"
 
 
 

@@ -45,3 +45,23 @@ section#contact {
     @include heading-font;
   }
 }
+
+.center {
+  margin: auto;
+  float: center;
+  width: 50%;
+  border: 3px;
+  text-align: center;
+  padding: 10px;
+}
+
+.white-text{
+    color: #fff;
+}
+
+.image-right {
+  width: 25%;
+  float: right;
+  padding-right: 100px;
+  border: 10px;
+}
