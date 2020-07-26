@@ -74,3 +74,11 @@ img::selection {
 img::-moz-selection {
   background: transparent;
 }
+
+.smps-dark-yellow{
+  background-color: var(--main-dark-yellow) !important;
+}
+
+.smps-dark-yellow-text {
+  color: var(--main-dark-yellow) !important;
+}

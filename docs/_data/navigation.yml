@@ -1,16 +1,13 @@
 nav:
 
   - title: "What is SMPS?"
-    section: timeline
+    section: about
 
-  - title: "Partners"
-    section: clients
+  - title: "Contributors"
+    section: contributors
 
   - title: "Resources"
-    section: services
-
-  - title: "SMPS Live"
-    section: team
+    section: resources
 
   - title: "Blog"
     section: portfolio

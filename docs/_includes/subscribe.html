@@ -1,19 +1,17 @@
-<!-- Contact -->
-  <section class="page-section" id="{{ site.data.sitetext.contact.section | default: "contact" }}">
+<!-- subscribe -->
+  <section class="page-section" id="{{ site.data.sitetext.subscribe.section | default: "subscribe" }}">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">{{ site.data.sitetext.contact.title | markdownify | default: Connect and stay meshy! }}</h2>
-            <div class="white-text"><h2>Connect and stay meshy!</h2></div>
-          <h3 class="section-subheading text-muted">{{ site.data.sitetext.contact.text | default: "" }}</h3>
+          <h2 class="section-heading text-uppercase">{{ site.data.sitetext.subscribe.title | markdownify | default: Stay meshy and subscribe! }}</h2>
+          <h3 class="section-subheading text-muted">{{ site.data.sitetext.subscribe.text | default: "" }}</h3>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 center">
           <form id="contactForm" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&id=6bb65defeb" novalidate="novalidate" method="POST">
 		  <!--name="sentMessage"-->
-        <a href="https://meshery.io/"><img class="image-right" src="assets/img/meshery-white.png"></a>
-            <div class="row">
+            
               <div class="col-md-6">
                 <div class="form-group; center;">
                   <input name="first_name" class="form-control" id="First Name" type="text" placeholder="First Name" required="required" data-validation-required-message="First Name">
@@ -28,20 +26,20 @@
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
-              </div>
+              
 			  <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
               <div class="clearfix"></div>
               <div class="col-lg-12 text-center; center;">
                 <div id="success"></div>
-                <button id="sendMessageButton" class="button" type="submit">Sign up</button>
+                <button id="sendMessageButton" class="button" type="submit">Subscribe</button>
               </div>
 			  <input type="text" name="_gotcha" style="display:none">
 			  <input type="hidden" name="_next" value="#"/>
-            </div>
+            
           </form>
 
         </div>
       </div>
     </div>
   </section>
-<!-- End Contact -->
+<!-- End subscribe -->

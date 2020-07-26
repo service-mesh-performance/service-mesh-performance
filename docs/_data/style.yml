@@ -1,10 +1,11 @@
 #Color Customization
-highlight: "transparent"
+
+highlight: "#EBC017" #smps-dark-yellow
 white: "#FFF"
 #black: "#000"
 
 #Image Customization
-header-image: "../img/bgnew2.jpg"
+header-image: "../img/hero.jpg"
 contact-image: "../img/contact.jpg"
 
 #Font Awesome icon for portfolio grid when an item is hovered over

@@ -23,7 +23,7 @@ $black: {{ site.data.style.black | default: "#000" }} !default;
 
 // Custom Images
 $header-image: "{{ site.data.style.header-image }}";
-$contact-image: "{{ site.data.style.contact-image }}";
+$subscribe-image: "{{ site.data.style.subscribe-image }}";
 
 // Global CSS
 @import "base/page.scss";
@@ -37,7 +37,7 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "layout/masthead.scss";
 @import "layout/services.scss";
 @import "layout/portfolio.scss";
-@import "layout/timeline.scss";
-@import "layout/team.scss";
-@import "layout/contact.scss";
+@import "layout/about.scss";
+@import "layout/implementation.scss";
+@import "layout/subscribe.scss";
 @import "layout/footer.scss";

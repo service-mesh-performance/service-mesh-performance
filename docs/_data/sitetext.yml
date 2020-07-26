@@ -1,70 +1,63 @@
 header:
     title: Service Mesh Performance Specification
     #text: It's nice to meet you
-    button: SMPS in action
-    buttonlink: "#team"
+    button: SMPS in-action
+    buttonlink: "#implementation"
 
-services:
-    title: "Resources"
+engage:
+    title: "engage"
     text: ""
-    section: services
+    section: engage
     list:
       - title: "[Contributing](https://github.com/layer5io/service-mesh-performance-specification/blob/master/CONTRIBUTING.md)"
-        desc: "Want to contribute? You're very welcome"
+        desc: "Get Involved. Collaborate."
         icon: fas fa-hands-helping #find more at https://fontawesome.com/icons
       - title: "[Code of Conduct](https://github.com/layer5io/service-mesh-performance-specification/blob/master/CODE_OF_CONDUCT.md)"
         desc: "A few rules to keep the meshiness in control"
         icon: fas fa-clipboard-list
       - title: "[Learn Layer5](https://github.com/layer5io/learn-layer5)"
-        desc: "A sample application for learning how to service mesh "
+        desc: "A sample application for learning how to service mesh"
         icon: fab fa-battle-net
 
-portfolio:
-    title: ""
-    text: ""
-    section: portfolio
+# portfolio:
+#     title: ""
+#     text: ""
+#     section: portfolio
 
-
-timeline:
+about:
     title: ""
     text: ""
     section: timeline
 
-
-about:
-    title: "About Us"
-    text: "our story"
-    section: about
-
-clients:
-    title: "Partners"
-    section: clients
+contributors:
+    title: "Contributors"
+    section: contributors
     max-height: 100px
-    horizontal-scrolling: "" #"yes/no"
+    horizontal-scrolling: "yes" #"yes/no"
     list:
       - title: "Google"
         align: center
-        logo: assets/img/partners/google.png
+        logo: assets/img/contributors/google.png
       - title: "Layer5"
         align: center
-        logo: assets/img/partners/layer5.png
+        logo: assets/img/contributors/layer5.png
       - title: "The Linux Foundation"
         align: center
-        logo: assets/img/partners/the-linux-foundation.png
+        logo: assets/img/contributors/the-linux-foundation.png
       - title: "UT Austin"
         align: center
-        logo: assets/img/partners/utaustin.png
+        logo: assets/img/contributors/utaustin.png
 
-team:
-    title: "SMPS Live"
-    text: ""
+implementation:
+    title: "Example implementation"
+    text: "Meshery is the canonical implementation of SMPS"
     subtext:
-    section: team
+    section: implementation
 
-contact:
-    title: "Connect"
-    text: ""
-    section: contact
+subscribe:
+    title: "Newsletter"
+    text: "Stay abreast of the progress of the Service Mesh Performance Specification initiative"
+    section: subscribe
 
 footer:
     social:

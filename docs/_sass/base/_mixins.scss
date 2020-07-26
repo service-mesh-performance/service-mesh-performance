@@ -1,4 +1,7 @@
 // Font Mixins
+@mixin courier-font {
+  font-family: 'Courier New', Courier, monospace;
+}
 @mixin serif-font {
   font-family: 'Open Sans', sans-serif, Roboto;
 }
