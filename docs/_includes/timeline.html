@@ -1,22 +1,43 @@
 <!-- About -->
   <section class="page-section" id="{{ site.data.sitetext.timeline.section | default: "about" }}">
+    <div class="background">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">{{ site.data.sitetext.timeline.title | markdownify | default: "" }}</h2>
           <h3 class="section-subheading text-muted">{{ site.data.sitetext.timeline.text | default: ""}}</h3>
-         <img class="image-left" src="assets\img\buttons\smps_black.png">
-          The Service Mesh Performance Specification (SMPS) is a vendor-neutral specification for capturing details of:
+          <iframe
+       width="100%" height="320px" src="https://www.youtube.com/embed/LxP-yHrKL4M"
+       frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+       allowfullscreen>
+     </iframe> <br><br>
+       <div style="text-align: center;">
+          <h4>The Service Mesh Performance Specification (SMPS)</h4>
+          SMPS is a collaborative effort of Layer5, UT Austin, Google, and The Linux Foundation :balloon: <br>
+          The Service Mesh Performance Working Group defines the Service Mesh Performance Specification and is hosted within the CNCF SIG Network. Using SMPS, MeshMark provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.
+          <br><br>The group is also working in collaboration with the Envoy project to create easy-to-use tooling around distributed performance management (distributed load generation and analysis) in context of Istio, Consul, Tanzu Service Mesh, Network Service Mesh, App Mesh, Linkerd, and other service meshes.
+        <br><br>
+        <h4>The Service Mesh Performance Specification (SMPS) is a vendor-neutral specification for capturing details of:</h4> <br>
           <ul>
               <li>Environment and infrastructure details</li>
               <li>Number and size of nodes, orchestrator</li>
               <li>Service mesh and its configuration</li>
               <li>Service / application details</li>
               <li>Bundled with test results.</li>
-          </ul><br>
-          SMPS is a collaborative effort of Layer5, UT Austin, Google, and The Linux Foundation.
-        </div>
-      </div><br><br>
+          </ul><br><br>
+            The canonical implementation of this specification is the <a href="https://meshery.io/">Meshery Project</a>. The following snippet provides a further insight into the fact that the specification defines a common collection of statistical analysis to be calculated for every performance test:
+            <br><br><div style="background-color:black;color:white;text-align: center;"><br>
+            message PerformanceTestResult {<br>
+            message Latency {<br>
+            double min = 1;<br>
+            double average = 2;<br>
+            double p50 = 3;<br>
+            double p90 = 4;<br>
+            double p99 = 5;<br>
+            double max = 6;<br>
+            }<br><br></div><br><br>
+            </div>
+       </div><br><br>
       <div class="row">
         <div class="col-lg-12">
           <ul class="timeline">

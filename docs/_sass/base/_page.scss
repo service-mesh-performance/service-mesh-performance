@@ -15,6 +15,11 @@ a {
   }
 }
 
+.background{
+ background-image: linear-gradient(to top, #00b39f, #46b8ab, #68bcb4, #85c0bd, #a0c4c3, #b0cacc, #c0d0d3, #d0d6d8, #dce0e2, #e8eaec, #f4f4f5, #ffffff);
+ background-size: auto;
+}
+
 .text-primary {
   color: $primary !important;
 }
@@ -29,17 +34,22 @@ h6 {
   @include heading-font;
 }
 
+a {
+  color: #231f20;
+  text-decoration: underline;
+ }
+
 .page-section {
   padding: 100px 0;
   h2.section-heading {
-    font-size: 40px;
+    font-size: 45px;
     margin-top: 0;
     margin-bottom: 15px;
   }
   h3.section-subheading {
+    color: #00b39f;
     font-size: 16px;
     font-weight: 400;
-    font-style: italic;
     margin-bottom: 75px;
     text-transform: none;
     @include serif-font;

@@ -12,7 +12,6 @@ header.masthead {
     padding-bottom: 100px;
     .intro-lead-in {
       font-size: 22px;
-      font-style: italic;
       line-height: 22px;
       margin-bottom: 25px;
       @include serif-font;
@@ -33,7 +32,6 @@ header.masthead {
       padding-bottom: 200px;
       .intro-lead-in {
         font-size: 40px;
-        font-style: italic;
         line-height: 40px;
         margin-bottom: 25px;
         @include serif-font;
@@ -47,4 +45,9 @@ header.masthead {
       }
     }
   }
+}
+
+.header-background{
+background-image: linear-gradient(to top, #00d3a9, #40a87a, #478054, #3f5a38, #2e3723, #28281a, #1d1a14, #0d0c0b, #0c0b0b, #0b0a0b, #0a0a0a, #090909);
+background-repeat:no-repeat;
 }

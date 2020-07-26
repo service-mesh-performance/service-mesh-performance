@@ -29,8 +29,9 @@ author     : Layer5 Authors
 
 twitter_username: layer5
 github_username:  l5io
+
 logo:     #optional, defaults to site title
-  path: assets\img\buttons\smps.png
+  path: /assets/img/smps-new-logo.png
   height: 100 #height in px, defaults to 52px
 plugins:
   - jekyll-feed

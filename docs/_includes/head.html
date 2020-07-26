@@ -1,4 +1,5 @@
 <head>
+<div class="header-background">
 {% if site.analytics.google %}
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
@@ -6,7 +7,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-	
+
 	gtag('config', '{{ site.analytics.google }}');
   </script>
   <!-- End Google Analytics -->
@@ -29,11 +30,12 @@
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 
   <!-- Custom styles for this theme -->
   <!--<link href="assets/css/agency.min.css" rel="stylesheet">-->
   <link href="assets/css/agency.css" rel="stylesheet">
-  
+
   <!-- Page container change top padding when nav shrinks -->
   {% if page.layout == "page" %}
   <style>
@@ -42,6 +44,6 @@
 	  #pagecontainer {padding-top: 100px;}
 	}
   </style>
+  </div>
   {% endif %}
-  
 </head>

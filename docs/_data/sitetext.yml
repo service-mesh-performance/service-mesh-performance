@@ -20,22 +20,16 @@ services:
         icon: fab fa-battle-net
 
 portfolio:
-    title: "Blog"
+    title: ""
     text: ""
     section: portfolio
 
 
 timeline:
-    title: "What is SMPS?"
+    title: ""
     text: ""
     section: timeline
     events:
-#      - title: "SMPS - up and running!"
-#        year: "2020"
-#        desc: ""
-#        image: assets/img/timeline/3.jpg
-#        alt: image alt text
-#        align: #default is left
     end: "Be Part <br> of the <br> community!"
 
 about:
@@ -48,18 +42,18 @@ clients:
     max-height: 100px
     horizontal-scrolling: "" #"yes/no"
     list:
-      - title: "envato"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/envato.jpg
-      - title: "designmodo"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/designmodo.jpg
-      - title: "themeforest"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/themeforest.jpg
-      - title: "Creative Market"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/creative-market.jpg
+      - title: "Google"
+        align: center
+        logo: assets/img/partners/google.png
+      - title: "Layer5"
+        align: center
+        logo: assets/img/partners/layer5.png
+      - title: "The Linux Foundation"
+        align: center
+        logo: assets/img/partners/the-linux-foundation.png
+      - title: "UT Austin"
+        align: center
+        logo: assets/img/partners/utaustin.png
 
 team:
     title: "Run SMPS"
@@ -74,11 +68,11 @@ contact:
 footer:
     social:
       - url: https://twitter.com/layer5
-        icon: "fab fa-twitter"
+        icon: "fab fa-twitter-square"
       - url: https://www.linkedin.com/company/layer5
-        icon: "fab fa-linkedin-in"
+        icon: "fab fa-linkedin"
       - url: https://github.com/layer5io/service-mesh-performance-specification
-        icon: "fab fa-github"
+        icon: "fab fa-github-square"
 
 
 

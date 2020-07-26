@@ -11,7 +11,6 @@
     width: 2px;
     margin-left: -1.5px;
     content: '';
-    background-color: $gray-200;
   }
   > li {
     position: relative;
@@ -52,7 +51,7 @@
       height: 80px;
       margin-left: 0;
       text-align: center;
-      color: $white;
+      color: $black;
       border: 7px solid $gray-200;
       border-radius: 100%;
       background-color: $primary;
@@ -178,7 +177,11 @@
 }
 
 .image-left {
-  width: 30%;
+  width: 40%;
   float: left;
   padding-right: 10px;
+}
+
+code {
+  color: #fff;
 }
