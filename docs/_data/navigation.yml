@@ -1,18 +1,16 @@
 nav:
-  - title: "Services"
-    section: services
 
-  - title: "Portfolio"
+  - title: "What is SMPS?"
+    section: about
+
+  - title: "Contributors"
+    section: contributors
+
+  - title: "Resources"
+    section: resources
+
+  - title: "Blog"
     section: portfolio
-    
-  - title: "About"
-    section: timeline
 
-  - title: "Team"
-    section: team
-
-  - title: "Contact"
+  - title: "Connect"
     section: contact
-
-  - title: "Theme Source"
-    url: https://github.com/raviriley/agency-jekyll-theme/

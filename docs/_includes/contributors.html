@@ -1,0 +1,16 @@
+<!-- Contributors -->
+<div id="block">
+  <section class="py-5" id="{{ site.data.sitetext.contributors.section | default: "contributors" }}">
+    <div class="container">
+      <div class="row" {% if site.data.sitetext.clients.horizontal-scrolling == "yes" %} id="scrolling-contributors" {% endif %}>
+	  {% for contributors in site.data.sitetext.contributors.list %}
+        <div class="col-md-3 col-sm-6">
+          <a href="{{ contributors.url }}">
+            <img class="img-fluid d-block mx-auto" src="{{ contributors.logo }}" alt="{{ contributors.title }}" style="max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
+          </a>
+        </div>
+	  {% endfor %}
+      </div>
+    </div>
+  </section>
+  </div>

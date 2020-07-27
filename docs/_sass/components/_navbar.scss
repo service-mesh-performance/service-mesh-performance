@@ -2,11 +2,11 @@
 #mainNav {
   background-color: $gray-900;
   .navbar-toggler {
-    font-size: 12px;
+    font-size: 1rem;
     right: 0;
     padding: 13px;
     text-transform: uppercase;
-    color: white;
+    color: $gray-100;
     border: 0;
     background-color: $primary;
     @include heading-font;
@@ -24,15 +24,13 @@
   .navbar-nav {
     .nav-item {
       .nav-link {
-        font-size: 90%;
-        font-weight: 400;
         padding: 0.75em 0;
         letter-spacing: 1px;
-        color: white;
+        color: $white;
         @include heading-font;
         &.active,
         &:hover {
-          color: $primary;
+          color:$gray-500;
         }
       }
     }

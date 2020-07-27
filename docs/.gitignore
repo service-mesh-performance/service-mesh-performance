@@ -1,5 +1,8 @@
-_site
+*.gem
+.bundle
 .sass-cache
 .jekyll-cache
-.jekyll-metadata
-vendor
+_site
+Gemfile.lock
+unused
+bootstrap-reference.html

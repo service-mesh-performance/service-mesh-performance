@@ -5,19 +5,21 @@
 }
 
 .btn-xl {
+  color: black;
   font-size: 18px;
-  padding: 20px 40px;
+  padding: 20px 20px;
 }
 
 .btn-primary {
+  color: #111;
   background-color: $primary;
   border-color: $primary;
   &:active,
   &:focus,
   &:hover {
-    background-color: darken($primary, 7.5%) !important;
-    border-color: darken($primary, 7.5%) !important;
-    color: white;
+    background-color: lighten($primary, 7.5%) !important;
+    border-color: lighten($primary, 7.5%) !important;
+    color: #333;
   }
   &:active,
   &:focus {

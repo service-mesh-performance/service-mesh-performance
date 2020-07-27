@@ -1,0 +1,31 @@
+// Styling for the implementation section
+.implementation-member {
+  margin-bottom: 50px;
+  text-align: center;
+  img {
+    width: 225px;
+    height: 225px;
+    border: 7px solid fade-out($black, 0.9);
+  }
+  h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none;
+  }
+  p {
+    margin-top: 0;
+  }
+}
+
+#image-background{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  max-width: 90%;
+  height: auto;
+}
+
+#implementation-bg {
+ background-color: #C0C0C0;
+}

@@ -1,17 +1,77 @@
 <!-- About -->
+    <div id="about-bg">
   <section class="page-section" id="{{ site.data.sitetext.about.section | default: "about" }}">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">{{ site.data.sitetext.about.title | default: "About Us" }}</h2>
-          <h3 class="section-subheading text-muted">{{ site.data.sitetext.about.text | default: "" }}</h3>
-        </div>
+          <h4>Standardizing Service Mesh Value Measurement</h4>
+          <p>
+            The Service Mesh Working Group defines the Service Mesh Performance Specification and is hosted within the CNCF SIG Network. Using SMPS, MeshMark provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.
+          </p>
+          <iframe width="80%" height="320px" src="https://www.youtube.com/embed/LxP-yHrKL4M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
       </div>
-	  <div class="row">
-		<div class="col-lg-8 mx-auto text-center">
-		  <div class="large text-muted">{{ site.data.sitetext.about.text | markdownify }}</div>
-		</div>
-	  </div>
+       <div class="left">
+        <h4>Service Mesh Performance Specification (SMPS) is a vendor-neutral specification for capturing details of:</h4> <br>
+          <ul>
+              <li>Environment and infrastructure details</li>
+              <li>Number and size of nodes, orchestrator</li>
+              <li>Service mesh and its configuration</li>
+              <li>Service / application details</li>
+              <li>Bundled with test results.</li>
+          </ul>
+          <p>
+            The canonical implementation of this specification is <a href="https://meshery.io/"> Meshery.</a>
+            The following snippet provides a further insight into the fact that the specification defines a common collection of statistical analysis to be calculated for every performance test:
+          </p>
+          <div class="codewrapper">
+            <pre><code>
+            message PerformanceTestResult {
+            message Latency {
+            double min = 1;
+            double average = 2;
+            double p50 = 3;
+            double p90 = 4;
+            double p99 = 5;
+            double max = 6;
+            }</code></pre>
+            <span="code-caption">Statistical analysis calculated with very performance test.</span>
+          </div>
+      <!-- <div class="row">
+        <div class="col-lg-12">
+          <ul class="about">
+		  {%- for event in site.data.sitetext.about.events -%}
+            {% if event.align == "right" %}
+			<li class="about-inverted">
+			{% else %}
+			<li>
+			{% endif %}
+              <div class="about-image">
+                <img class="rounded-circle img-fluid" src="{{ event.image }}" alt="{{ event.alt | default: ""}}">
+              </div>
+              <div class="about-panel">
+                <div class="about-heading">
+                  <h4>{{ event.year | markdownify }}</h4>
+                  <h4 class="subheading">{{ event.title }}</h4>
+                </div>
+                <div class="about-body">
+                  {{ event.desc | markdownify }}
+                </div>
+              </div>
+            </li>
+		  {% endfor %}
+
+		  {% if site.data.sitetext.about.end %}
+			<li class="about-inverted">
+              <div class="about-image">
+                <h4>{{ site.data.sitetext.about.end }}</h4>
+              </div>
+            </li>
+		  {% endif %}
+
+          </ul> -->
+        </div>
+      </div> 
     </div>
   </section>
+  </div>
 <!-- End About -->

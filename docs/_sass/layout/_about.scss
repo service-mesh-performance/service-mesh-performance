@@ -1,0 +1,211 @@
+// Styling for the about section
+.about {
+  position: relative;
+  padding: 0;
+  list-style: none;
+  &:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    width: 2px;
+    margin-left: -1.5px;
+    content: '';
+  }
+  > li {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 50px;
+    &:after,
+    &:before {
+      display: table;
+      content: ' ';
+    }
+    &:after {
+      clear: both;
+    }
+    .about-panel {
+      position: relative;
+      float: right;
+      width: 100%;
+      padding: 0 20px 0 100px;
+      text-align: left;
+      &:before {
+        right: auto;
+        left: -15px;
+        border-right-width: 15px;
+        border-left-width: 0;
+      }
+      &:after {
+        right: auto;
+        left: -14px;
+        border-right-width: 14px;
+        border-left-width: 0;
+      }
+    }
+    .about-image {
+      position: absolute;
+      z-index: 100;
+      left: 0;
+      width: 80px;
+      height: 80px;
+      margin-left: 0;
+      text-align: center;
+      color: $black;
+      border: 7px solid $gray-200;
+      border-radius: 100%;
+      background-color: $primary;
+      h4 {
+        font-size: 10px;
+        line-height: 14px;
+        margin-top: 12px;
+      }
+    }
+    &.about-inverted > .about-panel {
+      float: right;
+      padding: 0 20px 0 100px;
+      text-align: left;
+      &:before {
+        right: auto;
+        left: -15px;
+        border-right-width: 15px;
+        border-left-width: 0;
+      }
+      &:after {
+        right: auto;
+        left: -14px;
+        border-right-width: 14px;
+        border-left-width: 0;
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .about-heading {
+    h4 {
+      margin-top: 0;
+      color: black;
+      &.subheading {
+        text-transform: none;
+      }
+    }
+  }
+  .about-body {
+     > ul,
+    > p {
+      margin-bottom: 0;
+    }
+  }
+}
+@media(min-width:768px) {
+  .about {
+    &:before {
+      left: 50%;
+    }
+    > li {
+      min-height: 100px;
+      margin-bottom: 100px;
+      .about-panel {
+        float: left;
+        width: 41%;
+        padding: 0 20px 20px 30px;
+        text-align: right;
+      }
+      .about-image {
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        margin-left: -50px;
+        h4 {
+          font-size: 13px;
+          line-height: 18px;
+          margin-top: 16px;
+        }
+      }
+      &.about-inverted > .about-panel {
+        float: right;
+        padding: 0 30px 20px 20px;
+        text-align: left;
+      }
+    }
+  }
+}
+@media(min-width:992px) {
+  .about {
+    > li {
+      min-height: 150px;
+      .about-panel {
+        padding: 0 20px 20px;
+      }
+      .about-image {
+        width: 150px;
+        height: 150px;
+        margin-left: -75px;
+        h4 {
+          font-size: 18px;
+          line-height: 26px;
+          margin-top: 30px;
+        }
+      }
+      &.about-inverted > .about-panel {
+        padding: 0 20px 20px;
+      }
+    }
+  }
+}
+@media(min-width:1200px) {
+  .about {
+    > li {
+      min-height: 170px;
+      .about-panel {
+        padding: 0 20px 20px 100px;
+      }
+      .about-image {
+        width: 170px;
+        height: 170px;
+        margin-left: -85px;
+        h4 {
+          margin-top: 40px;
+        }
+      }
+      &.about-inverted > .about-panel {
+        padding: 0 100px 20px 20px;
+      }
+    }
+  }
+}
+
+.image-left {
+  width: 40%;
+  float: left;
+  padding-right: 10px;
+}
+
+#about-bg {
+ background-image: linear-gradient(to bottom, #ffffff, #f1f1f2, #e3e4e4, #d4d6d7, #c6c9c9);
+}
+
+div.left {
+  text-align: left;
+}
+
+pre code {
+  color: #eee;
+  background-color: #111;
+  display: block;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-bottom: 1vh;
+  @include courier-font;
+}
+
+div.code-wrapper {
+  width:50%;
+  float:right;
+  position: relative;
+
+  > .code-caption {
+    font-style: italic;
+  }
+}
