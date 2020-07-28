@@ -27,7 +27,7 @@ engage:
 about:
     title: ""
     text: ""
-    section: timeline
+    section: about
 
 contributors:
     title: "Contributors"
