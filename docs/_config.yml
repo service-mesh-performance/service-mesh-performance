@@ -1,18 +1,3 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that.
-# This file is *NOT* reloaded automatically when you use 'bundle exec jekyll serve'.
-# If you change this file, please restart the server process.
-
-# Site settings
-# are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
-theme: jekyll-agency
-
 title: Standardizing Service Mesh Value Measurement
 email: community@layer5.io #this is also the email contact forms will go
 description: "Service Mesh Performance Specification (SMPS): Measure your service mesh performance using the SMPS.
