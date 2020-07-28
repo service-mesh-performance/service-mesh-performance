@@ -7,10 +7,10 @@ nav:
     section: contributors
 
   - title: "Resources"
-    section: resources
+    section: engage
 
-  - title: "Blog"
-    section: portfolio
+  - title: "SMPS Live"
+    section: implementation
 
   - title: "Connect"
-    section: contact
+    section: subscribe

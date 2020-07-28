@@ -13,8 +13,8 @@
 
 theme: jekyll-agency
 
-title: Service Mesh Performance Specification
-email: community@layer5.io #this is also the email contact forms will go 
+title: Standardizing Service Mesh Value Measurement
+email: community@layer5.io #this is also the email contact forms will go
 description: "Service Mesh Performance Specification (SMPS): Measure your service mesh performance using the SMPS.
      provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments."
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -25,7 +25,8 @@ github_username:  l5io
 
 logo:
   path: assets/img/smps-white.svg
-  height: 100 #height in px, defaults to 52px
+  height: 80px #height in px, defaults to 52px
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap

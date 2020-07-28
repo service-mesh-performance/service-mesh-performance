@@ -74,14 +74,14 @@ section#subscribe {
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: #fff;
-  background-color: #00d3a9;
+  color: #000;
+  background-color: #EBC017;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
 
-.button:hover {background-color: #00d3a9}
+.button:hover {background-color: #F0D41C}
 
 .button:active {
   background-color: #fff;
@@ -90,5 +90,5 @@ section#subscribe {
 }
 
 .text{
-  color: white;
+  color: black;
 }
