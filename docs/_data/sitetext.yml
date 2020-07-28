@@ -1,5 +1,5 @@
 header:
-    title: Service Mesh Performance Specification
+    title: Standardizing Service Mesh Value Measurement
     #text: It's nice to meet you
     button: SMPS in-action
     buttonlink: "#implementation"
@@ -69,7 +69,7 @@ footer:
         icon: "fab fa-twitter-square"
       - url: https://www.linkedin.com/company/layer5
         icon: "fab fa-linkedin"
-      - url: https://groups.google.com/u/1/a/meshery.dev/g/community/members
+      - url: https://layer5.io/community
         icon: "fas fa-users"
       - url: https://www.youtube.com/embed/LxP-yHrKL4M
         icon: "fab fa-youtube"

@@ -6,11 +6,11 @@ nav:
   - title: "Contributors"
     section: contributors
 
-  - title: "SMPS Live"
-    section: implementation
-
   - title: "Resources"
     section: engage
+
+  - title: "SMPS Live"
+    section: implementation
 
   - title: "Connect"
     section: subscribe

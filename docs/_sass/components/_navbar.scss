@@ -2,10 +2,9 @@
 #mainNav {
   background-color: $gray-900;
   .navbar-toggler {
-    font-size: 1rem;
+    font-size: 0.75rem;
     right: 0;
     padding: 13px;
-    text-transform: uppercase;
     color: $gray-100;
     border: 0;
     background-color: $primary;
@@ -24,8 +23,8 @@
   .navbar-nav {
     .nav-item {
       .nav-link {
-        padding: 0.75em 0;
-        letter-spacing: 1px;
+        padding: 0.25em 0;
+        letter-spacing: 0.75px;
         color: $white;
         @include heading-font;
         &.active,
@@ -46,7 +45,7 @@
     border: none;
     background-color: transparent;
     .navbar-brand {
-      font-size: 1.75em;
+      font-size: 1.50em;
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       transition: all 0.3s;
@@ -54,7 +53,7 @@
     .navbar-nav {
       .nav-item {
         .nav-link {
-          padding: 1.1em 1em !important;
+          padding: 0.80em 0.80em !important;
         }
       }
     }
@@ -63,9 +62,26 @@
       padding-bottom: 0;
       background-color: $gray-900;
       .navbar-brand {
-        font-size: 1.25em;
+        font-size: 1.00em;
         padding: 12px 0;
       }
     }
   }
+}
+
+.white-text {
+  color: white;
+  font-size: 16px;
+  @include heading-font;
+}
+
+.iconDetails {
+float:left;
+height:80px;
+width:80px;
+}
+
+.container2 {
+   width:100%;
+   height:auto;
 }
