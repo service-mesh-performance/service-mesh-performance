@@ -15,7 +15,7 @@
   > li {
     position: relative;
     min-height: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     &:after,
     &:before {
       display: table;
@@ -28,7 +28,7 @@
       position: relative;
       float: right;
       width: 100%;
-      padding: 0 20px 0 100px;
+      padding: 0 20px 0 50px;
       text-align: left;
       &:before {
         right: auto;
@@ -63,7 +63,7 @@
     }
     &.about-inverted > .about-panel {
       float: right;
-      padding: 0 20px 0 100px;
+      padding: 0 20px 0 50px;
       text-align: left;
       &:before {
         right: auto;
@@ -105,11 +105,11 @@
     }
     > li {
       min-height: 100px;
-      margin-bottom: 100px;
+      margin-bottom: 50px;
       .about-panel {
         float: left;
         width: 41%;
-        padding: 0 20px 20px 30px;
+        padding: 0 20px 20px 20px;
         text-align: right;
       }
       .about-image {
@@ -183,7 +183,7 @@
 }
 
 #about-bg {
- background-image: linear-gradient(to bottom, #ffffff, #f1f1f2, #e3e4e4, #d4d6d7, #c6c9c9);
+background-color: #fff;
 }
 
 div.left {
@@ -194,18 +194,28 @@ pre code {
   color: #eee;
   background-color: #111;
   display: block;
-  padding-left: 1vw;
+  width: 50%;
+  height: auto;
+  text-align: left;
   padding-right: 1vw;
   padding-bottom: 1vh;
   @include courier-font;
 }
 
 div.code-wrapper {
-  width:50%;
+  width: 70%;
+  height: auto;
   float:right;
   position: relative;
 
   > .code-caption {
     font-style: italic;
   }
+}
+
+.subtitle-gray {
+  color:gray;
+  position:relative;
+  top:-10px;
+  font-size:0.80em;
 }

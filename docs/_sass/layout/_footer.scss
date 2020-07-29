@@ -3,17 +3,15 @@
   padding: 25px 0;
   text-align: center;
   span.copyright {
-    font-size: 78%;
-    line-height: 40px;
+    font-weight: normal;
     text-transform: none;
-    @include heading-font;
+      @include body-font;
   }
   ul.quicklinks {
     font-size: 90%;
     line-height: 40px;
     margin-bottom: 0;
     text-transform: none;
-    @include heading-font;
   }
 }
 
@@ -22,6 +20,7 @@ ul.social-buttons {
   li {
     a {
       font-size: 20px;
+        font-weight: normal;
       line-height: 50px;
       display: block;
       width: 50px;
