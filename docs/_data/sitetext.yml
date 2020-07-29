@@ -32,18 +32,22 @@ about:
 contributors:
     title: "Contributors"
     section: contributors
-    max-height: 100px
+    max-width: 80px;
+    height: auto;
     horizontal-scrolling: "yes" #"yes/no"
     list:
       - title: "Google"
         align: center
         logo: assets/img/contributors/google.png
-      - title: "Layer5"
+      - title: "HashiCorp"
         align: center
-        logo: assets/img/contributors/layer5.png
+        logo: assets/img/contributors/hashicorp.png
       - title: "The Linux Foundation"
         align: center
         logo: assets/img/contributors/the-linux-foundation.png
+      - title: "Layer5"
+        align: center
+        logo: assets/img/contributors/layer5.png
       - title: "UT Austin"
         align: center
         logo: assets/img/contributors/utaustin.png
@@ -65,7 +69,7 @@ footer:
         icon: "fab fa-github"
       - url: http://slack.layer5.io/
         icon: "fab fa-slack"
-      - url: https://twitter.com/layer5
+      - url: https://twitter.com/smp_spec
         icon: "fab fa-twitter-square"
       - url: https://www.linkedin.com/company/layer5
         icon: "fab fa-linkedin"
