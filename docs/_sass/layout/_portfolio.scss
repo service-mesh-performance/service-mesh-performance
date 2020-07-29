@@ -138,3 +138,29 @@
     }
   }
 }
+
+
+.code {
+    font-style: italic;
+    color: $gray-900;
+  }
+
+.subtitle-gray {
+  color:gray;
+  position:relative;
+  top:-10px;
+  font-size:0.80em;
+}
+
+.image-right {
+  width: 80%;
+  float: right;
+  padding-right: 10px;
+}
+
+.image-feature {
+  float: center;
+  width: 50%;
+  height: auto;
+  padding-bottom: 10px;
+}

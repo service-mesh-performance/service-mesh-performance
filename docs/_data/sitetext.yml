@@ -19,10 +19,10 @@ engage:
         desc: "A sample application for learning how to service mesh"
         icon: fab fa-battle-net
 
-# portfolio:
-#     title: ""
-#     text: ""
-#     section: portfolio
+#portfolio:
+#    title: "Blog"
+#    text: ""
+#    section: portfolio
 
 about:
     title: ""
