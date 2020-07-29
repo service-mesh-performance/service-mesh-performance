@@ -8,9 +8,9 @@ author: Layer5 Authors
 twitter_username: layer5
 github_username:  l5io
 
-logo:
-  path: assets/img/smps-white.svg
-  height: 80px #height in px, defaults to 52px
+# logo:
+#   path: 
+ # height: 80px #height in px, defaults to 52px
 
 plugins:
   - jekyll-feed
