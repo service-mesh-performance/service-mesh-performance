@@ -7,7 +7,7 @@
 	  {% for contributors in site.data.sitetext.contributors.list %}
         <div class="col-md-3 col-sm-6">
           <a href="{{ contributors.url }}">
-            <img class="img-fluid d-block mx-auto" src="{{ contributors.logo }}" alt="{{ contributors.title }}" style="max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
+            <img class="img-fluid d-block mx-auto" src="{{ contributors.logo }}" alt="{{ contributors.title }}" style="padding-bottom: 40px;max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
           </a>
         </div>
 	  {% endfor %}
