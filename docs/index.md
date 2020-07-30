@@ -6,6 +6,6 @@ author: Lee Calcote
 twitter: smp_spec
 lang: en
 image:
-  path: /assets/img/logo/smps.svg
+  path: /assets/img/logo/smps.png
   width: 1500 
 ---
