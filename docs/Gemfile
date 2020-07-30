@@ -5,7 +5,7 @@ group :jekyll_plugins do
     gem "jekyll-feed"
     gem "jekyll-paginate"
     gem "jekyll-sitemap"
-    gem "jekyll-seo"
+    gem "jekyll-seo-tag"
     gem 'jemoji', '~> 0.12.0'
     gem 'jekyll-coffeescript', '~> 2.0'
     gem 'jekyll-manager' if ENV['ADMIN'] == 'on'

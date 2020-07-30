@@ -4,8 +4,14 @@ description: "Service Mesh Performance Specification (SMPS): Measure your servic
 baseurl: "" # the subpath of your site, e.g. /blog
 
 author: Layer5 Authors
-twitter_username: layer5
+twitter_username: smp_spec
 github_username:  l5io
+
+twitter:
+  card: summary
+  username: smp_spec
+  url: "https://twitter.com/smp_spec"
+  image: "https://smp-spec.io/assets/img/logo/smps.svg"
 
 # logo:
 #   path: 
@@ -16,6 +22,7 @@ plugins:
   - jekyll-sitemap
   - jemoji
   - jekyll-coffeescript
+  - jekyll-seo-tag
 
 analytics:
   google: UA-152604689-2
