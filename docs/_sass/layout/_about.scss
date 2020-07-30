@@ -99,14 +99,23 @@
     }
   }
   
-  .about-body {
-     > ul,
+  .about-body 
     > p {
       margin-bottom: 0;
       
     }
-  }
 }
+
+
+div.about-body {
+  display: block; 
+  width: 100%;
+  padding-top: 15px;
+  margin-left: 15px;
+  margin-right: 35px;
+  background-color: $gray-100;
+} 
+
 @media(min-width:768px) {
   .about {
     &:before {
@@ -209,7 +218,7 @@ pre code {
 }
 
 div.codewrapper {
-  width: 60%;
+  min-width: 60%;
   height: auto;
   margin-left:auto;
   margin-right:auto;
@@ -221,7 +230,7 @@ div.codewrapper {
 }
 
 div.videowrapper {
-  width: 80%;
+  min-width: 80%;
   height: auto;
   margin-left:auto;
   margin-right:auto;
