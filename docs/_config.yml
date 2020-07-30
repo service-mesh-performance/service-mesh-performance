@@ -22,7 +22,6 @@ plugins:
   - jekyll-sitemap
   - jemoji
   - jekyll-coffeescript
-  - jekyll-seo-tag
 
 analytics:
   google: UA-152604689-2
