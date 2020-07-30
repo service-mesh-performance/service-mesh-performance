@@ -35,9 +35,10 @@ $subscribe-image: "{{ site.data.style.subscribe-image }}";
 
 // Layout
 @import "layout/masthead.scss";
-@import "layout/services.scss";
+@import "layout/contributors.scss";
 @import "layout/portfolio.scss";
 @import "layout/about.scss";
+@import "layout/engage.scss";
 @import "layout/implementation.scss";
 @import "layout/subscribe.scss";
 @import "layout/footer.scss";

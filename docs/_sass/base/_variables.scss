@@ -4,6 +4,21 @@
 $smps-dark-yellow: #EBC017;
 $smps-light-yellow: #E9C46A;
 
+$background-color: #3C494F;
+$primary-brand-color: #00b39f;
+$secondary-brand-color: #00D3A9;
+
+$brand-brown-dark: #4f423c;
+$brand-brown-light: #4f4d3c;
+$brand-purple: #463c4f;
+
+$brand-gray-light: #9fbfcd;
+$brand-gray-dark: #647881;
+$brand-blue-light: #62accd;
+$brand-blue-dark: #477e96;
+
+$middle-gradient-color: mix($background-color, $secondary-brand-color, 100%);
+
 // Restated Bootstrap Variables
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;

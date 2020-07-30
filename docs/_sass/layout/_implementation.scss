@@ -1,31 +1,39 @@
 // Styling for the implementation section
-.implementation-member {
-  margin-bottom: 50px;
-  text-align: center;
-  img {
-    width: 225px;
-    height: 225px;
-    border: 7px solid fade-out($black, 0.9);
-  }
-  h4 {
-    margin-top: 25px;
-    margin-bottom: 0;
-    text-transform: none;
-  }
-  p {
-    margin-top: 0;
-  }
-}
+.implementation {
+  background: linear-gradient(to top, $brand-blue-light 0%, 
+      $brand-blue-dark 100%);
 
-#image-background{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 10px;
-  max-width: 90%;
-  height: auto;
-}
-
-#implementation-bg {
- background-image: url("bg-implementation.jpg");
+  > .page-section {
+    text-align: center;
+    img {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 90%;
+      box-shadow: 6px 6px 5px $gray-700;
+      -moz-box-shadow: 6px 6px 5px $gray-700;
+      -webkit-box-shadow: 6px 6px 5px $gray-700;
+      -khtml-box-shadow: 6px 6px 5px $gray-700;
+      // border: 7px solid fade-out($black, 0.9);
+    }
+    h4 {
+      margin-top: 25px;
+      margin-bottom: 0;
+      text-transform: none;
+    }
+    p {
+      margin-top: 0;
+    }
+    h2.section-heading {
+      color:#fff;
+    }
+    h3.section-subheading {
+      margin-bottom: 75px;
+      @include heading-font-italic
+    }
+    .section-caption {
+      margin-top: 18px;
+      color: #fff;
+      @include heading-font
+    }
+  }
 }

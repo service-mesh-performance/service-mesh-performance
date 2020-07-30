@@ -1,8 +1,6 @@
 header:
     title: Standardizing Service Mesh Value Measurement
-    #text: It's nice to meet you
-    button: SMPS in-action
-    buttonlink: "#implementation"
+    button: SMPS In-Action
 
 engage:
     title: "engage"
@@ -11,13 +9,13 @@ engage:
     list:
       - title: "[Contributing](https://github.com/layer5io/service-mesh-performance-specification/blob/master/CONTRIBUTING.md)"
         desc: "Get Involved. Collaborate."
-        icon: fas fa-hands-helping #find more at https://fontawesome.com/icons
+        icon: fas fa-hands-helping 
       - title: "[Code of Conduct](https://github.com/layer5io/service-mesh-performance-specification/blob/master/CODE_OF_CONDUCT.md)"
-        desc: "A few rules to keep the meshiness in control"
+        desc: "A few rules to keep the mesh in control"
         icon: fas fa-clipboard-list
       - title: "[Learn Layer5](https://github.com/layer5io/learn-layer5)"
         desc: "A sample application for learning how to service mesh"
-        icon: fab fa-battle-net
+        icon: fas fa-graduation-cap
 
 #portfolio:
 #    title: "Blog"
@@ -25,7 +23,7 @@ engage:
 #    section: portfolio
 
 about:
-    title: ""
+    title: "Service Mesh Performance Specification"
     text: ""
     section: about
 
@@ -36,26 +34,26 @@ contributors:
     height: auto;
     horizontal-scrolling: "yes" #"yes/no"
     list:
-      - title: "Google"
-        align: center
-        logo: assets/img/contributors/google.png
-      - title: "HashiCorp"
-        align: center
-        logo: assets/img/contributors/hashicorp.png
-      - title: "The Linux Foundation"
-        align: center
-        logo: assets/img/contributors/the-linux-foundation.png
       - title: "Layer5"
         align: center
-        logo: assets/img/contributors/layer5.png
+        logo: assets/img/contributors/layer5-white-bg-no-trim.svg
+      - title: "Google"
+        align: center
+        logo: assets/img/contributors/google-logo.svg
+      - title: "HashiCorp"
+        align: center
+        logo: assets/img/contributors/HashiCorp_PrimaryLogo_Black_RGB.svg
+      - title: "CNCF"
+        align: center
+        logo: assets/img/contributors/cncf-color.svg
       - title: "UT Austin"
         align: center
         logo: assets/img/contributors/utaustin.png
 
 implementation:
     title: "Example implementation"
-    text: "Meshery is the canonical implementation of SMPS"
-    subtext:
+    caption: "Exchange performance tests and results in a standard format."
+    subtext: "Meshery is the canonical implementation of SMPS"
     section: implementation
 
 subscribe:

@@ -1,4 +1,5 @@
 <!-- engage -->
+<div class="engage">
     <section class="page-section" id="{{ site.data.sitetext.engage.section | default: "engage" }}">
     <div class="container">
       <div class="row">
@@ -13,15 +14,16 @@
 	  {% for engage in site.data.sitetext.engage.list %}
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="{{ engage.icon | default: "fas fa-shopping-cart" }} fa-stack-1x fa-inverse"></i>
+            <i class="fas fa-circle fa-stack-2x"  style="color:#3C494F;"></i>
+            <i class="{{ engage.icon | default: "fas fa-shopping-cart" }} fa-stack-1x fa-inverse""></i>
           </span>
           <h4 class="engage-heading">{{ engage.title | markdownify }}</h4>
-          {% if engage.desc %}<div class="text-muted">{{ engage.desc | markdownify }}</div>{% endif %}
+          {% if engage.desc %}<div class="engage-subheading">{{ engage.desc | markdownify }}</div>{% endif %}
         </div>
 	  {% endfor %}
       </div>
 
     </div>
   </section>
+</div>
 <!-- End engage -->

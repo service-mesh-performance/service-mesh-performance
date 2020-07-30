@@ -1,26 +1,27 @@
 // Styling for the navbar
 #mainNav {
-  background-color: $gray-900;
+  background-color: $background-color;
   .navbar-toggler {
-    font-size: 0.75rem;
+    font-size: .85rem;
     right: 0;
-    padding: 13px;
+    padding: 1.5em;
     color: $gray-100;
     border: 0;
-    background-color: $primary;
+    background-color: $primary-brand-color;
     @include heading-font;
   }
   .navbar-brand {
-    color: $primary;
+    color: $primary-brand-color;
     @include script-font;
     &.active,
     &:active,
     &:focus,
     &:hover {
-      color: darken($primary, 10%);
+      color: darken($primary-brand-color, 10%);
     }
   }
   .navbar-nav {
+    text-align: right;
     .nav-item {
       .nav-link {
         padding: 0.25em 0;
@@ -29,7 +30,7 @@
         @include heading-font;
         &.active,
         &:hover {
-          color:$gray-500;
+          color:$gray-400;
         }
       }
     }
@@ -43,7 +44,7 @@
     -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s;
     border: none;
-    background-color: transparent;
+    background-color: $background-color;
     .navbar-brand {
       font-size: 1.50em;
       -webkit-transition: all 0.3s;
@@ -53,6 +54,7 @@
     .navbar-nav {
       .nav-item {
         .nav-link {
+          font-size: 1.15em;
           padding: 0.80em 0.80em !important;
         }
       }
@@ -60,7 +62,7 @@
     &.navbar-shrink {
       padding-top: 0;
       padding-bottom: 0;
-      background-color: $gray-900;
+      background-color: $background-color;
       .navbar-brand {
         font-size: 1.00em;
         padding: 12px 0;
@@ -69,19 +71,9 @@
   }
 }
 
-.white-text {
-  color: white;
-  font-size: 16px;
-  @include heading-font;
-}
-
-.iconDetails {
+.logoDetails {
 float:left;
-height:80px;
-margin-left:5vw;
+height:100px;
+margin-left:4vw;
 }
 
-.container2 {
-   width:100%;
-   height:auto;
-}

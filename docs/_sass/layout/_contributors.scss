@@ -1,0 +1,16 @@
+// Styling for the services section
+.contributors-heading {
+  margin: 15px 0;
+  text-transform: none;
+  color: $black;
+}
+
+.contributors {
+  background: #eaeaea;
+  > section {
+    .section-heading {
+      padding-bottom: 40px;
+      text-align: center;
+    }
+  }  
+} 

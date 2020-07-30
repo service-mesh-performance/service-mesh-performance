@@ -3,6 +3,7 @@
   position: relative;
   padding: 0;
   list-style: none;
+  
   &:before {
     position: absolute;
     top: 0;
@@ -11,8 +12,7 @@
     width: 2px;
     margin-left: -1.5px;
     content: '';
-  }
-  > li {
+  } >  li {
     position: relative;
     min-height: 50px;
     margin-bottom: 30px;
@@ -82,6 +82,13 @@
       margin-bottom: 0;
     }
   }
+  h1.section-heading {
+    padding-bottom: 20px;
+    text-align: center;
+  }  
+  .page-section {
+    padding-top:20px;
+  }
   .about-heading {
     h4 {
       margin-top: 0;
@@ -91,10 +98,12 @@
       }
     }
   }
+  
   .about-body {
      > ul,
     > p {
       margin-bottom: 0;
+      
     }
   }
 }
@@ -182,10 +191,6 @@
   padding-right: 10px;
 }
 
-#about-bg {
-background-color: #fff;
-}
-
 div.left {
   text-align: left;
 }
@@ -194,20 +199,34 @@ pre code {
   color: #eee;
   background-color: #111;
   display: block;
-  width: 50%;
+  width: 100%;
   height: auto;
   text-align: left;
+  
   padding-right: 1vw;
   padding-bottom: 1vh;
   @include courier-font;
 }
 
-div.code-wrapper {
-  width: 70%;
+div.codewrapper {
+  width: 60%;
   height: auto;
-  float:right;
-  position: relative;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  display: block;
+  > .code-caption {
+    font-style: italic;
+  }
+}
 
+div.videowrapper {
+  width: 80%;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  display: block;
   > .code-caption {
     font-style: italic;
   }
@@ -215,7 +234,7 @@ div.code-wrapper {
 
 .subtitle-gray {
   color:gray;
-  position:relative;
+display: block;
   top:-10px;
   font-size:0.80em;
 }

@@ -3,14 +3,19 @@
   font-family: 'Courier New', Courier, monospace;
 }
 @mixin serif-font {
-  font-family: 'Open Sans', sans-serif, Roboto;
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 }
 @mixin script-font {
-  font-family: 'Open Sans', sans-serif, Roboto;
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 }
 @mixin body-font {
-  font-family: 'Open Sans', sans-serif, Roboto;
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 }
 @mixin heading-font {
-  font-family: 'Open Sans', sans-serif, Roboto;
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+}
+
+@mixin heading-font-italic {
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+  font-style: italic;  
 }

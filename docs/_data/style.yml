@@ -5,7 +5,7 @@ white: "#FFF"
 #black: "#000"
 
 #Image Customization
-header-image: "../img/hero.jpg"
+header-image: "../img/smps-hero.png"
 contact-image: "../img/contact.jpg"
 
 #Font Awesome icon for portfolio grid when an item is hovered over

@@ -3,7 +3,6 @@
   padding: 25px 0;
   text-align: center;
   span.copyright {
-    font-weight: normal;
     text-transform: none;
       @include body-font;
   }
@@ -20,7 +19,6 @@ ul.social-buttons {
   li {
     a {
       font-size: 20px;
-        font-weight: normal;
       line-height: 50px;
       display: block;
       width: 50px;

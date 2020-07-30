@@ -1,14 +1,16 @@
 <!-- About -->
-    <div id="about-bg">
+    <div class="about">
+      
   <section class="page-section" id="{{ site.data.sitetext.about.section | default: "about" }}">
+    <h1 class="section-heading text-uppercase">{{ site.data.sitetext.about.title | default: "About Us" }}</h1>    
     <div class="container">
+
       <div class="row">
-        <div class="left">
+        <p>
         The Service Mesh Working Group defines the Service Mesh Performance Specification and is hosted within the CNCF SIG Network. Using SMPS, MeshMark provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.
-        </div>
-      </div>
-       <div class="left"><br>
-        Service Mesh Performance Specification (SMPS) is a vendor-neutral specification for capturing details of:<br>
+      </p>
+      <p>
+        Service Mesh Performance Specification (SMPS) is a vendor-neutral specification for capturing details of:</p>
           <ul>
               <li>Environment and infrastructure details</li>
               <li>Number and size of nodes, orchestrator</li>
@@ -23,18 +25,21 @@
           <div class="codewrapper">
             <pre><code>
             message PerformanceTestResult {
-            message Latency {
-            double min = 1;
-            double average = 2;
-            double p50 = 3;
-            double p90 = 4;
-            double p99 = 5;
-            double max = 6;
-            }</code></pre>
-            <div class="subtitle-gray"> Snippet of the Service Mesh Performance Specification describing how to capture statistical analysis. </div>
-          <br></div><br>
-          <iframe width="70%" height="320px" src="https://www.youtube.com/embed/LxP-yHrKL4M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
-
+              message Latency {
+                double min = 1;
+                double average = 2;
+                double p50 = 3;
+                double p90 = 4;
+                double p99 = 5;
+                double max = 6;
+              } ...</code></pre>
+            <p class="subtitle-gray"> Snippet of the Service Mesh Performance Specification describing how to capture statistical analysis. </p>
+          </div>
+          <div class="videowrapper">
+          <h4>Learn more</h4>
+          <br />
+          <iframe width="100%" height="320px" src="https://www.youtube.com/embed/LxP-yHrKL4M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+        </div>
       <!-- <div class="row">
         <div class="col-lg-12">
           <ul class="about">

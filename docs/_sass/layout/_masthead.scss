@@ -2,11 +2,13 @@
 header.masthead {
   text-align: center;
   color: white;
+  background-color: $background-color;
+  // background: linear-gradient(to bottom, $background-color 0%, $middle-gradient-color 100%);
   background-image: url("#{$header-image}");
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
+  background-position: bottom;
+  // background-size: contain;
   @include heading-font;
   .intro-text {
     padding-top: 150px;
@@ -47,4 +49,17 @@ header.masthead {
       }
     }
   }
+}
+
+header.master {
+	background: linear-gradient(to bottom, $background-color 0%, $middle-gradient-color 100%);
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+	padding: 100px 0;
+	vertical-align: top;
+	h2 {
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
 }
