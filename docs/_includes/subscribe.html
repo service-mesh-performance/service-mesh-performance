@@ -1,64 +1,35 @@
 <!-- subscribe -->
 
-    <!-- Begin MailChimp Signup Form -->
-    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-      #mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
-      /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-      #mc_embed_signup .button {width: 100%; margin:0px;background-color: rgba(255, 152, 0, 0.5); }
-      #mc_embed_signup .button:hover{background-color: rgba(255, 152, 0, 0.7);}
-      #mc_embed_signup input.newsletter-name { width:35%; }
-      #mc_embed_signup input.newsletter-email { width:70%; }
-      @media (max-width: 768px) {
-        #mc_embed_signup input.email { margin-bottom:5px;}
-        #mc_embed_signup .clear {display: block; width: 100% }
-        #mc_embed_signup .button {width: 100%; margin:0; }
-        #mc_embed_signup input.newsletter-name { width:45%; }
-        #mc_embed_signup input.newsletter-email { width:90%; }
-        #mc_embed_signup div.newsletter-forklift { display: none !important; }
-      }
-    </style>
-
   <section class="page-section" id="{{ site.data.sitetext.subscribe.section | default: "subscribe" }}">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 text-center">
+        <div class="col-lg-12 text-lg-center">
           <h2 class="section-heading text-uppercase">{{ site.data.sitetext.subscribe.title | markdownify | default: Stay meshy and subscribe! }}</h2>
           <h3 class="section-subheading text-muted">{{ site.data.sitetext.subscribe.text | default: "" }}</h3>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-12 center">
+        <div class="col-lg-6 text-lg-center" style="margin-left:auto;margin-right:auto;width:100%;">
           <form action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb" 
           method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
-             <center>
-              <div class="col-md-6">
-                <div class="form-group; center;">
-                  <input type="text" value="" placeholder="First Name"name="FNAME" class="form-control" id="mce-FNAME" >
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group; center;">
-                  <div style="white-space: nowrap;">
-                    <input type="text" value="" placeholder="Last Name" name="LNAME" class="form-control" id="mce-LNAME" >
-                  </div>
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group; center;">
-                  <input type="email" value="" name="EMAIL" class="form-control" id="mce-EMAIL" placeholder="Email Address" 
-                  required style="white-space: nowrap;display: inline-block;">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              </center>
+            
+          <input type="text" value="" placeholder="First Name" name="FNAME" class="form-control" id="mce-FNAME" >
+          <p class="help-block text-danger"></p>
+            <input type="text" value="" placeholder="Last Name" name="LNAME" class="form-control" id="mce-LNAME" >
+          <p class="help-block text-danger"></p>
+          <input type="email" value="" name="EMAIL" class="form-control" id="mce-EMAIL" placeholder="Email Address" 
+          required style="white-space: nowrap;display: inline-block;">
+          <p class="help-block text-danger"></p>
 
             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
             <div style="position: absolute; left: -5000px;" aria-hidden="true">
-              <input type="text" name="b_6b50be5aea3dfe1fd4c041d80_6bb65defeb" tabindex="-1" value=""></div>
-              <div onclick="document.getElementById('mc-embedded-subscribe-form').submit();" id="mc_embed_signup" class="clear">
-                  <input 
-                  class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" 
-                  type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+              <input type="text" name="b_6b50be5aea3dfe1fd4c041d80_6bb65defeb" tabindex="-1" value="">
+            </div>
+            <div onclick="document.getElementById'mc-embedded-subscribe-form').submit();" 
+                id="mc_embed_signup" class="clear">
+                <input 
+                    class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" 
+                    type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
             </div>
  
           </form>

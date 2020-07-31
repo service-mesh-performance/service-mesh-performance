@@ -1,0 +1,32 @@
+<!-- posts Grid -->
+<div class="posts">
+<section class="page-section" id="{{ site.data.sitetext.posts.section | default: "posts" }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">{{ site.data.sitetext.posts.title | markdownify | default: "posts" }}</h2>
+        <h3 class="section-subheading">{{ site.data.sitetext.posts.text | markdownify }}</h3>
+      </div>
+    </div>
+    <div class="row">
+	{% for posts in site.posts %}
+      <div class="col-md-4 col-sm-6 posts-item">
+        <a class="posts-link" data-toggle="modal" href="#p{{ forloop.index }}">
+          <div class="posts-hover">
+            <div class="posts-hover-content">
+              <i class="{{ site.data.style.posts-icon | default: "fas fa-eye fa-3x" }}"></i>
+            </div>
+          </div>
+          <img class="img-fluid" src="{{ posts.caption.thumbnail }}" alt="">
+        </a>
+        <div class="posts-caption">
+          <h4>{{ posts.caption.title }}</h4>
+          <p>{{ posts.caption.subtitle }}</p>
+        </div>
+      </div>
+	{% endfor %}
+    </div>
+  </div>
+</section>
+</div>
+{% include modals.html %}

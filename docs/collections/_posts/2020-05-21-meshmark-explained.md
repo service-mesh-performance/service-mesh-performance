@@ -1,12 +1,14 @@
 ---
-title: Meshmark explained
-subtitle:
+title: MeshMark explained
+subtitle: MeshMark explained
 image: assets/img/smi-conformance.svg
-alt: Keep Exploring
-
+alt: MeshMark explained
+date: 2020-05-21 12:15:05 +0000
+category: test
+layout: page
 caption:
-  title: MeshMark, through the eyes of a consumer
-  subtitle:
+  title: MeshMark explained
+  subtitle: Through the eyes of a consumer
   thumbnail: assets/img/container-crane.svg
 ---
 

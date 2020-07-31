@@ -18,10 +18,11 @@ engage:
         desc: "A sample application for learning how to service mesh"
         icon: fas fa-graduation-cap
 
-#portfolio:
-#    title: "Blog"
-#    text: ""
-#    section: portfolio
+
+posts:
+    title: "Blog"
+    text: "Learn more about SMPS"
+    section: posts
 
 about:
     title: "Service Mesh Performance Specification"
@@ -49,7 +50,7 @@ contributors:
         logo: assets/img/contributors/cncf-color.svg
       - title: "UT Austin"
         align: center
-        logo: assets/img/contributors/utaustin.png
+        logo: assets/img/contributors/ut-austin.svg
 
 implementation:
     title: "Example implementation"

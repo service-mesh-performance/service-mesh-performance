@@ -26,7 +26,11 @@ plugins:
 analytics:
   google: UA-152604689-2
 
+collections_dir: collections
 collections:
-  portfolio:
+  blog:
+    output: true
+    permalink: /blog/:categories/:title
+    future: true
 
 markdown: kramdown

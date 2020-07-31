@@ -87,7 +87,7 @@
     text-align: center;
   }  
   .page-section {
-    padding-top:20px;
+    padding-top:60px;
   }
   .about-heading {
     h4 {
@@ -112,8 +112,9 @@ div.about-body {
   width: 100%;
   padding-top: 15px;
   margin-left: 15px;
-  margin-right: 35px;
-  background-color: $gray-100;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  background-color: $gray-200;
 } 
 
 @media(min-width:768px) {
@@ -211,7 +212,7 @@ pre code {
   width: 100%;
   height: auto;
   text-align: left;
-  
+  font-size: 1.25em;
   padding-right: 1vw;
   padding-bottom: 1vh;
   @include courier-font;
@@ -226,6 +227,8 @@ div.codewrapper {
   display: block;
   > .code-caption {
     font-style: italic;
+    font-size: 1em;
+    color: $gray-600;
   }
 }
 
@@ -239,11 +242,4 @@ div.videowrapper {
   > .code-caption {
     font-style: italic;
   }
-}
-
-.subtitle-gray {
-  color:gray;
-display: block;
-  top:-10px;
-  font-size:0.80em;
 }
