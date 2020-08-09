@@ -1,16 +1,16 @@
-# Contributing to the Service Mesh Performance Specification Documentation
+# Contributing to the Service Mesh Performance Documentation
 
 Before contributing, please review the [Documentation Contribution Flow](https://github.com/layer5io/service-mesh-performance-specification/blob/master/CONTRIBUTING.md#documentation-contribution-flow). The following steps will guide you on how to set up your development environment, fork and clone the repository, run the site locally, and finally commit, sign-off, and push any changes made for review. 
 
 ### 1. Set up your development environment
 
-* *The Service-Mesh-Performance-Specification Docs site is built using Jekyll - a simple static site generator! You can learn more about Jekyll and setting up your development environment in the [Jekyll Docs](https://jekyllrb.com/docs/).*
+* *The Service-Mesh-Performance Docs site is built using Jekyll - a simple static site generator! You can learn more about Jekyll and setting up your development environment in the [Jekyll Docs](https://jekyllrb.com/docs/).*
 
 * First [install Ruby](https://jekyllrb.com/docs/installation/), then install Jekyll and Bundler.
 
 ### 2. Get the code
 
-* Fork and then clone the [Service Mesh Performance Specification repository](https://github.com/layer5io/service-mesh-performance-specification)
+* Fork and then clone the [Service Mesh Performance repository](https://github.com/layer5io/service-mesh-performance-specification)
   ```bash
   $ git clone https://github.com/YOUR-USERNAME/service-mesh-performance-specification
   ```
@@ -41,7 +41,7 @@ Before contributing, please review the [Documentation Contribution Flow](https:/
   ```bash
   $ git push origin <branch-name>
   ```
-* Then on Github, navigate to the [Service-Mesh-Performance-Specification repository](https://github.com/layer5io/service-mesh-performance-specification) and create a pull request from your recently pushed changes!
+* Then on Github, navigate to the [Service-Mesh-Performance repository](https://github.com/layer5io/service-mesh-performance-specification) and create a pull request from your recently pushed changes!
 
 ---
-*See the [Service-Mesh-Performance-Specification Documentation Google Doc](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit) for additional reference.*
+*See the [Service-Mesh-Performance Documentation Google Doc](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit) for additional reference.*

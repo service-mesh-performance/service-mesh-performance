@@ -1,6 +1,6 @@
 header:
     title: Standardizing Service Mesh Value Measurement
-    button: SMPS In-Action
+    button: SMP In-Action
     buttonlink: "#implementation"
 
 engage:
@@ -21,11 +21,11 @@ engage:
 
 posts:
     title: "Blog"
-    text: "Learn more about SMPS"
+    text: "Learn more about SMP"
     section: posts
 
 about:
-    title: "Service Mesh Performance Specification"
+    title: "Service Mesh Performance"
     text: ""
     section: about
 
@@ -55,12 +55,12 @@ contributors:
 implementation:
     title: "Example implementation"
     caption: "Exchange performance tests and results in a standard format."
-    subtext: "Meshery is the canonical implementation of SMPS"
+    subtext: "Meshery is the canonical implementation of SMP"
     section: implementation
 
 subscribe:
     title: "Newsletter"
-    text: "Stay abreast of the progress of the Service Mesh Performance Specification initiative"
+    text: "Stay abreast of the progress of the Service Mesh Performance initiative"
     section: subscribe
 
 footer:

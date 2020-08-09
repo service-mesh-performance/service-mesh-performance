@@ -1,6 +1,6 @@
 title: Standardizing Service Mesh Value Measurement
 email: community@layer5.io #this is also the email contact forms will go
-description: "Service Mesh Performance Specification (SMPS): Measure your service mesh performance using SMPS. SMPS provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments."
+description: "Service Mesh Performance (SMP): Measure your service mesh performance using SMP. SMP provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments."
 baseurl: "" # the subpath of your site, e.g. /blog
 
 author: Layer5 Authors
@@ -11,7 +11,7 @@ twitter:
   card: summary
   username: smp_spec
   url: "https://twitter.com/smp_spec"
-  image: "https://smp-spec.io/assets/img/logo/smps.png"
+  image: "https://smp-spec.io/assets/img/logo/smp.png"
 
 # logo:
 #   path: 
