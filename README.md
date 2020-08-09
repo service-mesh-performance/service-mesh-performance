@@ -13,7 +13,7 @@
 
 <p align="center"><i>If you’re using Meshery or if you like the project, please <a href="https://github.com/layer5io/meshery/stargazers">★</a> star this repository to show your support! 🤩</i></p>
 
-# Service Mesh Performance Specification ([SMPS](https://layer5.io/performance))
+# Service Mesh Performance ([SMP](https://layer5.io/performance))
 A common format for describing and capturing:
 
 1. performance test configuration
@@ -26,9 +26,9 @@ This specification is currently being advanced through the [Meshery](https://lay
 
 ## Example
 
-See the [sample results](docs/assets/spec/readme/example/service%20mesh%20performance%20specification%20result.yaml) file.
+See the [sample results](docs/assets/spec/readme/example/service%20mesh%20performance%20result.yaml) file.
 
-<a href="docs/assets/spec/readme/service mesh performance specification example.gif"><img src="docs/assets/spec/readme/service mesh performance specification example.gif" /></a>
+<a href="docs/assets/spec/readme/service mesh performance example.gif"><img src="docs/assets/spec/readme/service mesh performance example.gif" /></a>
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
