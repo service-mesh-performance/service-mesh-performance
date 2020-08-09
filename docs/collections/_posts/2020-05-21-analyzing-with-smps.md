@@ -29,7 +29,7 @@ Such tests are complicated in part, because there are different types of perform
 
 * **Spike testing** is where we go over and above the maximum design capacity, just to see how the service mesh and workload can deal with a significantly spiking load. Spike testing helps identify the amount of load by which your service falls over.
 
-Outside of the different types of performance tests, performance management concerns include the need for performance and overhead data under a permutation of different workloads (applications) and different types and sizes of infrastructure resources. The need for cross-project, apple-to-apple comparisons are also desired in order to facilitate a comparison of behavioral differences between service meshes and which one might be best-suited for your workloads. Individual projects shy from publishing test results of other, competing service meshes. The need for an independent, unbiased, credible standard measurement is needed is why the Service Mesh Performance Specification (SMP) was created.
+Outside of the different types of performance tests, performance management concerns include the need for performance and overhead data under a permutation of different workloads (applications) and different types and sizes of infrastructure resources. The need for cross-project, apple-to-apple comparisons are also desired in order to facilitate a comparison of behavioral differences between service meshes and which one might be best-suited for your workloads. Individual projects shy from publishing test results of other, competing service meshes. The need for an independent, unbiased, credible standard measurement is needed is why the Service Mesh Performance (SMP) was created.
 
 #### Service Mesh Performance (SMP)
 
