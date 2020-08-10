@@ -26,7 +26,7 @@ This specification is currently being advanced through the [Meshery](https://lay
 
 ## Example
 
-See the [sample results](docs/assets/perf/readme/example/service%20mesh%20performance%20result.yaml) file.
+See the [sample results](docs/assets/perf/readme/service mesh performance result.yaml) file.
 
 <a href="docs/assets/perf/readme/service mesh performance example.gif"><img src="docs/assets/perf/readme/service mesh performance example.gif" /></a>
 
