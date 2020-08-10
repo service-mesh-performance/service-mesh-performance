@@ -33,7 +33,7 @@ Outside of the different types of performance tests, performance management conc
 
 #### Service Mesh Performance (SMP)
 
-The Service Mesh Performance Working Group defines the Service Mesh Performance and is hosted within the CNCF SIG Network. Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments. The group is also working in collaboration with the Envoy project to create easy-to-use tooling around distributed performance management (distributed load generation and analysis) in context of Istio, Consul, Tanzu Service Mesh, Network Service Mesh, App Mesh, Linkerd, and other service meshes.
+The Service Mesh Performance working group defines the Service Mesh Performance and is hosted within the CNCF SIG Network. Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments. The group is also working in collaboration with the Envoy project to create easy-to-use tooling around distributed performance management (distributed load generation and analysis) in context of Istio, Consul, Tanzu Service Mesh, Network Service Mesh, App Mesh, Linkerd, and other service meshes.
 
 The specification itself provides a standard format for describing and capturing:
 
