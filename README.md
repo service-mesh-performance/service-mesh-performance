@@ -11,7 +11,7 @@
 [![Slack](http://slack.layer5.io/badge.svg)](http://slack.layer5.io)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3564/badge)](https://bestpractices.coreinfrastructure.org/projects/3564)
 
-<p align="center"><i>If you’re using Meshery or if you like the project, please <a href="https://github.com/layer5io/meshery/stargazers">★</a> star this repository to show your support! 🤩</i></p>
+<p align="center"><i>If you’re using Meshery or if you like the project, please <a href="https://github.com/layer5io/service-mesh-performance/stargazers">★</a> star this repository to show your support! 🤩</i></p>
 
 # Service Mesh Performance ([SMP](https://layer5.io/performance))
 A common format for describing and capturing:
