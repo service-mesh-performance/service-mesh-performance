@@ -4,13 +4,13 @@ description: "Service Mesh Performance (SMP): Measure your service mesh performa
 baseurl: "" # the subpath of your site, e.g. /blog
 
 author: Layer5 Authors
-twitter_username: smp_spec
+twitter_username: smp
 github_username: l5io
 
 twitter:
   card: summary
-  username: smp_spec
-  url: "https://twitter.com/smp_spec"
+  username: smp
+  url: "https://twitter.com/smp"
   image: "https://smp-spec.io/assets/img/logo/smp.png"
 
 # logo:
