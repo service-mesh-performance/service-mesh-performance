@@ -26,17 +26,17 @@ This specification is currently being advanced through the [Meshery](https://lay
 
 ## Example
 
-See the [sample results](docs/assets/spec/readme/example/service%20mesh%20performance%20result.yaml) file.
+See the [sample results](docs/assets/perf/readme/example/service%20mesh%20performance%20result.yaml) file.
 
-<a href="docs/assets/spec/readme/service mesh performance example.gif"><img src="docs/assets/spec/readme/service mesh performance example.gif" /></a>
+<a href="docs/assets/perf/readme/service mesh performance example.gif"><img src="docs/perf/spec/readme/service mesh performance example.gif" /></a>
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
-<a href="https://meshery.io"><img src="docs/assets/spec/readme/meshery-logo-light-text.svg"
+<a href="https://meshery.io"><img src="docs/assets/perf/readme/meshery-logo-light-text.svg"
 style="margin:10px;" width="125px" 
 alt="Meshery - the Service Mesh Management Plane" align="left" /></a>
 <a href="https://meshery.io">Meshery</a> is the multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. 
-<br /><br /><p align="center"><i>If you’re using Meshery or if you like the project, please <a href="https://github.com/layer5io/meshery/stargazers">★</a> star this repository to show your support! 🤩</i></p>
+<br /><br /><p align="center"><i>If you’re using Meshery or if you like the project, please <a href="https://github.com/layer5io/service-mesh-performance/stargazers">★</a> star this repository to show your support! 🤩</i></p>
 </p>
 
 <p style="clear:both;">
