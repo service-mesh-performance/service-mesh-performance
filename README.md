@@ -22,7 +22,7 @@ A common format for describing and capturing:
 1. workload configuration
 1. performance test results
 
-This specification is currently being advanced through the [Meshery](https://layer5.io/meshery) project. See a [screenshot](docs/assets/spec/readme/meshery_benchmark_screen.png) of its implementation.
+This specification is currently being advanced through the CNCF [Service Mesh WG](https://github.com/cncf/sig-network/tree/master/service-mesh-wg) and the [Meshery](https://layer5.io/meshery) project. See a [screenshot](docs/assets/spec/readme/meshery_benchmark_screen.png) of SMP's canonical implementation.
 
 ## Example
 
