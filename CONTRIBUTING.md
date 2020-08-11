@@ -7,7 +7,7 @@ Grab an open issue with the [help-wanted label](../../labels/help%20wanted) and 
 
 # <a name="contributing">General Contribution Flow</a>
 
-To contribute to Service-Mesh-Performance, please follow the fork-and-pull request workflow described [here](CONTRIBUTING-gitflow.md).
+To contribute to Service Mesh Performance, please follow the fork-and-pull request workflow described [here](CONTRIBUTING-gitflow.md).
 
 ## <a name="commit-signing">Signing-off on Commits (Developer Certificate of Origin)</a>
 
@@ -58,4 +58,4 @@ Please contribute! All projects under Layer5 use GitHub Pages to host its docume
 `make site`
 1. Commit, [sign-off](#commit-signing), and push changes to your remote branch.
 `git push origin <my-changes>`
-1. Open a pull request (in your web browser) against our main repo: https://github.com/layer5io/meshery.
+1. Open a pull request (in your web browser) against our main repo: https://github.com/layer5io/service-mesh-performance.
