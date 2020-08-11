@@ -1,19 +1,19 @@
 # <a name="contributing">Contributing Overview</a>
-Please do! Thanks for your help in improving the project! :balloon:
+Please do! Thanks for your help improving the project! :balloon:
 
-All contributors are welcome. Please see the [newcomers welcome guide](https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit) for how, where, and why to contribute. This project is community-built and welcomes collaboration. Contributors are expected to adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
+All contributors are welcome. Please see the [newcomers welcome guide](https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit) for how, where and why to contribute. This project is community-built and welcomes collaboration. Contributors are expected to adhere to our [Code of Conduct](.CODE_OF_CONDUCT.md).
 
 Grab an open issue with the [help-wanted label](../../labels/help%20wanted) and jump in. Join the [Slack account](http://slack.layer5.io) and engage in conversation. Create a [new issue](/../../issues/new/choose) if needed.  All [pull requests](/../../pulls) should reference an open [issue](/../../issues). Include keywords in your pull request descriptions, as well as commit messages, to [automatically close issues in GitHub](https://help.github.com/en/github/managing-your-work-on-github/closing-issues-using-keywords).
 
 # <a name="contributing">General Contribution Flow</a>
 
-To contribute to Service-Mesh-Performance-Specification, please follow the fork-and-pull request workflow described [here](CONTRIBUTING-gitflow.md).
+To contribute to Service-Mesh-Performance, please follow the fork-and-pull request workflow described [here](CONTRIBUTING-gitflow.md).
 
 ## <a name="commit-signing">Signing-off on Commits (Developer Certificate of Origin)</a>
 
 To contribute to this project, you must agree to the Developer Certificate of
 Origin (DCO) for each commit you make. The DCO is a simple statement that you,
-as a contributor, have the legal right to contribute.
+as a contributor, have the legal right to make the contribution.
 
 See the [DCO](https://developercertificate.org) file for the full text of what you must agree to
 and how it works [here](https://github.com/probot/dco#how-it-works).
@@ -43,11 +43,11 @@ To ensure all your commits are signed, you may choose to add this alias to your 
 Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:
 
 <a href="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" ><img src="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" width="50%"><a>
-  
-## <a name="contributing-docs">Documentation Contribution Flow</a>
-Please contribute! Layer5 documentation uses GitHub Pages to host the docs site. Learn more about [Layer5's documentation framework](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit?usp=sharing). The process of contributing follows this flow:
 
-1. Create a fork, if you have not already, by following the steps described [here](CONTRIBUTING-gitflow.md)
+## <a name="contributing-docs">Documentation Contribution Flow</a>
+Please contribute! All projects under Layer5 use GitHub Pages to host its documentation. Learn more about [Layer5's documentation framework](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit?usp=sharing). The process of contributing follows this flow:
+
+1. Create a fork, if you have not already, by following the steps described [here](./CONTRIBUTING-gitflow.md)
 1. In the local copy of your fork, navigate to the docs folder.
 `cd docs`
 1. Create and checkout a new branch to make changes within
@@ -58,4 +58,4 @@ Please contribute! Layer5 documentation uses GitHub Pages to host the docs site.
 `make site`
 1. Commit, [sign-off](#commit-signing), and push changes to your remote branch.
 `git push origin <my-changes>`
-1. Open a pull request (in your web browser) against our main repo: https://github.com/layer5io/service-mesh-performance-specification.
+1. Open a pull request (in your web browser) against our main repo: https://github.com/layer5io/meshery.
