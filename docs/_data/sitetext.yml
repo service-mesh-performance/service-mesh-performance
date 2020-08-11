@@ -1,6 +1,6 @@
 header:
     title: Standardizing Service Mesh Value Measurement
-    button: SMPS In-Action
+    button: SMP In-Action
     buttonlink: "#implementation"
 
 engage:
@@ -8,10 +8,10 @@ engage:
     text: ""
     section: engage
     list:
-      - title: "[Contributing](https://github.com/layer5io/service-mesh-performance-specification/blob/master/CONTRIBUTING.md)"
+      - title: "[Contributing](https://github.com/layer5io/service-mesh-performance/blob/master/CONTRIBUTING.md)"
         desc: "Get Involved. Collaborate."
         icon: fas fa-hands-helping 
-      - title: "[Code of Conduct](https://github.com/layer5io/service-mesh-performance-specification/blob/master/CODE_OF_CONDUCT.md)"
+      - title: "[Code of Conduct](https://github.com/layer5io/service-mesh-performance/blob/master/CODE_OF_CONDUCT.md)"
         desc: "A few rules to keep the mesh in control"
         icon: fas fa-clipboard-list
       - title: "[Learn Layer5](https://github.com/layer5io/learn-layer5)"
@@ -21,11 +21,11 @@ engage:
 
 posts:
     title: "Blog"
-    text: "Learn more about SMPS"
+    text: "Learn more about SMP"
     section: posts
 
 about:
-    title: "Service Mesh Performance Specification"
+    title: "Service Mesh Performance"
     text: ""
     section: about
 
@@ -55,17 +55,17 @@ contributors:
 implementation:
     title: "Example implementation"
     caption: "Exchange performance tests and results in a standard format."
-    subtext: "Meshery is the canonical implementation of SMPS"
+    subtext: "Meshery is the canonical implementation of SMP"
     section: implementation
 
 subscribe:
     title: "Newsletter"
-    text: "Stay abreast of the progress of the Service Mesh Performance Specification initiative"
+    text: "Stay abreast of the progress of the Service Mesh Performance initiative"
     section: subscribe
 
 footer:
     social:
-      - url: https://github.com/layer5io/service-mesh-performance-specification
+      - url: https://github.com/layer5io/service-mesh-performance
         icon: "fab fa-github"
       - url: http://slack.layer5.io/
         icon: "fab fa-slack"

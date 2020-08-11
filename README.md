@@ -11,9 +11,9 @@
 [![Slack](http://slack.layer5.io/badge.svg)](http://slack.layer5.io)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3564/badge)](https://bestpractices.coreinfrastructure.org/projects/3564)
 
-<p align="center"><i>If you’re using Meshery or if you like the project, please <a href="https://github.com/layer5io/meshery/stargazers">★</a> star this repository to show your support! 🤩</i></p>
+<p align="center"><i>If you’re using Service Mesh Performance or if you like the project, please <a href="https://github.com/layer5io/service-mesh-performance/stargazers">★</a> star this repository to show your support! 🤩</i></p>
 
-# Service Mesh Performance Specification ([SMPS](https://layer5.io/performance))
+# Service Mesh Performance ([SMP](https://layer5.io/performance))
 A common format for describing and capturing:
 
 1. performance test configuration
@@ -22,17 +22,17 @@ A common format for describing and capturing:
 1. workload configuration
 1. performance test results
 
-This specification is currently being advanced through the [Meshery](https://layer5.io/meshery) project. See a [screenshot](docs/assets/spec/readme/meshery_benchmark_screen.png) of its implementation.
+This specification is currently being advanced through the [Meshery](https://layer5.io/meshery) project. See a [screenshot](docs/assets/perf/readme/meshery_benchmark_screen.png) of its implementation.
 
 ## Example
 
-See the [sample results](docs/assets/spec/readme/example/service%20mesh%20performance%20specification%20result.yaml) file.
+See the [sample results](docs/assets/perf/readme/service mesh performance result.yaml) file.
 
-<a href="docs/assets/spec/readme/service mesh performance specification example.gif"><img src="docs/assets/spec/readme/service mesh performance specification example.gif" /></a>
+<a href="docs/assets/perf/readme/service mesh performance example.gif"><img src="docs/assets/perf/readme/service mesh performance example.gif" /></a>
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
-<a href="https://meshery.io"><img src="docs/assets/spec/readme/meshery-logo-light-text.svg"
+<a href="https://meshery.io"><img src="docs/assets/perf/readme/meshery-logo-light-text.svg"
 style="margin:10px;" width="125px" 
 alt="Meshery - the Service Mesh Management Plane" align="left" /></a>
 <a href="https://meshery.io">Meshery</a> is the multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. 
@@ -43,9 +43,9 @@ alt="Meshery - the Service Mesh Management Plane" align="left" /></a>
 <h2><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Contributing</a></h2>
 Our projects are community-built and welcome collaboration. 👍 Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you and jump into our <a href="http://slack.layer5.io">Slack</a>! Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
 
-<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="docs/assets/spec/readme/slack-128.png" style="margin-left:10px;padding-top:5px;" width="110px" align="right" /></a>
+<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="docs/assets/perf/readme/slack-128.png" style="margin-left:10px;padding-top:5px;" width="110px" align="right" /></a>
 
-<a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src="docs/assets/spec/readme/community.svg" style="margin-right:8px;padding-top:5px;" width="140px" align="left" /></a>
+<a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src="docs/assets/perf/readme/community.svg" style="margin-right:8px;padding-top:5px;" width="140px" align="left" /></a>
 
 <p>
 ✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://calendar.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendar</a>.<br />
