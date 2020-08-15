@@ -35,5 +35,16 @@
       color: #fff;
       @include heading-font
     }
+    .performance-tests {
+      margin-top: 20px;
+      color: black;
+      font-weight: bolder;
+      font-size: larger;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      background-color: white;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 10px;
+    }
   }
 }

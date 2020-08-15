@@ -8,6 +8,7 @@ header.masthead {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: bottom;
+  background-blend-mode: lighten;
   // background-size: contain;
   @include heading-font;
   .intro-text {
