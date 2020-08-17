@@ -3,18 +3,27 @@
 	<section class="page-section" id="{{ site.data.sitetext.implementation.section | default: "" }}">
 		<div class="container">
 			<div class="col-lg-12 text-center">
-			<h2 class="section-heading text-uppercase">{{ site.data.sitetext.implementation.title }}</h2>
-			<h3 class="section-subheading">{{ site.data.sitetext.implementation.subtext }}</h3>
+				<h2 class="section-heading text-uppercase">{{ site.data.sitetext.implementation.title }}</h2>
+				<h3 class="section-subheading">{{ site.data.sitetext.implementation.subtext }}</h3>
+			</div>
+			<img class="image-example" src="{{ site.baseurl }} assets/spec/readme/service mesh performance example.gif">
+			<div class="row">
+				<div class="col-lg-8 mx-auto text-center">
+					<div class="section-caption">{{ site.data.sitetext.implementation.caption | markdownify }}</div>
+				</div>
+			</div>
+			<div class="card performance-tests">
+				<div>
+					<span class="testresults" id="testresults"></span>
+					<p style="display: inline-block;">performance tests run!</p>
+				</div>
+			</div>
+			<div style="margin-top: 2.5em;">
+				<iframe src="https://ghbtns.com/github-btn.html?user=layer5io&repo=service-mesh-performance&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="50px"></iframe>
+				<iframe src="https://ghbtns.com/github-btn.html?user=layer5io&repo=service-mesh-performance&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="50px"></iframe>
+				<iframe src="https://ghbtns.com/github-btn.html?user=layer5io&repo=service-mesh-performance&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="50px"></iframe>
+			</div>
 		</div>
-	</div>
-	<div class="container">
-		<img class="image-example" src="{{ site.baseurl }} assets/spec/readme/service mesh performance example.gif">
-	</div>
-	<div class="row">
-		<div class="col-lg-8 mx-auto text-center">
-		<div class="section-caption">{{ site.data.sitetext.implementation.caption | markdownify }}</div>
-		</div>
-	</div>
 	</section>
 </div>
 <!-- End implementation -->

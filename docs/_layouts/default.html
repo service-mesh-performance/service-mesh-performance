@@ -28,6 +28,14 @@
 
 	  <!-- Custom scripts for this template -->
 	  <script src="assets/js/agency.min.js"></script>
+	  <script>
+		$(document).ready(function() {
+			$.get("https://meshery.layer5.io/result/total", function(data, status) {
+				var testresults = JSON.parse(data);
+				document.getElementById("testresults").innerHTML = "&nbsp;"+testresults.total_runs+"&nbsp;";
+			});
+		});
+	  </script>
 
   </body>
 </html>
