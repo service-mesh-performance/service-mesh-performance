@@ -12,15 +12,6 @@
 					<div class="section-caption">{{ site.data.sitetext.implementation.caption | markdownify }}</div>
 				</div>
 			</div>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-			<script>
-				$(document).ready(function() {
-					$.get("https://meshery.layer5.io/result/total", function(data, status) {
-						var testresults = JSON.parse(data);
-						document.getElementById("testresults").innerHTML = "&nbsp;"+testresults.total_runs+"&nbsp;";
-					});
-				});
-			</script>
 			<div class="card performance-tests">
 				<div>
 					<span class="testresults" id="testresults"></span>
