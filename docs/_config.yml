@@ -23,6 +23,12 @@ plugins:
   - jemoji
   - jekyll-coffeescript
 
+defaults:
+  - scope:
+      path: 'collections/_drafts/**'
+    values:
+      sitemap: false
+
 analytics:
   google: UA-152604689-2
 
