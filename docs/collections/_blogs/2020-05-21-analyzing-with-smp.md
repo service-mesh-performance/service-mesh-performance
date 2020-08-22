@@ -1,17 +1,20 @@
 ---
+layout: blog
 title: Getting started with Service Mesh Performance Analysis
-subtitle: 
+subtitle:
 author: Lee Calcote
 image: assets/img/buttons/smp-logo/smp-new-logo.png
 alt:
 published: true
 date: 2019-7-30 12:15:05 +0000
 category: spec
-caption: 
+caption:
   title: Analyzing with SMP
   subtitle: Standardizing mesh analysis practices
   thumbnail: assets/img/mesh-cubes.svg
+permalink: /blog/Getting started with Service Mesh Performance Analysis
 ---
+
 Anytime performance questions are to be answered, they are subjective to the specific workload and infrastructure used for measurement. Given the variety of this measurement challenge, the Envoy project, for example, refuses to publish performance data because such tests can be
 
 1. Time consuming and Redundant
@@ -19,15 +22,15 @@ Anytime performance questions are to be answered, they are subjective to the spe
 
 Such tests are complicated in part, because there are different types of performance testing, which include: soak testing, stress testing, load testing, capacity testing, and spike testing. Let’s examine each in context of service meshes and their workloads.
 
-* **Soak testing** involves testing a service mesh with a typical production load, over a continuous availability period, to validate service mesh and workload behavior under production use. A good soak test would also include the ability to simulate peak loads as opposed to just average loads. A soak test would be something that we’d run over a weekend or over 24-hour period and we would be looking generally for things like memory leaks.
+- **Soak testing** involves testing a service mesh with a typical production load, over a continuous availability period, to validate service mesh and workload behavior under production use. A good soak test would also include the ability to simulate peak loads as opposed to just average loads. A soak test would be something that we’d run over a weekend or over 24-hour period and we would be looking generally for things like memory leaks.
 
-* **Stress testing** is where we escalate the amount of load over time until we find the limits of the service mesh. Stress testing answers questions of which components will fail first when you push your mesh to extreme limits. Naturally, the results of stress tests identify which components need additional consideration in the face of such extreme load; where your service mesh deployment model and/or it’s configuration may break.
+- **Stress testing** is where we escalate the amount of load over time until we find the limits of the service mesh. Stress testing answers questions of which components will fail first when you push your mesh to extreme limits. Naturally, the results of stress tests identify which components need additional consideration in the face of such extreme load; where your service mesh deployment model and/or it’s configuration may break.
 
-* **Load testing** is where you understand the business requirements very well and can ramp up the load, leaving it running at a plateau until you’re satisfied that the performance is not continuing to degrade and then ramp down on the load. Load testing can help determine what normal performance metrics look like.  By using iterative, load testing, you can determine whether new updates have been in par with code quality or not.
+- **Load testing** is where you understand the business requirements very well and can ramp up the load, leaving it running at a plateau until you’re satisfied that the performance is not continuing to degrade and then ramp down on the load. Load testing can help determine what normal performance metrics look like. By using iterative, load testing, you can determine whether new updates have been in par with code quality or not.
 
-* **Capacity testing** is when a test to determine how many users your application can handle before either performance or stability becomes unacceptable. Capacity testing addresses things like identifying the number of users your application can handle “successfully”. Having run capacity tests, you will have better visibility into events that might push your site beyond its limitations.
+- **Capacity testing** is when a test to determine how many users your application can handle before either performance or stability becomes unacceptable. Capacity testing addresses things like identifying the number of users your application can handle “successfully”. Having run capacity tests, you will have better visibility into events that might push your site beyond its limitations.
 
-* **Spike testing** is where we go over and above the maximum design capacity, just to see how the service mesh and workload can deal with a significantly spiking load. Spike testing helps identify the amount of load by which your service falls over.
+- **Spike testing** is where we go over and above the maximum design capacity, just to see how the service mesh and workload can deal with a significantly spiking load. Spike testing helps identify the amount of load by which your service falls over.
 
 Outside of the different types of performance tests, performance management concerns include the need for performance and overhead data under a permutation of different workloads (applications) and different types and sizes of infrastructure resources. The need for cross-project, apple-to-apple comparisons are also desired in order to facilitate a comparison of behavioral differences between service meshes and which one might be best-suited for your workloads. Individual projects shy from publishing test results of other, competing service meshes. The need for an independent, unbiased, credible standard measurement is needed is why the Service Mesh Performance (SMP) was created.
 
@@ -49,24 +52,26 @@ The canonical implementation of this specification is the Meshery project. Figur
   <pre><code>
 
 message PerformanceTestResult {
-  message Latency {
-    double min = 1;
-    double average = 2;
-    double p50 = 3;
-    double p90 = 4;
-    double p99 = 5;
-    double max = 6;
-  } </code></pre></div>
+message Latency {
+double min = 1;
+double average = 2;
+double p50 = 3;
+double p90 = 4;
+double p99 = 5;
+double max = 6;
+} </code></pre></div>
 
 <div class="subtitle-gray"> Snippet of the Service Mesh Performance describing how to capture statistical analysis. </div>
 
-
 #### Measuring the value of your service mesh configuration
+
 In this pattern we introduce the MeshMark scoring system as a derivation from the Service Mesh Performance. The focus of the MeshMark scoring system is to measure the value versus the overhead of a service mesh.
 
 #### The value of SMP
+
 Consider that the more value you try to derive from service mesh, the more you will ask it to do. Which is to say, that as someone reflects more deeply on the architecture of a service mesh - with its distributed proxies - and the more work it does, they will eventually wonder, “What overhead is running my service mesh incurring?”. This is one of the most common questions engineers have.
 
 #### What SMP solves
+
 Measurement data may not provide a clear and simple picture of how well those applications are performing from a business point of view, a characteristic desired in metrics that are used as key performance indicators. Reporting several different kinds of data can cause confusion.
 MeshMark distills a variety of overhead signals and key performance indicators into a simple scale. Reducing measurement data to a single well understood metric is a convenient way to track and report on quality of experience. Its purpose is to convert measurements into insights about the value of functions a service mesh is providing. It does so by specifying a uniform way to analyze and report on the degree to which measured performance provides user value.
