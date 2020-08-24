@@ -44,4 +44,3 @@ Before contributing, please review the [Documentation Contribution Flow](https:/
 * Then on Github, navigate to the [Service-Mesh-Performance repository](https://github.com/layer5io/service-mesh-performance) and create a pull request from your recently pushed changes!
 
 ---
-*See the [Service-Mesh-Performance Documentation Google Doc](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit) for additional reference.*
