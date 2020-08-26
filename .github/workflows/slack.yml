@@ -13,4 +13,4 @@ jobs:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"CSK7N9TGX\",\"text\":\"Someone just starred SMPS! (https://github.com/layer5io/service-mesh-performance/stargazers) Total ⭐️: ${{env.STARS}}\"}'
+        args: '{\"channel\":\"CSK7N9TGX\",\"text\":\"Someone just starred SMP! (https://github.com/layer5io/service-mesh-performance/stargazers) Total ⭐️: ${{env.STARS}}\"}'

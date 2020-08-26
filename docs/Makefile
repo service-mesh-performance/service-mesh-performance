@@ -14,4 +14,4 @@ setup:
 	ADMIN=on bundle install
 
 docker:
-	docker run --name smps --rm -p 4000:4000 -v `pwd`:"/srv/jekyll" jekyll/jekyll:4.1.1 bash -c "bundle install; jekyll serve --drafts --livereload"
+	docker run --name smp --rm -p 4000:4000 -v `pwd`:"/srv/jekyll" jekyll/jekyll:4.1.1 bash -c "bundle install; jekyll serve --drafts --livereload"
