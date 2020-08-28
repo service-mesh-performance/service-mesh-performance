@@ -46,8 +46,11 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 
 ### Set up your development environment
 
-
- Note: Windows users can run Jekyll by following the [Windows Installation Guide](https://jekyllrb.com/docs/installation/windows/) and also install Ruby Version Manager [RVM](https://rvm.io) - a command-line tool which allows you to easily install, manage and work with multiple ruby environments on your local machine. Alternatively, if you're running Windows 10, update to version 1903 Build 18362 or higher. You can also shift to Windows Subsystem for Linux [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+Note: Windows users can run Jekyll by following the [Windows Installation Guide,](https://jekyllrb.com/docs/installation/windows/) for Jekyll. This includes installing the Ruby Version Manager [RVM](https://rvm.io) - a command-line tool that allows you to easily install, manage, and work with multiple ruby environments on your local machine. 
+ Alternatively, if you are running Windows 10, you may install the Windows Subsystem for Linux:
+-  [WSL1](https://docs.microsoft.com/en-us/windows/wsl/install-win10)  for Windows build version 1607 or higher.
+-  [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2) for Windows build version 1903 or higher.
+After successfully installation, proceed with the following [steps](https://jekyllrb.com/docs/installation/windows/#installation-via-bash-on-windows-10) to run Jekyll on WSL.
 
 
 ## <a name="contributing-docs">Documentation Contribution Flow</a>
