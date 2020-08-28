@@ -44,6 +44,12 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 
 <a href="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" ><img src="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" width="50%"><a>
 
+### Set up your development environment
+
+
+ Note: Windows users can run Jekyll by following the [Windows Installation Guide](https://jekyllrb.com/docs/installation/windows/) and also install Ruby Version Manager [RVM](https://rvm.io) - a command-line tool which allows you to easily install, manage and work with multiple ruby environments on your local machine. Alternatively, if you're running Windows 10, update to version 1903 Build 18362 or higher. You can also shift to Windows Subsystem for Linux [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
+
 ## <a name="contributing-docs">Documentation Contribution Flow</a>
 Please contribute! All projects under Layer5 use GitHub Pages to host its documentation. Learn more about [Layer5's documentation framework](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit?usp=sharing). The process of contributing follows this flow:
 
