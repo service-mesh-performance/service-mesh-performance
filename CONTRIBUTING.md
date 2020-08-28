@@ -50,7 +50,7 @@ Note: Windows users can run Jekyll by following the [Windows Installation Guide,
  Alternatively, if you are running Windows 10, you may install the Windows Subsystem for Linux:
 -  [WSL1](https://docs.microsoft.com/en-us/windows/wsl/install-win10)  for Windows build version 1607 or higher.
 -  [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2) for Windows build version 1903 or higher.
-After successfully installation, proceed with the following [steps](https://jekyllrb.com/docs/installation/windows/#installation-via-bash-on-windows-10) to run Jekyll on WSL.
+After successful installation, proceed with the following [steps](https://jekyllrb.com/docs/installation/windows/#installation-via-bash-on-windows-10) to run Jekyll on WSL.
 
 
 ## <a name="contributing-docs">Documentation Contribution Flow</a>
