@@ -22,6 +22,7 @@ plugins:
   - jekyll-sitemap
   - jemoji
   - jekyll-coffeescript
+  - jekyll-paginate
 
 defaults:
   - scope:
@@ -32,11 +33,18 @@ defaults:
 analytics:
   google: UA-152604689-2
 
+paginate: 10
+paginate_path: "/blog/:num/"
+permalink: pretty
+
 collections_dir: collections
 collections:
-  blog:
+  posts:
+    permalink: /blog/:categories/:slug
     output: true
-    permalink: /blog/:categories/:title
-    future: true
+  contributors:
+    output: true
+  pages:
+    output: true
 
 markdown: kramdown

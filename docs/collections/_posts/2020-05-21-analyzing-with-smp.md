@@ -1,8 +1,9 @@
 ---
-title: Getting started with Service Mesh Performance Analysis
+slug: Getting started with Service Mesh Performance Analysis
+layout: page
 subtitle: 
 author: Lee Calcote
-image: assets/img/buttons/smp-logo/smp-new-logo.png
+image: /assets/img/buttons/smp-logo/smp-new-logo.png
 alt:
 published: true
 date: 2019-7-30 12:15:05 +0000
@@ -10,7 +11,7 @@ category: spec
 caption: 
   title: Analyzing with SMP
   subtitle: Standardizing mesh analysis practices
-  thumbnail: assets/img/mesh-cubes.svg
+  thumbnail: /assets/img/mesh-cubes.svg
 ---
 Anytime performance questions are to be answered, they are subjective to the specific workload and infrastructure used for measurement. Given the variety of this measurement challenge, the Envoy project, for example, refuses to publish performance data because such tests can be
 

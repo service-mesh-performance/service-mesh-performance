@@ -1,15 +1,15 @@
 ---
-title: MeshMark explained
+slug: MeshMark explained
 subtitle: MeshMark explained
-image: assets/img/smi-conformance.svg
+image: /assets/img/smi-conformance.svg
 alt: MeshMark explained
 date: 2020-05-21 12:15:05 +0000
-category: test
+category: spec
 layout: page
 caption:
   title: MeshMark explained
   subtitle: Through the eyes of a consumer
-  thumbnail: assets/img/container-crane.svg
+  thumbnail: /assets/img/container-crane.svg
 ---
 
 An introduction to MeshMark might be best explained through a simple story that we can all relate to. As a consumer, when you make a purchase, there are generically two methods by which we determine our happiness about making any given purchase.
@@ -33,5 +33,5 @@ MeshMark functions as a service mesh performance index (a scale) to provide peop
 
 The scoring system ranges from 0 to 100.
 
-<img class="image-right" src="assets/img/distributed-performance_green.svg">
+<img class="image-right" src="/assets/img/distributed-performance_green.svg">
 Another aspect here is the need for distributed, multi-mesh and workload performance management. Distributed load testing offers insight into system behaviors that arguably more accurately represent real world behaviors of services under load as that load comes from any number of sources. This aim of enhancing the current load generation and analysis techniques to include distributed load testing is hoped to be achieved by the [Distributed Performance Management of Service Meshes](https://layer5.io/projects/service-mesh-distributed-performance-management) project, by analyzing and working hand ii n hand with Nighthawk, a versatile HTTP load testing tool.

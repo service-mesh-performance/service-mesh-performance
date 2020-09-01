@@ -1,8 +1,8 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <img class="logoDetails" src="assets/img/logo/smp-white.svg"/>
+      <a class="navbar-brand js-scroll-trigger" href="/#page-top">
+        <img class="logoDetails" src="/assets/img/logo/smp-white.svg"/>
       </a>       
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
@@ -13,11 +13,11 @@
 		  {%- for link in site.data.navigation.nav -%}
 		  <li class="nav-item">
 		  {%- if link.url -%}
-		    <a class="nav-link js-scroll-trigger" href="{{ link.url }}">{{ link.title }}</a>
+		    <a class="nav-link js-scroll-trigger" href="/{{ link.url }}">{{ link.title }}</a>
 		  {%- else if link.section -%}
-		    <a class="nav-link js-scroll-trigger" href="#{{ link.section }}">{{ link.title }}</a>
+		    <a class="nav-link js-scroll-trigger" href="/#{{ link.section }}">{{ link.title }}</a>
 		  {%- else -%}
-		    <a class="nav-link js-scroll-trigger" href="#">{{ link.title }}</a>
+		    <a class="nav-link js-scroll-trigger" href="/#">{{ link.title }}</a>
 		  {%- endif -%}
           </li>
 		  {% endfor %}

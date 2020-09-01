@@ -11,7 +11,7 @@
     <div class="row">
 	{% for posts in site.posts %}
       <div class="col-md-4 col-sm-6 posts-item">
-        <a class="posts-link" data-toggle="modal" href="#p{{ forloop.index }}">
+        <a class="posts-link"  href="{{ site.baseurl }}/blog/{{ posts.category | slugify }}/{{ posts.slug | slugify }}">
           <div class="posts-hover">
             <div class="posts-hover-content">
               <i class="{{ site.data.style.posts-icon | default: "fas fa-eye fa-3x" }}"></i>
