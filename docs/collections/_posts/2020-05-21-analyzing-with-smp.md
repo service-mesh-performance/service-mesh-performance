@@ -6,7 +6,7 @@ author: Lee Calcote
 image: /assets/img/buttons/smp-logo/smp-new-logo.png
 alt:
 published: true
-date: 2019-7-30 12:15:05 +0000
+date: 2020-7-30 12:15:05 +0000
 category: spec
 caption: 
   title: Analyzing with SMP
