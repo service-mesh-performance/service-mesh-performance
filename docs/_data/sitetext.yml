@@ -21,7 +21,7 @@ engage:
 
 posts:
     title: "Blog"
-    text: "Learn more about SMP"
+    text: "Learn more about Service Mesh Performance"
     section: posts
 
 about:

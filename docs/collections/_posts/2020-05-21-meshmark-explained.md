@@ -5,6 +5,7 @@ image: /assets/img/smi-conformance.svg
 alt: MeshMark explained
 date: 2020-05-21 12:15:05 +0000
 category: spec
+author: Lee Calcote
 layout: page
 caption:
   title: MeshMark explained
