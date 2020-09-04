@@ -22,6 +22,20 @@
         <div class="posts-caption">
           <h4>{{ posts.caption.title }}</h4>
           <p>{{ posts.caption.subtitle }}</p>
+          <p
+            class="grey-text text-darken-2"
+            style="padding-top: 1em; padding-bottom: 0.75em; font-size: 14px"
+          >
+            <time
+              style="float: left;"
+              datetime="{{ page.date | date_to_xmlschema }}"
+              itemprop="datePublished"
+            >
+              {% assign date_format = site.minima.date_format | default: "%b %-d,
+              %Y" %} {{ posts.date | date: date_format }}
+            </time>
+            <span style="float: right;">by {{posts.author}}</span>
+          </p>
         </div>
       </div>
 	{% endfor %}
