@@ -27,7 +27,7 @@ message PerformanceTestConfig {
     repeated string endpoint_url = 10;
   }
   // Spec version
-  string smps_version = 1;
+  string smp_version = 1;
   string id = 2;
   string name = 3;
   map<string, string> labels = 4;
@@ -48,7 +48,7 @@ message PerformanceTestResult {
     double max = 6;
   }
   // Spec version
-  string smps_version = 1;
+  string smp_version = 1;
   string id = 2;
   map<string, string> labels = 3;
   // All times in UTC
@@ -128,7 +128,7 @@ message ServiceMeshConfig {
     // how long does it take for cluster change to propagate to 90% proxies
     int32 cds_latency_ms = 10;
   }
-  string smps_version = 1;
+  string smp_version = 1;
   string id = 2;
   map<string, string> labels = 3;
   IngressGateway ingress_gateway = 4;
@@ -160,7 +160,7 @@ message EnvironmentConfig {
     int32 cpu_mCores = 3;
     int32 mem_mb = 4;
   }
-  string smps_version = 1;
+  string smp_version = 1;
   string id = 2;
   map<string, string> labels = 3;
   string kubernetes_version = 4;
