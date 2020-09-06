@@ -48,7 +48,7 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 *The Service Mesh Performance site is built using Jekyll - a simple static site generator! You can learn more about Jekyll and setting up your development environment in the [Jekyll Docs](https://jekyllrb.com/docs/).*
 * First [install Ruby](https://jekyllrb.com/docs/installation/), then install Jekyll and Bundler.
 
-**Please Note:** Windows users can run Jekyll by following the [Windows Installation Guide](https://jekyllrb.com/docs/installation/windows/), for Jekyll. This includes installing the Ruby Version Manager [RVM](https://rvm.io) - a command-line tool that allows you to easily install, manage, and work with multiple ruby environments on your local machine. 
+**Note:** Windows users can run Jekyll by following the [Windows Installation Guide](https://jekyllrb.com/docs/installation/windows/), for Jekyll. This includes installing the Ruby Version Manager [RVM](https://rvm.io) - a command-line tool that allows you to easily install, manage, and work with multiple ruby environments on your local machine. 
  Alternatively, if you are running Windows 10, you may install the Windows Subsystem for Linux:
  
 -  [WSL1](https://docs.microsoft.com/en-us/windows/wsl/install-win10)  for Windows build version 1607 or higher.
@@ -68,7 +68,7 @@ Please contribute! All projects under Layer5 use GitHub Pages to host its docume
 `vi <specific page>.md`
 1. Run site locally to preview changes.
 `make site`
-* **Please Note:** *From the Makefile, this command is actually running `$ bundle exec jekyll serve --drafts --livereload`. There are two Jekyll configuration, `jekyll serve` for developing locally and `jekyll build` when deploying for production based on differences of the handling of trailing slashes between Jekyll and GitHub Pages.*
+* **Note:** *From the Makefile, this command is actually running `$ bundle exec jekyll serve --drafts --livereload`. There are two Jekyll configuration, `jekyll serve` for developing locally and `jekyll build` when deploying for production based on differences of the handling of trailing slashes between Jekyll and GitHub Pages.*
 1. Commit, [sign-off](#commit-signing), and push changes to your remote branch.
 `git push origin <my-changes>`
 1. Open a pull request (in your web browser) against our main repo: https://github.com/layer5io/service-mesh-performance.
