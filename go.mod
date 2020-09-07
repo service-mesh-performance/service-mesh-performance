@@ -1,4 +1,4 @@
-module github.com/layer5io/service-mesh-performance-specification
+module github.com/layer5io/service-mesh-performance
 
 go 1.14
 
