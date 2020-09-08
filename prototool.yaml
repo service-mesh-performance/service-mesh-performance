@@ -9,7 +9,7 @@ lint:
     # lint rules in lint.rules.add.
     # Run prototool lint --list-all-lint-groups to see all available lint groups.
     # Run prototool lint --list-lint-group GROUP to list the linters in the given lint group.
-  group: uber2
+  group: google
   
   # Linter files to ignore.
   # These can either be file or directory names.

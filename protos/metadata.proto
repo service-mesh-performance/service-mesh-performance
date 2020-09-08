@@ -2,10 +2,10 @@ syntax = "proto3";
 
 package smp;
 
-option csharp_namespace = "Smp.Spec";
-option go_package = "spec;spec";
+option csharp_namespace = "Smp";
+option go_package = "smp";
 option java_multiple_files = true;
-option java_outer_classname = "MetadataProtos";
+option java_outer_classname = "MetadataProto";
 option java_package = "com.smp";
 option objc_class_prefix = "smp";
 option php_namespace = "Smp";
