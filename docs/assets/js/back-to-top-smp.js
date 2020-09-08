@@ -18,7 +18,7 @@ function smpBackToTop()
 		m = i.id,
 		h = void 0 === m ? "back-to-top" : m,
 		b = i.innerHTML,
-		v = void 0 === b ? '<svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>' : b,
+		v = void 0 === b ? '<svg viewBox="04.5 04.5 15 15"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>' : b,
 		f = i.onClickScrollTo,
 		x = void 0 === f ? 0 : f,
 		w = i.scrollContainer,
