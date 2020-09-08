@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package smp;
+
+option go_package = "spec;spec";
+option csharp_namespace = "Smp.Spec";
+option java_package = "com.smp.spec";
+option java_multiple_files = true;
+option java_outer_classname = "MetadataProtos";
+option php_namespace = "Smp\\Spec";
+option ruby_package = "Smp::Spec::Metadata";
+option objc_class_prefix = "smp";
+
+message ApplicationMetadata {
+  enum ApplicationProtocol {
+    http = 0;
+    https = 1;
+  }
+  string application_name = 1;
+  string application_version = 2;
+  string helmchart_name = 3;
+  string helmchart_version = 4;
+  string cnabspec_version = 5;
+  string compose_version = 6;
+  string cluster_name = 7;
+  string k8s_version_supported = 8;
+  ApplicationProtocol application_protocol = 9;
+}
+
+message TrafficMetadata {
+  string load_balance_name = 1;
+  string load_balance_ip = 2;
+  string host_endpoint = 3;
+  string prometheus_url = 4;
+  string http_headers = 5;
+  string user_agent = 6;
+  string ping_health_endpoint = 7;
+}

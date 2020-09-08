@@ -1,11 +1,19 @@
 syntax = "proto3";
 
-package SMP;
+package smp;
 
 option go_package = "spec;spec";
+option csharp_namespace = "Smp.Spec";
+option java_package = "com.smp.spec";
+option java_multiple_files = true;
+option java_outer_classname = "ServiceMeshPerformanceProto";
+option php_namespace = "Smp\\Spec";
+option ruby_package = "Smp::Spec::ServiceMeshPerformance";
+option objc_class_prefix = "smp";
 
 import "google/protobuf/timestamp.proto";
-import "sm.proto";
+import "protos/service_mesh.proto";
+import "protos/metadata.proto";
 
 message PerformanceTestConfig {
   message Client {
@@ -146,6 +154,7 @@ message ServiceMeshConfig {
   string exp_uuid = 16;
   string profile = 17;
   ServiceMeshes mesh_type = 18;
+  ApplicationMetadata application_metadata = 19;
 }
 
 message EnvironmentConfig {
@@ -166,4 +175,5 @@ message EnvironmentConfig {
   string kubernetes_version = 4;
   repeated Node node = 5;
   repeated IndividualWorkload individual_workloads = 6;
+  TrafficMetadata traffic_metadata = 7;
 }
