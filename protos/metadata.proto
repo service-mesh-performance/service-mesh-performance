@@ -3,7 +3,7 @@ syntax = "proto3";
 package smp;
 
 option csharp_namespace = "Smp";
-option go_package = "smp";
+option go_package = "spec;smp";
 option java_multiple_files = true;
 option java_outer_classname = "MetadataProto";
 option java_package = "com.smp";
