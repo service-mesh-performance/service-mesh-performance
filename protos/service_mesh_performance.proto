@@ -2,18 +2,18 @@ syntax = "proto3";
 
 package smp;
 
-option go_package = "spec;spec";
 option csharp_namespace = "Smp.Spec";
-option java_package = "com.smp.spec";
+option go_package = "spec;spec";
 option java_multiple_files = true;
 option java_outer_classname = "ServiceMeshPerformanceProto";
+option java_package = "com.smp.spec";
+option objc_class_prefix = "smp";
 option php_namespace = "Smp\\Spec";
 option ruby_package = "Smp::Spec::ServiceMeshPerformance";
-option objc_class_prefix = "smp";
 
 import "google/protobuf/timestamp.proto";
-import "protos/service_mesh.proto";
 import "protos/metadata.proto";
+import "protos/service_mesh.proto";
 
 message PerformanceTestConfig {
   message Client {
