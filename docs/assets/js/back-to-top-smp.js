@@ -1,6 +1,3 @@
-// Crafted with ☕ for Service Mesh Performance
-// © Neilblaze 2020
-
 "use strict";
 
 function smpBackToTop()
