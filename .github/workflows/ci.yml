@@ -1,0 +1,33 @@
+
+name: Service Mesh Performance
+on:
+  push:
+    branches:
+      - "*"
+    tags:
+      - "v*"
+  pull_request:
+    branches:
+      - master
+jobs:
+  protobuf-lint-and-compile:
+    strategy:
+      matrix:
+        go-version: [1.14.x]
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    name: Check & Review code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Setup Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: ${{ secrets.GO_VERSION }}
+      - name: protobuf-lint
+        run: GOPROXY=direct GOSUMDB=off go get -u github.com/uber/prototool/cmd/prototool@dev; /home/runner/go/bin/prototool lint
+      - name: protobuf-compile
+        run: GOPROXY=direct GOSUMDB=off go get -u github.com/uber/prototool/cmd/prototool@dev; /home/runner/go/bin/prototool compile
