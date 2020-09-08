@@ -2,6 +2,8 @@
 section#subscribe {
   background-color: $gray-900;
   background-image: url("#{$subscribe-image}");
+  padding-top: 50px;
+  padding-bottom: 80px;
   background-repeat: no-repeat;
   background-position: center;
   .section-heading {
@@ -69,6 +71,7 @@ section#subscribe {
 .button {
   display: inline-block;
   padding: 15px 25px;
+  margin-top: 15px;
   font-size: 24px;
   cursor: pointer;
   text-align: center;
@@ -91,4 +94,8 @@ section#subscribe {
 
 .text{
   color: black;
+}
+
+.padbtn{
+  margin-top: 15px;
 }
