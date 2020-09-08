@@ -6,10 +6,10 @@ option csharp_namespace = "Smp.Spec";
 option go_package = "spec;spec";
 option java_multiple_files = true;
 option java_outer_classname = "ServiceMeshProto";
-option java_package = "com.smp.spec";
+option java_package = "com.smp";
 option objc_class_prefix = "smp";
-option php_namespace = "Smp\\Spec";
-option ruby_package = "Smp::Spec::ServiceMesh";
+option php_namespace = "Smp";
+option ruby_package = "Smp";
 
 message ServiceMeshes {
   enum Type {
