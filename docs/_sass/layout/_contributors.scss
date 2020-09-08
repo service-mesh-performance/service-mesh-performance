@@ -12,5 +12,15 @@
       padding-bottom: 40px;
       text-align: center;
     }
-  }  
-} 
+  }
+  .scroll > .row {
+    display: inline-block;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    .col-md-3.col-sm-6 {
+      float: none;
+      display: inline-block;
+    }
+  }
+}
