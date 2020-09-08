@@ -13,15 +13,16 @@ option ruby_package = "Smp";
 
 message ServiceMeshes {
   enum Type {
-    appmesh = 0;
-    consul = 1;
-    istio = 2;
-    kuma = 3;
-    linkerd = 4;
-    maesh = 5;
-    octarine = 6;
-    networkservicemesh = 7;
-    tanzu = 8;
+    APP_MESH = 0;
+    CONSUL = 1;
+    ISTIO = 2;
+    KUMA = 3;
+    LINKERD = 4;
+    MAESH = 5;
+    OCTARINE = 6;
+    NETWORK_SERVICE_MESH = 7;
+    TANZU = 8;
+    OPEN_SERVICE_MESH = 9;
   }
   Type type = 1;
 }

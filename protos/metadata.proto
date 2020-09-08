@@ -13,8 +13,8 @@ option ruby_package = "Smp";
 
 message ApplicationMetadata {
   enum ApplicationProtocol {
-    http = 0;
-    https = 1;
+    HTTP = 0;
+    HTTPS = 1;
   }
   string application_name = 1;
   string application_version = 2;
