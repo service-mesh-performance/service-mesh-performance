@@ -1,9 +1,16 @@
 // Styling for the implementation section
 .engage-subheading {
     margin-top: 18px;
+    padding-top: 0px; 
+    padding-bottom: 0px;
     color: $gray-800;
-    @include heading-font-italic
-  
-
+    @include heading-font-italic  
   }
+
+.newpadding {
+  padding-top: 50px; 
+  padding-bottom: 30px;
+  color: $gray-800;
+  @include heading-font-italic  
+}  
   
