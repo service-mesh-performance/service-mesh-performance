@@ -32,7 +32,7 @@ function smpBackToTop()
 		C = i.textColor,
 		L = void 0 === C ? "#fff" : C,
 		N = i.zIndex,
-		I = void 0 === N ? 1 : N,
+		I = void 0 === N ? 3 : N,
 		A = g === document.body,
 		B = A && document.documentElement;
 	o = Math.round(.43 * E), t = Math.round(.29 * E), e = "#" + h + "{background:" + d + ";-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;bottom:" + c + "px;-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.26);-moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.26);box-shadow:0 2px 5px 0 rgba(0,0,0,.26);color:" + L + ";cursor:pointer;display:block;height:" + E + "px;opacity:1;outline:0;position:fixed;right:" + c + "px;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-transition:bottom .2s,opacity .2s;-o-transition:bottom .2s,opacity .2s;-moz-transition:bottom .2s,opacity .2s;transition:bottom .2s,opacity .2s;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:" + E + "px;z-index:" + I + "}#" + h + " svg{display:block;fill:currentColor;height:" + o + "px;margin:" + t + "px auto 0;width:" + o + "px}#" + h + ".hidden{bottom:-" + E + "px;opacity:0}", (n = document.createElement("style")).appendChild(document.createTextNode(e)), document.head.insertAdjacentElement("afterbegin", n);
