@@ -33,7 +33,7 @@ message PerformanceTestConfig {
     map<string, string> cookies = 7;
     string body = 8;
     string content_type = 9;
-    repeated string endpoint_url = 10;
+    repeated string endpoint_urls = 10;
   }
   // Spec version
   string smp_version = 1;
@@ -174,7 +174,7 @@ message EnvironmentConfig {
   string id = 2;
   map<string, string> labels = 3;
   string kubernetes_version = 4;
-  repeated Node node = 5;
+  repeated Node nodes = 5;
   repeated IndividualWorkload individual_workloads = 6;
   TrafficMetadata traffic_metadata = 7;
 }
