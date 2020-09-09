@@ -30,7 +30,7 @@
         @include heading-font;
         &.active,
         &:hover {
-          color:$gray-400;
+          color:#EBC017;
         }
       }
     }
@@ -73,7 +73,7 @@
 
 .logoDetails {
 float:left;
-height:100px;
+height:70px;
 margin-left:4vw;
 }
 
