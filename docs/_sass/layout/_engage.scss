@@ -7,10 +7,9 @@
     @include heading-font-italic  
   }
 
-.newpadding {
+.padded-page-section {
   padding-top: 50px; 
   padding-bottom: 30px;
   color: $gray-800;
   @include heading-font-italic  
 }  
-  
