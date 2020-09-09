@@ -18,10 +18,11 @@ import "protos/service_mesh.proto";
 message PerformanceTestConfig {
   message Client {
     enum Protocol {
-      HTTP = 0;
-      TCP = 1;
-      UDP = 2;
-      GRPC = 3;
+      PROTOCOL_INVALID = 0;
+      PROTOCOL_HTTP = 1;
+      PROTOCOL_TCP = 2;
+      PROTOCOL_UDP = 3;
+      PROTOCOL_GRPC = 4;
     }
     bool internal = 1;
     string load_generator = 2;
