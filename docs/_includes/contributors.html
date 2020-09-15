@@ -1,17 +1,42 @@
 <!-- Contributors -->
 <div class="contributors">
   <section class="py-5" id="{{ site.data.sitetext.contributors.section | default: "contributors" }}">
-    <h1 class="section-heading text-uppercase">{{ site.data.sitetext.contributors.title | default: "About Us" }}</h1>   
+    <h1 class="section-heading text-uppercase">{{ site.data.sitetext.contributors.title | default: "About Us" }}</h1>
     <div class="container scroll">
-      <div class="row" {% if site.data.sitetext.clients.horizontal-scrolling == "yes" %} id="scrolling-contributors" {% endif %}>
-	  {% for contributors in site.data.sitetext.contributors.list %}
-        <div class="col-md-3 col-sm-6">
-          <a href="{{ contributors.url }}">
-            <img class="img-fluid d-block mx-auto" src="{{ contributors.logo }}" alt="{{ contributors.title }}" style="padding-bottom: 40px;max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
-          </a>
+      <div class="row">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="3000">
+              <div class="col-md-3 col-sm-6">
+                <img class="img-fluid d-block mx-auto" src="assets/img/contributors/layer5-white-bg-no-trim.svg"
+                  class="d-block w-100" alt="Layer5"
+                  style="padding-bottom: 40px;max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <img class="img-fluid d-block mx-auto" src="assets/img/contributors/google-logo.svg"
+                  class="d-block w-100" alt="Google"
+                  style="padding-bottom: 40px;max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <img class="img-fluid d-block mx-auto" src="assets/img/contributors/HashiCorp_PrimaryLogo_Black_RGB.svg"
+                  class="d-block w-100" alt="HashiCorp"
+                  style="padding-bottom: 40px;max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <img class="img-fluid d-block mx-auto" src="assets/img/contributors/cncf-color.svg"
+                  class="d-block w-100" alt="CNCF"
+                  style="padding-bottom: 40px;max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
+              </div>
+            </div>
+            <div class="carousel-item" data-interval="3000">
+              <div class="col-md-3 col-sm-6">
+                <img class="img-fluid d-block mx-auto" src="assets/img/contributors/ut-austin.svg" class="d-block w-100"
+                  alt="UT Austin"
+                  style="padding-bottom: 40px;max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
+              </div>
+            </div>
+          </div>
         </div>
-	  {% endfor %}
       </div>
-    </div>
   </section>
-  </div>
+</div>
