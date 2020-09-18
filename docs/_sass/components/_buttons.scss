@@ -29,3 +29,10 @@
     box-shadow: 0 0 0 0.2rem rgba(254, 209, 55,.5) !important;
   }
 }
+
+.centerx{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
