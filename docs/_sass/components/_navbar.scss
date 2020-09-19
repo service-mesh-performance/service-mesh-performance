@@ -54,7 +54,7 @@
     .navbar-nav {
       .nav-item {
         .nav-link {
-          font-size: 1.15em;
+          font-size: 1.2em;
           padding: 0.80em 0.80em !important;
         }
       }
@@ -63,8 +63,12 @@
       padding-top: 0;
       padding-bottom: 0;
       background-color: $background-color;
+      .header_logo {
+        height: 60px;
+        transition: all 600ms;
+      }
       .navbar-brand {
-        font-size: 1.00em;
+        font-size: 1.50em;
         padding: 12px 0;
       }
     }
@@ -73,8 +77,8 @@
 
 .logoDetails {
 float:left;
-height:70px;
-margin-left:4vw;
+height:100px;
+margin-left:3vw;
 }
 
 @media(max-width:992px) {

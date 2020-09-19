@@ -17,7 +17,7 @@ $black: {{ site.data.style.black | default: "#000" }} !default;
         width: 200px;
         color: $white;
         font-size: 4.0em;
-        box-shadow: 0 20px 20px rgba(0.4, 0.4, 0, 0.6);
+        box-shadow: 0 20px 20px rgba(0.4, 0.4, 0, 0.25);
        }
 
 
