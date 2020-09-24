@@ -12,5 +12,13 @@
       padding-bottom: 40px;
       text-align: center;
     }
-  }  
-} 
+  }
+  .container > .row {
+    display: inline-block;
+    white-space: nowrap;
+    width: 100%;
+    .col-md-3.col-sm-6 {
+      display: inline-block;
+    }
+  }
+}
