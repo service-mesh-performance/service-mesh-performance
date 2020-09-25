@@ -1,29 +1,60 @@
   <!-- Footer -->
-  <footer class="footer" id="footer" style="background-color:white;">
+<footer class="footer" id="footer" style="background-color:#222">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-4">
-          <span class="copyright">Copyright &copy; Layer5, Inc. {{ 'now' | date: "%Y" }}</span>
+      <div class="foot-up">
+        <div class="row">
+          <div class="col-sm-3 padding-right-50"> <img class="foot-logo" src="/assets/img/logo/smp-light-text-side.png" height="100" width="230" alt="SMP" > </div>
+          <div class="col-sm-9">
+            <div class="pos-info">
+              <ul class="row">
+                <li class="col-sm-4"> <br>
+                  <h6>Service Mesh Performance</h6>
+                  <p class="smp-about">Service Mesh Performance and is hosted within the CNCF SIG Network. Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency against deployments in other organization's environments. </p>
+                </li>
+                <li class="col-sm-7"> <br>
+                  <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/smp_spec?ref_src=twsrc%5Etfw" data-width="1000" data-height="250">
+                  Tweets by smp_spec
+                  </a> 
+                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" ></script>
+                  </li>
+                  <li class="col-sm-4">
+                  <p style="text-align: right;">
+					        <a href="https://www.netlify.com">
+						      <img class="netlify-icon" src="https://www.netlify.com/img/global/badges/netlify-dark.svg">
+					        </a>
+				        </p> 
+               </li>
+              </ul>
+            </div>
+          </div>
         </div>
-		<!-- Social Media -->
-        <div class="col-md-4">
-          <ul class="list-inline social-buttons">
-		  {% for link in site.data.sitetext.footer.social  %}
-            <li class="list-inline-item">
-			  {% if link.url %}
+      </div>
+    </div>
+    <div class="foot-down">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 text-left">
+            <p class="l5-text">Copyright © Layer5, Inc. <script>document.write(new Date().getFullYear());</script></p>
+          </div>
+          <!--Social media icons -->
+          <div class="col-sm-6"> <ul class="list-inline social-buttons">
+		      {% for link in site.data.sitetext.footer.social  %}
+          <li class="list-inline-item">
+			    {% if link.url %}
               <a href="{{ link.url }}">
                 {% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %}
               </a>
-			{% endif %}
-            </li>
-			{% endfor %}
-          </ul>
+			    {% endif %}
+          </li>
+			    {% endfor %}
+          </ul> </div> 
+          <!--Social media icons end -->
         </div>
-		<!-- Legal -->
       </div>
     </div>
   </footer>
-{% if page.layout == "page" %}
+
+  {% if page.layout == "page" %}
 <script>
 fixPageShort();
 function fixPageShort() {
@@ -37,6 +68,7 @@ function fixPageShort() {
 }
 </script>
 {% endif %}
+<link rel="stylesheet" href="./assets/css/font-awesome.min.css">
 <script src="./assets/js/back-to-top-smp.js"></script>
 <script>smpBackToTop()</script>
   <!-- End Footer -->
