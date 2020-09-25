@@ -1,42 +1,52 @@
 <!-- Contributors -->
 <div class="contributors">
   <section class="py-5" id="{{ site.data.sitetext.contributors.section | default: "contributors" }}">
-    <h1 class="section-heading text-uppercase">{{ site.data.sitetext.contributors.title | default: "About Us" }}</h1>
-    <div class="container scroll">
-      <div class="row">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-interval="3000">
-              <div class="col-md-3 col-sm-6">
-                <img class="img-fluid d-block mx-auto" src="assets/img/contributors/layer5-white-bg-no-trim.svg"
-                  class="d-block w-100" alt="Layer5"
-                  style="padding-bottom: 40px;max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <img class="img-fluid d-block mx-auto" src="assets/img/contributors/google-logo.svg"
-                  class="d-block w-100" alt="Google"
-                  style="padding-bottom: 40px;max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <img class="img-fluid d-block mx-auto" src="assets/img/contributors/HashiCorp_PrimaryLogo_Black_RGB.svg"
-                  class="d-block w-100" alt="HashiCorp"
-                  style="padding-bottom: 40px;max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <img class="img-fluid d-block mx-auto" src="assets/img/contributors/cncf-color.svg"
-                  class="d-block w-100" alt="CNCF"
-                  style="padding-bottom: 40px;max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
-              </div>
-            </div>
-            <div class="carousel-item" data-interval="3000">
-              <div class="col-md-3 col-sm-6">
-                <img class="img-fluid d-block mx-auto" src="assets/img/contributors/ut-austin.svg" class="d-block w-100"
-                  alt="UT Austin"
-                  style="padding-bottom: 40px;max-height: {{ site.data.sitetext.contributors.max-height | default: "100px" }}">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </section>
+    <h1 class="section-heading text-uppercase">{{ site.data.sitetext.contributors.title | default: "About Us" }}</h1>   
+    <div class="client-slider">
+	<div class="client-slide-track">
+		<div class="client-slide">
+			<img src="assets/img/contributors/layer5-white-bg-no-trim.svg" height="100" width="200" alt="Layer5" />
+		</div>
+    <div class="svg-space"></div>
+		<div class="client-slide uem1">
+			<img src="assets/img/contributors/uem-logo.png" height="50" width="150" alt="UEM" />
+		</div>
+    <div class="svg-space"></div>
+		<div class="client-slide hashicorp1">
+			<img src="assets/img/contributors/HashiCorp_PrimaryLogo_Black_RGB.svg" height="100" width="200" alt="HashiCorp" />
+		</div>
+    <div class="svg-space"></div>
+		<div class="client-slide cncf1">
+			<img src="assets/img/contributors/cncf-color.svg" height="125" width="220" alt="CNCF" />
+		</div>
+    <div class="svg-space"></div>
+		<div class="client-slide ut1" style="margin-top: 17px;">
+			<img src="assets/img/contributors/ut-austin.svg" height="60" width="175" alt="University of Texas" />
+		</div>
+    <div class="svg-space"></div>
+    <div class="client-slide">
+			<img src="assets/img/contributors/layer5-white-bg-no-trim.svg" height="100" width="200" alt="Layer5" />
+		</div>
+    <div class="svg-space"></div>
+		<div class="client-slide uem2">
+			<img src="assets/img/contributors/uem-logo.png" height="50" width="150" alt="UEM" />
+		</div>
+    <div class="svg-space"></div>
+		<div class="client-slide">
+			<img src="assets/img/contributors/HashiCorp_PrimaryLogo_Black_RGB.svg" height="100" width="200" alt="HashiCorp" />
+		</div>
+    <div class="svg-space"></div>
+		<div class="client-slide cncf2">
+			<img src="assets/img/contributors/cncf-color.svg" height="125" width="220" alt="CNCF" />
+		</div>
+    <div class="svg-space"></div>
+		<div class="client-slide svg-space" style="margin-top: 17px;">
+			<img src="assets/img/contributors/ut-austin.svg" height="55" width="170" alt="University of Texas" />
+		</div>
+	<div class="svg-space"></div>
+	</div>
 </div>
+  </section>
+  </div>
+
+  <link href="/assets/css/slide.css" rel="stylesheet">
