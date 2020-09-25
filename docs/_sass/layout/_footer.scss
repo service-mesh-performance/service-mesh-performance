@@ -1,6 +1,6 @@
 // Styling for the footer
 .footer {
-  padding: 25px 0;
+  padding: 0px 0px 15px;
   text-align: center;
   span.copyright {
     text-transform: none;
@@ -19,10 +19,10 @@ ul.social-buttons {
   li {
     a {
       font-size: 20px;
-      line-height: 50px;
+      line-height: 40px;
       display: block;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       transition: all 0.3s;
@@ -44,4 +44,95 @@ ul.social-buttons {
   body {
     scroll-behavior: smooth;
   }
+}
+
+footer p {
+	color: rgba(255,255,255,0.8);
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.foot-up {
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+.foot-up ul {
+	text-align: right;
+	margin-top: 30px;
+}
+.foot-up ul li {
+	display: inline-block;
+	margin-left: 30px;
+}
+.foot-up ul li a {
+	color: #fff;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.foot-down {
+	text-align: right;
+}
+.foot-down a {
+	color: #fff;
+	font-size: 14px;
+	margin: 0 5px;
+	height: 30px;
+	width: 30px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 50%;
+	margin: 0 3px;
+	display: inline-block;
+}
+.foot-down a:hover {
+	background: #fff;
+	color: #000;
+}
+
+a:hover {
+	color: #252839;
+}
+
+a {
+	text-decoration: none;
+	color: #141414;
+}
+
+a {
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+	text-decoration: none !important;
+}
+
+html * {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.l5-text {
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+.foot-logo {
+  margin-top: 40px;
+}
+
+footer .pos-info ul h6 {
+	color: #fff;
+	font-weight: 600;
+}
+
+.smp-about {
+  font-size: 15px;
+}
+
+.netlify-icon {
+  width: 100px; 
+  margin-top: 20px;
 }
