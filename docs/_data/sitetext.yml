@@ -48,6 +48,10 @@ contributors:
       - title: "UT Austin"
         align: center
         logo: assets/img/contributors/ut-austin.svg
+      - title: "Red Hat"
+        align: center
+        logo: assets/img/contributors/redhat.svg
+        
 
 implementation:
     title: "Example implementation"
