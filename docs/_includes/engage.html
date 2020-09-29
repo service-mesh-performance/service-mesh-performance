@@ -1,28 +1,88 @@
 <!-- engage -->
 <div class="engage">
     <section class="padded-page-section" id="{{ site.data.sitetext.engage.section | default: "engage" }}">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          {% if site.data.sitetext.engage.text %}
-		 
-		  {% endif %}
+    <h1 class="section-heading text-uppercase paddex">{{ site.data.sitetext.engage.title | default: "About Us" }}</h1> 
+      <div class="container">
+        <div class="container">
+            <!-- 1st row -->
+          <div class="row mt-5">
+            <!-- Learn Layer5 -->  
+            <div class="col-lg-4">    
+              <div class="card-web card hover-up hover-line">  
+                <div class="card-body">
+                  <a href="https://github.com/layer5io/learn-layer5"><h4 class="card-title"><i class="fas fa-graduation-cap lL5"></i> Learn Layer5</h4>
+                  <p class="card-text">
+                    A sample application for learning how to service mesh. 
+                  </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Contribute @Github --> 
+            <div class="col-lg-4">   
+              <div class="card-web card hover-up hover-line">  
+                <div class="card-body">     
+                  <a href="https://github.com/layer5io/service-mesh-performance"><h4 class="card-title"><i class="fab fa-github gh"></i> Contribute</h4>
+                  <p class="card-text">
+                    Get Involved. Collaborate & get started with Layer5 projects. 
+                  </p>
+                  </a>
+                </div>
+              </div>  
+            </div>
+            <!-- Slack -->
+            <div class="col-lg-4">
+              <div class="card-web card hover-up hover-line"> 
+                <div class="card-body">
+                  <a href="http://slack.layer5.io/"><h4 class="card-title"><i class="fab fa-slack sl"></i> Slack</h4>
+                  <p class="card-text">
+                    Join the Layer5 Slack Community & never miss any updates.
+                  </p>
+                  </a>
+                </div>
+              </div>  
+            </div>
+          </div>
+          <!-- 2nd row -->
+          <div class="row">
+          <!-- Youtube -->
+          <div class="col-lg-4">
+            <div class="card-web card hover-up hover-line">
+              <div class="card-body">
+                <a href="https://www.youtube.com/embed/LxP-yHrKL4M"><h4 class="card-title"><i class="fab fa-youtube yt"></i> YouTube</h4>
+                <p class="card-text">
+                  Watch community meeting recordings anytime anywhere. 
+                </p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Community Calender -->
+          <div class="col-lg-4"> 
+            <div class="card-web card hover-up hover-line">  
+              <div class="card-body">    
+                <a href="https://calendar.google.com/calendar/b/1/r?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"><h4 class="card-title"><i class="far fa-calendar-alt cal"></i> Community Calender</h4>
+                <p class="card-text">
+                    Subscribe to the community calender & stay updated. 
+                </p>
+                </a>
+              </div>
+            </div>         
+          </div>
+          <!-- Layer5 Community -->
+          <div class="col-lg-4">
+            <div class="card-web card hover-up hover-line"> 
+              <div class="card-body">
+                <a href="https://layer5.io/community"><h4 class="card-title"><i class="fas fa-users cmu"></i> Layer5 Community</h4>
+                <p class="card-text">
+                  Join the largest collection of service mesh projects and their maintainers in the world. 
+                </p>
+                </a>
+              </div>
+            </div>  
+          </div>
         </div>
       </div>
-
-      <div class="row text-center">
-	  {% for engage in site.data.sitetext.engage.list %}
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x"  style="color:#3C494F;"></i>
-            <i class="{{ engage.icon | default: "fas fa-shopping-cart" }} fa-stack-1x fa-inverse""></i>
-          </span>
-          <h4 class="engage-heading">{{ engage.title | markdownify }}</h4>
-          {% if engage.desc %}<div class="engage-subheading">{{ engage.desc | markdownify }}</div>{% endif %}
-        </div>
-	  {% endfor %}
-      </div>
-
     </div>
   </section>
 </div>
