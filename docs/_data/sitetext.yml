@@ -8,15 +8,24 @@ engage:
     text: ""
     section: engage
     list:
-      - title: "[Contributing](https://github.com/layer5io/service-mesh-performance/blob/master/CONTRIBUTING.md)"
-        desc: "Get Involved. Collaborate."
-        icon: fas fa-hands-helping 
-      - title: "[Code of Conduct](https://github.com/layer5io/service-mesh-performance/blob/master/CODE_OF_CONDUCT.md)"
-        desc: "A few rules to keep the mesh in control"
-        icon: fas fa-clipboard-list
       - title: "[Learn Layer5](https://github.com/layer5io/learn-layer5)"
-        desc: "A sample application for learning how to service mesh"
-        icon: fas fa-graduation-cap
+        desc: "A sample application for learning how to service mesh."
+        icon: fas fa-graduation-cap 
+      - title: "[Contribute](https://github.com/layer5io/service-mesh-performance)"
+        desc: "Get Involved. Collaborate & get started with Layer5 projects."
+        icon: fab fa-github
+      - title: "[Slack](http://slack.layer5.io)"
+        desc: "Join the Layer5 Slack Community & never miss any updates."
+        icon: fab fa-slack
+      - title: "[YouTube](https://www.youtube.com/embed/LxP-yHrKL4M)"
+        desc: "Watch community meeting recordings anytime anywhere."
+        icon: fab fa-youtube
+      - title: "[Community Calender](https://calendar.google.com/calendar/b/1/r?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)"
+        desc: "Subscribe to the community calender & stay updated."
+        icon: far fa-calendar-alt
+      - title: "[Layer5 Community](https://layer5.io/community)"
+        desc: "Join the largest collection of service mesh projects and their maintainers in the world."
+        icon: fas fa-users
 
 
 posts:
