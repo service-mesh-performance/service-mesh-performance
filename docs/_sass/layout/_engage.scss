@@ -11,5 +11,88 @@
   padding-top: 50px; 
   padding-bottom: 30px;
   color: $gray-800;
-  @include heading-font-italic  
+  text-align: center;
+  @include heading-font  
 }  
+
+.paddex {
+  margin-bottom: 40px;
+}
+
+/* Custom Cards */
+
+.card-web {
+  box-shadow: 0 2px 8px rgba(61, 65, 84, 0.25);
+  border:none;
+  z-index: 1;
+  padding:0px 0px 10px 0px;
+	border-radius: 3px;
+	overflow: hidden;
+	margin-bottom: 20px;
+	background-color: #fff;
+}
+
+.card-web h4 {
+ color:#444;
+  margin-top:5px;
+   font-size:1.2rem;
+}
+
+.card-web p {
+ color:#666;
+ font-size:.9rem;
+}
+
+
+.hover-up {
+	top: 0;
+	position: relative;
+	transition: all 0.2s ease-in-out;
+}
+
+.hover-up:hover {
+	box-shadow: 0 20px 40px rgba(61, 65, 84, 0.25);
+	top: -2px;
+}
+
+.hover-line:hover::before {
+	width: 100%;
+     
+}
+.hover-line::before {
+	content: '';
+	display: block;
+	height:3px;
+	width: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #00b39f;
+	transition: all 0.2s ease-in-out;
+}
+
+/* Social icon colors ~ Colors Muted */
+
+.yt {
+  color:#ff0000a8;  // YouTube
+}
+
+.gh {
+  color: #333;  // Github
+}
+
+.sl {
+  color: #4a154bb9;  // Slack
+}
+
+.lL5 {
+  color: #00d3a9bd;  // Learn Layer5
+}
+
+.cal {
+  color: #4c8af5b6;  // Community Calender
+}
+
+.cmu {
+  color: #232424a4;  // Community
+}
