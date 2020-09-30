@@ -50,10 +50,51 @@ a {
     text-transform: none;
     @include serif-font;
   }
+
+  //For Specificity
+  .codewrapper{
+    pre {
+      code {
+        padding-top: 2em;
+        padding-bottom: 2em;
+        padding-left: 6em;
+        padding-right: 0;
+      }
+    }
+  }
 }
 @media(min-width:768px) {
   section {
     padding: 150px 0;
+  }
+}
+
+@media(max-width:480px){
+  .page-section {
+    padding-left: 1em;
+    padding-right: 1em;
+    h1.section-heading {
+      font-size: 1.5em;
+    }
+    h2.section-heading {
+      font-size: 1.5em;
+    }
+    div.about-body {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .codewrapper{
+      pre {
+        code {
+          padding-left: .7em;
+        }
+      }
+    }
+  }
+  .about {
+    iframe {
+      height: auto;
+    }
   }
 }
 
