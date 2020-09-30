@@ -50,6 +50,18 @@ a {
     text-transform: none;
     @include serif-font;
   }
+
+  //For Specificity
+  .codewrapper{
+    pre {
+      code {
+        padding-top: 2em;
+        padding-bottom: 2em;
+        padding-left: 6em;
+        padding-right: 0;
+      }
+    }
+  }
 }
 @media(min-width:768px) {
   section {
@@ -70,6 +82,13 @@ a {
     div.about-body {
       margin-left: 0;
       margin-right: 0;
+    }
+    .codewrapper{
+      pre {
+        code {
+          padding-left: .7em;
+        }
+      }
     }
   }
   .about {
