@@ -13,7 +13,7 @@ To contribute to Service Mesh Performance, please follow the fork-and-pull reque
 
 To contribute to this project, you must agree to the Developer Certificate of
 Origin (DCO) for each commit you make. The DCO is a simple statement that you,
-as a contributor, have the legal right to make the contribution.
+as a contributor, have the legal right to contribute.
 
 See the [DCO](https://developercertificate.org) file for the full text of what you must agree to
 and how it works [here](https://github.com/probot/dco#how-it-works).
@@ -68,7 +68,7 @@ Please contribute! All projects under Layer5 use GitHub Pages to host its docume
 `vi <specific page>.md`
 1. Run site locally to preview changes.
 `make site`
-* **Note:** *From the Makefile, this command is actually running `$ bundle exec jekyll serve --drafts --livereload`. There are two Jekyll configuration, `jekyll serve` for developing locally and `jekyll build` when deploying for production based on differences of the handling of trailing slashes between Jekyll and GitHub Pages.*
+* **Note:** *From the Makefile, this command is running `$ bundle exec jekyll serve --drafts --livereload`. There are two Jekyll configuration, `jekyll serve` for developing locally and `jekyll build` when deploying for production based on differences of the handling of trailing slashes between Jekyll and GitHub Pages.*
 1. Commit, [sign-off](#commit-signing), and push changes to your remote branch.
 `git push origin <my-changes>`
 1. Open a pull request (in your web browser) against our main repo: https://github.com/layer5io/service-mesh-performance.
