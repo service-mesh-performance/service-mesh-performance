@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package smp;
+
+option csharp_namespace = "Smp";
+option go_package = "spec;smp";
+option java_multiple_files = true;
+option java_outer_classname = "ServiceMeshProto";
+option java_package = "com.smp";
+option objc_class_prefix = "smp";
+option php_namespace = "Smp";
+option ruby_package = "Smp";
+
+message ServiceMeshes {
+  enum Type {
+    INVALID_MESH = 0;
+    APP_MESH = 1;
+    CONSUL = 2;
+    ISTIO = 3;
+    KUMA = 4;
+    LINKERD = 5;
+    MAESH = 6;
+    OCTARINE = 7;
+    NETWORK_SERVICE_MESH = 8;
+    TANZU = 9;
+    OPEN_SERVICE_MESH = 10;
+  }
+  Type type = 1;
+}

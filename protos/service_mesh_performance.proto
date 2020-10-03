@@ -1,19 +1,28 @@
 syntax = "proto3";
 
-package SMP;
+package smp;
 
-option go_package = "spec;spec";
+option csharp_namespace = "Smp";
+option go_package = "spec;smp";
+option java_multiple_files = true;
+option java_outer_classname = "ServiceMeshPerformanceProto";
+option java_package = "com.smp";
+option objc_class_prefix = "smp";
+option php_namespace = "Smp";
+option ruby_package = "Smp";
 
 import "google/protobuf/timestamp.proto";
-import "sm.proto";
+import "protos/metadata.proto";
+import "protos/service_mesh.proto";
 
 message PerformanceTestConfig {
   message Client {
     enum Protocol {
-      http = 0;
-      tcp = 1;
-      udp = 2;
-      grpc = 3;
+      PROTOCOL_INVALID = 0;
+      PROTOCOL_HTTP = 1;
+      PROTOCOL_TCP = 2;
+      PROTOCOL_UDP = 3;
+      PROTOCOL_GRPC = 4;
     }
     bool internal = 1;
     string load_generator = 2;
@@ -24,7 +33,7 @@ message PerformanceTestConfig {
     map<string, string> cookies = 7;
     string body = 8;
     string content_type = 9;
-    repeated string endpoint_url = 10;
+    repeated string endpoint_urls = 10;
   }
   // Spec version
   string smp_version = 1;
@@ -55,18 +64,18 @@ message PerformanceTestResult {
   google.protobuf.Timestamp start_time = 4;
   google.protobuf.Timestamp end_time = 5;
   Latency latencies_ms = 6;
-  double actual_QPS = 7;
+  double actual_qps = 7;
   string details_uri = 8;
-  string testId = 9;
-  string meshConfigId = 10;
-  string envId = 11;
+  string test_id = 9;
+  string mesh_config_id = 10;
+  string env_id = 11;
 }
 
 message ServiceMeshConfig {
   message IngressGateway {
     int32 count = 1;
     // cpu in mCores
-    int32 cpu_mCores = 2;
+    int32 cpu_mcores = 2;
     // memory in MB
     int32 mem_mb = 3;
     // traffic sent thru ingress gateway
@@ -77,7 +86,7 @@ message ServiceMeshConfig {
   message EgressGateway {
     int32 count = 1;
     // cpu in mCores
-    int32 cpu_mCores = 2;
+    int32 cpu_mcores = 2;
     // memory in MB
     int32 mem_mb = 3;
     // traffic sent thru egress gateway
@@ -88,7 +97,7 @@ message ServiceMeshConfig {
   message Sidecar {
     int32 count = 1;
     // cpu used by all sidecars except ingress / egress
-    int32 cpu_mCores = 2;
+    int32 cpu_mcores = 2;
     int32 mem_mb = 3;
     // Total rps traversing all sidecars
     int32 rps = 4;
@@ -98,7 +107,7 @@ message ServiceMeshConfig {
   message MeshTelemetry {
     int32 count = 1;
     // cpu used by all mesh_telemetry pods
-    int32 cpu_mCores = 2;
+    int32 cpu_mcores = 2;
     int32 mem_mb = 3;
     // Total rps traversing all proxies (sidecars+ingress+egress)
     int32 rps = 4;
@@ -106,7 +115,7 @@ message ServiceMeshConfig {
   message MeshPolicy {
     int32 count = 1;
     // cpu used by all mesh_policy pods
-    int32 cpu_mCores = 2;
+    int32 cpu_mcores = 2;
     int32 mem_mb = 3;
     // Total rps traversing all proxies (sidecars+ingress+egress)
     int32 rps = 4;
@@ -115,7 +124,7 @@ message ServiceMeshConfig {
   message MeshControlPlane {
     int32 count = 1;
     // cpu used by mesh_pilot pods
-    int32 cpu_mCores = 2;
+    int32 cpu_mcores = 2;
     int32 mem_mb = 3;
     int32 endpoints = 4;
     // services + service entries
@@ -146,6 +155,7 @@ message ServiceMeshConfig {
   string exp_uuid = 16;
   string profile = 17;
   ServiceMeshes mesh_type = 18;
+  ApplicationMetadata application_metadata = 19;
 }
 
 message EnvironmentConfig {
@@ -157,13 +167,14 @@ message EnvironmentConfig {
   message IndividualWorkload {
     string name = 1;
     int32 count = 2;
-    int32 cpu_mCores = 3;
+    int32 cpu_mcores = 3;
     int32 mem_mb = 4;
   }
   string smp_version = 1;
   string id = 2;
   map<string, string> labels = 3;
   string kubernetes_version = 4;
-  repeated Node node = 5;
+  repeated Node nodes = 5;
   repeated IndividualWorkload individual_workloads = 6;
+  TrafficMetadata traffic_metadata = 7;
 }
