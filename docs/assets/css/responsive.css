@@ -1,0 +1,54 @@
+/* Responsive CSS for footer section */
+
+@media screen and (max-width: 992px) {
+    .footer {
+        text-align: left;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .rspnsv {
+        text-align: left;
+        padding-right: 8px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .row {
+        padding-inline-start: 0px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .col-sm-4 {
+        padding-left: 0px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .col-sm-7 {
+        padding-left: 0px;
+        margin-left: 15px;
+        padding-right: 28px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .ntlfy {
+        text-align: center;
+        padding-left: 0px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .l5-text {
+        text-align: center;
+        padding-left: 0px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .ico {
+        text-align: left;
+    }
+  }
