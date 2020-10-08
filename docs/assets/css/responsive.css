@@ -1,0 +1,68 @@
+/* Responsive CSS for footer section */
+
+@media screen and (max-width: 992px) {
+    .footer {
+        text-align: left;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .rspnsv {
+        text-align: left;
+        padding-right: 8px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .row {
+        padding-inline-start: 0px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .col-sm-4 {
+        padding-left: 0px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .col-sm-7 {
+        padding-left: 0px;
+        margin-left: 15px;
+        padding-right: 28px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .ntlfy {
+        text-align: center;
+        padding-left: 0px;
+        padding-right: 30px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .l5-text {
+        text-align: center;
+        padding-left: 0px;
+    }
+  }
+
+  @media screen and (max-width: 772px) {
+    .ico {
+        text-align: left;
+    }
+  }
+
+  @media screen and (max-width: 1080px) {
+    .ico {
+        text-align: center;
+        padding-right: 30px;
+    }
+  }
+
+  /* @media screen and (max-width: 1500px) {
+    .b2t {
+        transform: scale(0.2); 
+    }
+  } */

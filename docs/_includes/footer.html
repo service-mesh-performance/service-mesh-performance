@@ -8,8 +8,8 @@
             <div class="pos-info">
               <ul class="row">
                 <li class="col-sm-4"> <br>
-                  <h6>Service Mesh Performance</h6>
-                  <p class="smp-about">Created by Layer5 in collaboration with service mesh maintainers, Service Mesh Performance is hosted within the CNCF SIG Network's Service Mesh Working Group. Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency. </p>
+                  <h6 class="rspnsv">Service Mesh Performance</h6>
+                  <p class="smp-about rspnsv">Created by Layer5 in collaboration with service mesh maintainers, Service Mesh Performance is hosted within the CNCF SIG Network's Service Mesh Working Group. Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency. </p>
                 </li>
                 <li class="col-sm-7"> <br>
                   <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/smp_spec?ref_src=twsrc%5Etfw" data-width="1000" data-height="250">
@@ -18,7 +18,7 @@
                   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" ></script>
                   </li>
                   <li class="col-sm-4">
-                  <p style="text-align: right;">
+                  <p class="ntlfy">
 			<a href="https://www.netlify.com">
 			<img class="netlify-icon" src="https://www.netlify.com/img/global/badges/netlify-dark.svg">
 			</a>
@@ -37,7 +37,7 @@
             <p class="l5-text">Copyright © Layer5, Inc. <script>document.write(new Date().getFullYear());</script></p>
           </div>
           <!--Social media icons -->
-          <div class="col-sm-6"> <ul class="list-inline social-buttons">
+          <div class="col-sm-6"> <ul class="list-inline social-buttons ico">
 		      {% for link in site.data.sitetext.footer.social  %}
           <li class="list-inline-item">
 			    {% if link.url %}
@@ -69,6 +69,7 @@ function fixPageShort() {
 </script>
 {% endif %}
 <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/responsive.css">
 <script src="./assets/js/back-to-top-smp.js"></script>
 <script>smpBackToTop()</script>
   <!-- End Footer -->
