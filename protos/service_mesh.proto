@@ -24,6 +24,7 @@ message ServiceMeshes {
     NETWORK_SERVICE_MESH = 8;
     TANZU = 9;
     OPEN_SERVICE_MESH = 10;
+    NGINX_SERVICE_MESH = 11;
   }
   Type type = 1;
 }
