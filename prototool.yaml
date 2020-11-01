@@ -35,7 +35,7 @@ lint:
 
 generate:
   go_options:
-    import_path: protos
+    import_path: github.com/layer5io/service-mesh-performance/protos
   plugins:
     - name: go
       type: go
