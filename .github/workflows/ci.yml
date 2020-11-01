@@ -26,6 +26,6 @@ jobs:
         with:
           go-version: ${{ secrets.GO_VERSION }}
       - name: protobuf-lint
-        run: GOPROXY=direct GOSUMDB=off go get -u github.com/uber/prototool/cmd/prototool@dev; /home/runner/go/bin/prototool lint
+        run: GOPROXY=direct GOSUMDB=off go get github.com/uber/prototool/cmd/prototool@dev; /home/runner/go/bin/prototool lint
       - name: protobuf-compile
-        run: GOPROXY=direct GOSUMDB=off go get -u github.com/uber/prototool/cmd/prototool@dev; /home/runner/go/bin/prototool compile
+        run: GOPROXY=direct GOSUMDB=off go get github.com/uber/prototool/cmd/prototool@dev; /home/runner/go/bin/prototool compile
