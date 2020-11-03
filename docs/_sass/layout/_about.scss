@@ -244,3 +244,14 @@ div.videowrapper {
     font-style: italic;
   }
 }
+
+.slide-wrapping{
+  display: flex;
+  height: auto; 
+  flex-direction: column;            
+  flex-flow: column; 
+  vertical-align: top; 
+  text-align: center;
+  position: relative;
+  justify-content:center;
+}
