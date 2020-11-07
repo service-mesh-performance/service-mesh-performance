@@ -33,7 +33,9 @@ document.getElementById("page-top").className="bg-light";
     %} {{ page.date | date: date_format }}
   </time>
 </p>
-{{ content }}
+<div class="card mt-1 mb-5 p-5 shadow-lg">
+  {{ content }}
+</div>
 </div>
 
 {% include footer.html %}	  
