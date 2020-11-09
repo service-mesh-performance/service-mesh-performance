@@ -1,42 +1,101 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+<head>
 
-  <body id="page-top">
+  {% if site.analytics.google %}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-{% include nav.html %}
+    gtag('config', '{{ site.analytics.google }}');
+  </script>
+  <!-- End Google Analytics -->
+  {% endif %}
 
-{% if page.background == "grey" or page.background == "gray" %}
-<script>
-document.getElementById("page-top").className="bg-light";
-</script>
-{% endif %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="{{ site.author }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
-<div class="container" id="pagecontainer">
+  <title>{% if page.title %}{{ page.title | append: " | " | append: site.title }}{% else %}{{ site.title }}{% endif %}
+  </title>
 
-  <h2
-  class="post-title"
-  itemprop="name headline"
-  style="text-align: center;padding-top:1em;padding-bottom:.5em;"
->
-  {{ page.slug | escape }}
-</h2>
-<span style="color: #999;float: right;">by {{page.author}}</span>
+  <!-- Bootstrap core CSS -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
-<p class="post-meta" style="color: #999; display: inline-flex;">
-  <time
-    datetime="{{ page.date | date_to_xmlschema }}"
-    itemprop="datePublished"
-  >
-    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y"
+  <meta name="twitter:card" content="summary" />
+  <meta name="image" property="og:image" content="https://smp-spec.io/assets/img/logo/smp.png" />
+  <meta name="title" property="og:title" content="Service Mesh Performance" />
+  <meta property="og:description"
+    content="Service Mesh Performance (SMP): Measure your service mesh performance using SMP. SMP provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments." />
+
+
+  <!-- Custom fonts for this template -->
+  <link href="/assets/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this theme -->
+  <!--<link href="assets/css/agency.min.css" rel="stylesheet">-->
+  <link href="/assets/css/agency.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+
+  <!-- Page container change top padding when nav shrinks -->
+  {% if page.layout == "page" %}
+  <style>
+    #pagecontainer {
+      padding-top: 150px;
+    }
+
+    @media only screen and (max-width: 991px) {
+      #pagecontainer {
+        padding-top: 100px;
+      }
+    }
+  </style>
+
+  {% endif %}
+</head>
+
+
+<body id="page-top">
+
+  {% include nav.html %}
+
+  {% if page.background == "grey" or page.background == "gray" %}
+  <script>
+    document.getElementById("page-top").className = "bg-light";
+  </script>
+  {% endif %}
+
+  <div class="container" id="pagecontainer">
+
+    <h2 class="post-title" itemprop="name headline" style="text-align: center;padding-top:1em;padding-bottom:.5em;">
+      {{ page.slug | escape }}
+    </h2>
+    <span style="color: #999;float: right;">by {{page.author}}</span>
+
+    <p class="post-meta" style="color: #999; display: inline-flex;">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y"
     %} {{ page.date | date: date_format }}
-  </time>
-</p>
-{{ content }}
-</div>
+      </time>
+    </p>
+    <div class="card mt-1 mb-5 p-5 shadow-lg">
+      {{ content }}
+    </div>
+  </div>
 
-{% include footer.html %}	  
+  {% include footer.html %}
 
   <!-- Bootstrap core JavaScript -->
   <script src="/assets/js/jquery.min.js"></script>
@@ -53,4 +112,5 @@ document.getElementById("page-top").className="bg-light";
   <script src="/assets/js/agency.min.js"></script>
 
 </body>
+
 </html>
