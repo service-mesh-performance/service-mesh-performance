@@ -17,8 +17,8 @@ engage:
       - title: "[Slack](http://slack.layer5.io)"
         desc: "Join the Layer5 Slack Community & never miss any updates."
         icon: fab fa-slack
-      - title: "[YouTube](https://www.youtube.com/embed/LxP-yHrKL4M)"
-        desc: "Watch community meeting recordings anytime anywhere."
+      - title: "[YouTube](https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1)"
+        desc: "Watch community meeting recordings and learn about distributed performance management."
         icon: fab fa-youtube
       - title: "[Community Calender](https://calendar.google.com/calendar/b/1/r?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)"
         desc: "Subscribe to the community calender & stay updated."
