@@ -13,8 +13,8 @@
 
 <p align="center"><i>If you’re using Service Mesh Performance or if you like the project, please <a href="https://github.com/layer5io/service-mesh-performance/stargazers">★</a> star this repository to show your support! 🤩</i></p>
 
-# Service Mesh Performance ([SMP](https://layer5.io/performance))
-A common format for describing and capturing:
+# [Service Mesh Performance](https://smp-spec.io) (SMP)
+A common format for capturing and describing:
 
 1. performance test configuration
 1. service mesh configuration
