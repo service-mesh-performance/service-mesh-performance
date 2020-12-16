@@ -1,2 +1,2 @@
 build:
-	protoc -I=./ --go_out=./ ./smp.proto sm.proto metadata.proto traffic_metadata.proto
+	protoc -I=./ --go_out=./ ./protos/service_mesh_performance.proto ./protos/service_mesh.proto ./protos/metadata.proto

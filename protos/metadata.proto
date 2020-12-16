@@ -37,3 +37,29 @@ message TrafficMetadata {
   string user_agent = 6;
   string ping_health_endpoint = 7;
 }
+
+//Controller Health
+enum ControllerStatus {
+	RUNNING = 0;
+	IDLE = 1;
+}
+
+message ControllerHealth {
+    ControllerStatus status = 1;
+}
+
+//Controller Info
+message ControllerInfo {
+  string name = 1;
+  string version = 2;
+}
+
+//Errors
+message CommonError {
+  string code = 1;
+  string severity = 2;
+  string shortDescription = 3;
+  string longDescription = 4;
+  string probableCause = 5;
+  string suggestedRemediation = 6;
+}
