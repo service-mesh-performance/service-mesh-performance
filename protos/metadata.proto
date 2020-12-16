@@ -58,8 +58,8 @@ message ControllerInfo {
 message CommonError {
   string code = 1;
   string severity = 2;
-  string shortDescription = 3;
-  string longDescription = 4;
-  string probableCause = 5;
-  string suggestedRemediation = 6;
+  string short_description = 3;
+  string long_description = 4;
+  string probable_dause = 5;
+  string suggested_remediation = 6;
 }
