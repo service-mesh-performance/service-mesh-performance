@@ -34,7 +34,7 @@ const (
 	ServiceMeshes_ISTIO                ServiceMeshes_Type = 3
 	ServiceMeshes_KUMA                 ServiceMeshes_Type = 4
 	ServiceMeshes_LINKERD              ServiceMeshes_Type = 5
-	ServiceMeshes_MAESH                ServiceMeshes_Type = 6
+	ServiceMeshes_TRAEFIK_MESH                ServiceMeshes_Type = 6
 	ServiceMeshes_OCTARINE             ServiceMeshes_Type = 7
 	ServiceMeshes_NETWORK_SERVICE_MESH ServiceMeshes_Type = 8
 	ServiceMeshes_TANZU                ServiceMeshes_Type = 9
@@ -51,7 +51,7 @@ var (
 		3:  "ISTIO",
 		4:  "KUMA",
 		5:  "LINKERD",
-		6:  "MAESH",
+		6:  "TRAEFIK_MESH",
 		7:  "OCTARINE",
 		8:  "NETWORK_SERVICE_MESH",
 		9:  "TANZU",
@@ -65,7 +65,7 @@ var (
 		"ISTIO":                3,
 		"KUMA":                 4,
 		"LINKERD":              5,
-		"MAESH":                6,
+		"TRAEFIK_MESH":                6,
 		"OCTARINE":             7,
 		"NETWORK_SERVICE_MESH": 8,
 		"TANZU":                9,
