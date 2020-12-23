@@ -19,7 +19,7 @@ message ServiceMeshes {
     ISTIO = 3;
     KUMA = 4;
     LINKERD = 5;
-    MAESH = 6;
+    TRAEFIK_MESH = 6;
     OCTARINE = 7;
     NETWORK_SERVICE_MESH = 8;
     TANZU = 9;
