@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package controller;
+
+option go_package = "github.com/layer5io/service-mesh-performance/controller;controller";
+
+enum ControllerStatus {
+	RUNNING = 0;
+	IDLE = 1;
+}
+
+message ControllerHealth {
+    ControllerStatus status = 1;
+}
