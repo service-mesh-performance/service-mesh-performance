@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package common;
+package service;
 
-option go_package = "github.com/layer5io/service-mesh-performance/common;common";
+option go_package = "github.com/layer5io/service-mesh-performance/service;service";
 
 message CommonError {
     string code = 1;

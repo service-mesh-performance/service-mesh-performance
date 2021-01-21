@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package controller;
+package service;
 
-option go_package = "github.com/layer5io/service-mesh-performance/controller;controller";
+option go_package = "github.com/layer5io/service-mesh-performance/service;service";
 
 enum ControllerStatus {
 	RUNNING = 0;
