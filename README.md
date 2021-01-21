@@ -30,7 +30,10 @@ See the <a href="docs/assets/spec/readme/service mesh performance result.yaml">s
 <a href="docs/assets/spec/readme/service mesh performance example.gif"><img src="docs/assets/spec/readme/service mesh performance example.gif" /></a>
 
 <p style="clear:both;">
-<h2><a href="https://layer5.io/meshery">Meshery</a></h2>
+<h2>Implementations</h2>
+The following projects or products are compatible with / have implemented SMP.
+
+<h3><a href="https://layer5.io/meshery">Meshery</a></h3>
 <a href="https://meshery.io"><img src="docs/assets/spec/readme/meshery-logo-light-text.svg"
 style="margin:10px;" width="125px"
 alt="Meshery - the Service Mesh Management Plane" align="left" /></a>
