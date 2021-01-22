@@ -1,31 +1,82 @@
-
-name: Service Mesh Performance
+name: service-mesh-performance
 on:
   push:
-    branches:
-      - "*"
     tags:
-      - "v*"
+      - v*
+    branches:
+      - master
   pull_request:
+    tags:
+      - v*
     branches:
       - master
 jobs:
-  protobuf-lint-and-compile:
+  golangci-lint:
     strategy:
       matrix:
         go-version: [1.14.x]
         platform: [ubuntu-latest]
     runs-on: ${{ matrix.platform }}
     steps:
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v2
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v2
         with:
-          fetch-depth: 1
-      - name: Setup Go
-        uses: actions/setup-go@v1
-        with:
-          go-version: ${{ secrets.GO_VERSION }}
-      - name: protobuf-lint
-        run: GOPROXY=direct GOSUMDB=off go get github.com/uber/prototool/cmd/prototool@dev; /home/runner/go/bin/prototool lint
-      - name: protobuf-compile
-        run: GOPROXY=direct GOSUMDB=off go get github.com/uber/prototool/cmd/prototool@dev; /home/runner/go/bin/prototool compile
+          # Required: the version of golangci-lint is required and must be specified without patch version: we always use the latest patch version.
+          version: v1.32
+          # Optional: golangci-lint command line arguments.
+          args: --skip-dirs-use-default=true
+          # Optional: show only new issues if it's a pull request. The default value is `false`.
+          # only-new-issues: true
+  build:
+    strategy:
+      matrix:
+        go-version: [1.14.x]
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Cache go modules
+      uses: actions/cache@v2
+      with:
+        path: ~/go/pkg/mod
+        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+        restore-keys: |
+          ${{ runner.os }}-go-
+    - name: Build operator
+      run: |
+        go clean -modcache
+        make all
+  test:
+    strategy:
+      matrix:
+        go-version: [1.14.x]
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Cache go modules
+      uses: actions/cache@v2
+      with:
+        path: ~/go/pkg/mod
+        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+        restore-keys: |
+          ${{ runner.os }}-go-
+    - name: Test
+      run: |
+        chmod +x ./scripts/setup-ci.sh
+        ls -l ./scripts/setup-ci.sh
+        sh ./scripts/setup-ci.sh
+        go clean -modcache
+        make test

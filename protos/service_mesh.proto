@@ -11,7 +11,7 @@ option objc_class_prefix = "smp";
 option php_namespace = "Smp";
 option ruby_package = "Smp";
 
-message ServiceMeshes {
+message ServiceMesh {
   enum Type {
     INVALID_MESH = 0;
     APP_MESH = 1;
@@ -26,5 +26,9 @@ message ServiceMeshes {
     OPEN_SERVICE_MESH = 10;
     NGINX_SERVICE_MESH = 11;
   }
+
   Type type = 1;
+  string version = 2;
+  map<string,string> labels = 3;
+  map<string,string> annotations = 4;
 }

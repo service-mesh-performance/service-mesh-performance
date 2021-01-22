@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "github.com/layer5io/service-mesh-performance/service;service";
+
+enum ServiceStatus {
+	RUNNING = 0;
+	IDLE = 1;
+}
+
+message ServiceHealth {
+    ServiceStatus status = 1;
+}

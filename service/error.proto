@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "github.com/layer5io/service-mesh-performance/service;service";
+
+message CommonError {
+    string code = 1;
+    string severity = 2;
+    string shortDescription = 3;
+    string longDescription = 4;
+    string probableCause = 5;
+    string suggestedRemediation = 6;
+}
