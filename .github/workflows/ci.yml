@@ -1,82 +1,102 @@
-name: service-mesh-performance
+name: Service Mesh Performance
 on:
   push:
-    tags:
-      - v*
     branches:
-      - master
-  pull_request:
+      - "*"
     tags:
-      - v*
+      - "v*"
+  pull_request:
     branches:
       - master
 jobs:
-  golangci-lint:
-    strategy:
-      matrix:
-        go-version: [1.14.x]
-        platform: [ubuntu-latest]
-    runs-on: ${{ matrix.platform }}
+  lint:
+    name: Check & Review code
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v2
+      - name: Check out code
+        uses: actions/checkout@master
         with:
-          # Required: the version of golangci-lint is required and must be specified without patch version: we always use the latest patch version.
-          version: v1.32
-          # Optional: golangci-lint command line arguments.
-          args: --skip-dirs-use-default=true
-          # Optional: show only new issues if it's a pull request. The default value is `false`.
-          # only-new-issues: true
-  build:
-    strategy:
-      matrix:
-        go-version: [1.14.x]
-        platform: [ubuntu-latest]
-    runs-on: ${{ matrix.platform }}
+          fetch-depth: 1
+      - name: Setup Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: ${{ secrets.GO_VERSION }}
+      - run: GOPROXY=direct GOSUMDB=off go get -u golang.org/x/lint/golint; go list ./... | grep -v /vendor/ | xargs -L1 /home/runner/go/bin/golint -set_exit_status
+  error_check:
+    name: Error check
+    runs-on: ubuntu-latest
     steps:
-    - name: Install Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: ${{ matrix.go-version }}
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Cache go modules
-      uses: actions/cache@v2
-      with:
-        path: ~/go/pkg/mod
-        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-        restore-keys: |
-          ${{ runner.os }}-go-
-    - name: Build operator
-      run: |
-        go clean -modcache
-        make all
-  test:
-    strategy:
-      matrix:
-        go-version: [1.14.x]
-        platform: [ubuntu-latest]
-    runs-on: ${{ matrix.platform }}
+      - name: Check out code
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: Setup Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: ${{ secrets.GO_VERSION }}
+      - run: GOPROXY=direct GOSUMDB=off GO111MODULE=on go get -u github.com/kisielk/errcheck; /home/runner/go/bin/errcheck -tags draft ./...
+  static_check:
+    name: Static check
+    runs-on: ubuntu-latest
     steps:
-    - name: Install Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: ${{ matrix.go-version }}
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Cache go modules
-      uses: actions/cache@v2
-      with:
-        path: ~/go/pkg/mod
-        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-        restore-keys: |
-          ${{ runner.os }}-go-
-    - name: Test
-      run: |
-        chmod +x ./scripts/setup-ci.sh
-        ls -l ./scripts/setup-ci.sh
-        sh ./scripts/setup-ci.sh
-        go clean -modcache
-        make test
+      - name: Check out code
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: Setup Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: ${{ secrets.GO_VERSION }}
+      - run: GOPROXY=direct GOSUMDB=off GO111MODULE=on go get -u honnef.co/go/tools/cmd/staticcheck; /home/runner/go/bin/staticcheck -tags draft -checks all ./... # https://staticcheck.io/docs/checks
+  vet:
+    name: Vet
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: Setup Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: ${{ secrets.GO_VERSION }}
+      - run: GOPROXY=direct GOSUMDB=off GO111MODULE=on go vet -tags draft ./...
+  sec_check:
+    name: Security check
+    runs-on: ubuntu-latest
+    env:
+      GO111MODULE: on
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Run Gosec Security Scanner
+        uses: securego/gosec@master
+        with:
+          args: ./... -exclude=G301,G304,G107,G101,G110
+  tests:
+    #  needs: [lint, error_check, static_check, vet, sec_check]
+     name: Tests
+     runs-on: ubuntu-latest
+     env:
+       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+     steps:
+     - name: Check out code
+       uses: actions/checkout@master
+       with:
+        fetch-depth: 1
+     - name: Setup Go
+       uses: actions/setup-go@v1
+       with:
+        go-version: ${{ secrets.GO_VERSION }}
+     - name: Create cluster using KinD
+       uses: engineerd/setup-kind@v0.3.0
+       with:
+         version: "v0.7.0"
+     - run: |
+         export CURRENTCONTEXT="$(kubectl config current-context)"
+         echo "current-context:" ${CURRENTCONTEXT}   
+         export KUBECONFIG="${HOME}/.kube/config"
+         echo "environment-kubeconfig:" ${KUBECONFIG}
+         GOPROXY=direct GOSUMDB=off GO111MODULE=on go test ./...
