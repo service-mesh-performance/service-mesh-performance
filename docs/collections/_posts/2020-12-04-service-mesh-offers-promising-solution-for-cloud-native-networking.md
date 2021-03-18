@@ -13,7 +13,7 @@ caption:
   thumbnail: /assets/img/service-mesh.png
 ---
 <div style="text-align:center;margin-bottom:4rem;">
-  <img src="/assets/img/service-mesh.png" alt="service-mesh" width="60%" height="120%"  />
+  <img src="/assets/img/service-mesh.png" alt="service-mesh" width="60%"  />
 </div>
 "Cloud native" doesn't just mean "running in the cloud." It's a specific deployment paradigm and uses containers and an orchestration system (usually Kubernetes) to help provision, schedule, run and control a production workload in the cloud, or even across multiple clouds. Within cloud native deployments, an increasingly common approach to networking is the service mesh concept. With a service mesh, instead of each individual container requiring a full networking stack, a grouping of containers all benefit from a mesh that provides connectivity and networking with other containers as well as the outside world.
 
