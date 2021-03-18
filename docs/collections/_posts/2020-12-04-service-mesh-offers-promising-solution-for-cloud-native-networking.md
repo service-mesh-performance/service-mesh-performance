@@ -2,7 +2,7 @@
 slug: Service Mesh Offers Promising Solution for Cloud Native Networking
 subtitle: Service Mesh can be thought of as a next generation of Software Defined Networking (SDN) for the cloud. Here are the main approaches.
 image: /assets/img/service-mesh.png
-alt: MeshMark explained
+alt: Service Mesh Offers Promising Solution for Cloud Native Networking
 date: 2020-12-04 12:15:05 +0000
 category: spec
 author: The Newsroom
