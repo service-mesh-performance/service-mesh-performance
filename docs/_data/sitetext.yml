@@ -23,7 +23,7 @@ engage:
       - title: "[Community Calender](https://calendar.google.com/calendar/b/1/r?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)"
         desc: "Subscribe to the community calender & stay updated."
         icon: far fa-calendar-alt
-      - title: "[Layer5 Community](https://layer5.io/community)"
+      - title: "[Service Mesh Community](https://layer5.io/community)"
         desc: "Join the largest collection of service mesh projects and their maintainers in the world."
         icon: fas fa-users
 
