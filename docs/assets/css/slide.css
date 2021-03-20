@@ -10,7 +10,7 @@
               transform: translateX(calc(-250px * 5));
     }
   }
-  
+
   @keyframes scroll {
     0% {
       -webkit-transform: translateX(0);
@@ -58,10 +58,10 @@
     height: 100px;
     width: 250px;
   }
-  
+
  /* Space between two svg's */
  .svg-space {
-    
+
     border-right: 60px solid #EAEAEA;
   }
 
@@ -69,7 +69,7 @@
     border-right: 60px solid #EAEAEA;
     border-right: 60px solid #EAEAEA;
   }
-  
+
   /* Styling for individual svg's */
 
   .uem1 {
@@ -101,4 +101,9 @@
   .redhat1 {
     margin-top: -10px;
     padding-left: 25px;
+  }
+
+  .fiserv1 {
+    margin-top: 20px;
+    padding-left: 50px;
   }
