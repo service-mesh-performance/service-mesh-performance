@@ -1,2 +1,4 @@
 # Ignore OS-X cache
 .DS_Store
+
+.vscode
