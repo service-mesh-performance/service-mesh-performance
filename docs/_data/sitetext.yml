@@ -10,7 +10,7 @@ engage:
     list:
       - title: "[Learn Layer5](https://github.com/layer5io/learn-layer5)"
         desc: "A sample application for learning how to service mesh."
-        icon: fas fa-graduation-cap 
+        icon: fas fa-graduation-cap
       - title: "[Contribute](https://github.com/layer5io/service-mesh-performance)"
         desc: "Get Involved. Collaborate & get started with Layer5 projects."
         icon: fab fa-github
@@ -60,7 +60,13 @@ contributors:
       - title: "Red Hat"
         align: center
         logo: assets/img/contributors/redhat.svg
-        
+      - title: "Fiserv"
+        align: center
+        logo: assets/img/contributors/fiserv.svg
+      - title: "Intel"
+        align: center
+        logo: assets/img/contributors/intel.svg
+
 
 implementation:
     title: "Example implementation"
