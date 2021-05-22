@@ -1,95 +1,93 @@
 header:
-    title: Standardizing Service Mesh Value Measurement
-    button: SMP In-Action
-    buttonlink: "#implementation"
+  title: Standardizing Service Mesh Value Measurement
+  button: SMP In-Action
+  buttonlink: "#implementation"
 
 engage:
-    title: "Resources"
-    text: ""
-    section: engage
-    list:
-      - title: "[Learn Layer5](https://github.com/layer5io/learn-layer5)"
-        desc: "A sample application for learning how to service mesh."
-        icon: fas fa-graduation-cap 
-      - title: "[Contribute](https://github.com/layer5io/service-mesh-performance)"
-        desc: "Get Involved. Collaborate & get started with Layer5 projects."
-        icon: fab fa-github
-      - title: "[Slack](http://slack.layer5.io)"
-        desc: "Join the Layer5 Slack Community & never miss any updates."
-        icon: fab fa-slack
-      - title: "[YouTube](https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1)"
-        desc: "Watch community meeting recordings and learn about distributed performance management."
-        icon: fab fa-youtube
-      - title: "[Community Calender](https://calendar.google.com/calendar/b/1/r?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)"
-        desc: "Subscribe to the community calender & stay updated."
-        icon: far fa-calendar-alt
-      - title: "[Service Mesh Community](https://layer5.io/community)"
-        desc: "Join the largest collection of service mesh projects and their maintainers in the world."
-        icon: fas fa-users
-
+  title: "Resources"
+  text: ""
+  section: engage
+  list:
+    - title: "[Learn Layer5](https://github.com/layer5io/learn-layer5)"
+      desc: "A sample application for learning how to service mesh."
+      icon: fas fa-graduation-cap
+    - title: "[Contribute](https://github.com/layer5io/service-mesh-performance)"
+      desc: "Get Involved. Collaborate & get started with Layer5 projects."
+      icon: fab fa-github
+    - title: "[Slack](http://slack.layer5.io)"
+      desc: "Join the Layer5 Slack Community & never miss any updates."
+      icon: fab fa-slack
+    - title: "[YouTube](https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1)"
+      desc: "Watch community meeting recordings and learn about distributed performance management."
+      icon: fab fa-youtube
+    - title: "[Community Calender](https://calendar.google.com/calendar/b/1/r?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)"
+      desc: "Subscribe to the community calender & stay updated."
+      icon: far fa-calendar-alt
+    - title: "[Service Mesh Community](https://layer5.io/community)"
+      desc: "Join the largest collection of service mesh projects and their maintainers in the world."
+      icon: fas fa-users
 
 posts:
-    title: "Blog"
-    text: "Learn more about Service Mesh Performance"
-    section: posts
+  title: "Blog"
+  text: "Learn more about Service Mesh Performance"
+  section: posts
 
 about:
-    title: "Service Mesh Performance"
-    text: ""
-    section: about
+  title: "Service Mesh Performance"
+  text: ""
+  section: about
 
 contributors:
-    title: "Contributors"
-    section: contributors
-    max-width: 80px;
-    height: auto;
-    horizontal-scrolling: "yes" #"yes/no"
-    list:
-      - title: "Layer5"
-        align: center
-        logo: assets/img/contributors/layer5-white-bg-no-trim.svg
-      - title: "HashiCorp"
-        align: center
-        logo: assets/img/contributors/HashiCorp_PrimaryLogo_Black_RGB.svg
-      - title: "CNCF"
-        align: center
-        logo: assets/img/contributors/cncf-color.svg
-      - title: "UT Austin"
-        align: center
-        logo: assets/img/contributors/ut-austin.svg
-      - title: "Red Hat"
-        align: center
-        logo: assets/img/contributors/redhat.svg
-        
+  title: "Contributors"
+  section: contributors
+  max-width: 80px;
+  height: auto;
+  horizontal-scrolling: "yes" #"yes/no"
+  list:
+    - title: "Layer5"
+      align: center
+      logo: assets/img/contributors/layer5-white-bg-no-trim.svg
+    - title: "HashiCorp"
+      align: center
+      logo: assets/img/contributors/HashiCorp_PrimaryLogo_Black_RGB.svg
+    - title: "CNCF"
+      align: center
+      logo: assets/img/contributors/cncf-color.svg
+    - title: "UT Austin"
+      align: center
+      logo: assets/img/contributors/ut-austin.svg
+    - title: "Red Hat"
+      align: center
+      logo: assets/img/contributors/redhat.svg
+    - title: "solarwinds"
+      align: center
+      logo: assets/img/contributors/solarwinds.svg
 
 implementation:
-    title: "Example implementation"
-    caption: "Exchange performance tests and results in a standard format."
-    subtext: "Meshery is the canonical implementation of SMP"
-    section: implementation
+  title: "Example implementation"
+  caption: "Exchange performance tests and results in a standard format."
+  subtext: "Meshery is the canonical implementation of SMP"
+  section: implementation
 
 subscribe:
-    title: "Newsletter"
-    text: "Stay abreast of the progress of the Service Mesh Performance initiative"
-    section: subscribe
+  title: "Newsletter"
+  text: "Stay abreast of the progress of the Service Mesh Performance initiative"
+  section: subscribe
 
 footer:
-    social:
-      - url: https://github.com/layer5io/service-mesh-performance
-        icon: "fab fa-github"
-      - url: http://slack.layer5.io/
-        icon: "fab fa-slack"
-      - url: https://twitter.com/smp_spec
-        icon: "fab fa-twitter-square"
-      - url: https://www.linkedin.com/company/layer5
-        icon: "fab fa-linkedin"
-      - url: https://layer5.io/community
-        icon: "fas fa-users"
-      - url: https://www.youtube.com/embed/LxP-yHrKL4M
-        icon: "fab fa-youtube"
-      - url: https://calendar.google.com/calendar/b/1/r?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20
-        icon: "far fa-calendar-alt"
-
-
-
+  social:
+    - url: https://github.com/layer5io/service-mesh-performance
+      icon: "fab fa-github"
+    - url: http://slack.layer5.io/
+      icon: "fab fa-slack"
+    - url: https://twitter.com/smp_spec
+      icon: "fab fa-twitter-square"
+    - url: https://www.linkedin.com/company/layer5
+      icon: "fab fa-linkedin"
+    - url: https://layer5.io/community
+      icon: "fas fa-users"
+    - url: https://www.youtube.com/embed/LxP-yHrKL4M
+      icon: "fab fa-youtube"
+    - url: https://calendar.google.com/calendar/b/1/r?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20
+      icon: "far fa-calendar-alt"
 # {{ site.data.sitetext.ex.ex | markdownify | default: example }}
