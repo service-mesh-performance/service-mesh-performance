@@ -4,8 +4,8 @@
 		transform: translateX(0);
 	}
 	100% {
-		-webkit-transform: translateX(calc(-250px * 5));
-		transform: translateX(calc(-250px * 5));
+		-webkit-transform: translateX(calc(-250px * 8.2));
+		transform: translateX(calc(-250px * 8.2));
 	}
 }
 
@@ -15,8 +15,8 @@
 		transform: translateX(0);
 	}
 	100% {
-		-webkit-transform: translateX(calc(-250px * 5));
-		transform: translateX(calc(-250px * 5));
+		-webkit-transform: translateX(calc(-250px * 8.2));
+		transform: translateX(calc(-250px * 8.2));
 	}
 }
 .client-slider {
@@ -61,7 +61,7 @@
 	animation: scroll 40s linear infinite;
 	display: -webkit-box;
 	display: flex;
-	width: calc(250px * 14);
+	width: calc(250px * 16);
 }
 .client-slider .client-slide {
 	height: 100px;
