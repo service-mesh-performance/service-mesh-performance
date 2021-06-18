@@ -34,7 +34,7 @@ The following projects or products are compatible with / have implemented SMP.
 <a href="https://meshery.io"><img src="docs/assets/spec/readme/meshery-logo-light-text.svg"
 style="margin:10px;" width="125px"
 alt="Meshery - the Service Mesh Management Plane" align="left" /></a>
-<a href="https://meshery.io">Meshery</a> is the multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh.
+<a href="https://meshery.io">Meshery</a> is the multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh.<br /><br />
 
 <a href="docs/assets/spec/readme/service mesh performance example.gif"><img src="docs/assets/spec/readme/service mesh performance example.gif" /></a>
 See the <a href="docs/assets/spec/readme/service mesh performance result.yaml">sample results</a> file.
