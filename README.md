@@ -23,6 +23,12 @@ A common format for capturing and describing:
 
 This specification is currently being advanced through the CNCF [Service Mesh WG](https://github.com/cncf/sig-network/tree/master/service-mesh-wg) and the [Meshery](https://layer5.io/meshery) project. See a [screenshot](docs/assets/spec/readme/meshery_benchmark_screen.png) of SMP's canonical implementation.
 
+## Overview
+
+<a href="https://docs.google.com/presentation/d/1fm7Eu1T3JSBPVmdFYyyevqQLSmAMLXqzWqC7QxTHGX8/edit#"><img src="docs/assets/spec/readme/smp-overview-slides.png" /></a>
+<i>Project Overview Presentation</i>
+
+
 ## Example
 
 See the <a href="docs/assets/spec/readme/service mesh performance result.yaml">sample results</a> file.
