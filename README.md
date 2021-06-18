@@ -1,14 +1,12 @@
 <p style="text-align:center;" align="center">
   <img align="center" src="https://raw.githubusercontent.com/layer5io/service-mesh-performance/master/docs/assets/spec/readme/smp-dark-text-side.svg" width="55%" /></p>
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/layer5io/meshery)](https://goreportcard.com/report/github.com/layer5io/meshery)
-[![Build Status](https://github.com/layer5io/meshery/workflows/Meshery/badge.svg)](https://github.com/layer5io/meshery/actions)
-[![GitHub](https://img.shields.io/github/license/layer5io/meshery.svg)](LICENSE)
-[![GitHub issues by-label](https://img.shields.io/github/issues/layer5io/meshery/help%20wanted.svg)](https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+")
-[![Website](https://img.shields.io/website/https/layer5.io/meshery.svg)](https://layer5.io/meshery/)
-[![Twitter Follow](https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=mesheryio)
-[![Slack](http://slack.layer5.io/badge.svg)](http://slack.layer5.io)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3564/badge)](https://bestpractices.coreinfrastructure.org/projects/3564)
+[![Go Report Card](https://goreportcard.com/badge/github.com/layer5io/service-mesh-performance)](https://goreportcard.com/report/github.com/layer5io/service-mesh-performance)
+[![Build Status](https://github.com/layer5io/service-mesh-performance/workflows/service-mesh-performance/badge.svg)](https://github.com/layer5io/service-mesh-performance/actions)
+[![GitHub](https://img.shields.io/github/license/layer5io/service-mesh-performance.svg)](LICENSE)
+[![GitHub issues by-label](https://img.shields.io/github/issues/layer5io/service-mesh-performance/help%20wanted.svg)](https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+")
+[![Website](https://img.shields.io/website/https/layer5.io/meshery.svg)](https://smp-spec.io)
+[![Twitter Follow](https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=smp_spec)
 
 <p align="center"><i>If you’re using Service Mesh Performance or if you like the project, please <a href="https://github.com/layer5io/service-mesh-performance/stargazers">★</a> star this repository to show your support! 🤩</i></p>
 
@@ -47,7 +45,7 @@ See the <a href="docs/assets/spec/readme/service mesh performance result.yaml">s
 <p style="clear:both;">
 <h2><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Contributing</a></h2>
 Our projects are community-built and welcome collaboration. 👍 Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you and jump into our <a href="http://slack.layer5.io">Slack</a>! Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
-
+<br />
 <a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="docs/assets/spec/readme/slack-128.png" style="margin-left:10px;padding-top:5px;" width="110px" align="right" /></a>
 
 <a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src="docs/assets/spec/readme/community.svg" style="margin-right:8px;padding-top:5px;" width="140px" align="left" /></a>
