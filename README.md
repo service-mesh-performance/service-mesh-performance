@@ -26,7 +26,7 @@ This specification is currently being advanced through the CNCF [Service Mesh WG
 ## Overview
 
 <a href="https://docs.google.com/presentation/d/1fm7Eu1T3JSBPVmdFYyyevqQLSmAMLXqzWqC7QxTHGX8/edit#"><img src="docs/assets/spec/readme/smp-overview-slides.png" /></a>
-<i>Project Overview Presentation</i>
+<a href="https://docs.google.com/presentation/d/1fm7Eu1T3JSBPVmdFYyyevqQLSmAMLXqzWqC7QxTHGX8/edit#"><i>Project Overview Presentation</i></a>
 
 
 ## Example
