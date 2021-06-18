@@ -28,13 +28,6 @@ This specification is currently being advanced through the CNCF [Service Mesh WG
 <a href="https://docs.google.com/presentation/d/1fm7Eu1T3JSBPVmdFYyyevqQLSmAMLXqzWqC7QxTHGX8/edit#"><img src="docs/assets/spec/readme/smp-overview-slides.png" /></a>
 <a href="https://docs.google.com/presentation/d/1fm7Eu1T3JSBPVmdFYyyevqQLSmAMLXqzWqC7QxTHGX8/edit#"><i>Project Overview Presentation</i></a>
 
-
-## Example
-
-See the <a href="docs/assets/spec/readme/service mesh performance result.yaml">sample results</a> file.
-
-<a href="docs/assets/spec/readme/service mesh performance example.gif"><img src="docs/assets/spec/readme/service mesh performance example.gif" /></a>
-
 <p style="clear:both;">
 <h2>Implementations</h2>
 The following projects or products are compatible with / have implemented SMP.
@@ -44,6 +37,10 @@ The following projects or products are compatible with / have implemented SMP.
 style="margin:10px;" width="125px"
 alt="Meshery - the Service Mesh Management Plane" align="left" /></a>
 <a href="https://meshery.io">Meshery</a> is the multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh.
+
+<a href="docs/assets/spec/readme/service mesh performance example.gif"><img src="docs/assets/spec/readme/service mesh performance example.gif" /></a>
+See the <a href="docs/assets/spec/readme/service mesh performance result.yaml">sample results</a> file.
+
 <br /><br /><p align="center"><i>If you’re using Meshery or if you like the project, please <a href="https://github.com/layer5io/meshery/stargazers">★</a> star this repository to show your support! 🤩</i></p>
 </p>
 
