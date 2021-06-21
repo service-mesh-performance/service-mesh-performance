@@ -1,12 +1,18 @@
 <p style="text-align:center;" align="center">
   <img align="center" src="https://raw.githubusercontent.com/layer5io/service-mesh-performance/master/docs/assets/spec/readme/smp-dark-text-side.svg" width="55%" /></p>
 
+<div align="center">
+
 [![Go Report Card](https://goreportcard.com/badge/github.com/layer5io/service-mesh-performance)](https://goreportcard.com/report/github.com/layer5io/service-mesh-performance)
 [![Build Status](https://github.com/layer5io/service-mesh-performance/workflows/service-mesh-performance/badge.svg)](https://github.com/layer5io/service-mesh-performance/actions)
 [![GitHub](https://img.shields.io/github/license/layer5io/service-mesh-performance.svg)](LICENSE)
 [![GitHub issues by-label](https://img.shields.io/github/issues/layer5io/service-mesh-performance/help%20wanted.svg)](https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+")
 [![Website](https://img.shields.io/website/https/layer5.io/meshery.svg)](https://smp-spec.io)
 [![Twitter Follow](https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=smp_spec)
+[![Join Slack](https://img.shields.io/badge/Slack-@layer5.svg?logo=slack)](http://slack.layer5.io)
+[![CLI Best Practices](https://bestpractices.coreinfrastructure.org/projects/3564/badge)](https://bestpractices.coreinfrastructure.org/projects/3564)
+
+</div>
 
 <p align="center"><i>If you’re using Service Mesh Performance or if you like the project, please <a href="https://github.com/layer5io/service-mesh-performance/stargazers">★</a> star this repository to show your support! 🤩</i></p>
 
