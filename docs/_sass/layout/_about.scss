@@ -245,6 +245,21 @@ div.videowrapper {
   }
 }
 
+div.deckwrapper {
+  min-width: 80%;
+  height: auto;
+  width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  color: #EEE;
+  background-color: #231f20;;
+  display: block;
+  > .code-caption {
+    font-style: italic;
+  }
+}
+
 .slide-wrapping{
   display: flex;
   height: auto; 
