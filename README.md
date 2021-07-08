@@ -55,6 +55,7 @@ Our projects are community-built and welcome collaboration. 👍 Be sure to see 
 <a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="docs/assets/spec/readme/slack-128.png" style="margin-left:10px;padding-top:5px;" width="110px" align="right" /></a>
 
 <a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src="docs/assets/spec/readme/community.svg" style="margin-right:8px;padding-top:5px;" width="140px" align="left" /></a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fservice-mesh-performance%2Fservice-mesh-performance?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fservice-mesh-performance%2Fservice-mesh-performance.svg?type=shield"/></a>
 
 <p>
 ✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://calendar.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendar</a>.<br />
@@ -77,3 +78,7 @@ Our projects are community-built and welcome collaboration. 👍 Be sure to see 
 **License**
 
 This repository and site are available as open source under the terms of the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fservice-mesh-performance%2Fservice-mesh-performance.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fservice-mesh-performance%2Fservice-mesh-performance?ref=badge_large)
