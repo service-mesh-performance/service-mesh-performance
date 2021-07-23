@@ -96,6 +96,63 @@ section#subscribe {
   color: black;
 }
 
+.mailing-container{
+  margin: 0 auto;
+  margin-top: 100px;
+  max-width: 45rem;
+  padding: 40px 20px;
+  background-color: #141414;
+  text-align: center;
+  color: white;
+
+  h1{
+    text-transform: uppercase;
+  }
+
+  p{
+    padding: 1.25rem 3rem;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+  }
+}
+
+.mailing-btn-container a{
+  padding:12px;
+  color: #222222 !important;
+
+  &:first-child{
+    margin-right: 40px;
+  }
+}
+
 .padbtn{
   margin-top: 15px;
+}
+
+@media (max-width: 765px){
+  .mailing-container p{
+    padding: 1.25rem 1rem;
+  }
+}
+
+@media (max-width: 530px){
+  .mailing-container h1{
+    font-size: 1.75rem;
+  }
+
+  .mailing-btn-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a{
+      width: 90%;
+    }
+  }
+  .mailing-btn-container a:first-child{
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
 }
