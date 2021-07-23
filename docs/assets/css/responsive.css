@@ -1,68 +1,130 @@
-/* Responsive CSS for footer section */
+/* Responsive CSS for google slides and footer section */
 
 @media screen and (max-width: 992px) {
-    .footer {
-        text-align: left;
-    }
+  .footer {
+      padding-left: 8p;
+      text-align: left;
+  }
+}
+
+@media screen and (max-width: 992px) {
+   .h6{
+    margin-top: 50px;
+  } 
+  .rspnsv {
+      
+      text-align: left;
+      padding-right: 8px;
+      margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .row {
+      padding-inline-start: 0px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .col-sm-4 {
+      padding-left: 0px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .col-sm-7 {
+      padding-left: 0px;
+      margin-left: 15px;
+      padding-right: 28px;
+  }
+}
+@media (min-width:300px) and (max-width: 421px){
+  #cncf-img{
+    height:200px;
+    width:300px;
+  }
+  .google-slides{
+    height:220px;
+    width:300px;
+  }
+  .slides{
+    margin-left:5px; 
+    height:320px ;
+    width:330px ;
   }
 
-  @media screen and (max-width: 992px) {
-    .rspnsv {
-        text-align: left;
-        padding-right: 8px;
-    }
-  }
+}
 
-  @media screen and (max-width: 992px) {
-    .row {
-        padding-inline-start: 0px;
-    }
+@media (min-width:422px) and (max-width: 480px){
+  #cncf-img{
+    height:270px;
+    width:400px;
   }
-
-  @media screen and (max-width: 992px) {
-    .col-sm-4 {
-        padding-left: 0px;
-    }
-  }
-
-  @media screen and (max-width: 992px) {
-    .col-sm-7 {
-        padding-left: 0px;
-        margin-left: 15px;
-        padding-right: 28px;
-    }
-  }
-
-  @media screen and (max-width: 992px) {
-    .ntlfy {
-        text-align: center;
-        padding-left: 0px;
-        padding-right: 30px;
-    }
-  }
-
-  @media screen and (max-width: 992px) {
-    .l5-text {
-        text-align: center;
-        padding-left: 0px;
-    }
-  }
-
-  @media screen and (max-width: 772px) {
-    .ico {
-        text-align: left;
-    }
-  }
-
-  @media screen and (max-width: 1080px) {
-    .ico {
-        text-align: center;
-        padding-right: 30px;
-    }
-  }
-
-  /* @media screen and (max-width: 1500px) {
-    .b2t {
-        transform: scale(0.2); 
-    }
+  /* .google-slides{
+    height:220px;
+    width:250px;
   } */
+  .slides{
+    margin-left:10px;
+    height:310px ;
+    width:370px ;
+  }
+
+}
+ @media (min-width:481px) and (max-width: 574px){
+   #cncf-img{
+     height:200px;
+     width:480px;
+   }
+  .slides{
+    height:450px ;
+    width:480px ;
+  }
+
+} 
+
+@media (min-width:771px )  and (max-width: 992px) {
+  .slides{
+    height:400px ;
+    width:600px ;
+  }
+  .ntlfy {
+      text-align: center;
+      padding-left: 0px;
+      padding-right: 30px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .l5-text {
+      text-align: center;
+      padding-left: 0px;
+  }
+}
+
+@media  (min-width:575px ) and (max-width: 770px) {
+  .slides{
+    height:500px ;
+    width: 450px;
+  }
+  .ico {
+      text-align: left;
+  }
+}
+
+@media (min-width:993px )  and (max-width: 1080px) {
+  .slides{
+    height:632px ;
+    width:960px ;
+  }
+  .ico {
+      text-align: center;
+      padding-right: 30px;
+  }
+}
+
+/* @media screen and (max-width: 1500px) {
+  .b2t {
+      transform: scale(0.2); 
+  }
+} */
