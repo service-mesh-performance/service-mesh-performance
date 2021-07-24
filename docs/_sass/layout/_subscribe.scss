@@ -3,7 +3,7 @@ section#subscribe {
   background-color: $gray-900;
   background-image: url("#{$subscribe-image}");
   padding-top: 50px;
-  padding-bottom: 80px;
+  // padding-bottom: 80px;
   background-repeat: no-repeat;
   background-position: center;
   .section-heading {
@@ -97,10 +97,9 @@ section#subscribe {
 }
 
 .mailing-container{
-  margin: 0 auto;
-  margin-top: 100px;
-  max-width: 45rem;
-  padding: 40px 20px;
+  margin-top: 80px;
+  padding: 80px 100px;
+
   background-color: #141414;
   text-align: center;
   color: white;
@@ -133,6 +132,10 @@ section#subscribe {
   .mailing-container p{
     padding: 1.25rem 1rem;
   }
+  .mailing-container{
+    margin-top: 100px;
+    padding: 80px 40px;
+  }  
 }
 
 @media (max-width: 530px){

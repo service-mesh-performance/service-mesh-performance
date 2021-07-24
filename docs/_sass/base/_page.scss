@@ -35,7 +35,7 @@ a {
  }
 
 .page-section {
-  padding: 100px 0;
+  // padding: 100px 0;
   
   h2.section-heading {
     font-size: 45px;
@@ -65,14 +65,14 @@ a {
 }
 @media(min-width:768px) {
   section {
-    padding: 150px 0;
+    // padding: 150px 0;
   }
 }
 
 @media(max-width:480px){
   .page-section {
-    padding-left: 1em;
-    padding-right: 1em;
+    // padding-left: 1em;
+    // padding-right: 1em;
     h1.section-heading {
       font-size: 1.5em;
     }
