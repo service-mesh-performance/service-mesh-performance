@@ -10,6 +10,7 @@ jobs:
         echo "STARS=$(curl --silent 'https://api.github.com/repos/layer5io/service-mesh-performance' -H 'Accept: application/vnd.github.preview' | jq '.watchers_count')" >> $GITHUB_ENV
     - name: Notify slack
       env:
+        
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       uses: pullreminders/slack-action@master
       with:
