@@ -97,10 +97,10 @@ section#subscribe {
 }
 
 .mailing-container{
-  margin-top: 80px;
+  margin-top: 40px;
   padding: 80px 100px;
-
-  background-color: #141414;
+  padding-bottom: 100px;
+  // background-color: #141414;
   text-align: center;
   color: white;
 
@@ -138,7 +138,7 @@ section#subscribe {
   }  
 }
 
-@media (max-width: 530px){
+@media (max-width: 600px){
   .mailing-container h1{
     font-size: 1.75rem;
   }
