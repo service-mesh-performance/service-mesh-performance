@@ -10,7 +10,7 @@
 [![Website](https://img.shields.io/website/https/layer5.io/meshery.svg)](https://smp-spec.io)
 [![Twitter Follow](https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=smp_spec)
 [![Join Slack](https://img.shields.io/badge/Slack-@layer5.svg?logo=slack)](http://slack.layer5.io)
-[![CLI Best Practices](https://bestpractices.coreinfrastructure.org/projects/3564/badge)](https://bestpractices.coreinfrastructure.org/projects/3564)
+[![CLI Best Practices](https://bestpractices.coreinfrastructure.org/projects/5054/badge)](https://bestpractices.coreinfrastructure.org/projects/5054)
 
 </div>
 
