@@ -57,8 +57,8 @@ section#subscribe {
   padding: 10px;
 }
 
-.white-text{
-    color: #fff;
+.white-text {
+  color: #fff;
 }
 
 .image-right {
@@ -78,13 +78,15 @@ section#subscribe {
   text-decoration: none;
   outline: none;
   color: #000;
-  background-color: #EBC017;
+  background-color: #ebc017;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
 
-.button:hover {background-color: #F0D41C}
+.button:hover {
+  background-color: #f0d41c;
+}
 
 .button:active {
   background-color: #fff;
@@ -92,70 +94,70 @@ section#subscribe {
   transform: translateY(4px);
 }
 
-.text{
+.text {
   color: black;
 }
 
-.mailing-container{
+.mailing-container {
   margin-top: 40px;
-  padding: 80px 100px;
-  padding-bottom: 100px;
-  // background-color: #141414;
+  padding: 30px 0px;
+  padding-bottom: 70px;
   text-align: center;
   color: white;
 
-  h1{
+  h1 {
     text-transform: uppercase;
   }
 
-  p{
-    padding: 1.25rem 3rem;
+  p {
+    padding: 1.25rem 0;
     font-size: 1.25rem;
     letter-spacing: 1px;
   }
 }
 
-.mailing-btn-container a{
-  padding:12px;
+.mailing-btn-container a {
+  padding: 12px;
   color: #222222 !important;
 
-  &:first-child{
+  &:first-child {
     margin-right: 40px;
   }
 }
 
-.padbtn{
+.padbtn {
   margin-top: 15px;
+  width: 100%;
+  padding: 12.5px;
 }
 
-@media (max-width: 765px){
-  .mailing-container p{
-    padding: 1.25rem 1rem;
-  }
-  .mailing-container{
-    margin-top: 100px;
-    padding: 80px 40px;
-  }  
-}
+// @media (max-width: 765px) {
+//   .mailing-container p {
+//     padding: 1.25rem 1rem;
+//   }
+//   .mailing-container {
+//     margin-top: 100px;
+//     padding: 80px 40px;
+//   }
+// }
 
-@media (max-width: 600px){
-  .mailing-container h1{
+@media (max-width: 600px) {
+  .mailing-container h1 {
     font-size: 1.75rem;
   }
 
-  .mailing-btn-container{
+  .mailing-btn-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    a{
+    a {
       width: 90%;
     }
   }
-  .mailing-btn-container a:first-child{
+  .mailing-btn-container a:first-child {
     margin-right: 0;
     margin-bottom: 20px;
   }
-  
 }
