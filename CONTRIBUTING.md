@@ -72,3 +72,5 @@ Please contribute! All projects under Layer5 use GitHub Pages to host its docume
 1. Commit, [sign-off](#commit-signing), and push changes to your remote branch.
 `git push origin <my-changes>`
 1. Open a pull request (in your web browser) against our main repo: https://github.com/layer5io/service-mesh-performance.
+
+Note- SMP prominently and consistently engages with the Meshery project. For a more complete set of contributing guides see docs.meshery.io/project/contributing.
