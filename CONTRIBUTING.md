@@ -5,6 +5,8 @@ All contributors are welcome. Not sure where to start? Please see the [newcomers
 
 All set to contribute? Grab an open issue with the [help-wanted label](../../labels/help%20wanted) and jump in. Join the [Slack channel](http://slack.layer5.io) and engage in conversation. Create a [new issue](/../../issues/new/choose) if needed.  All [pull requests](/../../pulls) should reference an open [issue](/../../issues). Include keywords in your pull request descriptions, as well as commit messages, to [automatically close issues in GitHub](https://help.github.com/en/github/managing-your-work-on-github/closing-issues-using-keywords).
 
+Note- SMP prominently and consistently engages with the Meshery project. For a more complete set of contributing guides see docs.meshery.io/project/contributing.
+
 # <a name="contributing">General Contribution Flow</a>
 
 To contribute to Service Mesh Performance, please follow the fork-and-pull request workflow described [here](CONTRIBUTING-gitflow.md).
@@ -72,5 +74,3 @@ Please contribute! All projects under Layer5 use GitHub Pages to host its docume
 1. Commit, [sign-off](#commit-signing), and push changes to your remote branch.
 `git push origin <my-changes>`
 1. Open a pull request (in your web browser) against our main repo: https://github.com/layer5io/service-mesh-performance.
-
-Note- SMP prominently and consistently engages with the Meshery project. For a more complete set of contributing guides see docs.meshery.io/project/contributing.
