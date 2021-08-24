@@ -10,11 +10,13 @@
 [![Website](https://img.shields.io/website/https/layer5.io/meshery.svg)](https://smp-spec.io)
 [![Twitter Follow](https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=smp_spec)
 [![Join Slack](https://img.shields.io/badge/Slack-@layer5.svg?logo=slack)](http://slack.layer5.io)
-[![CLI Best Practices](https://bestpractices.coreinfrastructure.org/projects/3564/badge)](https://bestpractices.coreinfrastructure.org/projects/3564)
+[![CLI Best Practices](https://bestpractices.coreinfrastructure.org/projects/5054/badge)](https://bestpractices.coreinfrastructure.org/projects/5054)
 
 </div>
 
 <p align="center"><i>If you’re using Service Mesh Performance or if you like the project, please <a href="https://github.com/layer5io/service-mesh-performance/stargazers">★</a> star this repository to show your support! 🤩</i></p>
+
+<p align="center">SMP Community Meetings biweekly on Thursdays at 9 - 10 AM Central. (<a href="https://docs.google.com/document/d/1wiPiEoaaQgJ3E1lQF2tBIn1IblpUay0cHLjsWRcWV2o/edit">Meeting Minutes</a> | <a href="https://meet.layer5.io/smp">Zoom</a>)</p>
 
 # [Service Mesh Performance](https://smp-spec.io) (SMP)
 A common format for capturing and describing:
