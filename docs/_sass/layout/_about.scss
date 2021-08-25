@@ -123,10 +123,12 @@ div.about-body {
   border-radius: 4px;
   padding: 5px;
   color:white;
+  text-decoration: none;
 }
 .btn-slides:hover{
   background-color: rgb(201, 168, 85);
-  color: white;
+  color:black;
+  text-decoration: none;
 }
 
 @media(min-width:768px) {
