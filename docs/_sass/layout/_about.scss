@@ -119,9 +119,14 @@ div.about-body {
 } 
 
 .btn-slides{
-  background-color: darkgoldenrod;
+  background-color: rgb(216, 159, 15);
   border-radius: 4px;
   padding: 5px;
+  color:white;
+}
+.btn-slides:hover{
+  background-color: rgb(201, 168, 85);
+  color: white;
 }
 
 @media(min-width:768px) {
