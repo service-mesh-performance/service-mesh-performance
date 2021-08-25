@@ -119,7 +119,7 @@ div.about-body {
 } 
 
 .btn-slides{
-  text-decoration: none;
+  text-decoration: none!important;
   background-color: #EBC017;
   border-radius: 4px;
   padding: 5px;
@@ -128,7 +128,7 @@ div.about-body {
 }
 
 .btn-slides:hover{
-  text-decoration: none;
+  text-decoration: none!important;
   background-color: #E9C46A;
   color:#343a40;
   
