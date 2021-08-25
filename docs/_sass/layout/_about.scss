@@ -125,15 +125,12 @@ div.about-body {
   color:white;
   text-decoration: none;
 }
-.btn-slides:link { text-decoration: none; }
-.btn-slides:visited { text-decoration: none; }
 
 .btn-slides:hover{
   background-color: rgb(201, 168, 85);
   color:black;
   text-decoration: none;
 }
-.btn-slides:active { text-decoration: none; }
 
 @media(min-width:768px) {
   .about {
