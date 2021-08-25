@@ -118,6 +118,12 @@ div.about-body {
   background-color: $gray-200;
 } 
 
+.btn-slides{
+  background-color: darkgoldenrod;
+  border-radius: 4px;
+  padding: 5px;
+}
+
 @media(min-width:768px) {
   .about {
     &:before {
