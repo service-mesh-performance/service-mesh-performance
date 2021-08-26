@@ -57,7 +57,7 @@ a {
       code {
         padding-top: 2em;
         padding-bottom: 2em;
-        padding-left: 6em;
+        padding-left: 4em;
         padding-right: 0;
       }
     }
@@ -86,7 +86,7 @@ a {
     .codewrapper{
       pre {
         code {
-          padding-left: .7em;
+          padding-left: .4em;
         }
       }
     }
@@ -94,6 +94,16 @@ a {
   .about {
     iframe {
       height: auto;
+    }
+  }
+}
+@media (min-width:300px) and (max-width: 479px){
+  .codewrapper{
+    pre {
+      code {
+        padding-left: .4em;
+        font-size: 15px;
+      }
     }
   }
 }

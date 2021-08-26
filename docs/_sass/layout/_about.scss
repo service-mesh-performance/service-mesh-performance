@@ -118,6 +118,23 @@ div.about-body {
   background-color: $gray-200;
 } 
 
+.btn-slides{
+  text-decoration: none!important;
+  background-color: #EBC017;
+  border-radius: 4px;
+  padding: 5px;
+  color:black;
+  text-align: center;
+  
+}
+
+.btn-slides:hover{
+  text-decoration: none!important;
+  background-color: #E9C46A;
+  color:#343a40;
+  
+}
+
 @media(min-width:768px) {
   .about {
     &:before {
@@ -239,6 +256,22 @@ div.videowrapper {
   margin-left:auto;
   margin-right:auto;
   text-align: center;
+  display: block;
+  > .code-caption {
+    font-style: italic;
+  }
+}
+
+div.deckwrapper {
+  min-width: 80%;
+  height: auto;
+  width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  color: #EEE;
+  padding-bottom: 5px;
+  background-color: #231f20;;
   display: block;
   > .code-caption {
     font-style: italic;

@@ -2,9 +2,9 @@
 source "https://rubygems.org"
 
 group :jekyll_plugins do
-    gem "jekyll-feed"
+    gem "jekyll-feed", ">= 0.15.0"
     gem "jekyll-paginate"
-    gem "jekyll-sitemap"
+    gem "jekyll-sitemap", ">= 1.4.0"
     # gem "jekyll-seo-tag"
     gem 'jemoji', '~> 0.12.0'
     gem "nokogiri", ">= 1.11.0.rc4"

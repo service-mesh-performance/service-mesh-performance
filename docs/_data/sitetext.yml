@@ -6,6 +6,7 @@ header:
 engage:
     title: "Resources"
     text: ""
+    subtext: "SMP Community Meetings biweekly on Thursdays at 9 - 10 AM Central."
     section: engage
     list:
       - title: "[Learn Layer5](https://github.com/layer5io/learn-layer5)"

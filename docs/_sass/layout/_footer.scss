@@ -99,6 +99,23 @@ a {
 	text-decoration: none;
 	color: #141414;
 }
+// footer responsiveness
+@media (min-width:768px) and (max-width: 991px){
+  .foot-up ul li {
+    display: inline-block;
+    margin-left: 90px;
+    margin-top: 25px;
+    text-align: justify;
+  }
+}
+@media (max-width: 767px){
+  .foot-up ul li {
+    display: inline-block;
+    margin-left: 120px;
+    margin-top: 25px;
+    text-align: justify;
+  }
+}
 
 a {
 	-webkit-transition: all 0.4s ease-in-out;
