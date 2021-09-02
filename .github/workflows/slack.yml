@@ -2,8 +2,7 @@ name: Slack Notify on Star
 on: watch
 jobs:
   star-notify:
-    if: github.repository == 'service-mesh-performance/
-    service-mesh-performance'
+    if: github.repository == 'service-mesh-performance/service-mesh-performance'
     name: Notify Slack on star
     runs-on: ubuntu-latest
     steps:
