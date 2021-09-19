@@ -58,6 +58,9 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 
 After successful installation, proceed with the following [steps](https://jekyllrb.com/docs/installation/windows/#installation-via-bash-on-windows-10) to run Jekyll on WSL.
 
+If you face any errors during installation or setup, have a look at [Meshery Contributing Docs](https://docs.meshery.io/project/contributing-docs) to find a possible solution. 
+  
+
 ## <a name="contributing-docs">Documentation Contribution Flow</a>
 Please contribute! All projects under Layer5 use GitHub Pages to host its documentation. Learn more about [Layer5's documentation framework](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit?usp=sharing). The process of contributing follows this flow:
 
