@@ -2,16 +2,16 @@ name: Slack Notify on Star
 on: watch
 jobs:
   star-notify:
+    if: github.repository == 'service-mesh-performance/service-mesh-performance'
     name: Notify Slack on star
     runs-on: ubuntu-latest
     steps:
     - name: Get current star count
       run: |
-        echo "STARS=$(curl --silent 'https://api.github.com/repos/layer5io/service-mesh-performance' -H 'Accept: application/vnd.github.preview' | jq '.watchers_count')" >> $GITHUB_ENV
+        echo "STARS=$(curl --silent 'https://api.github.com/repos/service-mesh-performance/service-mesh-performance' -H 'Accept: application/vnd.github.preview' | jq '.stargazers_count')" >> $GITHUB_ENV
     - name: Notify slack
       env:
-        
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"CSK7N9TGX\",\"text\":\"${{ github.actor }} just starred SMP! (https://github.com/layer5io/service-mesh-performance/stargazers) Total ⭐️: ${{env.STARS}}\"}'
+        args: '{\"channel\":\"CSK7N9TGX\",\"text\":\"${{ github.actor }} just starred Service Mesh Performance! (https://github.com/service-mesh-performance/service-mesh-performance/stargazers) Total ⭐️: ${{env.STARS}}\"}'
