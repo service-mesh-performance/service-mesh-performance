@@ -67,6 +67,9 @@ contributors:
       - title: "Intel"
         align: center
         logo: assets/img/contributors/intel.svg
+      - title: "Solarwinds"
+        align: center
+        logo: assets/img/contributors/solarwinds.svg
 
 
 implementation:
