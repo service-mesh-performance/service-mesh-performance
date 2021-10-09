@@ -13,4 +13,4 @@ nav:
     section: implementation
 
   - title: "Connect"
-    section: subscribe
+    url: subscribe
