@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  {% if site.analytics.google %}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', '{{ site.analytics.google }}');
+  </script>
+  <!-- End Google Analytics -->
+  {% endif %}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="{{ site.author }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+  <title>{% if page.title %}{{ page.title | append: " | " | append: site.title }}{% else %}{{ site.title }}{% endif %}
+  </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="image" property="og:image" content="https://smp-spec.io/assets/img/logo/smp.png" />
+  <meta name="title" property="og:title" content="Service Mesh Performance" />
+  <meta property="og:description"
+    content="Service Mesh Performance (SMP): Measure your service mesh performance using SMP. SMP provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments." />
+
+
+  <!-- Custom fonts for this template -->
+  <link href="/assets/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this theme -->
+  <!--<link href="assets/css/agency.min.css" rel="stylesheet">-->
+  <link href="/assets/css/agency.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+
+  <!-- Page container change top padding when nav shrinks -->
+  {% if page.layout == "plain" %}
+  <style>
+    #pagecontainer {
+      padding-top: 150px;
+    }
+
+    @media only screen and (max-width: 991px) {
+      #pagecontainer {
+        padding-top: 100px;
+      }
+    }
+  </style>
+
+  {% endif %}
+</head>
+
+
+<body id="page-top">
+
+  {% include nav.html %}
+
+  <div id="pagecontainer">
+    {{ content }}
+  </div>
+
+  {% include footer.html %}
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/assets/js/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <script src="/assets/js/jqBootstrapValidation.js"></script>
+  <script src="/assets/js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/assets/js/agency.min.js"></script>
+
+</body>
+
+</html>
