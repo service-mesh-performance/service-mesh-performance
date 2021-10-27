@@ -82,7 +82,9 @@
     <h2 class="post-title" itemprop="name headline" style="text-align: center;padding-top:1em;padding-bottom:.5em;">
       {{ page.slug | escape }}
     </h2>
+    {% if page.title != 'Newsletter' %}
     <span style="color: #999;float: right;">by {{page.author}}</span>
+    {% endif %}
 
     <p class="post-meta" style="color: #999; display: inline-flex;">
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
