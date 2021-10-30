@@ -111,7 +111,6 @@ a {
 @media (max-width: 767px){
   .foot-up ul li {
     display: inline-block;
-    margin-left: 120px;
     margin-top: 25px;
     text-align: justify;
   }
@@ -156,4 +155,7 @@ footer .pos-info ul h6 {
 
 .ntlfy {
   text-align: right;
+}
+.row{
+  margin-right: 0px;
 }
