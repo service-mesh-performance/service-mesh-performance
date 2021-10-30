@@ -137,6 +137,12 @@ html * {
 
 .foot-logo {
   margin-top: 40px;
+  @media (max-width: 992px) {
+       position: relative;
+       top:50%;
+       left: 50%;
+       transform: translate(-50%,-50%);
+  }
 }
 
 footer .pos-info ul h6 {
