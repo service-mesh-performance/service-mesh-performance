@@ -2,7 +2,7 @@
 name: Site Update
 about: Suggest an update to the service-mesh-performance site
 title: ''
-labels: 'component/ui'
+labels: 'area/website'
 assignees: ''
 ---
 **Current State of the service-mesh-performance site**
