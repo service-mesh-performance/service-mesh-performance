@@ -16,6 +16,10 @@
 
 ul.social-buttons {
   margin-bottom: 0;
+  @media(max-width:992px) {
+    width: 100%;
+    text-align: center;
+  }
   li {
     a {
       font-size: 20px;
@@ -137,6 +141,12 @@ html * {
 
 .foot-logo {
   margin-top: 40px;
+  @media (max-width: 992px) {
+       position: relative;
+       top:50%;
+       left: 50%;
+       transform: translate(-50%,-50%);
+  }
 }
 
 footer .pos-info ul h6 {
@@ -158,4 +168,16 @@ footer .pos-info ul h6 {
 }
 .row{
   margin-right: 0px;
+}
+
+@media(max-width:992px){
+  #back-to-top{
+   height:2.7rem;
+   width: 2.7rem;
+   right: 15px;
+   svg{
+     margin:auto;
+     margin-top:0.6rem;
+   }
+  }
 }
