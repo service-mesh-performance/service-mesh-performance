@@ -35,7 +35,7 @@ Now, checkout your own master branch and merge the upstream repo's master branch
 git checkout master
 git merge upstream/master
 ```
-If there are no unique commits on the local master branch, git will simply perform a fast-forward. However, if you have been making changes on master (in the vast majority of cases you probably shouldn't be - see the next section, you may have to deal with conflicts. When doing so, be careful to respect the changes made upstream.
+If there are no unique commits on the local master branch, git will simply perform a fast-forward. However, if you have been making changes on master (in the vast majority of cases you probably shouldn't be - see the next section, you may have to deal with conflicts). When doing so, be careful to respect the changes made upstream.
 
 Now, your local master branch is up-to-date with everything modified upstream.
 
