@@ -91,6 +91,7 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.8.0)
+    webrick (1.7.0)
     zeitwerk (2.4.2)
 
 PLATFORMS
@@ -103,6 +104,7 @@ DEPENDENCIES
   jekyll-sitemap (>= 1.4.0)
   jemoji (~> 0.12.0)
   nokogiri (>= 1.12.5)
+  webrick (~> 1.7)
 
 BUNDLED WITH
-   2.1.4
+   2.2.31
