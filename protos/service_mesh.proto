@@ -25,6 +25,7 @@ message ServiceMesh {
     TANZU = 9;
     OPEN_SERVICE_MESH = 10;
     NGINX_SERVICE_MESH = 11;
+    CILIUM_SERVICE_MESH = 12;
   }
 
   Type type = 1;
