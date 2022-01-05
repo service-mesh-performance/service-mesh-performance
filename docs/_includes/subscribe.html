@@ -11,27 +11,23 @@
       <div class="row">
         <div class="col-lg-6 text-lg-center" style="margin-left:auto;margin-right:auto;width:100%;">
           <form action="https://layer5.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=365c8c024d" 
-          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" onsubmit="document.getElementById('mc-embedded-subscribe-form').submit();">
             
-          <input type="text" value="" placeholder="First Name" name="FNAME" class="form-control" id="mce-FNAME" >
+          <input type="text" value="" placeholder="First Name" name="FNAME" class="form-control" id="mce-FNAME" required />
           <p class="help-block text-danger"></p>
-            <input type="text" value="" placeholder="Last Name" name="LNAME" class="form-control" id="mce-LNAME" >
+            <input type="text" value="" placeholder="Last Name" name="LNAME" class="form-control" id="mce-LNAME" required />
           <p class="help-block text-danger"></p>
           <input type="email" value="" name="EMAIL" class="form-control" id="mce-EMAIL" placeholder="Email Address" 
-          required style="white-space: nowrap;display: inline-block;">
+          required style="white-space: nowrap;display: inline-block;" required/>
           <p class="help-block text-danger"></p>
 
             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
             <div style="position: absolute; left: -5000px;" aria-hidden="true">
               <input type="text" name="b_6b50be5aea3dfe1fd4c041d80_6bb65defeb" tabindex="-1" value="">
             </div>
-            <div onclick="document.getElementById('mc-embedded-subscribe-form').submit();" 
-                id="mc_embed_signup" class="clear">
-                <input 
-                    class="btn btn-primary btn-xl text-uppercase js-scroll-trigger padbtn" 
-                    type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
-            </div>
- 
+            <input 
+                class="btn btn-primary btn-xl text-uppercase js-scroll-trigger padbtn" 
+                type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" />
           </form>
 
           <!--Mailing List-->
