@@ -19,66 +19,70 @@
       color: $gray-600;
       font-style: italic;
     }
+
   .posts-item {
     right: 0;
     margin: 0 0 15px;
+  }
     .posts-link {
       position: relative;
       display: block;
       max-width: 400px;
       margin: 0 auto;
       cursor: pointer;
-      .posts-hover {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all ease 0.5s;
-        -moz-transition: all ease 0.5s;
-        transition: all ease 0.5s;
-        opacity: 0;
-        background: fade-out($secondary-brand-color, .1);
-        &:hover {
-          opacity: 1;
-        }
-        .posts-hover-content {
-          font-size: 20px;
-          position: absolute;
-          top: 50%;
-          width: 100%;
-          height: 20px;
-          margin-top: -12px;
-          text-align: center;
-          color: white;
-          i {
-            margin-top: -12px;
-          }
-          h3,
-          h4 {
-            margin: 0;
-          }
-        }
-      }
+  }
+  .posts-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    opacity: 0;
+    background: fade-out($secondary-brand-color, .1);
+    &:hover {
+      opacity: 1;
     }
-    .posts-caption {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 25px;
-      text-align: center;
-      color: $white;
-      background-color: $secondary-brand-color;
-      h4 {
-        margin: 0;
-        text-transform: none;
-      }
-      p {
-        font-size: 1.1em;
-        color: $gray-700;
-        font-style: italic;
-        margin: 0;
-        @include serif-font;
-      }
+   
+}
+  .posts-hover-content {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 20px;
+    margin-top: -12px;
+    text-align: center;
+    color: white;
+    i {
+      margin-top: -12px;
+    }
+    h3,
+    h4 {
+      margin: 0;
     }
   }
+
+  .posts-caption {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 25px;
+    text-align: center;
+    color: $white;
+    background-color: $secondary-brand-color;
+    h4 {
+      margin: 0;
+      text-transform: none;
+    }
+    p {
+      font-size: 1.1em;
+      color: $gray-700;
+      font-style: italic;
+      margin: 0;
+      @include serif-font;
+    }
+  }
+
   * {
     z-index: 2;
   }
@@ -165,4 +169,18 @@
   display: block;
   top:-10px;
   font-size:2.25em;
+}
+
+
+.img-fluid {
+  height: 250px;
+  width: 100%;
+}
+
+.posts-caption {
+  height: 275px;
+}
+
+.posts-item {
+  padding:5%;
 }

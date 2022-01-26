@@ -19,8 +19,10 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
+    eventmachine (1.2.7-x64-mingw32)
     execjs (2.7.0)
     ffi (1.15.4)
+    ffi (1.15.4-x64-mingw32)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
     html-pipeline (2.14.0)
@@ -74,6 +76,8 @@ GEM
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
+    nokogiri (1.12.5-x64-mingw32)
+      racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
@@ -86,15 +90,20 @@ GEM
     safe_yaml (1.0.5)
     sassc (2.4.0)
       ffi (~> 1.9)
+    sassc (2.4.0-x64-mingw32)
+      ffi (~> 1.9)
     terminal-table (2.0.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.8.0)
+    wdm (0.1.1)
+    webrick (1.7.0)
     zeitwerk (2.4.2)
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   jekyll-coffeescript (~> 2.0)
@@ -103,6 +112,8 @@ DEPENDENCIES
   jekyll-sitemap (>= 1.4.0)
   jemoji (~> 0.12.0)
   nokogiri (>= 1.12.5)
+  wdm (>= 0.1.0)
+  webrick (~> 1.7)
 
 BUNDLED WITH
-   2.1.4
+   2.2.26
