@@ -1,1 +1,1 @@
-@leecalcote, @oschaaf, @nicholasjackson, @sunkuranganath, @utkarsh-pro, @navendu-pottekkat
+@leecalcote, @oschaaf, @nicholasjackson, @sunkuranganath, @navendu-pottekkat
