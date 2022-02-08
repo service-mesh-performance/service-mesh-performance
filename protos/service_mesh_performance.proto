@@ -69,6 +69,33 @@ message PerformanceTestResult {
   string test_id = 9;
   string mesh_config_id = 10;
   string env_id = 11;
+  // CPU
+  message CPU {
+    // cpu in mCores
+    int32 cpu_mcores = 1;
+    double user = 2;
+    double nice = 3;
+    double system = 4;
+    double idle = 5;
+    double iowait = 6;
+    double hardware_interrupt = 7;
+    double software_interrupt = 8;
+    double steal = 9;
+  }
+  // Memory
+  message Memory {
+    // memory in MB
+    double mem_total_mb = 1;
+    double mem_free_mb = 2;
+    double mem_used_mb = 3;
+  }
+  // Swap
+  message Swap {
+    // swap in MB
+    double swap_total_mb = 1;
+    double swap_free_mb = 2;
+    double swap_used_mb = 3;
+  }
 }
 
 message ServiceMeshConfig {
