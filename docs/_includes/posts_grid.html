@@ -3,14 +3,14 @@
 <section class="page-section" id="{{ site.data.sitetext.posts.section | default: "posts" }}">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 text-center">
+      <div class="col-lg-12 d-flex align-items-stretch text-center">
         <h2 class="section-heading text-uppercase">{{ site.data.sitetext.posts.title | markdownify | default: "posts" }}</h2>
         <h3 class="section-subheading">{{ site.data.sitetext.posts.text | markdownify }}</h3>
       </div>
     </div>
     <div class="row">
 	{% for posts in site.posts %}
-      <div class="col-md-4 col-sm-6 posts-item">
+      <div class="col-md-4 col-sm-6 d-flex align-items-stretch posts-item">
         <a class="posts-link"  href="{{ site.baseurl }}/blog/{{ posts.category | slugify }}/{{ posts.slug | slugify }}">
           <div class="posts-hover">
             <div class="posts-hover-content">
