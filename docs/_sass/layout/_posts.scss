@@ -1,4 +1,8 @@
 // Styling for the posts section
+.img-fluid {
+  height: 100%;
+  width: 100%;
+}
 .posts {
     background: #fff;
     .page-section, section {
@@ -22,6 +26,7 @@
   .posts-item {
     right: 0;
     margin: 0 0 15px;
+    padding:2%;
     .posts-link {
       position: relative;
       display: block;
