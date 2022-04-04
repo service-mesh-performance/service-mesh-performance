@@ -14,3 +14,6 @@ nav:
 
   - title: "Connect"
     section: subscribe
+  
+  - title: "Dashboard"
+    url: benchmark

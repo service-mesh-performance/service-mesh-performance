@@ -1,0 +1,116 @@
+$color_1: #aaa;
+$background-color_1: #3C494E;
+$background-color_2: white;
+
+.vertical-nav {
+	min-width: 13rem;
+	width: 13rem;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+	transition: all 0.4s;
+	padding-top: 160px;
+	background-color: $background-color_1;
+	z-index: 1;
+}
+.page-content {
+	width: calc(100% - 13rem);
+	margin-left: 12rem;
+	transition: all 0.4s;
+}
+#sidebar.active {
+	margin-left: -17rem;
+}
+#content.active {
+	width: 100%;
+	margin: 0;
+}
+#dashboardPagecontainer {
+	padding-top: 7.6rem;
+    overflow: hidden;
+}
+.text-uppercase {
+	letter-spacing: 0.1em;
+}
+.text-gray {
+	color: $color_1;
+}
+.load-generators {
+	display: flex;
+	width: 50%;
+	justify-content: space-between;
+}
+.test-selector {
+	width: 100%;
+	padding: 5px;
+}
+.drop-down {
+	margin-top: 2rem;
+}
+.toggle-button {
+	margin-left: -3rem;
+	position: sticky;
+	z-index: 3;
+	// bottom: 1.4rem;
+	text-align: right;
+	padding: 0.3rem;
+    background-color: $background-color_1;
+    border: #3C494E solid 1px;
+}
+.resultsContainer {
+	margin-top: -3rem;
+}
+.icon-left {
+	position: sticky;
+	bottom: 2rem;
+	z-index: 2;
+    
+}
+.icon-right {
+	position: sticky;
+	bottom: 2rem;
+	z-index: 2;
+}
+.performance-graph {
+	width: fit-content;
+	margin-right: auto;
+	margin-left: auto;
+	border: solid 1px black;
+	position: relative;
+	background-color: $background-color_2;
+}
+.graph-image {
+	width: 79vw;
+	opacity: 0.5;
+}
+.test-text {
+	position: absolute;
+	top: 10rem;
+	left: 19rem;
+}
+@media only screen and (max-width: 991px) {
+	#dashboardPagecontainer {
+		padding-top: 120px;
+	}
+	.vertical-nav {
+		padding-top: 70px;
+	}
+}
+@media (max-width: 768px) {
+	#sidebar {
+		margin-left: -17rem;
+	}
+	#sidebar.active {
+		margin-left: 0;
+	}
+	#content {
+		width: 100%;
+		margin: 0;
+	}
+	#content.active {
+		margin-left: 17rem;
+		width: calc(100% - 17rem);
+	}
+}
