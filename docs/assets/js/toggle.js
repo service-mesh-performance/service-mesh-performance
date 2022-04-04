@@ -1,17 +1,24 @@
-// // Sidebar toggle behavior
-// const toggleButton = document.getElementById("sidebarCollapse");
-// const vertNav = document.getElementById("sidebar")
-// const content = document.getElementById("content")
-// console.log(vertNav.classList)
-// toggleButton.addEventListener(onclick ,function() {
-//   console.log("toggleClicked")
-//   vertNav.classList.toggle("active")
-//   content.classList.toggle("active")
-// })
+// Sidebar toggle behavior
+const toggleButton = document.getElementById("sidebarCollapse");
+const vertNav = document.getElementById("sidebar")
+const content = document.getElementById("content")
+const leftChevron = document.querySelector(".icon-left")
+const rightChevron = document.querySelector(".icon-right")
+console.log(leftChevron.getc)
 
-$(function() {
-    // Sidebar toggle behavior
-    $('#sidebarCollapse').on('click', function() {
-      $('#sidebar, #content').toggleClass('active');
-    });
-  });
+function toggleStyle(element){
+  if(element.style["display"] === "none"){
+    element.style["display"] = "block"
+  }
+  else{
+    element.style["display"]= "none"
+  }
+}
+
+toggleButton.addEventListener("click" ,function() {
+  vertNav.classList.toggle("active")
+  content.classList.toggle("active")
+  toggleStyle(leftChevron)
+  toggleStyle(rightChevron)
+ 
+})

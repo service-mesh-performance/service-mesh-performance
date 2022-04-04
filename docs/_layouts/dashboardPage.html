@@ -1,94 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html> 
 
-<head>
+{% include head.html %}
 
-  {% if site.analytics.google %}
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+<body id="dashboard-page-top"> 
 
-    gtag('config', '{{ site.analytics.google }}');
-  </script>
-  <!-- End Google Analytics -->
-  {% endif %}
+{% include nav.html %}
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="{{ site.description }}">
-  <meta name="author" content="{{ site.author }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-
-  <title>{% if page.title %}{{ page.title | append: " | " | append: site.title }}{% else %}{{ site.title }}{% endif %}
-  </title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="image" property="og:image" content="https://smp-spec.io/assets/img/logo/smp.png" />
-  <meta name="title" property="og:title" content="Service Mesh Performance" />
-  <meta property="og:description"
-    content="Service Mesh Performance (SMP): Measure your service mesh performance using SMP. SMP provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments." />
-
-
-  <!-- Custom fonts for this template -->
-  <link href="/assets/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
-    type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-
-  <!-- Custom styles for this theme -->
-  <!--<link href="assets/css/agency.min.css" rel="stylesheet">-->
-  <link href="/assets/css/agency.css" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/responsive.css">
-  
-
-  <!-- Page container change top padding when nav shrinks -->
-  {% if page.layout == "page" %}
-  <style>
-    #pagecontainer {
-      padding-top: 150px;
-    }
-
-    @media only screen and (max-width: 991px) {
-      #pagecontainer {
-        padding-top: 100px;
-      }
-    }
-  </style>
-
-  {% endif %}
-</head>
-
-
-<body id="dashboard-page-top">
-
-  {% include nav.html %}
-  {% include benchmark.html %}
-  
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="/assets/js/jquery.easing.min.js"></script>
-
-  <!-- Contact form JavaScript -->
-  <script src="/assets/js/jqBootstrapValidation.js"></script>
-  <script src="/assets/js/contact_me.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="/assets/js/agency.min.js"></script>
-  
-
+	<section id="dashboardPagecontainer">
+		<div class="vertical-nav" id="sidebar">
+			<p class="text-gray font-weight-bold text-uppercase px-1 small pb-4">Service Mesh Performance Results</p>
+			<ul class="nav flex-column mb-0">
+				<li class="nav-item">
+					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> All results </a>
+				</li>
+			</ul>
+			<p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Service Mesh</p>
+			<ul class="nav flex-column  mb-0">
+				<li class="nav-item">
+					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i> Istio </a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i> Linkered </a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i> Consul </a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i> OSM </a>
+				</li>
+			</ul>
+		</div>
+		<!-- End vertical navbar -->
+		<!-- Page content holder -->
+		<div class="page-content p-5" id="content">
+			<!-- Demo content -->
+			<section class="resultsContainer">
+				<h5 class="display-5 text-black">Select Load Generator: </h5>
+				<form class="load-generators">
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="fortio">
+						<label class="form-check-label" for="inlineCheckbox1">Fortio</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="nighthawk">
+						<label class="form-check-label" for="inlineCheckbox2">Nighthawk</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="wrk2">
+						<label class="form-check-label" for="inlineCheckbox3">wrk2</label>
+					</div>
+				</form>
+				<select class=" test-selector drop-down custom-select custom-select-lg mb-3" name="performance-ids" id="performance-ids">
+					<option value="test-id-1">test-id-1</option>
+					<option value="test-id-2">test-id-2</option>
+					<option value="test-id-2">test-id-2</option>
+					<option value="test-id-3">test-id-3</option>
+					<option value="test-id-4">test-id-4</option>
+				</select>
+				<div class="performance-graph">
+					<h4 class="test-text">TEST DATA NOT FOR COMPARISION</h4> <img class="graph-image" src="../assets/img/dashboard.jpg"> </div>
+			</section>
+			<!-- Toggle button -->
+			<button id="sidebarCollapse" type="button" class="toggle-button text-light ">
+        <i class="icon-left fa fa-angle-left mr-2" style="display: block;"></i>
+        <i class="icon-right fa fa-angle-right mr-2" style="display: none;"></i>
+      </button>
+		</div>
+	</section>
+	<!-- Bootstrap core JavaScript -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/bootstrap.bundle.min.js"></script>
+	<!-- Plugin JavaScript -->
+	<script src="/assets/js/jquery.easing.min.js"></script>
+	<!-- Contact form JavaScript -->
+	<script src="/assets/js/jqBootstrapValidation.js"></script>
+	<script src="/assets/js/contact_me.js"></script>
+	<!-- Custom scripts for this template -->
+	<script src="/assets/js/agency.min.js"></script>
+	<script src="/assets/js/toggle.js"></script>
 </body>
 
 </html>
