@@ -22,7 +22,9 @@
 		  {%- for link in site.data.navigation.nav -%}
 		  <li class="nav-item">
 		  {%- if link.url -%}
+      <div class= "rounded-pill" style="border: 1px solid black;">
 		    <a class="nav-link" href="/{{ link.url }}">{{ link.title }}</a>
+      </div> 
 		  {%- else if link.section -%}
 		    <a class="nav-link js-scroll-trigger" href="/#{{ link.section }}">{{ link.title }}</a>
 		  {%- else -%}
