@@ -1,8 +1,8 @@
 ---
 layout: dashboardPage
 title: Project
-permalink: benchmark
-redirect_from: benchmark/
+permalink: dashboard
+redirect_from: dashboard/
 language: en
 display-title: "false"
 list: exclude
