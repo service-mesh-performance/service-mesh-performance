@@ -22,3 +22,14 @@ toggleButton.addEventListener("click" ,function() {
   toggleStyle(rightChevron)
  
 })
+
+window.addEventListener("resize",function(){
+  if(this.window.matchMedia("(max-width: 768px)").matches){
+    leftChevron.style["display"] = "none"
+    rightChevron.style["display"] = "block"
+  }
+  if(this.window.matchMedia("(min-width: 768px)").matches){
+    leftChevron.style["display"] = "block"
+    rightChevron.style["display"] = "none"
+  }
+})
