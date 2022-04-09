@@ -28,7 +28,7 @@ $background-color_2: white;
 	margin: 0;
 }
 #dashboardPagecontainer {
-	padding-top: 7.6rem;
+	padding-top: 10.5rem;
     overflow: hidden;
 }
 .text-uppercase {
@@ -39,8 +39,9 @@ $background-color_2: white;
 }
 .load-generators {
 	display: flex;
-	width: 50%;
+	width: 100%;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 .test-selector {
 	width: 100%;
@@ -95,7 +96,7 @@ $background-color_2: white;
 		padding-top: 120px;
 	}
 	.vertical-nav {
-		padding-top: 70px;
+		padding-top: 100px;
 	}
 }
 @media (max-width: 768px) {
@@ -112,5 +113,10 @@ $background-color_2: white;
 	#content.active {
 		margin-left: 17rem;
 		width: calc(100% - 17rem);
+	}
+	.test-text{
+		top:4rem;
+		left:6rem;
+		font-size: medium;
 	}
 }

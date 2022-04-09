@@ -1,17 +1,8 @@
   <!-- Navigation -->
-  {% if page.layout == "dashboardPage" %}
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="dashBoardNav">
-      {% else %}
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      {% endif %}
-  
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="/#page-top">
-        {% if page.layout == "dashboardPage" %}
-        <img class="logoDetails dashboard-logo header_logo" src="/assets/img/logo/smp-white.svg"/>
-        {% else %}
         <img class="logoDetails header_logo" src="/assets/img/logo/smp-white.svg"/>
-        {% endif %}
       </a>       
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
@@ -22,7 +13,12 @@
 		  {%- for link in site.data.navigation.nav -%}
 		  <li class="nav-item">
 		  {%- if link.url -%}
-		    <a class="nav-link" href="/{{ link.url }}">{{ link.title }}</a>
+        {% if link.title == "Dashboard" %}
+		      <a class="nav-link dashboardLink rounded-pill" href="/{{ link.url }}">{{ link.title }}</a>
+        {% else %}
+         <a class="nav-link" href="/{{ link.url }}">{{ link.title }}</a>
+        {% endif %} 
+      </div> 
 		  {%- else if link.section -%}
 		    <a class="nav-link js-scroll-trigger" href="/#{{ link.section }}">{{ link.title }}</a>
 		  {%- else -%}
