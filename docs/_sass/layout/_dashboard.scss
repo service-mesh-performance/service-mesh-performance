@@ -2,19 +2,37 @@ $color_1: #aaa;
 $background-color_1: #3C494E;
 $background-color_2: white;
 
-.vertical-nav {
-	min-width: 13rem;
-	width: 13rem;
-	height: 100vh;
-	position: fixed;
-	top: 0;
-	left: 0;
-	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-	transition: all 0.4s;
-	padding-top: 160px;
-	background-color: $background-color_1;
-	z-index: 1;
+body{
+	margin: 0;
 }
+
+#contents{
+    height:1000px;
+    position:relative;
+}
+#sidebar{
+	background-color: $background-color_1;
+    height:100%;
+	margin-top: 5rem;
+	padding-top: 10rem;
+	width: 13rem;
+    float:left;
+	transition: all 0.4s;
+}
+
+.fixed{
+    position:fixed;
+    top:0;
+    left:0;
+}
+
+.bottom{
+    top:auto;
+    bottom:0;
+    position:absolute;
+}
+
+
 .page-content {
 	width: calc(100% - 13rem);
 	margin-left: 12rem;
@@ -60,9 +78,7 @@ $background-color_2: white;
     background-color: $background-color_1;
     border: #3C494E solid 1px;
 }
-.resultsContainer {
-	margin-top: -3rem;
-}
+
 .icon-left {
 	position: sticky;
 	bottom: 2rem;
@@ -93,25 +109,23 @@ $background-color_2: white;
 }
 @media only screen and (max-width: 991px) {
 	#dashboardPagecontainer {
-		padding-top: 120px;
-	}
-	.vertical-nav {
-		padding-top: 100px;
+		padding-top: 6.64rem;
 	}
 }
 @media (max-width: 768px) {
-	#sidebar {
-		margin-left: -17rem;
+
+	#dashboardPagecontainer {
+		padding-top: 5.5rem;
 	}
+
 	#sidebar.active {
-		margin-left: 0;
+		margin-right: 0;
 	}
 	#content {
 		width: 100%;
-		margin: 0;
 	}
 	#content.active {
-		margin-left: 17rem;
+		margin-left: 0rem;
 		width: calc(100% - 17rem);
 	}
 	.test-text{
