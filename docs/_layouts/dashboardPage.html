@@ -7,48 +7,56 @@
 
 {% include nav.html %}
 
-	<section id="dashboardPagecontainer">
-		<div class="vertical-nav" id="sidebar">
-			<!-- <p class="text-gray font-weight-bold text-uppercase px-1 small pb-4">Service Mesh Performance Results</p> -->
-			<ul class="nav flex-column ">
-				<li class="nav-item">
+		<div id="contents">
+			<div id="sidebar">
+			        <ul class="nav flex-column ">
+				      <li class="nav-item">
 					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> All results </a>
-				</li>
-			</ul>
-			<p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Service Mesh</p>
-			<ul class="nav flex-column ">
-				<li class="nav-item">
-					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i> Istio </a>
-				</li>
-				<li class="nav-item">
-					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i> Linkerd </a>
-				</li>
-				<li class="nav-item">
-					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i> Consul </a>
-				</li>
-				<li class="nav-item">
-					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i> Open Service Mesh </a>
-				</li>
-			</ul>
-		</div>
-		<!-- End vertical navbar -->
+				      </li>
+			        </ul>
+			        <p class="text-gray font-weight-bold text-uppercase px-2 small py-4 mb-0">Performance Profiles</p>
+			        <ul class="nav flex-column ">
+				      <li class="nav-item">
+					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i> Soak </a>
+				      </li>
+				      <li class="nav-item">
+					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i> Burst </a>
+				      </li>
+				      <li class="nav-item">
+					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i> JWT Revocation </a>
+				      </li>
+			        </ul>
+			</div>
 		<!-- Page content holder -->
+		<section id="dashboardPagecontainer">
 		<div class="page-content p-5" id="content">
 			<!-- Demo content -->
 			<section class="resultsContainer">
-				<h5 class="display-5 text-black">Select Performance Profile: </h5>
+				<h5 class="display-5 text-black">Select Service Mesh: </h5>
 				<form class="load-generators">
 					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="fortio">
-						<label class="form-check-label" for="inlineCheckbox1">Soak</label>
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="istio">
+						<label class="form-check-label" for="inlineCheckbox1">Istio</label>
 					</div>
 					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="nighthawk">
-						<label class="form-check-label" for="inlineCheckbox2">Burst</label>
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="consul">
+						<label class="form-check-label" for="inlineCheckbox2">Consul</label>
 					</div>
 					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="wrk2">
-						<label class="form-check-label" for="inlineCheckbox3">JWT Revocation</label>
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="linkerd">
+						<label class="form-check-label" for="inlineCheckbox3">Linkerd</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="open service mesh">
+						<label class="form-check-label" for="inlineCheckbox3">Open Service Mesh</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="kuma">
+						<label class="form-check-label" for="inlineCheckbox3">Kuma</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="app mesh">
+						<label class="form-check-label" for="inlineCheckbox3">App Mesh</label>
 					</div>
 				</form>
 				<select class=" test-selector drop-down custom-select custom-select-lg mb-3" name="performance-ids" id="performance-ids">
@@ -61,13 +69,16 @@
 				<div class="performance-graph">
 					<h4 class="test-text">TEST DATA NOT FOR COMPARISION</h4> <img class="graph-image" src="../assets/img/dashboard.jpg"> </div>
 			</section>
+
 			<!-- Toggle button -->
 			<button id="sidebarCollapse" type="button" class="toggle-button text-light ">
-        <i class="icon-left fa fa-angle-left mr-2" style="display: block;"></i>
-        <i class="icon-right fa fa-angle-right mr-2" style="display: none;"></i>
-      </button>
+        		 <i class="icon-left fa fa-angle-left mr-2" style="display: block;"></i>
+      			 <i class="icon-right fa fa-angle-right mr-2" style="display: none;"></i>
+     		 </button>
 		</div>
-	</section>
+		</section>
+	</div>
+
 	<!-- Bootstrap core JavaScript -->
 	<script src="/assets/js/jquery.min.js"></script>
 	<script src="/assets/js/bootstrap.bundle.min.js"></script>
@@ -79,5 +90,20 @@
 	<!-- Custom scripts for this template -->
 	<script src="/assets/js/agency.min.js"></script>
 	<script src="/assets/js/toggle.js"></script>
+
+	<script>
+		$(window).scroll(function () {
+    var threshold = 50;
+    if ($(window).scrollTop() >= threshold)
+        $('#sidebar').addClass('fixed');
+    else
+        $('#sidebar').removeClass('fixed');
+    var check = $("#content").height() - $("#sidebar").height()-21;
+    if ($(window).scrollTop() >= check)
+        $('#sidebar').addClass('bottom');
+    else
+        $('#sidebar').removeClass('bottom');
+});
+	</script>
 
 	{% include footer.html %}
