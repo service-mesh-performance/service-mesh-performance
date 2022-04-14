@@ -1,11 +1,9 @@
-// Styling for the posts section
 .posts {
   background: #fff;
   .page-section, section {
     padding: 0px;
     margin-top: 30px;
     margin-bottom: 40px;
-    
   }  
   h2.section-heading {
     margin: 0px;
@@ -23,7 +21,7 @@
 .posts-item {
   right: 0;
   margin: 0 0 15px;
-  
+
   .posts-link {
     height: 50%;
     position: relative;
@@ -32,12 +30,13 @@
     border-left: 0.5px solid  black; 
     border-right: 0.5px solid  black;
     border-top: 0.5px solid  black;
-    
     cursor: pointer;
-
     .posts-hover {
       position: absolute;
-      min-width: 100%;
+      border-left: 0.5px solid  black; 
+    border-right: 0.5px solid  black;
+    border-top: 0.5px solid  black;
+      width: 100%;
       height: 100%;
       -webkit-transition: all ease 0.5s;
       -moz-transition: all ease 0.5s;
@@ -63,14 +62,15 @@
         h4 {
           margin: 0;
         }
-      
+      }
     }
   }
   .posts-caption {
     position: relative;
     height: 220px;
     width: 100%;
-    height: 100%;
+    .postcap{
+    height: 200px;
     width: 100%;
     margin-bottom: 1px;
     border-bottom: 0.5px solid black; 
@@ -96,6 +96,7 @@
     }
   }
   }
+
 }
 * {
   z-index: 2;
@@ -104,24 +105,9 @@
 @media(min-width:767px) {
 #posts {
   .posts-item {
-    margin: 0 0 15px;
+    margin: 0 0 10px;
   }
 }
-}
-
-.posts-caption{
-h4 {
-  font-size:18px;
-  margin: 0;
-  text-transform: none;
-}
-p {
-      font-size:5px;
-      color: $gray-700;
-      font-style: italic;
-      margin: 0;
-      @include serif-font;
-    }
 }
 
 .posts-modal {
