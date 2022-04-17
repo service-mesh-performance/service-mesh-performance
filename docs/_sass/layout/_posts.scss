@@ -185,3 +185,9 @@ display: block;
 top:-10px;
 font-size:2.25em;
 }
+@media (max-width:1195px) {
+  .posts-item{
+    padding-top: 5%;
+  }
+  
+}
