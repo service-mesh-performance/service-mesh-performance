@@ -8,7 +8,7 @@
 {% include nav.html %}
 
 		<div id="contents">
-			<div id="sidebar">
+			<div id="sidebar" class="bottom fixed">
 			        <ul class="nav flex-column ">
 				      <li class="nav-item">
 					<a href="/dashboard" class="nav-link text-light font-italic"> <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> All results </a>
@@ -30,36 +30,21 @@
 		<!-- Page content holder -->
 		<section id="dashboardPagecontainer">
 		<div class="page-content p-5" id="content">
-			<!-- Demo content -->
+			<!--content -->
 			<section class="resultsContainer">
 				{{content}}
 				<h5 class="display-5 text-black">Select Service Mesh: </h5>
+
+			<!-- List service mesh -->
 				<form class="load-generators">
+					{%- for service_mesh in site.data.service_meshes.service_meshes  -%}
 					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="istio">
-						<label class="form-check-label" for="inlineCheckbox1">Istio</label>
+						<input class="form-check-input" type="checkbox" id="{{service_mesh.id}}" value="{{service_mesh.value}}">
+						<label class="form-check-label" for="{{service_mesh.id}}">{{service_mesh.name}}</label>
 					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="consul">
-						<label class="form-check-label" for="inlineCheckbox2">Consul</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="linkerd">
-						<label class="form-check-label" for="inlineCheckbox3">Linkerd</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="open service mesh">
-						<label class="form-check-label" for="inlineCheckbox3">Open Service Mesh</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="kuma">
-						<label class="form-check-label" for="inlineCheckbox3">Kuma</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="app mesh">
-						<label class="form-check-label" for="inlineCheckbox3">App Mesh</label>
-					</div>
+					{% endfor %}
 				</form>
+
 				<select class=" test-selector drop-down custom-select custom-select-lg mb-3" name="performance-ids" id="performance-ids">
 					<option value="test-id-1">test-id-1</option>
 					<option value="test-id-2">test-id-2</option>
@@ -80,38 +65,9 @@
 		</section>
 	</div>
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="/assets/js/jquery.min.js"></script>
-	<script src="/assets/js/bootstrap.bundle.min.js"></script>
-	<!-- Plugin JavaScript -->
-	<script src="/assets/js/jquery.easing.min.js"></script>
-	<!-- Contact form JavaScript -->
-	<script src="/assets/js/jqBootstrapValidation.js"></script>
-	<script src="/assets/js/contact_me.js"></script>
+	{% include javascript_files.html %}
 	<!-- Custom scripts for this template -->
-	<script src="/assets/js/agency.min.js"></script>
 	<script src="/assets/js/toggle.js"></script>
 
-<script>
-	$(window).scroll(function () {
-	$("#content").css('margin-left', '12rem');
-    var threshold = 50;
-    if ($(window).scrollTop() >= threshold)
-        {
-			$('#sidebar').addClass('fixed');
-		}
-    else{
-        	$('#sidebar').removeClass('fixed');
-		}
-    var check = $("#content").height() - $("#sidebar").height()-21;
-    if ($(window).scrollTop() >= check)
-		{
-        	$('#sidebar').addClass('bottom');
-		}
-    else{
-        	$('#sidebar').removeClass('bottom');
-		}
-	});
-</script>
 
 {% include footer.html %}

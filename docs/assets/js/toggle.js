@@ -4,6 +4,7 @@ const vertNav = document.getElementById("sidebar")
 const content = document.getElementById("content")
 const leftChevron = document.querySelector(".icon-left")
 const rightChevron = document.querySelector(".icon-right")
+// const pageContent = document.getElementById("#content")
 console.log(leftChevron.getc)
 
 function toggleStyle(element){
@@ -24,12 +25,16 @@ toggleButton.addEventListener("click" ,function() {
 })
 
 window.addEventListener("resize",function(){
-  if(this.window.matchMedia("(max-width: 768px)").matches){
+  if(this.window.matchMedia("(max-width: 1167px)").matches){
     leftChevron.style["display"] = "none"
     rightChevron.style["display"] = "block"
+    vertNav.classList.add("active")
+    content.classList.add("active")
   }
-  if(this.window.matchMedia("(min-width: 768px)").matches){
+  if(this.window.matchMedia("(min-width: 1167px)").matches){
     leftChevron.style["display"] = "block"
     rightChevron.style["display"] = "none"
+    vertNav.classList.remove("active")
+    content.classList.remove("active")
   }
 })

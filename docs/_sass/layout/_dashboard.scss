@@ -34,7 +34,9 @@ body{
 
 
 .page-content {
-	width: calc(100% - 13rem);
+	width: calc(100%-13rem);
+	margin-left: 12rem;
+	transition: all 0.4s;
 }
 #sidebar.active {
 	margin-left: -17rem;
@@ -124,7 +126,6 @@ body{
 	}
 	#content.active {
 		margin-left: 0rem;
-		width: calc(100% - 17rem);
 	}
 	.test-text{
 		top:4rem;
