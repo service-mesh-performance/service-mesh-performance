@@ -1,11 +1,11 @@
 ---
 layout: dashboardPage
 title: Project
-permalink: dashboard
-redirect_from: dashboard/
+permalink: dashboard/burst
+redirect_from: dashboard/burst/
 language: en
 display-title: "false"
 list: exclude
 ---
 
-## All test Results
+## Burst

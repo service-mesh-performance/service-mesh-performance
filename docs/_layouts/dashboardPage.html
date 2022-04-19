@@ -11,19 +11,19 @@
 			<div id="sidebar">
 			        <ul class="nav flex-column ">
 				      <li class="nav-item">
-					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> All results </a>
+					<a href="/dashboard" class="nav-link text-light font-italic"> <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> All results </a>
 				      </li>
 			        </ul>
 			        <p class="text-gray font-weight-bold text-uppercase px-2 small py-4 mb-0">Performance Profiles</p>
 			        <ul class="nav flex-column ">
 				      <li class="nav-item">
-					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i> Soak </a>
+					<a href="soak" class="nav-link text-light font-italic"> <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i> Soak </a>
 				      </li>
 				      <li class="nav-item">
-					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i> Burst </a>
+					<a href="burst" class="nav-link text-light font-italic"> <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i> Burst </a>
 				      </li>
 				      <li class="nav-item">
-					<a href="#" class="nav-link text-light font-italic"> <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i> JWT Revocation </a>
+					<a href="jwt" class="nav-link text-light font-italic"> <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i> JWT Revocation </a>
 				      </li>
 			        </ul>
 			</div>
@@ -32,6 +32,7 @@
 		<div class="page-content p-5" id="content">
 			<!-- Demo content -->
 			<section class="resultsContainer">
+				{{content}}
 				<h5 class="display-5 text-black">Select Service Mesh: </h5>
 				<form class="load-generators">
 					<div class="form-check form-check-inline">
@@ -91,19 +92,26 @@
 	<script src="/assets/js/agency.min.js"></script>
 	<script src="/assets/js/toggle.js"></script>
 
-	<script>
-		$(window).scroll(function () {
+<script>
+	$(window).scroll(function () {
+	$("#content").css('margin-left', '12rem');
     var threshold = 50;
     if ($(window).scrollTop() >= threshold)
-        $('#sidebar').addClass('fixed');
-    else
-        $('#sidebar').removeClass('fixed');
+        {
+			$('#sidebar').addClass('fixed');
+		}
+    else{
+        	$('#sidebar').removeClass('fixed');
+		}
     var check = $("#content").height() - $("#sidebar").height()-21;
     if ($(window).scrollTop() >= check)
-        $('#sidebar').addClass('bottom');
-    else
-        $('#sidebar').removeClass('bottom');
-});
-	</script>
+		{
+        	$('#sidebar').addClass('bottom');
+		}
+    else{
+        	$('#sidebar').removeClass('bottom');
+		}
+	});
+</script>
 
-	{% include footer.html %}
+{% include footer.html %}
