@@ -27,7 +27,7 @@
   right: 0;
   margin: 0 0 15px;
   padding-top: 20px;
-  
+
   .posts-link {
     height: 50%;
     position: relative;
@@ -84,12 +84,23 @@
       font-size: 1.5em;
       margin: 0;
       text-transform: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-top: 5px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
     p {
       font-size: 1em;
       color: $gray-700;
       font-style: italic;
       margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;padding-top: 5px;
       @include serif-font;
     }
   }
