@@ -10,13 +10,14 @@
       <div class="row" >
     {% for posts in site.posts %}
         <div class="col-md-4 col-sm-6 posts-item">
+          <div class="dm">
           <a class="posts-link"  href="{{ site.baseurl }}/blog/{{ posts.category | slugify }}/{{ posts.slug | slugify }}">
             <div class="posts-hover">
               <div class="posts-hover-content">
                 <i class="{{ site.data.style.posts-icon | default: "fas fa-eye fa-3x" }}"></i>
               </div>
             </div>
-            <img class="img-fluid" src="{{ posts.caption.thumbnail }}" alt="">
+            <img class="img-fluid" style="height:100%; width:100%;" src="{{ posts.caption.thumbnail }}" alt="">
           </a>
           <div class="posts-caption">
             <div class="postcap">
@@ -47,6 +48,7 @@
               <span style="position: absolute;
               bottom: 25px;right: 6px;">by {{posts.author}}</span>
             </p>
+            </div>
           </div>
           </div>
         </div>
