@@ -1,0 +1,28 @@
+service_meshes:
+  - name: "Istio"
+    id: "inlineCheckbox1"
+    value: "Istio"
+
+  - name: "Consul"
+    id: "inlineCheckbox2"
+    value: "Consul"
+
+  - name: "Linkerd"
+    id: "inlineCheckbox3"
+    value: "Linkerd"
+
+  - name: "Open Service Mesh"
+    id: "inlineCheckbox4"
+    value: "OSM"
+
+  - name: "App Mesh"
+    id: "inlineCheckbox5"
+    value: "App Mesh"
+
+  - name: "Kuma"
+    id: "inlineCheckbox6"
+    value: "Kuma"
+  
+  - name: "Cilium"
+    id: "inlineCheckbox7"
+    value: "Cilium"

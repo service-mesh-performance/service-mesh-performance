@@ -1,11 +1,11 @@
 ---
 layout: dashboardPage
 title: Project
-permalink: dashboard
-redirect_from: dashboard/
+permalink: dashboard/jwt
+redirect_from: dashboard/jwt/
 language: en
 display-title: "false"
 list: exclude
 ---
 
-## All test Results
+## JWT Revocation

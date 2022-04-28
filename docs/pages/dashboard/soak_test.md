@@ -1,11 +1,11 @@
 ---
 layout: dashboardPage
 title: Project
-permalink: dashboard
-redirect_from: dashboard/
+permalink: dashboard/soak
+redirect_from: dashboard/soak/
 language: en
 display-title: "false"
 list: exclude
 ---
 
-## All test Results
+## Soak
