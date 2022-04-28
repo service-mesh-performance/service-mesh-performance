@@ -4,9 +4,9 @@ const vertNav = document.getElementById("sidebar")
 const content = document.getElementById("content")
 const leftChevron = document.querySelector(".icon-left")
 const rightChevron = document.querySelector(".icon-right")
-// const pageContent = document.getElementById("#content")
 console.log(leftChevron.getc)
 
+//toggle left and right chevron
 function toggleStyle(element){
   if(element.style["display"] === "none"){
     element.style["display"] = "block"
@@ -16,6 +16,7 @@ function toggleStyle(element){
   }
 }
 
+// user clickes the toggle button
 toggleButton.addEventListener("click" ,function() {
   vertNav.classList.toggle("active")
   content.classList.toggle("active")
