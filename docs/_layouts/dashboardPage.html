@@ -2,6 +2,9 @@
 <html> 
 
 {% include head.html %}
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css">
 
 <body id="dashboard-page-top"> 
 
@@ -52,8 +55,7 @@
 					<option value="test-id-3">test-id-3</option>
 					<option value="test-id-4">test-id-4</option>
 				</select>
-				<div class="performance-graph">
-					<h4 class="test-text">TEST DATA NOT FOR COMPARISION</h4> <img class="graph-image" src="../assets/img/dashboard.jpg"> </div>
+				{% include graph.html %}
 			</section>
 
 			<!-- Toggle button -->
