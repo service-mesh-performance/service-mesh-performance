@@ -236,7 +236,7 @@ function makeTitle (rawdata,res) {
       var labels = res.Labels.split(' -_- ');
       // title.push(`Labels: ${labels.map(item => item + '\n')}`)
       title.push(`Title: ${rawdata ? rawdata.name : labels[0]}`);
-      title.push(`URL: ${rawdata ? rawdata.runner_results.URL : labels[1]}`);
+      title.push(`URL: ${labels[1]}`);
       title.push(`Start Time: ${formatDate(res.StartTime)}`);
     } else { // grpc results
       title.push(`Destination: ${res.Destination}`);
@@ -282,7 +282,7 @@ function makeTitle (rawdata,res) {
                     \nKubelet version: ${node.kubelet_version} \nContainer runtime: ${node.container_runtime_version}`);
     });
   }
-
+  console.log(title)
   return title;
 }
 
@@ -599,9 +599,30 @@ function processChartData(chartData) {
     }
   }
 
+function fillTittle(){
+  const titleContainer = document.getElementById("titles");
+  const titles = makeTitle(rawdata,data[0]);
+  titleContainer.innerHTML = `<div id="titles-holder" class="container"></div>`
+  const innerTitle = document.getElementById("titles-holder")
+  innerTitle.innerHTML = ""
+  let titleCount = 0;
+  for(let i =0;i<3;i++){
+    innerTitle.innerHTML += `<div id = "row${i}" class="row"> </div>`
+    const row = document.getElementById(`row${i}`)
+    row.innerHTML = " ";
+    for(let j =0;j<3;j++){
+      row.innerHTML += `<div class="col-sm">
+     ${titles[titleCount]}
+    </div>`
+    titleCount = titleCount+1;
+    }
+  }
+}
+
+
 
 
 processChartData(chartData)
-
+fillTittle()
 
 
