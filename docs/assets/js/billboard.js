@@ -13,58 +13,34 @@ function formatDate (dStr) {
   return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + ' ' +
           pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
 }
-const linearXAxe = {
-  type: 'linear',
-  scaleLabel: {
-    display: true,
-    labelString: 'Response time in ms',
-    ticks: {
-      min: 0,
-      beginAtZero: true
-    }
-  }
-};
-const logXAxe = {
-  type: 'logarithmic',
-  scaleLabel: {
-    display: true,
-    labelString: 'Response time in ms (log scale)'
-  },
-  ticks: {
-    // min: dataH[0].x, // newer chart.js are ok with 0 on x axis too
-    callback: function (tick, index, ticks) {
-      return tick.toLocaleString();
-    }
-  }
-};
-const linearYAxe = {
-  id: 'H',
-  type: 'linear',
-  ticks: {
-    beginAtZero: true
-  },
-  scaleLabel: {
-    display: true,
-    labelString: 'Count'
-  }
-};
-const logYAxe = {
-  id: 'H',
-  type: 'logarithmic',
-  display: true,
-  ticks: {
-    // min: 1, // log mode works even with 0s
-    // Needed to not get scientific notation display:
-    callback: function (tick, index, ticks) {
-      return tick.toString();
-    }
-  },
-  scaleLabel: {
-    display: true,
-    labelString: 'Count (log scale)'
-  }
-};
 
+/**
+ * The Axes Definitions and labellers
+ */
+const Axes = {
+  x: {
+    type: 'linear',
+    scaleLabel: {
+      display: true,
+      labelString: 'Response time in ms',
+      ticks: {
+        min: 0,
+        beginAtZero: true
+      }
+    }
+  },
+  y: {
+    id: 'H',
+    type: 'linear',
+    ticks: {
+      beginAtZero: true
+    },
+    scaleLabel: {
+      display: true,
+      labelString: 'Count'
+    }
+  }
+}
 
 function getMetadata(rawdata,res) {
   return {
@@ -348,7 +324,7 @@ function fortioResultToJsChartData (rawdata,res) {
     prev = endX;
   }
   return {
-    title: makeTitle(rawdata,res),
+    title: "Hello",
     metadata: getMetadata(rawdata,res),
     dataP: dataP,
     dataH: dataH,
@@ -393,7 +369,7 @@ function makeChart (data) {
       },
       scales: {
         xAxes: [
-          linearXAxe
+          Axes.x
         ],
         yAxes: [{
           id: 'P',
@@ -407,14 +383,14 @@ function makeChart (data) {
             labelString: '%'
           }
         },
-        linearYAxe
+        Axes.y
         ]
       }
     }
   };
 }
 
-singleChart = (rawdata,data) => {
+let singleChart = (rawdata,data) => {
   if (typeof data === 'undefined' || typeof data.StartTime === 'undefined') {
     return {};
   }
@@ -422,8 +398,8 @@ singleChart = (rawdata,data) => {
   return makeChart(fortioResultToJsChartData(rawdata,data));
 }
 
-let result = 
- {"meshery_id":"f9ccd668-9d26-4f70-8a51-47de5af3c502",
+let result =  {
+"meshery_id":"f9ccd668-9d26-4f70-8a51-47de5af3c502",
  "name":"No mesh_1650983199033",
  "mesh":null,
  "performance_profile":"30c9382b-636f-4117-8205-10bac2d77944",
@@ -440,7 +416,8 @@ let result =
     "ActualQPS":2.5838099794764338,
     "DurationHistogram":
         {"Avg":0.3866328985641026,"Count":78,"Data":[{"Count":5,"End":0.35000000000000003,"Percent":6.410256410256411,"Start":0.3349775},{"Count":51,"End":0.4,"Percent":71.7948717948718,"Start":0.35000000000000003},{"Count":19,"End":0.45,"Percent":96.15384615384616,"Start":0.4},{"Count":2,"End":0.5,"Percent":98.71794871794872,"Start":0.45},{"Count":1,"End":0.509868292,"Percent":100,"Start":0.5}],"Max":0.509868292,"Min":0.3349775,"Percentiles":[{"Percentile":50,"Value":0.38333333333333336},{"Percentile":75,"Value":0.4065789473684211},{"Percentile":90,"Value":0.4373684210526316},{"Percentile":99,"Value":0.50217102424},{"Percentile":99.9,"Value":0.509098565224}],"StdDev":0.031457000667904265,"Sum":30.157366088000003},
-        "Exactly":0,"HeaderSizes":{"Avg":0,"Count":78,"Data":[{"Count":78,"End":0,"Percent":100,"Start":0}],"Max":0,"Min":0,"Percentiles":null,"StdDev":0,"Sum":0},"Jitter":false,"Labels":"No mesh_1650983199033 -_- https://www.facebook.com","NumThreads":1,"RequestedDuration":"30s","RequestedQPS":"max","RetCodes":{"200":78},"RunID":0,"RunType":"HTTP","Sizes":{"Avg":88505.5,"Count":78,"Data":[{"Count":78,"End":88666,"Percent":100,"Start":88363}],"Max":88666,"Min":88363,"Percentiles":null,"StdDev":137.89309776147758,"Sum":6903429},"SocketCount":0,"StartTime":"2022-04-26T19:56:40.358118+05:30","URL":"https://www.facebook.com","Uniform":false,"Version":"dev","kubernetes":{"nodes":[{"allocatable_cpu":"4","allocatable_memory":"3925304Ki","architecture":"arm64","capacity_cpu":"4","capacity_memory":"4027704Ki","container_runtime_version":"docker://20.10.14","hostname":"docker-desktop","internal_ip":"192.168.65.4","kubelet_version":"v1.22.4","kubeproxy_version":"v1.22.4","operating_system":"linux","os_image":"Docker Desktop"}],"server_version":"v1.22.5"},"load-generator":"fortio"}]}
+        "Exactly":0,"HeaderSizes":{"Avg":0,"Count":78,"Data":[{"Count":78,"End":0,"Percent":100,"Start":0}],"Max":0,"Min":0,"Percentiles":null,"StdDev":0,"Sum":0},"Jitter":false,"Labels":"No mesh_1650983199033 -_- https://www.facebook.com","NumThreads":1,"RequestedDuration":"30s","RequestedQPS":"max","RetCodes":{"200":78},"RunID":0,"RunType":"HTTP","Sizes":{"Avg":88505.5,"Count":78,"Data":[{"Count":78,"End":88666,"Percent":100,"Start":88363}],"Max":88666,"Min":88363,"Percentiles":null,"StdDev":137.89309776147758,"Sum":6903429},"SocketCount":0,"StartTime":"2022-04-26T19:56:40.358118+05:30","URL":"https://www.facebook.com","Uniform":false,"Version":"dev","kubernetes":{"nodes":[{"allocatable_cpu":"4","allocatable_memory":"3925304Ki","architecture":"arm64","capacity_cpu":"4","capacity_memory":"4027704Ki","container_runtime_version":"docker://20.10.14","hostname":"docker-desktop","internal_ip":"192.168.65.4","kubelet_version":"v1.22.4","kubeproxy_version":"v1.22.4","operating_system":"linux","os_image":"Docker Desktop"}],"server_version":"v1.22.5"},"load-generator":"fortio"}]
+}
 
 let rawdata = result;
 let data = result.runner_results;
@@ -599,7 +576,7 @@ function processChartData(chartData) {
     }
   }
 
-function fillTittle(){
+function fillTittle() {
   const titleContainer = document.getElementById("titles");
   const titles = makeTitle(rawdata,data[0]);
   titleContainer.innerHTML = `<div id="titles-holder" class="container"></div>`
@@ -619,10 +596,5 @@ function fillTittle(){
   }
 }
 
-
-
-
 processChartData(chartData)
 fillTittle()
-
-
