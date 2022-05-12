@@ -65,5 +65,4 @@ function serviceMeshClick(){
     iconDown.classList.replace("fa-angle-right","fa-angle-down")
   }
   
-  console.log("clicked")
 }
