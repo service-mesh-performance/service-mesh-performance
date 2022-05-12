@@ -99,9 +99,8 @@ function getMetadata(rawdata, res) {
     qps: {
       display: {
         key: "QPS",
-        value: `Achieved ${myRound(res.ActualQPS, 1)} (Requested ${
-          res?.RequestedQPS
-        })`,
+        value: `Achieved ${myRound(res.ActualQPS, 1)} (Requested ${res?.RequestedQPS
+          })`,
       },
     },
     numberOfConnections: {
@@ -113,9 +112,8 @@ function getMetadata(rawdata, res) {
     duration: {
       display: {
         key: "Duration",
-        value: `Achieved ${myRound(res.ActualDuration / 1e9, 1)} (Requested ${
-          res.RequestedDuration
-        })`,
+        value: `Achieved ${myRound(res.ActualDuration / 1e9, 1)} (Requested ${res.RequestedDuration
+          })`,
       },
     },
     errors: {
@@ -301,14 +299,11 @@ function makeTitle(rawdata, res) {
     title.push(`Kubernetes server version: ${res.kubernetes.server_version}`);
     title.push("Nodes:");
     res.kubernetes?.nodes?.forEach((node, ind) => {
-      title.push(`Node ${ind + 1} - \nHostname: ${node.hostname} \nCPU: ${
-        node.allocatable_cpu
-      } \nMemory: ${node.allocatable_memory} \nArch: ${
-        node.architecture
-      } \nOS: ${node.os_image}
-                    \nKubelet version: ${
-                      node.kubelet_version
-                    } \nContainer runtime: ${node.container_runtime_version}`);
+      title.push(`Node ${ind + 1} - \nHostname: ${node.hostname} \nCPU: ${node.allocatable_cpu
+        } \nMemory: ${node.allocatable_memory} \nArch: ${node.architecture
+        } \nOS: ${node.os_image}
+                    \nKubelet version: ${node.kubelet_version
+        } \nContainer runtime: ${node.container_runtime_version}`);
     });
   }
   console.log(title);
@@ -748,3 +743,30 @@ function fillTittle() {
 
 processChartData(chartData);
 fillTittle();
+
+// The Infrastructure Profile
+document.getElementById("infrastructure-details").innerHTML = machineSpecs(result.runner_results[0].kubernetes.nodes[0])
+function machineSpecs(machineSpec) {
+  function getTableRows() {
+    return Object.keys(machineSpec).map((key) => `<tr>
+    <th scope="row">${formattedName(key)}</th>
+    <td>${machineSpec[key]}</td>
+  </tr>`).join("")
+  }
+
+  return `<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Infrastructure Profile</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    ${getTableRows(machineSpec)}
+  </tbody>
+</table>`
+}
+
+function formattedName(name) {
+  return name.split("_").map(word => word[0].toUpperCase() + word.substring(1)).join(" ")
+}
