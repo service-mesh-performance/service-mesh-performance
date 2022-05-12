@@ -51,5 +51,19 @@ window.addEventListener("resize",function(){
 
 
 function serviceMeshClick(){
+  selectMeshModal = document.getElementById("selectMeshModal")
+  selectServiceMeshButton = document.getElementById("selectMeshButton")
+  loadGenerator = document.querySelector(".load-generators")
+  iconDown = document.querySelector(".chevron")
+  
+  if(loadGenerator.style["display"]=="block"){
+    loadGenerator.style["display"]= "none"
+    iconDown.classList.replace("fa-angle-down","fa-angle-right")
+  }
+  else{
+    loadGenerator.style["display"]="block"
+    iconDown.classList.replace("fa-angle-right","fa-angle-down")
+  }
+  
   console.log("clicked")
 }

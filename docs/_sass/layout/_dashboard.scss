@@ -99,7 +99,11 @@ body{
 	position: relative;
 	background-color: $background-color_2;
 }
-
+#selectMeshButton{
+	border-radius: 5px;
+	background-color: transparent ;
+	border: $background-color_1 solid 1px ;
+}
 
 @media only screen and (max-width: 991px) {
 	#dashboardPagecontainer {
@@ -120,6 +124,10 @@ body{
 	}
 	#content.active {
 		margin-left: 0rem;
+	}
+	.load-generators{
+		display: block;
+		
 	}
 	.test-text{
 		top:4rem;
