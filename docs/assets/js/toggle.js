@@ -48,3 +48,8 @@ window.addEventListener("resize",function(){
     content.classList.remove("active")
   }
 })
+
+
+function serviceMeshClick(){
+  console.log("clicked")
+}

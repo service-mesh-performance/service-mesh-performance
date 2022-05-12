@@ -384,7 +384,7 @@ function makeChart (data) {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false,
+      maintainAspectRatio: true,
       metadata : data?.metadata,
       title: {
         display: true,
