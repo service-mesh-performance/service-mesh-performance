@@ -91,23 +91,20 @@ body{
 	z-index: 2;
 }
 .performance-graph {
-	width: fit-content;
-	min-width: 100%;
+	width: 100%;
+	min-width: calc(100%);
 	margin-right: auto;
 	margin-left: auto;
 	border: solid 1px black;
 	position: relative;
 	background-color: $background-color_2;
 }
-.graph-image {
-	width: 79vw;
-	opacity: 0.5;
+#selectMeshButton{
+	border-radius: 5px;
+	background-color: transparent ;
+	border: $background-color_1 solid 1px ;
 }
-.test-text {
-	position: absolute;
-	top: 10rem;
-	left: 19rem;
-}
+
 @media only screen and (max-width: 991px) {
 	#dashboardPagecontainer {
 		padding-top: 6.64rem;
@@ -127,6 +124,9 @@ body{
 	}
 	#content.active {
 		margin-left: 0rem;
+	}
+	.load-generators{
+		display: block;
 	}
 	.test-text{
 		top:4rem;
