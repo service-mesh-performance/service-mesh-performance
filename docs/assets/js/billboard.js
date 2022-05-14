@@ -1,7 +1,7 @@
 function renderSelectedChart(e) {
-  // console.log("my Fn ran", e)
   const chartData = getChartData(e.value);
   processChartData(chartData);
+  fillTittle(chartData.options.title.text)
 }
 
 function myRound(v, digits = 2) {
@@ -65,7 +65,6 @@ function makeTitle(rawdata, res) {
       // http results
       // title.push(res.Labels + ' - ' + res.URL + ' - ' + formatDate(res.StartTime))
       // title.push(res.URL + ' - ' + formatDate(res.StartTime))
-      console.log(res.Labels);
       var labels = res.Labels.split(" -_- ");
       // title.push(`Labels: ${labels.map(item => item + '\n')}`)
       title.push(`Title: ${rawdata ? rawdata.name : labels[0]}`);
@@ -142,7 +141,6 @@ function makeTitle(rawdata, res) {
         } \nContainer runtime: ${node.container_runtime_version}`);
     });
   }
-  console.log(title);
   return title;
 }
 
@@ -264,7 +262,6 @@ let tmpData =
 function processChartData(chartData) {
   console.log({ chartData })
   if (chartData && chartData.data && chartData.options) {
-    console.log("inside if");
     const xAxes = [];
     const yAxes = [];
     const colors = {};
@@ -354,7 +351,6 @@ function processChartData(chartData) {
 
       grid.x = { lines: percentiles };
     }
-    console.log(xAxisTracker);
 
     const chartColumn = [];
 
@@ -365,9 +361,6 @@ function processChartData(chartData) {
       chartColumn.push(yAxe);
     });
     // chartColumn.push(["data1", 30, 200, 100, 400, 150, 250])
-    console.log({ chartColumn, xAxes, yAxes })
-
-    console.log("chart column", chartColumn.toString())
 
     const chartCol = [
       ["x1", 0, 334.98, 350, 400, 450, 500, 509.87],
@@ -392,7 +385,6 @@ function processChartData(chartData) {
       "Histogram: Count": "y2"
     }
 
-    console.log({ xAxisTracker, axes, types })
 
     const chartConfig = {
       // oninit: function(args){
@@ -436,7 +428,6 @@ function processChartData(chartData) {
 
     chart = bb.generate(chartConfig);
   } else {
-    console.log("inside else");
     chart = bb.generate({
       type: "line",
       data: { columns: [] },
@@ -445,9 +436,11 @@ function processChartData(chartData) {
   }
 }
 
-function fillTittle() {
+function fillTittle(titles) {
   const titleContainer = document.getElementById("titles");
-  const titles = makeTitle(rawdata, data[0]);
+  if(!titles) {
+    titles = makeTitle(rawdata, data[0]);
+  }
   titleContainer.innerHTML = `<div id="titles-holder" class="container"></div>`;
   const innerTitle = document.getElementById("titles-holder");
   innerTitle.innerHTML = "";
@@ -458,7 +451,7 @@ function fillTittle() {
     row.innerHTML = " ";
     for (let j = 0; j < 3; j++) {
       row.innerHTML += `<div class="col-sm">
-    ${titles[titleCount]}
+    ${titles[titleCount] || ""}
     </div>`;
       titleCount = titleCount + 1;
     }
