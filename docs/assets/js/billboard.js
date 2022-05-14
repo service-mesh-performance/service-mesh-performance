@@ -1,4 +1,4 @@
-function myFn(e) {
+function renderSelectedChart(e) {
   // console.log("my Fn ran", e)
   const chartData = getChartData(e.value);
   processChartData(chartData);

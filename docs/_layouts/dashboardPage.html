@@ -40,7 +40,7 @@
 
 			<!-- List service mesh -->
 				<form class="load-generators">
-					<select class=" test-selector drop-down custom-select custom-select-lg mb-3" name="performance-ids" id="performance-ids" onchange="myFn(this)">
+					<select class=" test-selector drop-down custom-select custom-select-lg mb-3" name="performance-ids" id="performance-ids" onchange="renderSelectedChart(this)">
 					{%- for service_mesh in site.data.service_meshes.service_meshes  -%}
           <option value="{{service_mesh.name}}" id="{{service_mesh.id}}">{{service_mesh.name}}</option>
 					{% endfor %}
