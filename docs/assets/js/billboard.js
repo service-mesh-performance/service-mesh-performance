@@ -1,3 +1,9 @@
+function myFn(e) {
+  // console.log("my Fn ran", e)
+  const chartData = getChartData(e.value);
+  processChartData(chartData);
+}
+
 function myRound(v, digits = 2) {
   var p = Math.pow(10, digits);
   return Math.round(v * p) / p;
@@ -51,176 +57,6 @@ const Axes = {
     },
   },
 };
-
-function getMetadata(rawdata, res) {
-  return {
-    title: {
-      display: {
-        key: "Title",
-        // value : res.Labels.split(' -_- ')?.[0] || "No Title"
-        value:
-          (rawdata ? rawdata.name : res.Labels.split(" -_- ")?.[0]) ||
-          "No Title",
-      },
-    },
-    url: {
-      display: {
-        key: "URL",
-        value:
-          (rawdata
-            ? rawdata.runner_results.URL
-            : res.Labels.split(" -_- ")?.[1]) || "No URL",
-      },
-    },
-    startTime: {
-      display: {
-        key: "Start Time",
-        value: formatDate(res.StartTime),
-      },
-    },
-    minimum: {
-      display: {
-        key: "Minimum",
-        value: `${myRound(1000.0 * res.DurationHistogram.Min, 3)} ms`,
-      },
-    },
-    average: {
-      display: {
-        key: "Average",
-        value: `${myRound(1000.0 * res.DurationHistogram.Avg, 3)} ms`,
-      },
-    },
-    maximum: {
-      display: {
-        key: "Maximum",
-        value: `${myRound(1000.0 * res.DurationHistogram.Max, 3)} ms`,
-      },
-    },
-    qps: {
-      display: {
-        key: "QPS",
-        value: `Achieved ${myRound(res.ActualQPS, 1)} (Requested ${res?.RequestedQPS
-          })`,
-      },
-    },
-    numberOfConnections: {
-      display: {
-        key: "Number Of Connections",
-        value: res.NumThreads,
-      },
-    },
-    duration: {
-      display: {
-        key: "Duration",
-        value: `Achieved ${myRound(res.ActualDuration / 1e9, 1)} (Requested ${res.RequestedDuration
-          })`,
-      },
-    },
-    errors: {
-      display: {
-        key: "Errors",
-        value: (() => {
-          const status = res.RetCodes?.[200] || res.RetCodes?.SERVING || 0;
-          const total = res.DurationHistogram.Count;
-
-          if (status !== total) {
-            if (status)
-              return (
-                myRound((100.0 * (total - status)) / total, 2) + "% errors"
-              );
-
-            return "100% errors!";
-          }
-
-          return "No Errors";
-        })(),
-      },
-    },
-    percentiles: {
-      display: {
-        key: "Percentiles",
-        value: res.DurationHistogram?.Percentiles?.map((p) => {
-          return {
-            display: {
-              key: `p${p.Percentile}`,
-              value: `${myRound(1000 * p.Value, 2)} ms`,
-            },
-          };
-        }),
-      },
-    },
-    kubernetes: {
-      display: {
-        hide: !res.kubernetes,
-        key: "Kuberenetes",
-        value: [
-          {
-            display: {
-              key: "Server Version",
-              value: res.kubernetes?.server_version,
-            },
-          },
-          {
-            display: {
-              key: "Nodes",
-              value: res.kubernetes?.nodes?.map((node, i) => {
-                return {
-                  display: {
-                    key: `Node ${i + 1}`,
-                    value: [
-                      {
-                        display: {
-                          key: "Hostname",
-                          value: node?.hostname,
-                        },
-                      },
-                      {
-                        display: {
-                          key: "CPU",
-                          value: node?.allocatable_cpu,
-                        },
-                      },
-                      {
-                        display: {
-                          key: "Memory",
-                          value: node?.allocatable_memory,
-                        },
-                      },
-                      {
-                        display: {
-                          key: "Arch",
-                          value: node?.architecture,
-                        },
-                      },
-                      {
-                        display: {
-                          key: "OS",
-                          value: node?.os_image,
-                        },
-                      },
-                      {
-                        display: {
-                          key: "Kubelet Version",
-                          value: node?.kubelet_version,
-                        },
-                      },
-                      {
-                        display: {
-                          key: "Container runtime",
-                          value: node?.container_runtime_version,
-                        },
-                      },
-                    ],
-                  },
-                };
-              }),
-            },
-          },
-        ],
-      },
-    },
-  };
-}
 
 function makeTitle(rawdata, res) {
   var title = [];
@@ -309,149 +145,6 @@ function makeTitle(rawdata, res) {
   console.log(title);
   return title;
 }
-
-function fortioResultToJsChartData(rawdata, res) {
-  var dataP = [
-    {
-      x: 0.0,
-      y: 0.0,
-    },
-  ];
-  var len = res.DurationHistogram.Data.length;
-  var prevX = 0.0;
-  var prevY = 0.0;
-  for (var i = 0; i < len; i++) {
-    var it = res.DurationHistogram.Data[i];
-    var x = myRound(1000.0 * it.Start);
-    if (i === 0) {
-      // Extra point, 1/N at min itself
-      dataP.push({
-        x: x,
-        // y: myRound(100.0 / res.DurationHistogram.Count, 3)
-        y: myRound(100.0 / res.DurationHistogram.Count, 2),
-      });
-    } else {
-      if (prevX !== x) {
-        dataP.push({
-          x: x,
-          y: prevY,
-        });
-      }
-    }
-    x = myRound(1000.0 * it.End);
-    // var y = myRound(it.Percent, 3)
-    var y = myRound(it.Percent, 2);
-    dataP.push({
-      x: x,
-      y: y,
-    });
-    prevX = x;
-    prevY = y;
-  }
-  var dataH = [];
-  var prev = 1000.0 * res.DurationHistogram.Data[0].Start;
-  for (i = 0; i < len; i++) {
-    it = res.DurationHistogram.Data[i];
-    var startX = 1000.0 * it.Start;
-    var endX = 1000.0 * it.End;
-    if (startX !== prev) {
-      dataH.push(
-        {
-          x: myRound(prev),
-          y: 0,
-        },
-        {
-          x: myRound(startX),
-          y: 0,
-        }
-      );
-    }
-    dataH.push(
-      {
-        x: myRound(startX),
-        y: it.Count,
-      },
-      {
-        x: myRound(endX),
-        y: it.Count,
-      }
-    );
-    prev = endX;
-  }
-  return {
-    title: makeTitle(rawdata, res),
-    metadata: getMetadata(rawdata, res),
-    dataP: dataP,
-    dataH: dataH,
-    percentiles: res.DurationHistogram.Percentiles,
-  };
-}
-
-function makeChart(data) {
-  return {
-    percentiles: data.percentiles,
-    data: {
-      datasets: [
-        {
-          label: "Cumulative %",
-          data: data.dataP,
-          fill: false,
-          yAxisID: "P",
-          stepped: true,
-          backgroundColor: "rgba(134, 87, 167, 1)",
-          borderColor: "rgba(134, 87, 167, 1)",
-          cubicInterpolationMode: "monotone",
-        },
-        {
-          label: "Histogram: Count",
-          data: data.dataH,
-          yAxisID: "H",
-          pointStyle: "rect",
-          radius: 1,
-          borderColor: "rgba(87, 167, 134, .9)",
-          backgroundColor: "rgba(87, 167, 134, .75)",
-          lineTension: 0,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      metadata: data?.metadata,
-      title: {
-        display: true,
-        fontStyle: "normal",
-        text: data.title,
-      },
-      scales: {
-        xAxes: [Axes.x],
-        yAxes: [
-          {
-            id: "P",
-            position: "right",
-            ticks: {
-              beginAtZero: true,
-              max: 100,
-            },
-            scaleLabel: {
-              display: true,
-              labelString: "%",
-            },
-          },
-          Axes.y,
-        ],
-      },
-    },
-  };
-}
-
-let singleChart = (rawdata, data) => {
-  if (typeof data === "undefined" || typeof data.StartTime === "undefined") {
-    return {};
-  }
-
-  return makeChart(fortioResultToJsChartData(rawdata, data));
-};
 
 let result = {
   meshery_id: "f9ccd668-9d26-4f70-8a51-47de5af3c502",
@@ -566,9 +259,10 @@ let data = result.runner_results;
 let tmpData =
   typeof data !== "undefined" ? (data.length == 1 ? data[0] : {}) : {};
 
-let chartData = singleChart(rawdata, tmpData);
+// let chartData = singleChart(rawdata, tmpData);
 
 function processChartData(chartData) {
+  console.log({ chartData })
   if (chartData && chartData.data && chartData.options) {
     console.log("inside if");
     const xAxes = [];
@@ -670,6 +364,35 @@ function processChartData(chartData) {
     yAxes.forEach((yAxe) => {
       chartColumn.push(yAxe);
     });
+    // chartColumn.push(["data1", 30, 200, 100, 400, 150, 250])
+    console.log({ chartColumn, xAxes, yAxes })
+
+    console.log("chart column", chartColumn.toString())
+
+    const chartCol = [
+      ["x1", 0, 334.98, 350, 400, 450, 500, 509.87],
+      ["x2", 334.98, 350, 350, 400, 400, 450, 450, 500, 500, 509.87],
+      ["Cumulative %", 0, 1.28, 6.41, 71.79, 96.15, 98.72, 100],
+      ["Cumulat", 0, 6.28, 14.41, 67.79, 84.15, 89.72, 98],
+      ["Histogram: Count", 5, 5, 51, 51, 19, 19, 2, 2, 1, 1],
+    ];
+
+    const xAxisTracker1 = {
+      "Cumulative %": "x1",
+      "Histogram: Count": "x2",
+      "Cumulat": "x1"
+    }
+
+    const types1 = {
+      "Histogram: Count": "area-step",
+    }
+
+    const axes1 = {
+      "Cumulative %": "y",
+      "Histogram: Count": "y2"
+    }
+
+    console.log({ xAxisTracker, axes, types })
 
     const chartConfig = {
       // oninit: function(args){
@@ -701,6 +424,7 @@ function processChartData(chartData) {
       },
       tooltip: { show: true },
     };
+
     // if (!hideTitle) {
     //   if (data.length == 4) {
     //    titleRef.innerText = chartData.options.title.text.slice(0,2).join('\n') +"\n"+ chartData.options.title.text[2].split('\n')[0];
@@ -734,14 +458,31 @@ function fillTittle() {
     row.innerHTML = " ";
     for (let j = 0; j < 3; j++) {
       row.innerHTML += `<div class="col-sm">
-     ${titles[titleCount]}
+    ${titles[titleCount]}
     </div>`;
       titleCount = titleCount + 1;
     }
   }
 }
 
-processChartData(chartData);
+const newData = "{\"data\":{\"datasets\":[{\"label\":\"A: Cumulative %\",\"data\":[{\"x\":0,\"y\":0},{\"x\":124.98,\"y\":1.02},{\"x\":140,\"y\":81.63},{\"x\":160,\"y\":91.84},{\"x\":180,\"y\":94.9},{\"x\":200,\"y\":94.9},{\"x\":250,\"y\":95.92},{\"x\":300,\"y\":96.94},{\"x\":500,\"y\":96.94},{\"x\":600,\"y\":97.96},{\"x\":700,\"y\":98.98},{\"x\":900,\"y\":98.98},{\"x\":954.23,\"y\":100}],\"fill\":false,\"yAxisID\":\"P\",\"stepped\":true,\"backgroundColor\":\"rgba(134, 87, 167, 1)\",\"borderColor\":\"rgba(134, 87, 167, 1)\",\"cubicInterpolationMode\":\"monotone\"},{\"label\":\"B: Cumulative %\",\"data\":[{\"x\":0,\"y\":0},{\"x\":78.14,\"y\":0.78},{\"x\":80,\"y\":1.55},{\"x\":90,\"y\":11.63},{\"x\":100,\"y\":32.56},{\"x\":120,\"y\":71.32},{\"x\":140,\"y\":82.95},{\"x\":160,\"y\":91.47},{\"x\":180,\"y\":96.12},{\"x\":200,\"y\":96.9},{\"x\":250,\"y\":99.22},{\"x\":350,\"y\":99.22},{\"x\":371.09,\"y\":100}],\"fill\":false,\"yAxisID\":\"P\",\"stepped\":true,\"backgroundColor\":\"rgba(204, 102, 0)\",\"borderColor\":\"rgba(204, 102, 0)\",\"cubicInterpolationMode\":\"monotone\"},{\"label\":\"A: Histogram: Count\",\"data\":[{\"x\":124.98,\"y\":80},{\"x\":140,\"y\":80},{\"x\":140,\"y\":10},{\"x\":160,\"y\":10},{\"x\":160,\"y\":3},{\"x\":180,\"y\":3},{\"x\":180,\"y\":0},{\"x\":200,\"y\":0},{\"x\":200,\"y\":1},{\"x\":250,\"y\":1},{\"x\":250,\"y\":1},{\"x\":300,\"y\":1},{\"x\":300,\"y\":0},{\"x\":500,\"y\":0},{\"x\":500,\"y\":1},{\"x\":600,\"y\":1},{\"x\":600,\"y\":1},{\"x\":700,\"y\":1},{\"x\":700,\"y\":0},{\"x\":900,\"y\":0},{\"x\":900,\"y\":1},{\"x\":954.23,\"y\":1}],\"yAxisID\":\"H\",\"pointStyle\":\"rect\",\"radius\":1,\"borderColor\":\"rgba(87, 167, 134, .9)\",\"backgroundColor\":\"rgba(87, 167, 134, .75)\",\"lineTension\":0},{\"label\":\"B: Histogram: Count\",\"data\":[{\"x\":78.14,\"y\":2},{\"x\":80,\"y\":2},{\"x\":80,\"y\":13},{\"x\":90,\"y\":13},{\"x\":90,\"y\":27},{\"x\":100,\"y\":27},{\"x\":100,\"y\":50},{\"x\":120,\"y\":50},{\"x\":120,\"y\":15},{\"x\":140,\"y\":15},{\"x\":140,\"y\":11},{\"x\":160,\"y\":11},{\"x\":160,\"y\":6},{\"x\":180,\"y\":6},{\"x\":180,\"y\":1},{\"x\":200,\"y\":1},{\"x\":200,\"y\":3},{\"x\":250,\"y\":3},{\"x\":250,\"y\":0},{\"x\":350,\"y\":0},{\"x\":350,\"y\":1},{\"x\":371.09,\"y\":1}],\"yAxisID\":\"H\",\"pointStyle\":\"rect\",\"radius\":1,\"borderColor\":\"rgba(36, 64, 238, .9)\",\"backgroundColor\":\"rgba(36, 64, 238, .75)\",\"lineTension\":0}]},\"options\":{\"responsive\":true,\"maintainAspectRatio\":false,\"metadata\":[{\"title\":{\"display\":{\"key\":\"Title\",\"value\":\"No mesh_1652261385805\"}},\"url\":{\"display\":{\"key\":\"URL\",\"value\":\"https://www.apple.com\"}},\"startTime\":{\"display\":{\"key\":\"Start Time\",\"value\":\"2022-05-11 14:59:47\"}},\"minimum\":{\"display\":{\"key\":\"Minimum\",\"value\":\"124.977 ms\"}},\"average\":{\"display\":{\"key\":\"Average\",\"value\":\"154.036 ms\"}},\"maximum\":{\"display\":{\"key\":\"Maximum\",\"value\":\"954.231 ms\"}},\"qps\":{\"display\":{\"key\":\"QPS\",\"value\":\"Achieved 6.5 (Requested max)\"}},\"numberOfConnections\":{\"display\":{\"key\":\"Number Of Connections\",\"value\":1}},\"duration\":{\"display\":{\"key\":\"Duration\",\"value\":\"Achieved 15.1 (Requested 15s)\"}},\"errors\":{\"display\":{\"key\":\"Errors\",\"value\":\"No Errors\"}},\"percentiles\":{\"display\":{\"key\":\"Percentiles\",\"value\":[{\"display\":{\"key\":\"p50\",\"value\":\"134.1 ms\"}},{\"display\":{\"key\":\"p75\",\"value\":\"138.76 ms\"}},{\"display\":{\"key\":\"p90\",\"value\":\"156.4 ms\"}},{\"display\":{\"key\":\"p99\",\"value\":\"901.08 ms\"}},{\"display\":{\"key\":\"p99.9\",\"value\":\"948.92 ms\"}}]}},\"kubernetes\":{\"display\":{\"hide\":false,\"key\":\"Kuberenetes\",\"value\":[{\"display\":{\"key\":\"Server Version\",\"value\":\"v1.22.5\"}},{\"display\":{\"key\":\"Nodes\",\"value\":[{\"display\":{\"key\":\"Node 1\",\"value\":[{\"display\":{\"key\":\"Hostname\",\"value\":\"docker-desktop\"}},{\"display\":{\"key\":\"CPU\",\"value\":\"5\"}},{\"display\":{\"key\":\"Memory\",\"value\":\"5979312Ki\"}},{\"display\":{\"key\":\"Arch\",\"value\":\"arm64\"}},{\"display\":{\"key\":\"OS\",\"value\":\"Docker Desktop\"}},{\"display\":{\"key\":\"Kubelet Version\",\"value\":\"v1.22.5\"}},{\"display\":{\"key\":\"Container runtime\",\"value\":\"docker://20.10.14\"}}]}}]}}]}}},{\"title\":{\"display\":{\"key\":\"Title\",\"value\":\"No mesh_1651960847594\"}},\"url\":{\"display\":{\"key\":\"URL\",\"value\":\"https://www.apple.com\"}},\"startTime\":{\"display\":{\"key\":\"Start Time\",\"value\":\"2022-05-08 03:30:48\"}},\"minimum\":{\"display\":{\"key\":\"Minimum\",\"value\":\"78.139 ms\"}},\"average\":{\"display\":{\"key\":\"Average\",\"value\":\"117.092 ms\"}},\"maximum\":{\"display\":{\"key\":\"Maximum\",\"value\":\"371.093 ms\"}},\"qps\":{\"display\":{\"key\":\"QPS\",\"value\":\"Achieved 8.5 (Requested max)\"}},\"numberOfConnections\":{\"display\":{\"key\":\"Number Of Connections\",\"value\":1}},\"duration\":{\"display\":{\"key\":\"Duration\",\"value\":\"Achieved 15.1 (Requested 15s)\"}},\"errors\":{\"display\":{\"key\":\"Errors\",\"value\":\"No Errors\"}},\"percentiles\":{\"display\":{\"key\":\"Percentiles\",\"value\":[{\"display\":{\"key\":\"p50\",\"value\":\"109 ms\"}},{\"display\":{\"key\":\"p75\",\"value\":\"126.33 ms\"}},{\"display\":{\"key\":\"p90\",\"value\":\"156.55 ms\"}},{\"display\":{\"key\":\"p99\",\"value\":\"245.17 ms\"}},{\"display\":{\"key\":\"p99.9\",\"value\":\"368.37 ms\"}}]}},\"kubernetes\":{\"display\":{\"hide\":false,\"key\":\"Kuberenetes\",\"value\":[{\"display\":{\"key\":\"Server Version\",\"value\":\"v1.22.5\"}},{\"display\":{\"key\":\"Nodes\",\"value\":[{\"display\":{\"key\":\"Node 1\",\"value\":[{\"display\":{\"key\":\"Hostname\",\"value\":\"docker-desktop\"}},{\"display\":{\"key\":\"CPU\",\"value\":\"5\"}},{\"display\":{\"key\":\"Memory\",\"value\":\"5979308Ki\"}},{\"display\":{\"key\":\"Arch\",\"value\":\"arm64\"}},{\"display\":{\"key\":\"OS\",\"value\":\"Docker Desktop\"}},{\"display\":{\"key\":\"Kubelet Version\",\"value\":\"v1.22.5\"}},{\"display\":{\"key\":\"Container runtime\",\"value\":\"docker://20.10.14\"}}]}}]}}]}}}],\"title\":{\"display\":true,\"fontStyle\":\"normal\",\"text\":[\"A: Title: No mesh_1652261385805\",\"URL: https://www.apple.com\",\"\",\"B: Title: No mesh_1651960847594\",\"URL: https://www.apple.com\"]},\"scales\":{\"xAxes\":[{\"type\":\"linear\",\"scaleLabel\":{\"display\":true,\"labelString\":\"Response time in ms\",\"ticks\":{\"min\":0,\"beginAtZero\":true}}}],\"yAxes\":[{\"id\":\"P\",\"position\":\"right\",\"ticks\":{\"beginAtZero\":true,\"max\":100},\"scaleLabel\":{\"display\":true,\"labelString\":\"%\"}},{\"id\":\"H\",\"type\":\"linear\",\"ticks\":{\"beginAtZero\":true},\"scaleLabel\":{\"display\":true,\"labelString\":\"Count\"}}]}}}";
+const istioChartData = "{\"percentiles\":[{\"Percentile\":50,\"Value\":0.11399999999999999},{\"Percentile\":75,\"Value\":0.1264864864864865},{\"Percentile\":90,\"Value\":0.23333333333333342},{\"Percentile\":99,\"Value\":0.3725535154571429},{\"Percentile\":99.9,\"Value\":0.38314386184571436}],\"data\":{\"datasets\":[{\"label\":\"Cumulative %\",\"data\":[{\"x\":0,\"y\":0},{\"x\":70.99,\"y\":0.42},{\"x\":80,\"y\":0.83},{\"x\":90,\"y\":1.25},{\"x\":100,\"y\":3.33},{\"x\":120,\"y\":70},{\"x\":140,\"y\":85.42},{\"x\":160,\"y\":86.67},{\"x\":180,\"y\":87.5},{\"x\":200,\"y\":88.33},{\"x\":250,\"y\":90.83},{\"x\":300,\"y\":92.5},{\"x\":350,\"y\":97.08},{\"x\":384.32,\"y\":100}],\"fill\":false,\"yAxisID\":\"P\",\"stepped\":true,\"backgroundColor\":\"rgba(134, 87, 167, 1)\",\"borderColor\":\"rgba(134, 87, 167, 1)\",\"cubicInterpolationMode\":\"monotone\"},{\"label\":\"Histogram: Count\",\"data\":[{\"x\":70.99,\"y\":2},{\"x\":80,\"y\":2},{\"x\":80,\"y\":1},{\"x\":90,\"y\":1},{\"x\":90,\"y\":5},{\"x\":100,\"y\":5},{\"x\":100,\"y\":160},{\"x\":120,\"y\":160},{\"x\":120,\"y\":37},{\"x\":140,\"y\":37},{\"x\":140,\"y\":3},{\"x\":160,\"y\":3},{\"x\":160,\"y\":2},{\"x\":180,\"y\":2},{\"x\":180,\"y\":2},{\"x\":200,\"y\":2},{\"x\":200,\"y\":6},{\"x\":250,\"y\":6},{\"x\":250,\"y\":4},{\"x\":300,\"y\":4},{\"x\":300,\"y\":11},{\"x\":350,\"y\":11},{\"x\":350,\"y\":7},{\"x\":384.32,\"y\":7}],\"yAxisID\":\"H\",\"pointStyle\":\"rect\",\"radius\":1,\"borderColor\":\"rgba(87, 167, 134, .9)\",\"backgroundColor\":\"rgba(87, 167, 134, .75)\",\"lineTension\":0}]},\"options\":{\"responsive\":true,\"maintainAspectRatio\":false,\"metadata\":{\"title\":{\"display\":{\"key\":\"Title\",\"value\":\"istio_1650568590330\"}},\"url\":{\"display\":{\"key\":\"URL\",\"value\":\"https://layer5.io\"}},\"startTime\":{\"display\":{\"key\":\"Start Time\",\"value\":\"2022-04-22 00:46:31\"}},\"minimum\":{\"display\":{\"key\":\"Minimum\",\"value\":\"70.989 ms\"}},\"average\":{\"display\":{\"key\":\"Average\",\"value\":\"138.927 ms\"}},\"maximum\":{\"display\":{\"key\":\"Maximum\",\"value\":\"384.321 ms\"}},\"qps\":{\"display\":{\"key\":\"QPS\",\"value\":\"Achieved 4 (Requested 4)\"}},\"numberOfConnections\":{\"display\":{\"key\":\"Number Of Connections\",\"value\":2}},\"duration\":{\"display\":{\"key\":\"Duration\",\"value\":\"Achieved 60.1 (Requested 1m0s)\"}},\"errors\":{\"display\":{\"key\":\"Errors\",\"value\":\"No Errors\"}},\"percentiles\":{\"display\":{\"key\":\"Percentiles\",\"value\":[{\"display\":{\"key\":\"p50\",\"value\":\"114 ms\"}},{\"display\":{\"key\":\"p75\",\"value\":\"126.49 ms\"}},{\"display\":{\"key\":\"p90\",\"value\":\"233.33 ms\"}},{\"display\":{\"key\":\"p99\",\"value\":\"372.55 ms\"}},{\"display\":{\"key\":\"p99.9\",\"value\":\"383.14 ms\"}}]}},\"kubernetes\":{\"display\":{\"hide\":false,\"key\":\"Kuberenetes\",\"value\":[{\"display\":{\"key\":\"Server Version\",\"value\":\"v1.22.5\"}},{\"display\":{\"key\":\"Nodes\",\"value\":[{\"display\":{\"key\":\"Node 1\",\"value\":[{\"display\":{\"key\":\"Hostname\",\"value\":\"docker-desktop\"}},{\"display\":{\"key\":\"CPU\",\"value\":\"4\"}},{\"display\":{\"key\":\"Memory\",\"value\":\"20398384Ki\"}},{\"display\":{\"key\":\"Arch\",\"value\":\"amd64\"}},{\"display\":{\"key\":\"OS\",\"value\":\"Docker Desktop\"}},{\"display\":{\"key\":\"Kubelet Version\",\"value\":\"v1.22.5\"}},{\"display\":{\"key\":\"Container runtime\",\"value\":\"docker://20.10.14\"}}]}}]}}]}}},\"title\":{\"display\":true,\"fontStyle\":\"normal\",\"text\":[\"Title: istio_1650568590330\",\"URL: https://layer5.io\",\"Start Time: 2022-04-22 00:46:31\",\"Minimum: 70.989 ms\",\"Average: 138.927 ms\",\"Maximum: 384.321 ms\",\"Target QPS: 4 ( Actual QPS: 4 )\",\"No of Connections: 2\",\"Requested Duration: 1m0s ( Actual Duration: 60.1 )\",\"Errors: No Error\",\"Percentiles: p50: 114 ms; p75: 126.49 ms; p90: 233.33 ms; p99: 372.55 ms; p99.9: 383.14 ms; \",\"Kubernetes server version: v1.22.5\",\"Nodes:\",\"Node 1 - \\nHostname: docker-desktop \\nCPU: 4 \\nMemory: 20398384Ki \\nArch: amd64 \\nOS: Docker Desktop\\n                    \\nKubelet version: v1.22.5 \\nContainer runtime: docker://20.10.14\"]},\"scales\":{\"xAxes\":[{\"type\":\"linear\",\"scaleLabel\":{\"display\":true,\"labelString\":\"Response time in ms\",\"ticks\":{\"min\":0,\"beginAtZero\":true}}}],\"yAxes\":[{\"id\":\"P\",\"position\":\"right\",\"ticks\":{\"beginAtZero\":true,\"max\":100},\"scaleLabel\":{\"display\":true,\"labelString\":\"%\"}},{\"id\":\"H\",\"type\":\"linear\",\"ticks\":{\"beginAtZero\":true},\"scaleLabel\":{\"display\":true,\"labelString\":\"Count\"}}]}}}";
+const consulChartData = "{\"percentiles\":[{\"Percentile\":50,\"Value\":0.19597883597883597},{\"Percentile\":75,\"Value\":0.2888364779874214},{\"Percentile\":90,\"Value\":0.43211009174311926},{\"Percentile\":99,\"Value\":0.7000000000000001},{\"Percentile\":99.9,\"Value\":0.8165030844000022}],\"data\":{\"datasets\":[{\"label\":\"Cumulative %\",\"data\":[{\"x\":0,\"y\":0},{\"x\":6.69,\"y\":0.03},{\"x\":7,\"y\":0.07},{\"x\":8,\"y\":0.3},{\"x\":9,\"y\":0.4},{\"x\":10,\"y\":0.53},{\"x\":11,\"y\":0.83},{\"x\":12,\"y\":1},{\"x\":14,\"y\":1.63},{\"x\":16,\"y\":2},{\"x\":18,\"y\":2.37},{\"x\":20,\"y\":2.57},{\"x\":25,\"y\":3.47},{\"x\":30,\"y\":4.3},{\"x\":35,\"y\":5.1},{\"x\":40,\"y\":6.13},{\"x\":45,\"y\":6.97},{\"x\":50,\"y\":7.93},{\"x\":60,\"y\":10.1},{\"x\":70,\"y\":12.03},{\"x\":80,\"y\":14.13},{\"x\":90,\"y\":16.83},{\"x\":100,\"y\":19.33},{\"x\":120,\"y\":24.83},{\"x\":140,\"y\":32.27},{\"x\":160,\"y\":39.53},{\"x\":180,\"y\":44.97},{\"x\":200,\"y\":51.27},{\"x\":250,\"y\":66.77},{\"x\":300,\"y\":77.37},{\"x\":350,\"y\":82.83},{\"x\":400,\"y\":87.67},{\"x\":450,\"y\":91.3},{\"x\":500,\"y\":94.9},{\"x\":600,\"y\":97.93},{\"x\":700,\"y\":99},{\"x\":800,\"y\":99.83},{\"x\":841.26,\"y\":100}],\"fill\":false,\"yAxisID\":\"P\",\"stepped\":true,\"backgroundColor\":\"rgba(134, 87, 167, 1)\",\"borderColor\":\"rgba(134, 87, 167, 1)\",\"cubicInterpolationMode\":\"monotone\"},{\"label\":\"Histogram: Count\",\"data\":[{\"x\":6.69,\"y\":2},{\"x\":7,\"y\":2},{\"x\":7,\"y\":7},{\"x\":8,\"y\":7},{\"x\":8,\"y\":3},{\"x\":9,\"y\":3},{\"x\":9,\"y\":4},{\"x\":10,\"y\":4},{\"x\":10,\"y\":9},{\"x\":11,\"y\":9},{\"x\":11,\"y\":5},{\"x\":12,\"y\":5},{\"x\":12,\"y\":19},{\"x\":14,\"y\":19},{\"x\":14,\"y\":11},{\"x\":16,\"y\":11},{\"x\":16,\"y\":11},{\"x\":18,\"y\":11},{\"x\":18,\"y\":6},{\"x\":20,\"y\":6},{\"x\":20,\"y\":27},{\"x\":25,\"y\":27},{\"x\":25,\"y\":25},{\"x\":30,\"y\":25},{\"x\":30,\"y\":24},{\"x\":35,\"y\":24},{\"x\":35,\"y\":31},{\"x\":40,\"y\":31},{\"x\":40,\"y\":25},{\"x\":45,\"y\":25},{\"x\":45,\"y\":29},{\"x\":50,\"y\":29},{\"x\":50,\"y\":65},{\"x\":60,\"y\":65},{\"x\":60,\"y\":58},{\"x\":70,\"y\":58},{\"x\":70,\"y\":63},{\"x\":80,\"y\":63},{\"x\":80,\"y\":81},{\"x\":90,\"y\":81},{\"x\":90,\"y\":75},{\"x\":100,\"y\":75},{\"x\":100,\"y\":165},{\"x\":120,\"y\":165},{\"x\":120,\"y\":223},{\"x\":140,\"y\":223},{\"x\":140,\"y\":218},{\"x\":160,\"y\":218},{\"x\":160,\"y\":163},{\"x\":180,\"y\":163},{\"x\":180,\"y\":189},{\"x\":200,\"y\":189},{\"x\":200,\"y\":465},{\"x\":250,\"y\":465},{\"x\":250,\"y\":318},{\"x\":300,\"y\":318},{\"x\":300,\"y\":164},{\"x\":350,\"y\":164},{\"x\":350,\"y\":145},{\"x\":400,\"y\":145},{\"x\":400,\"y\":109},{\"x\":450,\"y\":109},{\"x\":450,\"y\":108},{\"x\":500,\"y\":108},{\"x\":500,\"y\":91},{\"x\":600,\"y\":91},{\"x\":600,\"y\":32},{\"x\":700,\"y\":32},{\"x\":700,\"y\":25},{\"x\":800,\"y\":25},{\"x\":800,\"y\":5},{\"x\":841.26,\"y\":5}],\"yAxisID\":\"H\",\"pointStyle\":\"rect\",\"radius\":1,\"borderColor\":\"rgba(87, 167, 134, .9)\",\"backgroundColor\":\"rgba(87, 167, 134, .75)\",\"lineTension\":0}]},\"options\":{\"responsive\":true,\"maintainAspectRatio\":false,\"metadata\":{\"title\":{\"display\":{\"key\":\"Title\",\"value\":\"consul_1633988207149\"}},\"url\":{\"display\":{\"key\":\"URL\",\"value\":\"http://192.168.49.4/post\"}},\"startTime\":{\"display\":{\"key\":\"Start Time\",\"value\":\"2021-10-12 03:06:47\"}},\"minimum\":{\"display\":{\"key\":\"Minimum\",\"value\":\"6.688 ms\"}},\"average\":{\"display\":{\"key\":\"Average\",\"value\":\"221.379 ms\"}},\"maximum\":{\"display\":{\"key\":\"Maximum\",\"value\":\"841.258 ms\"}},\"qps\":{\"display\":{\"key\":\"QPS\",\"value\":\"Achieved 99.1 (Requested 100)\"}},\"numberOfConnections\":{\"display\":{\"key\":\"Number Of Connections\",\"value\":30}},\"duration\":{\"display\":{\"key\":\"Duration\",\"value\":\"Achieved 30.3 (Requested 30s)\"}},\"errors\":{\"display\":{\"key\":\"Errors\",\"value\":\"No Errors\"}},\"percentiles\":{\"display\":{\"key\":\"Percentiles\",\"value\":[{\"display\":{\"key\":\"p50\",\"value\":\"195.98 ms\"}},{\"display\":{\"key\":\"p75\",\"value\":\"288.84 ms\"}},{\"display\":{\"key\":\"p90\",\"value\":\"432.11 ms\"}},{\"display\":{\"key\":\"p99\",\"value\":\"700 ms\"}},{\"display\":{\"key\":\"p99.9\",\"value\":\"816.5 ms\"}}]}},\"kubernetes\":{\"display\":{\"hide\":true,\"key\":\"Kuberenetes\",\"value\":[{\"display\":{\"key\":\"Server Version\"}},{\"display\":{\"key\":\"Nodes\"}}]}}},\"title\":{\"display\":true,\"fontStyle\":\"normal\",\"text\":[\"Title: consul_1633988207149\",\"URL: http://192.168.49.4/post\",\"Start Time: 2021-10-12 03:06:47\",\"Minimum: 6.688 ms\",\"Average: 221.379 ms\",\"Maximum: 841.258 ms\",\"Target QPS: 100 ( Actual QPS: 99.1 )\",\"No of Connections: 30\",\"Requested Duration: 30s ( Actual Duration: 30.3 )\",\"Errors: No Error\",\"Percentiles: p50: 195.98 ms; p75: 288.84 ms; p90: 432.11 ms; p99: 700 ms; p99.9: 816.5 ms; \"]},\"scales\":{\"xAxes\":[{\"type\":\"linear\",\"scaleLabel\":{\"display\":true,\"labelString\":\"Response time in ms\",\"ticks\":{\"min\":0,\"beginAtZero\":true}}}],\"yAxes\":[{\"id\":\"P\",\"position\":\"right\",\"ticks\":{\"beginAtZero\":true,\"max\":100},\"scaleLabel\":{\"display\":true,\"labelString\":\"%\"}},{\"id\":\"H\",\"type\":\"linear\",\"ticks\":{\"beginAtZero\":true},\"scaleLabel\":{\"display\":true,\"labelString\":\"Count\"}}]}}}"
+const linkerdChartData = "{\"percentiles\":[{\"Percentile\":50,\"Value\":0.0006040040159574467},{\"Percentile\":75,\"Value\":0.0008281526861702126},{\"Percentile\":90,\"Value\":0.0009626418882978723},{\"Percentile\":99,\"Value\":0.005},{\"Percentile\":99.9,\"Value\":0.006486842600000006}],\"data\":{\"datasets\":[{\"label\":\"Cumulative %\",\"data\":[{\"x\":0,\"y\":0},{\"x\":0.16,\"y\":0.17},{\"x\":1,\"y\":94.17},{\"x\":2,\"y\":96.17},{\"x\":3,\"y\":96.67},{\"x\":4,\"y\":97.83},{\"x\":5,\"y\":99},{\"x\":6,\"y\":99.33},{\"x\":6.57,\"y\":100}],\"fill\":false,\"yAxisID\":\"P\",\"stepped\":true,\"backgroundColor\":\"rgba(134, 87, 167, 1)\",\"borderColor\":\"rgba(134, 87, 167, 1)\",\"cubicInterpolationMode\":\"monotone\"},{\"label\":\"Histogram: Count\",\"data\":[{\"x\":0.16,\"y\":565},{\"x\":1,\"y\":565},{\"x\":1,\"y\":12},{\"x\":2,\"y\":12},{\"x\":2,\"y\":3},{\"x\":3,\"y\":3},{\"x\":3,\"y\":7},{\"x\":4,\"y\":7},{\"x\":4,\"y\":7},{\"x\":5,\"y\":7},{\"x\":5,\"y\":2},{\"x\":6,\"y\":2},{\"x\":6,\"y\":4},{\"x\":6.57,\"y\":4}],\"yAxisID\":\"H\",\"pointStyle\":\"rect\",\"radius\":1,\"borderColor\":\"rgba(87, 167, 134, .9)\",\"backgroundColor\":\"rgba(87, 167, 134, .75)\",\"lineTension\":0}]},\"options\":{\"responsive\":true,\"maintainAspectRatio\":false,\"metadata\":{\"title\":{\"display\":{\"key\":\"Title\",\"value\":\"2022-02-22-20.24.21\"}},\"url\":{\"display\":{\"key\":\"URL\",\"value\":\"http://localhost:8080\"}},\"startTime\":{\"display\":{\"key\":\"Start Time\",\"value\":\"2022-02-23 01:56:02\"}},\"minimum\":{\"display\":{\"key\":\"Minimum\",\"value\":\"0.157 ms\"}},\"average\":{\"display\":{\"key\":\"Average\",\"value\":\"0.758 ms\"}},\"maximum\":{\"display\":{\"key\":\"Maximum\",\"value\":\"6.573 ms\"}},\"qps\":{\"display\":{\"key\":\"QPS\",\"value\":\"Achieved 10 (Requested 10)\"}},\"numberOfConnections\":{\"display\":{\"key\":\"Number Of Connections\",\"value\":2}},\"duration\":{\"display\":{\"key\":\"Duration\",\"value\":\"Achieved 60 (Requested 1m0s)\"}},\"errors\":{\"display\":{\"key\":\"Errors\",\"value\":\"100% errors!\"}},\"percentiles\":{\"display\":{\"key\":\"Percentiles\",\"value\":[{\"display\":{\"key\":\"p50\",\"value\":\"0.6 ms\"}},{\"display\":{\"key\":\"p75\",\"value\":\"0.83 ms\"}},{\"display\":{\"key\":\"p90\",\"value\":\"0.96 ms\"}},{\"display\":{\"key\":\"p99\",\"value\":\"5 ms\"}},{\"display\":{\"key\":\"p99.9\",\"value\":\"6.49 ms\"}}]}},\"kubernetes\":{\"display\":{\"hide\":false,\"key\":\"Kuberenetes\",\"value\":[{\"display\":{\"key\":\"Server Version\",\"value\":\"v1.22.2\"}},{\"display\":{\"key\":\"Nodes\",\"value\":[{\"display\":{\"key\":\"Node 1\",\"value\":[{\"display\":{\"key\":\"Hostname\",\"value\":\"minikube\"}},{\"display\":{\"key\":\"CPU\",\"value\":\"2\"}},{\"display\":{\"key\":\"Memory\",\"value\":\"7114112Ki\"}},{\"display\":{\"key\":\"Arch\",\"value\":\"amd64\"}},{\"display\":{\"key\":\"OS\",\"value\":\"Ubuntu 20.04.2 LTS\"}},{\"display\":{\"key\":\"Kubelet Version\",\"value\":\"v1.22.2\"}},{\"display\":{\"key\":\"Container runtime\",\"value\":\"docker://20.10.8\"}}]}}]}}]}}},\"title\":{\"display\":true,\"fontStyle\":\"normal\",\"text\":[\"Title: 2022-02-22-20.24.21\",\"URL: http://localhost:8080\",\"Start Time: 2022-02-23 01:56:02\",\"Minimum: 0.157 ms\",\"Average: 0.758 ms\",\"Maximum: 6.573 ms\",\"Target QPS: 10 ( Actual QPS: 10 )\",\"No of Connections: 2\",\"Requested Duration: 1m0s ( Actual Duration: 60 )\",\"Errors: 100% errors!\",\"Percentiles: p50: 0.6 ms; p75: 0.83 ms; p90: 0.96 ms; p99: 5 ms; p99.9: 6.49 ms; \",\"Kubernetes server version: v1.22.2\",\"Nodes:\",\"Node 1 - \\nHostname: minikube \\nCPU: 2 \\nMemory: 7114112Ki \\nArch: amd64 \\nOS: Ubuntu 20.04.2 LTS\\n                    \\nKubelet version: v1.22.2 \\nContainer runtime: docker://20.10.8\"]},\"scales\":{\"xAxes\":[{\"type\":\"linear\",\"scaleLabel\":{\"display\":true,\"labelString\":\"Response time in ms\",\"ticks\":{\"min\":0,\"beginAtZero\":true}}}],\"yAxes\":[{\"id\":\"P\",\"position\":\"right\",\"ticks\":{\"beginAtZero\":true,\"max\":100},\"scaleLabel\":{\"display\":true,\"labelString\":\"%\"}},{\"id\":\"H\",\"type\":\"linear\",\"ticks\":{\"beginAtZero\":true},\"scaleLabel\":{\"display\":true,\"labelString\":\"Count\"}}]}}}"
+const kumaChart = "{\"percentiles\":[{\"Percentile\":50,\"Value\":0.19597883597883597},{\"Percentile\":75,\"Value\":0.2888364779874214},{\"Percentile\":90,\"Value\":0.43211009174311926},{\"Percentile\":99,\"Value\":0.7000000000000001},{\"Percentile\":99.9,\"Value\":0.8165030844000022}],\"data\":{\"datasets\":[{\"label\":\"Cumulative %\",\"data\":[{\"x\":0,\"y\":0},{\"x\":6.69,\"y\":0.03},{\"x\":7,\"y\":0.07},{\"x\":8,\"y\":0.3},{\"x\":9,\"y\":0.4},{\"x\":10,\"y\":0.53},{\"x\":11,\"y\":0.83},{\"x\":12,\"y\":1},{\"x\":14,\"y\":1.63},{\"x\":16,\"y\":2},{\"x\":18,\"y\":2.37},{\"x\":20,\"y\":2.57},{\"x\":25,\"y\":3.47},{\"x\":30,\"y\":4.3},{\"x\":35,\"y\":5.1},{\"x\":40,\"y\":6.13},{\"x\":45,\"y\":6.97},{\"x\":50,\"y\":7.93},{\"x\":60,\"y\":10.1},{\"x\":70,\"y\":12.03},{\"x\":80,\"y\":14.13},{\"x\":90,\"y\":16.83},{\"x\":100,\"y\":19.33},{\"x\":120,\"y\":24.83},{\"x\":140,\"y\":32.27},{\"x\":160,\"y\":39.53},{\"x\":180,\"y\":44.97},{\"x\":200,\"y\":51.27},{\"x\":250,\"y\":66.77},{\"x\":300,\"y\":77.37},{\"x\":350,\"y\":82.83},{\"x\":400,\"y\":87.67},{\"x\":450,\"y\":91.3},{\"x\":500,\"y\":94.9},{\"x\":600,\"y\":97.93},{\"x\":700,\"y\":99},{\"x\":800,\"y\":99.83},{\"x\":841.26,\"y\":100}],\"fill\":false,\"yAxisID\":\"P\",\"stepped\":true,\"backgroundColor\":\"rgba(134, 87, 167, 1)\",\"borderColor\":\"rgba(134, 87, 167, 1)\",\"cubicInterpolationMode\":\"monotone\"},{\"label\":\"Histogram: Count\",\"data\":[{\"x\":6.69,\"y\":2},{\"x\":7,\"y\":2},{\"x\":7,\"y\":7},{\"x\":8,\"y\":7},{\"x\":8,\"y\":3},{\"x\":9,\"y\":3},{\"x\":9,\"y\":4},{\"x\":10,\"y\":4},{\"x\":10,\"y\":9},{\"x\":11,\"y\":9},{\"x\":11,\"y\":5},{\"x\":12,\"y\":5},{\"x\":12,\"y\":19},{\"x\":14,\"y\":19},{\"x\":14,\"y\":11},{\"x\":16,\"y\":11},{\"x\":16,\"y\":11},{\"x\":18,\"y\":11},{\"x\":18,\"y\":6},{\"x\":20,\"y\":6},{\"x\":20,\"y\":27},{\"x\":25,\"y\":27},{\"x\":25,\"y\":25},{\"x\":30,\"y\":25},{\"x\":30,\"y\":24},{\"x\":35,\"y\":24},{\"x\":35,\"y\":31},{\"x\":40,\"y\":31},{\"x\":40,\"y\":25},{\"x\":45,\"y\":25},{\"x\":45,\"y\":29},{\"x\":50,\"y\":29},{\"x\":50,\"y\":65},{\"x\":60,\"y\":65},{\"x\":60,\"y\":58},{\"x\":70,\"y\":58},{\"x\":70,\"y\":63},{\"x\":80,\"y\":63},{\"x\":80,\"y\":81},{\"x\":90,\"y\":81},{\"x\":90,\"y\":75},{\"x\":100,\"y\":75},{\"x\":100,\"y\":165},{\"x\":120,\"y\":165},{\"x\":120,\"y\":223},{\"x\":140,\"y\":223},{\"x\":140,\"y\":218},{\"x\":160,\"y\":218},{\"x\":160,\"y\":163},{\"x\":180,\"y\":163},{\"x\":180,\"y\":189},{\"x\":200,\"y\":189},{\"x\":200,\"y\":465},{\"x\":250,\"y\":465},{\"x\":250,\"y\":318},{\"x\":300,\"y\":318},{\"x\":300,\"y\":164},{\"x\":350,\"y\":164},{\"x\":350,\"y\":145},{\"x\":400,\"y\":145},{\"x\":400,\"y\":109},{\"x\":450,\"y\":109},{\"x\":450,\"y\":108},{\"x\":500,\"y\":108},{\"x\":500,\"y\":91},{\"x\":600,\"y\":91},{\"x\":600,\"y\":32},{\"x\":700,\"y\":32},{\"x\":700,\"y\":25},{\"x\":800,\"y\":25},{\"x\":800,\"y\":5},{\"x\":841.26,\"y\":5}],\"yAxisID\":\"H\",\"pointStyle\":\"rect\",\"radius\":1,\"borderColor\":\"rgba(87, 167, 134, .9)\",\"backgroundColor\":\"rgba(87, 167, 134, .75)\",\"lineTension\":0}]},\"options\":{\"responsive\":true,\"maintainAspectRatio\":false,\"metadata\":{\"title\":{\"display\":{\"key\":\"Title\",\"value\":\"consul_1633988207149\"}},\"url\":{\"display\":{\"key\":\"URL\",\"value\":\"http://192.168.49.4/post\"}},\"startTime\":{\"display\":{\"key\":\"Start Time\",\"value\":\"2021-10-12 03:06:47\"}},\"minimum\":{\"display\":{\"key\":\"Minimum\",\"value\":\"6.688 ms\"}},\"average\":{\"display\":{\"key\":\"Average\",\"value\":\"221.379 ms\"}},\"maximum\":{\"display\":{\"key\":\"Maximum\",\"value\":\"841.258 ms\"}},\"qps\":{\"display\":{\"key\":\"QPS\",\"value\":\"Achieved 99.1 (Requested 100)\"}},\"numberOfConnections\":{\"display\":{\"key\":\"Number Of Connections\",\"value\":30}},\"duration\":{\"display\":{\"key\":\"Duration\",\"value\":\"Achieved 30.3 (Requested 30s)\"}},\"errors\":{\"display\":{\"key\":\"Errors\",\"value\":\"No Errors\"}},\"percentiles\":{\"display\":{\"key\":\"Percentiles\",\"value\":[{\"display\":{\"key\":\"p50\",\"value\":\"195.98 ms\"}},{\"display\":{\"key\":\"p75\",\"value\":\"288.84 ms\"}},{\"display\":{\"key\":\"p90\",\"value\":\"432.11 ms\"}},{\"display\":{\"key\":\"p99\",\"value\":\"700 ms\"}},{\"display\":{\"key\":\"p99.9\",\"value\":\"816.5 ms\"}}]}},\"kubernetes\":{\"display\":{\"hide\":true,\"key\":\"Kuberenetes\",\"value\":[{\"display\":{\"key\":\"Server Version\"}},{\"display\":{\"key\":\"Nodes\"}}]}}},\"title\":{\"display\":true,\"fontStyle\":\"normal\",\"text\":[\"Title: consul_1633988207149\",\"URL: http://192.168.49.4/post\",\"Start Time: 2021-10-12 03:06:47\",\"Minimum: 6.688 ms\",\"Average: 221.379 ms\",\"Maximum: 841.258 ms\",\"Target QPS: 100 ( Actual QPS: 99.1 )\",\"No of Connections: 30\",\"Requested Duration: 30s ( Actual Duration: 30.3 )\",\"Errors: No Error\",\"Percentiles: p50: 195.98 ms; p75: 288.84 ms; p90: 432.11 ms; p99: 700 ms; p99.9: 816.5 ms; \"]},\"scales\":{\"xAxes\":[{\"type\":\"linear\",\"scaleLabel\":{\"display\":true,\"labelString\":\"Response time in ms\",\"ticks\":{\"min\":0,\"beginAtZero\":true}}}],\"yAxes\":[{\"id\":\"P\",\"position\":\"right\",\"ticks\":{\"beginAtZero\":true,\"max\":100},\"scaleLabel\":{\"display\":true,\"labelString\":\"%\"}},{\"id\":\"H\",\"type\":\"linear\",\"ticks\":{\"beginAtZero\":true},\"scaleLabel\":{\"display\":true,\"labelString\":\"Count\"}}]}}}";
+
+function getChartData(type) {
+  type = type.toLowerCase()
+  switch(type) {
+    case "istio": return JSON.parse(istioChartData)
+    case "consul": return JSON.parse(consulChartData)
+    case "linkerd": return JSON.parse(linkerdChartData)
+    case "kuma": return JSON.parse(kumaChart)
+    default: return JSON.parse(newData)
+  }
+}
+
+processChartData(JSON.parse(newData));
 fillTittle();
 
 // The Infrastructure Profile
