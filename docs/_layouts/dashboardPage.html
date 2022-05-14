@@ -50,16 +50,25 @@
 				</form>
 			</div>
 			</div>
-
-				<select class=" test-selector drop-down custom-select custom-select-lg mb-3" name="performance-ids" id="performance-ids" onchange=dropdownChange(this.value)>
-					{% for result in site.data.test-results %}
-					<option value={{forloop.index}} {%if forloop.first%}
-					selected
-					{%endif%}>{{result.name}}</option>
-					{% endfor %}
-
-				</select>
-				{% include graph.html %}
+			<!-- card start -->
+			<div class="row">
+				{% for result in site.data.test-results %}
+				<div id = "col-width" class="col-sm-6" style="margin: 2rem 0 ;">
+				  <div class="card">
+					<div class="card-body">
+					  <h5 class="card-title">{{result.name}}</h5>
+					  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					  <button onclick=dropdownChange({{forloop.index}}) class="btn btn-primary btn-xl">View Result</button>
+					  <div class = "graph-holder" style="display: none;">
+						{% include graph.html %}
+					  </div>
+					</div>
+				  </div>
+				</div>
+				{% endfor %}
+			  </div>
+			  <!-- card end -->
+				
 			</section>
 
 			<!-- Toggle button -->

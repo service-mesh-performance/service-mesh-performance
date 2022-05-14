@@ -952,12 +952,21 @@ let results =
     
 function dropdownChange(value){
 
-
-  
+  graphHolder = document.querySelector(".graph-holder")
   testValue = parseInt(value);
   let rawdata = results[testValue-1];
   let data = results[testValue-1].runner_results;
+
+  colWidth = document.getElementById("col-width")
   
+  if(graphHolder.style["display"]=="block"){
+    graphHolder.style["display"]= "none"
+  }
+  else{
+    graphHolder.style["display"]="block"
+    colWidth.className.replace("col-sm","col-sm-6")
+  }
+
   let tmpData = (typeof data !== 'undefined')
   ? (data.length == 1
     ? data[0]
