@@ -50,7 +50,9 @@
           <!--content -->
           <section class="resultsContainer">
             {{content}}
-            <h5 class="display-5 text-black">Select Service Mesh:</h5>
+            <p>
+              The Tests are running on standard environment with details provided with each of environment. All the tests runs on CNCF provided custom environments and even workloads.
+            </p>
 
             {% include graph.html %}
 
@@ -64,7 +66,7 @@
                     {{service_mesh.name}}
                   </div>
                   <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
+                    <h5 class="card-title">Performance Overview</h5>
                     <p class="card-text" id="{{service_mesh.id}}">
                       <script type="text/javascript">
                         renderSelectedChart(
@@ -81,7 +83,7 @@
                       data-target="#{{service_mesh.name}}-card2"
                       aria-expanded="false"
                       aria-controls="{{service_mesh.name}}-card2"
-                      onclick="processTestResultClick(`{{service_mesh.name}}`, `{{service_mesh.name}}-env2` )"
+                      onclick="processTestSpecificationClick(`{{service_mesh.name}}`, `{{service_mesh.name}}-env2` )"
                     >
                       Test Specifications
                     </button>
