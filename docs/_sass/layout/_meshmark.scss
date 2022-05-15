@@ -1,0 +1,42 @@
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-Container{
+    width: fit-content;
+    margin-left: -8rem;
+    margin-right: 10rem;
+}
+
+.logo{
+    width:30rem
+}
+
+.description{
+    text-align: justify;
+}
+
+.formulaContainer{
+    text-align: center;
+    position: relative;
+    margin-top: 4rem;
+}
+
+.formula-img{
+    width:50rem
+}
+.meshmark-text{
+    width:20rem
+}
+.equal-sign{
+    position: relative;
+    top:12rem;
+    left:2rem;
+    font-size: 60px;
+}
+.equation{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
