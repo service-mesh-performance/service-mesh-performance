@@ -1,66 +1,155 @@
 <!DOCTYPE html>
-<html> 
+<html>
+  {% include head.html %}
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css"
+  />
 
-{% include head.html %}
-<script src="https://d3js.org/d3.v6.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css">
+  <body id="dashboard-page-top">
+    {% include nav.html %}
 
-<body id="dashboard-page-top"> 
+    <div id="contents">
+      <div id="sidebar" class="bottom fixed">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="/dashboard" class="nav-link text-light font-italic">
+              <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> All results
+            </a>
+          </li>
+        </ul>
+        <p
+          class="text-gray font-weight-bold text-uppercase px-2 small py-4 mb-0"
+        >
+          Performance Profiles
+        </p>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="/dashboard/soak" class="nav-link text-light font-italic">
+              <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i> Soak
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/dashboard/burst" class="nav-link text-light font-italic">
+              <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i> Burst
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/dashboard/jwt" class="nav-link text-light font-italic">
+              <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i> JWT
+              Revocation
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Page content holder -->
+      <section id="dashboardPagecontainer">
+        <div class="page-content p-5" id="content">
+          <!--content -->
+          <section class="resultsContainer">
+            {{content}}
+            <h5 class="display-5 text-black">Select Service Mesh:</h5>
 
-{% include nav.html %}
+            {% include graph.html %}
 
-		<div id="contents">
-			<div id="sidebar" class="bottom fixed">
-			        <ul class="nav flex-column ">
-				      <li class="nav-item">
-					<a href="/dashboard" class="nav-link text-light font-italic"> <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> All results </a>
-				      </li>
-			        </ul>
-			        <p class="text-gray font-weight-bold text-uppercase px-2 small py-4 mb-0">Performance Profiles</p>
-			        <ul class="nav flex-column ">
-				      <li class="nav-item">
-					<a href="/dashboard/soak" class="nav-link text-light font-italic"> <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i> Soak </a>
-				      </li>
-				      <li class="nav-item">
-					<a href="/dashboard/burst" class="nav-link text-light font-italic"> <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i> Burst </a>
-				      </li>
-				      <li class="nav-item">
-					<a href="/dashboard/jwt" class="nav-link text-light font-italic"> <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i> JWT Revocation </a>
-				      </li>
-			        </ul>
-			</div>
-		<!-- Page content holder -->
-		<section id="dashboardPagecontainer">
-		<div class="page-content p-5" id="content">
-			<!--content -->
-			<section class="resultsContainer">
-				{{content}}
-				<h5 class="display-5 text-black">Select Service Mesh: </h5>
+            <!-- List service mesh -->
+            <div class="row">
+              {%- for service_mesh in site.data.service_meshes.service_meshes
+              -%}
+              <div class="col-md-6" style="padding: 10px">
+                <div class="card">
+                  <div class="card-header" style="font-weight: 900">
+                    {{service_mesh.name}}
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text" id="{{service_mesh.id}}">
+                      <script type="text/javascript">
+                        renderSelectedChart(
+                          "{{service_mesh.name}}",
+                          "{{service_mesh.id}}"
+                        );
+                      </script>
+                    </p>
 
-			<!-- List service mesh -->
-				<form class="load-generators">
-					<select class=" test-selector drop-down custom-select custom-select-lg mb-3" name="performance-ids" id="performance-ids" onchange="renderSelectedChart(this)">
-					{%- for service_mesh in site.data.service_meshes.service_meshes  -%}
-          <option value="{{service_mesh.name}}" id="{{service_mesh.id}}">{{service_mesh.name}}</option>
-					{% endfor %}
-        </select>
-				</form>
-				{% include graph.html %}
-			</section>
-
-			<!-- Toggle button -->
-			<button id="sidebarCollapse" type="button" class="toggle-button text-light ">
-        		 <i class="icon-left fa fa-angle-left mr-2" style="display: block;"></i>
-      			 <i class="icon-right fa fa-angle-right mr-2" style="display: none;"></i>
-     		 </button>
-		</div>
-		</section>
-	</div>
-
-	{% include javascript_files.html %}
-	<!-- Custom scripts for this template -->
-	<script src="/assets/js/toggle.js"></script>
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#{{service_mesh.name}}-card"
+                      aria-expanded="false"
+                      aria-controls="{{service_mesh.name}}-card"
+                    >
+                      Test Results
+                    </button>
 
 
-{% include footer.html %}
+                    <!-- Environment Details -->
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#{{service_mesh.name}}-card"
+                      aria-expanded="false"
+                      aria-controls="{{service_mesh.name}}-card"
+                    >
+                      Environment Details
+                    </button>
+
+                    <!-- Collapsed Items -->
+                    <div class="collapse" id="{{service_mesh.name}}-card">
+                      <div
+                        class="card card-body"
+                        id="{{service_mesh.name}}-env"
+                      >
+                        <script type="text/javascript">
+                          renderInfraDetails("{{service_mesh.name}}-env");
+                        </script>
+                      </div>
+                    </div>
+
+                    <div class="collapse" id="{{service_mesh.name}}-card">
+                      <div
+                        class="card card-body"
+                        id="{{service_mesh.name}}-env"
+                      >
+                        <script type="text/javascript">
+                          renderInfraDetails("{{service_mesh.name}}-env");
+                        </script>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </section>
+
+          <!-- Toggle button -->
+          <button
+            id="sidebarCollapse"
+            type="button"
+            class="toggle-button text-light"
+          >
+            <i
+              class="icon-left fa fa-angle-left mr-2"
+              style="display: block"
+            ></i>
+            <i
+              class="icon-right fa fa-angle-right mr-2"
+              style="display: none"
+            ></i>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    {% include javascript_files.html %}
+    <!-- Custom scripts for this template -->
+    <script src="/assets/js/toggle.js"></script>
+
+    {% include footer.html %}
+  </body>
+</html>

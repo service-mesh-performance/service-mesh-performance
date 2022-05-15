@@ -1,6 +1,7 @@
-function renderSelectedChart(e) {
-  const chartData = getChartData(e.value);
-  processChartData(chartData);
+function renderSelectedChart(e, id) {
+  { console.log({ e, id }) }
+  const chartData = getChartData(e);
+  processChartData(chartData, "#" + id);
   fillTittle(chartData.options.title.text)
 }
 
@@ -259,7 +260,7 @@ let tmpData =
 
 // let chartData = singleChart(rawdata, tmpData);
 
-function processChartData(chartData) {
+function processChartData(chartData, eleId) {
   console.log({ chartData })
   if (chartData && chartData.data && chartData.options) {
     const xAxes = [];
@@ -393,7 +394,7 @@ function processChartData(chartData) {
       // title: {
       //   text: chartData.options.title.text.join('\n'),
       // },
-      bindto: "#chart",
+      bindto: eleId,
       type: "line",
       data: {
         // x: 'x',
@@ -438,7 +439,7 @@ function processChartData(chartData) {
 
 function fillTittle(titles) {
   const titleContainer = document.getElementById("titles");
-  if(!titles) {
+  if (!titles) {
     titles = makeTitle(rawdata, data[0]);
   }
   titleContainer.innerHTML = `<div id="titles-holder" class="container"></div>`;
@@ -466,7 +467,7 @@ const kumaChart = "{\"percentiles\":[{\"Percentile\":50,\"Value\":0.195978835978
 
 function getChartData(type) {
   type = type.toLowerCase()
-  switch(type) {
+  switch (type) {
     case "istio": return JSON.parse(istioChartData)
     case "consul": return JSON.parse(consulChartData)
     case "linkerd": return JSON.parse(linkerdChartData)
@@ -475,20 +476,23 @@ function getChartData(type) {
   }
 }
 
-processChartData(JSON.parse(newData));
-fillTittle();
+// processChartData(JSON.parse(newData));
+// fillTittle();
 
 // The Infrastructure Profile
-document.getElementById("infrastructure-details").innerHTML = machineSpecs(result.runner_results[0].kubernetes.nodes[0])
-function machineSpecs(machineSpec) {
-  function getTableRows() {
-    return Object.keys(machineSpec).map((key) => `<tr>
+function renderInfraDetails(appendToId) {
+  // console.log({appendToId})
+  document.getElementById(appendToId).innerHTML = machineSpecs(result.runner_results[0].kubernetes.nodes[0])
+  console.log("hi hello", appendToId)
+  function machineSpecs(machineSpec) {
+    function getTableRows() {
+      return Object.keys(machineSpec).map((key) => `<tr>
     <th scope="row">${formattedName(key)}</th>
     <td>${machineSpec[key]}</td>
   </tr>`).join("")
-  }
+    }
 
-  return `<table class="table">
+    return `<table class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Infrastructure Profile</th>
@@ -499,6 +503,7 @@ function machineSpecs(machineSpec) {
     ${getTableRows(machineSpec)}
   </tbody>
 </table>`
+  }
 }
 
 function formattedName(name) {
