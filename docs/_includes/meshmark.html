@@ -21,8 +21,12 @@
     </div>
 </div>
 
-<div class="formulaContainer">
+<div class="formulaSection">
     <h1><strong>MeshMark: The Formula</strong></h1>
+    <div class="equationContainer">
+    <div class = "description">
+        MeshMark functions as a value performance index (a scale) to provide organizations the ability to weigh the value of their service mesh versus the overhead of their service mesh and assess whether they are getting out of the mesh what they are “paying” for in it. MeshMark’s scoring system ranges from 0 to 100 and incorporates collections of resource utilization efficiency calculations, categorized into similar consumption classes.
+    </div>
     <div class = "equation">
         <img class="meshmark-text" src="../assets/img/logo/meshmark-dark-text.svg">
         <div class="equal">
@@ -31,9 +35,34 @@
         <img class = "formula-img" src="../assets/img/meshmark-formula.png" alt="">
     </div>
 </div>
-<div class="youtubeVideo">
-    <h1>A quick Explanation of how MeshMark Works</h1>
-    <iframe width="1100" height="400" src="https://www.youtube.com/embed/yvqn6ckO7BI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+<div class = "mue">
+    <h2>What is MUE</h2>
+    <div class = "mue-description-image">
+    <p style="text-align: justify;"> 
+        It's a calculation, combined ratio of measured platform resources to assign resources. If you're able to measure what your assigned resources are in whatever form and able to also monitor what's the used resources, you can have this ratio. So, for example, a very simple one is CPU performance.And you would want to see if the CPU performance as a ratio to the available resources is a loss or a gain.<br>
+        <div class = "mue-image-container">
+            <img class = "mue-image" src="../assets/img/mue-description.png">
+        </div>
+        So CPU performance, raw loss over total CPU is our MUE one.
+        And that's just one minus CPU utilization over 100. That's a very simple ratio and if you see on the slide, the graph shows you that as the latency increases, your Mue lowers. And so that's a very good indicator that your efficiency of your infrastructure is not very good because your latencies are increasing as your QPS increases.
+        So like this you can measure and create other MUEs. We will look at how you can visualize this within an environment and so let's look at the demonstration. So let's jump into a sibling CNCF project called Meshery.
+        Meshery is a cloud native management plane. Users of Meshery can configure their Kubernetes deployments any and every service mesh as well as on board and off board their workloads onto any given mesh.
+    </p>
+   
+</div>
+</div>
+<div class="youtubeVideo">
+    <h1>A quick Explanation of how MeshMark Works</h1>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/yvqn6ckO7BI" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+        </div>
+</div>
+<div class = "presentation">
+    <h1>ServiceMeshCon EU 2022 Presentation on MeshMark</h1>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://docs.google.com/presentation/d/e/2PACX-1vRSt9Men_1dGGjfCDzMeUGfFPffyLZwJMp8idFHG1MP-bg7wJqAIIcrpxbbOjn97tpwg0dbkvUC3JmF/embed?start=false&loop=true&delayms=5000" frameborder="0" width="1080" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div>
+</div>
 </div>

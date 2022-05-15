@@ -20,11 +20,15 @@ h1{
     text-align: justify;
 }
 
-.formulaContainer{
+.formulaSection{
     text-align: center;
     position: relative;
     margin-top: 4rem;
 }
+
+// .equationContainer{
+//     display: f;
+// }
 
 .formula-img{
     width:50rem
@@ -46,7 +50,23 @@ h1{
 .description-point{
     margin-top: 2rem;
 }
-
+.mue{
+    margin-top: 2rem;
+    .mue-description-image{
+        justify-content: space-between;
+    }
+    .mue-image-container{
+        border:solid 1px black;
+        height: 25rem;
+        float: right;
+        margin-left: 2rem;
+    }
+    .mue-image{
+        width:50rem;
+        
+    }
+}
 .youtubeVideo{
     margin-top: 4rem;
+    margin-bottom: 2rem;
 }
