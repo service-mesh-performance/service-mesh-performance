@@ -78,13 +78,13 @@
                       class="btn btn-primary"
                       type="button"
                       data-toggle="collapse"
-                      data-target="#{{service_mesh.name}}-card"
+                      data-target="#{{service_mesh.name}}-card2"
                       aria-expanded="false"
-                      aria-controls="{{service_mesh.name}}-card"
+                      aria-controls="{{service_mesh.name}}-card2"
+                      onclick="processTestResultClick(`{{service_mesh.name}}`, `{{service_mesh.name}}-env2` )"
                     >
-                      Test Results
+                      Test Specifications
                     </button>
-
 
                     <!-- Environment Details -->
                     <button
@@ -94,31 +94,24 @@
                       data-target="#{{service_mesh.name}}-card"
                       aria-expanded="false"
                       aria-controls="{{service_mesh.name}}-card"
+                      onclick="renderInfraDetails(`{{service_mesh.name}}-env`)"
                     >
                       Environment Details
                     </button>
 
                     <!-- Collapsed Items -->
-                    <div class="collapse" id="{{service_mesh.name}}-card">
+                    <div class="collapse" id="{{service_mesh.name}}-card" style="margin-bottom: 10px;">
                       <div
                         class="card card-body"
                         id="{{service_mesh.name}}-env"
-                      >
-                        <script type="text/javascript">
-                          renderInfraDetails("{{service_mesh.name}}-env");
-                        </script>
-                      </div>
+                      ></div>
                     </div>
 
-                    <div class="collapse" id="{{service_mesh.name}}-card">
+                    <div class="collapse" id="{{service_mesh.name}}-card2" style="margin-bottom: 10px;">
                       <div
                         class="card card-body"
-                        id="{{service_mesh.name}}-env"
-                      >
-                        <script type="text/javascript">
-                          renderInfraDetails("{{service_mesh.name}}-env");
-                        </script>
-                      </div>
+                        id="{{service_mesh.name}}-env2"
+                      ></div>
                     </div>
                   </div>
                 </div>

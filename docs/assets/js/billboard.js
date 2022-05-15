@@ -1,6 +1,6 @@
 function renderSelectedChart(e, id) {
-  { console.log({ e, id }) }
   const chartData = getChartData(e);
+  console.log({ chartData })
   processChartData(chartData, "#" + id);
   fillTittle(chartData.options.title.text)
 }
@@ -480,30 +480,49 @@ function getChartData(type) {
 // fillTittle();
 
 // The Infrastructure Profile
-function renderInfraDetails(appendToId) {
-  // console.log({appendToId})
-  document.getElementById(appendToId).innerHTML = machineSpecs(result.runner_results[0].kubernetes.nodes[0])
-  console.log("hi hello", appendToId)
-  function machineSpecs(machineSpec) {
-    function getTableRows() {
-      return Object.keys(machineSpec).map((key) => `<tr>
-    <th scope="row">${formattedName(key)}</th>
-    <td>${machineSpec[key]}</td>
-  </tr>`).join("")
-    }
 
-    return `<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Infrastructure Profile</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    ${getTableRows(machineSpec)}
-  </tbody>
-</table>`
+function tableRowCreator(machineSpec, title) {
+  function getTableRows() {
+    return Object.keys(machineSpec).map((key) => `<tr>
+  <th scope="row">${formattedName(key)}</th>
+  <td>${machineSpec[key]}</td>
+</tr>`).join("")
   }
+
+  return `<table class="table">
+<thead class="thead-dark">
+  <tr>
+    <th scope="col">${title}</th>
+    <th scope="col"></th>
+  </tr>
+</thead>
+<tbody>
+  ${getTableRows(machineSpec)}
+</tbody>
+</table>`
+}
+
+function renderInfraDetails(appendToId) {
+  document.getElementById(appendToId).innerHTML = tableRowCreator(result.runner_results[0].kubernetes.nodes[0], "Environment Details");
+}
+
+function processTestResultClick(e, appendToId) {
+  const chartData = getChartData(e);
+  renderResult(chartData.options.title.text, appendToId)
+}
+
+function renderResult(titleString, appendToId) {
+  function changeStringToObj(strArr) {
+    console.log({strArr})
+    const obj = {};
+    strArr.forEach(str => {
+      const [key, value] = str.split(":").map(word => word.trim())
+      obj[key] = value;
+    })
+    return obj;
+  }
+  
+  document.getElementById(appendToId).innerHTML = tableRowCreator(changeStringToObj(titleString), "Test Specifications");
 }
 
 function formattedName(name) {
