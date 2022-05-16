@@ -491,8 +491,8 @@ function hideOtherTab(id) {
 }
 
 function renderInfraDetails(appendToId) {
-  hideOtherTab(appendToId);
   document.getElementById(appendToId).innerHTML = tableRowCreator(result.runner_results[0].kubernetes.nodes[0], "Environment Details");
+  hideOtherTab(appendToId);
 }
 
 function processTestSpecificationClick(e, appendToId) {
@@ -502,7 +502,6 @@ function processTestSpecificationClick(e, appendToId) {
 }
 
 function renderTestSpecs(titleString, appendToId) {
-  hideOtherTab(appendToId);
   function changeStringToObj(strArr) {
     const obj = {};
     strArr.forEach(str => {
@@ -513,6 +512,7 @@ function renderTestSpecs(titleString, appendToId) {
   }
   
   document.getElementById(appendToId).innerHTML = tableRowCreator(changeStringToObj(titleString), "Test Specifications");
+  hideOtherTab(appendToId);
 }
 
 function formattedName(name) {
