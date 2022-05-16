@@ -16,31 +16,31 @@
         <ul class="nav flex-column">
           <li class="nav-item">
             <a href="/dashboard" class="nav-link text-light font-italic">
-              <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> All results
+              <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> All Profiles
             </a>
           </li>
         </ul>
-        <p
+        <!-- <p
           class="text-gray font-weight-bold text-uppercase px-2 small py-4 mb-0"
         >
           Performance Profiles
-        </p>
+        </p> -->
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a href="/dashboard/soak" class="nav-link text-light font-italic">
-              <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i> Soak
-            </a>
+           
+              <i class="fa fa-area-chart mr-3 text-primary fa-fw" ></i> Soak
+
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light font-italic" style="cursor: default;opacity: 0.7;">
-              <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i> Burst
-            </a>
+            <!-- <a class="nav-link text-light font-italic" style="cursor: default;opacity: 0.7;"> -->
+              <i class="fa fa-bar-chart mr-3 text-primary fa-fw" style="text-decoration:line-through;"></i> Burst
+
           </li>
           <li class="nav-item">
-            <a  class="nav-link text-light font-italic" style="cursor:default;opacity:0.7;">
-              <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i> JWT
+
+              <i class="fa fa-pie-chart mr-3 text-primary fa-fw" style="text-decoration:line-through;"></i> JWT
               Revocation
-            </a>
+
           </li>
         </ul>
       </div>
@@ -51,7 +51,7 @@
           <section class="resultsContainer">
             {{content}}
             <p>
-              The Tests are running on standard environment with details provided with each of environment. All the tests runs on CNCF provided custom environments and even workloads.
+              Each performance profile containers environment and configuration details for the specific test scenario. Tests shown in SMP Dashboard are within the CNCF Lab.
             </p>
 
             {% include graph.html %}
