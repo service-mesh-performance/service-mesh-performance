@@ -1,26 +1,23 @@
-.headerContainer{
+.headerContainer {
     display: flex;
     justify-content: space-between;
 }
 
-.logo-Container{
+.logo-Container {
     width: fit-content;
     margin-left: -8rem;
     margin-right: 10rem;
 }
 
-.logo{
-    width:30rem
+.logo {
+    width: 100%
 }
-h1{
+
+h1 {
     text-align: center;
 }
 
-.description{
-    text-align: justify;
-}
-
-.formulaSection{
+.formulaSection {
     text-align: center;
     position: relative;
     margin-top: 4rem;
@@ -29,44 +26,215 @@ h1{
 // .equationContainer{
 //     display: f;
 // }
+.formula-img {
+    width: 50rem;
+    padding-left: 2rem;
+    display: flex;
+    justify-content: center;
+}
 
-.formula-img{
-    width:50rem
+.meshmark-text {
+    width: 20rem;
+    display: flex;
+    justify-content: center;
 }
-.meshmark-text{
-    width:20rem
-}
-.equal-sign{
+
+.equal-sign {
     position: relative;
-    top:12rem;
-    left:2rem;
+    top: 15.5rem;
+    left: 1rem;
+    display: flex;
+    justify-content: center;
     font-size: 60px;
+    color: #3C494F;
 }
-.equation{
+
+.equation {
     display: flex;
     justify-content: space-around;
+}
+
+.description-point {
     margin-top: 2rem;
 }
-.description-point{
+
+.mue {
     margin-top: 2rem;
-}
-.mue{
-    margin-top: 2rem;
-    .mue-description-image{
+    .mue-description-image {
         justify-content: space-between;
     }
-    .mue-image-container{
-        border:solid 1px black;
+    .mue-image-container {
+        border: solid 1px black;
         height: 25rem;
         float: right;
         margin-left: 2rem;
     }
-    .mue-image{
-        width:50rem;
-        
+}
+
+.mue-img {
+    width: 50rem;
+}
+
+.youtubeVideo {
+    margin-bottom: 2rem;
+}
+
+.hero-section {
+    padding: 5rem 0rem;
+    padding-bottom: 0;
+}
+
+.hero-text {
+    font-size: 3.125rem;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.subhero-text {
+    margin: 0px 0px 1rem;
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.grid-item {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+.counter {
+    animation: counter 5s infinite alternate ease-in-out;
+    counter-reset: num var(--num);
+    font: 800 40px system-ui;
+    padding: 2rem;
+}
+
+.counter::after {
+    content: counter(num);
+}
+
+@keyframes counter {
+    from {
+        --num: 0;
+    }
+    to {
+        --num: 100;
     }
 }
-.youtubeVideo{
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+
+//   Intro to MeshMark
+.explain-1 {
+    padding-top: 5rem;
+    text-align: center;
+    p {
+        padding: 0px 3.125rem;
+    }
+    h1 {
+        padding: 1.25rem 0px;
+    }
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        padding: 1.875rem 0;
+    }
+}
+
+.section-2 {
+    padding: 1.5rem 0rem;
+    padding-bottom: 0;
+}
+
+.section-4 {
+    padding: 1rem 0rem;
+}
+
+.mue-description-image {
+    width: 100%;
+    float: left;
+    padding-right: 2rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid rgb(0, 179, 159);
+}
+
+.callout {
+    display: flex;
+    justify-content: center;
+    background: rgb(205, 28, 109);
+    background: linear-gradient(107deg, rgba(205, 28, 109, 1) 0%, rgba(40, 43, 98, 1) 99%, rgba(41, 44, 99, 1) 100%);
+    padding: 5rem;
+    text-align: center;
+    color: white p {
+        margin: 0.94rem 0;
+        color: white;
+    }
+}
+
+.btn-join {
+    cursor: pointer;
+    width: 20%;
+    height: 40%;
+    display: inline-flex;
+    margin: 2rem 1rem 0rem 0rem;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: capitalize;
+    border: 0;
+    min-width: 170px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(235, 192, 23);
+    -webkit-transition: 450ms all;
+    transition: 450ms all;
+    position: relative;
+    z-index: 999;
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+    .icon-left {
+        margin-right: 8px;
+    }
+    .icon-right {
+        margin-left: 8px;
+    }
+}
+
+.btn-join:hover {
+    background-position: right center;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.section-5 {
+    padding: 1rem 0rem 3rem 0rem;
+}
+
+.callout-img {
+    width: 50%;
+}
+
+.callout-text {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: normal;
+    color: white;
+    margin: 2rem 1rem 0rem 2rem;
 }
