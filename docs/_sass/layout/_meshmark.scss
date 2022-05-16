@@ -1,0 +1,72 @@
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-Container{
+    width: fit-content;
+    margin-left: -8rem;
+    margin-right: 10rem;
+}
+
+.logo{
+    width:30rem
+}
+h1{
+    text-align: center;
+}
+
+.description{
+    text-align: justify;
+}
+
+.formulaSection{
+    text-align: center;
+    position: relative;
+    margin-top: 4rem;
+}
+
+// .equationContainer{
+//     display: f;
+// }
+
+.formula-img{
+    width:50rem
+}
+.meshmark-text{
+    width:20rem
+}
+.equal-sign{
+    position: relative;
+    top:12rem;
+    left:2rem;
+    font-size: 60px;
+}
+.equation{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+.description-point{
+    margin-top: 2rem;
+}
+.mue{
+    margin-top: 2rem;
+    .mue-description-image{
+        justify-content: space-between;
+    }
+    .mue-image-container{
+        border:solid 1px black;
+        height: 25rem;
+        float: right;
+        margin-left: 2rem;
+    }
+    .mue-image{
+        width:50rem;
+        
+    }
+}
+.youtubeVideo{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
