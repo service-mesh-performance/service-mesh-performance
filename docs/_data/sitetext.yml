@@ -85,7 +85,7 @@ subscribe:
 
 footer:
     social:
-      - url: https://github.com/layer5io/service-mesh-performance
+      - url: https://github.com/service-mesh-performance/service-mesh-performance
         icon: "fab fa-github"
       - url: http://slack.layer5.io/
         icon: "fab fa-slack"
