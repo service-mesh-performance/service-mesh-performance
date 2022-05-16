@@ -1,28 +1,28 @@
 service_meshes:
   - name: "Istio"
-    id: "inlineCheckbox1"
+    id: "istioDomId"
     value: "Istio"
 
   - name: "Consul"
-    id: "inlineCheckbox2"
+    id: "consulDomId"
     value: "Consul"
 
   - name: "Linkerd"
-    id: "inlineCheckbox3"
+    id: "linkerdDomId"
     value: "Linkerd"
 
   - name: "Open Service Mesh"
-    id: "inlineCheckbox4"
+    id: "osmDomId"
     value: "OSM"
 
   - name: "App Mesh"
-    id: "inlineCheckbox5"
+    id: "appmeshDomId"
     value: "App Mesh"
 
   - name: "Kuma"
-    id: "inlineCheckbox6"
+    id: "kumaDomId"
     value: "Kuma"
   
   - name: "Cilium"
-    id: "inlineCheckbox7"
+    id: "ciliumDomId"
     value: "Cilium"
