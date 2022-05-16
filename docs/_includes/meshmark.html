@@ -1,68 +1,102 @@
-<div class="content">
-    
-    <!-- <h1 style="text-align: center;">Meshmark</h1> -->
-    <div class="headerContainer">
-    <div class="logo-Container">
-        <img class="logo" src="../assets/img/logo/meshmark-dark-full.svg">
+<div class="meshmark">
+    <div class="hero-section">
+        <div class="grid-container">
+            <div class="grid-item">
+                <img class="logo" src="../assets/img/logo/meshmark-dark-full.svg">
+            </div>
+            <div class="grid-item">
+                <div class="description">
+                    <p class="hero-text">Cloud Native Value Measurement</p>
+                    <p>MeshMark is a performance index that measures the value and overhead of your cloud native environment.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="description">
-        <h4 style="text-align: center;">Cloud Native Value Measurement</h4>
-        <ul>
-            <li class="description-point">
-                MeshMark distills a variety of overhead signals and key performance indicators into a simple index. 
-            </li>
-            <li class="description-point">
-                MeshMark’s purpose is to convert measurements into insights about the value of functions your cloud native infrastructure is providing. 
-            </li>
-            <li class="description-point">
-                MeshMark specifies a uniform way to analyze and report on the degree to which measured performance provides business value.
-            </li>
-        </ul>
-    </div>
-</div>
+    <!-- Hiding until classes are defined -->
+    <!-- <section class="section-1">
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="counter">
+                    <h4>Histogram Statics</h4>
+                </div>
+                <div class="counter">
+                    <h4>Requests per sec</h4>
+                </div>
+                <div class="counter">
+                    <h4>Normalized latency</h4>
+                </div>
+                <div class="counter">
+                    <h4>Performance Test Performed</h4>
+                </div>
+            </div>
+        </div>
+    </section> -->
 
-<div class="formulaSection">
-    <h1><strong>MeshMark: The Formula</strong></h1>
-    <div class="equationContainer">
-    <div class = "description">
-        MeshMark functions as a value performance index (a scale) to provide organizations the ability to weigh the value of their service mesh versus the overhead of their service mesh and assess whether they are getting out of the mesh what they are “paying” for in it. MeshMark’s scoring system ranges from 0 to 100 and incorporates collections of resource utilization efficiency calculations, categorized into similar consumption classes.
-    </div>
-    <div class = "equation">
-        <img class="meshmark-text" src="../assets/img/logo/meshmark-dark-text.svg">
-        <div class="equal">
-            <h1 class = "equal-sign">=</h1>
-        </div>
-        <img class = "formula-img" src="../assets/img/meshmark-formula.png" alt="">
-    </div>
-</div>
-</div>
+    <!-- Intro to MeshMark -->
+    <section class="section-2">
+        <h2>What is MeshMark?</h2>
+        <p>
+            MeshMark is a performance index that measures the value and overhead of your cloud native environment. By converting performance measurements into insights about the value of individual, cloud native application networking functions, MeshMark distills
+            a variety of overhead signals and key performance indicators into a simple index.
+        </p>
+        <img class="mue-description-image" style="border: 0;" src="../assets/img/MeshMark-Score.png" alt="MeshMark Demo inside MeshMap" />
+        
+    </section>
 
-<div class = "mue">
-    <h2>What is MUE</h2>
-    <div class = "mue-description-image">
-    <p style="text-align: justify;"> 
-        It's a calculation, combined ratio of measured platform resources to assign resources. If you're able to measure what your assigned resources are in whatever form and able to also monitor what's the used resources, you can have this ratio. So, for example, a very simple one is CPU performance.And you would want to see if the CPU performance as a ratio to the available resources is a loss or a gain.<br>
-        <div class = "mue-image-container">
-            <img class = "mue-image" src="../assets/img/mue-description.png">
+    <section class="section-3">
+        <h2>MeshMark: The Formula</h2>
+        <p>
+            MeshMark functions as a value performance index (a scale) to provide organizations the ability to weigh the value of their service mesh versus the overhead of their service mesh and assess whether they are getting out of the mesh what they are “paying”
+            for in it. MeshMark’s scoring system ranges from 0 to 100 and incorporates collections of resource utilization efficiency calculations, categorized into similar consumption classes.
+        </p>
+        <div class="equation">
+            <img class="meshmark-text" src="../assets/img/logo/meshmark-dark-text.svg">
+            <div class="equal">
+                <h1 class="equal-sign">=</h1>
+            </div>
+            <img class="formula-img" src="../assets/img/mark-formula.png" alt="">
         </div>
-        So CPU performance, raw loss over total CPU is our MUE one.
-        And that's just one minus CPU utilization over 100. That's a very simple ratio and if you see on the slide, the graph shows you that as the latency increases, your Mue lowers. And so that's a very good indicator that your efficiency of your infrastructure is not very good because your latencies are increasing as your QPS increases.
-        So like this you can measure and create other MUEs. We will look at how you can visualize this within an environment and so let's look at the demonstration. So let's jump into a sibling CNCF project called Meshery.
-        Meshery is a cloud native management plane. Users of Meshery can configure their Kubernetes deployments any and every service mesh as well as on board and off board their workloads onto any given mesh.
-    </p>
-   
-</div>
-</div>
-<div class="youtubeVideo">
-    <h1>A quick Explanation of how MeshMark Works</h1>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/yvqn6ckO7BI" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+    </section>
+    <section class="section-4">
+        <h2>MeshMark utilization efficiencies and their classes</h2>
+        <p>
+            <strong>MeshMark Utilization Efficiency</strong> is a calculated, combined ratio of specific infrastructure resource utilizations to assigned resources to cloud native infrastructure.
+        </p>
+        <img class="mue-description-image" src="../assets/img/mue-description.png" alt="MeshMark Utilization Efficiency" />
+        <p>
+            The example depicted is a simple ratio. The graph demonstrates that as that as the latency increases, your utilization efficiency lowers. In this example, latencies are increasing as the queries per second increases, indicating that the infrastructure and/or its configuration is sub-optimal.
+        </p>
+        <p>
+            Tooling that implements MeshMark includes <a href="https://meshery.io">Meshery</a>, the cloud native management plane. Users of Meshery can configure their Kubernetes deployments, any and every service mesh as well as onboard and offboard their workloads onto any given mesh. Once they have done so, Meshery will begin to calculate MeshMarks continuously.
+        </p>
+    </section>
+
+    <div class="youtubeVideo">
+        <h2>Watch the MeshMark demo</h2>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/yvqn6ckO7BI" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-</div>
-<div class = "presentation">
-    <h1>ServiceMeshCon EU 2022 Presentation on MeshMark</h1>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://docs.google.com/presentation/d/e/2PACX-1vRSt9Men_1dGGjfCDzMeUGfFPffyLZwJMp8idFHG1MP-bg7wJqAIIcrpxbbOjn97tpwg0dbkvUC3JmF/embed?start=false&loop=true&delayms=5000" frameborder="0" width="1080" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <p style="font-style: italic;margin-left:1rem;margin-top:1rem;">Excerpt from ServiceMeshCon EU 2022: demo of MeshMark using MeshMap.</p>
     </div>
+
 </div>
-</div>
+<section class="footer">
+    <div class="callout">
+        <img class="callout-img" src="../assets/img/cncf-white.svg" alt="CNCF" />
+        <p class="callout-text" style="color:white;display: flex;justify-content: center;">Participate in the state of the art. <br /> Join us at ServiceMeshCon EU 2022</p>
+        <button class="btn-join" onclick="location.href='https://layer5.io/community/events/servicemeshcon-eu-2022'" type="button">Join Us</button>
+    </div>
+</section>
+
+
+<script text="text/javascript">
+    function counter() {
+        var count = setInterval(function() {
+            var c = parseInt($('.counter').text());
+            $('.counter').text((++c).toString());
+            if (c === 100) {
+                clearInterval(count);
+            }
+        }, 60)
+    }
+</script>

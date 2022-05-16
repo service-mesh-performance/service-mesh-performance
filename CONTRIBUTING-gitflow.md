@@ -10,7 +10,7 @@ While this isn't an absolutely necessary step, if you plan on doing anything mor
 
 ## Add 'upstream' repo to list of remotes
 ```
-git remote add upstream https://github.com/layer5io/service-mesh-performance.git
+git remote add upstream https://github.com/service-mesh-performance/service-mesh-performance.git
 ```
 
 ## Verify the new remote named 'upstream'

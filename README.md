@@ -48,7 +48,7 @@ alt="Meshery - the Service Mesh Management Plane" align="left" /></a>
 <a href="docs/assets/spec/readme/service mesh performance example.gif"><img src="docs/assets/spec/readme/service mesh performance example.gif" /></a>
 See the <a href="docs/assets/spec/readme/service mesh performance result.yaml">sample results</a> file.
 <hr />
-<br /><br /><p align="center"><i>If you’re using Service Mesh Performance or if you like the project, please <a href="https://github.com/layer5io/meshery/stargazers">★</a> star this repository to show your support! 🤩</i></p>
+<br /><br /><p align="center"><i>If you’re using Service Mesh Performance or if you like the project, please <a href="https://github.com/meshery/meshery/stargazers">★</a> star this repository to show your support! 🤩</i></p>
 </p>
 
 <p style="clear:both;">
