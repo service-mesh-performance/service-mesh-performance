@@ -1,3 +1,11 @@
+a:not([class]) {
+    background-color: #FFF3C5;
+}
+
+a:not([class]):hover {
+    font-weight: bold;
+}
+
 .headerContainer {
     display: flex;
     justify-content: space-between;
