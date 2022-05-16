@@ -1,6 +1,6 @@
 ---
 slug: Getting started with Service Mesh Performance Analysis
-layout: page
+layout: post
 subtitle: 
 author: Lee Calcote
 image: /assets/img/buttons/smp-logo/smp-new-logo.png
