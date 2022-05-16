@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Newsletter
 background: grey
 description: "Service Mesh Performance (SMP): Measure your service mesh performance using SMP. 

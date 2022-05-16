@@ -6,7 +6,7 @@ alt: KubeCon+CloudNativeCon
 date: 2020-12-02 06:00:00 +0000
 category: spec
 author: The Newsroom
-layout: page
+layout: post
 caption:
   title: KubeCon+CloudNativeCon
   subtitle: Service Mesh Battle Stories and Fixes

@@ -1,4 +1,13 @@
-# The Methodology of Service Mesh Performance
+---
+layout: page
+title: Test Methodology
+permalink: dashboard/methodology
+redirect_from: dashboard/methodology/
+language: en
+display-title: "true"
+list: exclude
+---
+# Test Methodology
 
 ## Service Mesh Performance GitHub Action
 
@@ -16,6 +25,6 @@ CNCF Community Infrastructure Lab resources is contributed and managed by [Equin
  
 ### SMP Github Action Sequence Diagram:
 
-![Sequence Diagram](../../assets/img/smp-action-sequence-diagram.jpg)
+<a href="/pages/dashboard/methodology/smp-action-sequence-diagram.jpg"><img src="/pages/dashboard/methodology/smp-action-sequence-diagram.jpg" width="100%" /></a>
 
-The results from the tests are updated on the Performance Management dashboard in Meshery. To learn more about interpreting the test results, check out this guide. You can always checkout the Meshery User Guides to dive deep into these features.
+The results from the tests are updated on the Performance Management dashboard in Meshery. To learn more about interpreting the test results, check out this guide. You can always checkout the [Meshery User Guides](https://docs.meshery.io) to dive deep into these features.

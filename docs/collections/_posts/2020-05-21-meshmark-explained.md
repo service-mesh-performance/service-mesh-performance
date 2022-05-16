@@ -6,7 +6,7 @@ alt: MeshMark explained
 date: 2020-05-21 12:15:05 +0000
 category: spec
 author: Lee Calcote
-layout: page
+layout: post
 caption:
   title: MeshMark explained
   subtitle: Through the eyes of a consumer

@@ -1,6 +1,6 @@
 ---
 slug: Pipelining Service Mesh Specifications
-layout: page
+layout: post
 subtitle: Using SMI and SMP specs on your CI/CD pipelines with Meshery's GitHub Actions
 author: The Newsroom
 image: /assets/img/buttons/smp-logo/smp-new-logo.png
