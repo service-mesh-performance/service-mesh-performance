@@ -14,6 +14,9 @@ nav:
 
   - title: "Connect"
     section: subscribe
+
+  - title: "MeshMark"
+    url: meshmark
   
   - title: "Dashboard"
     url: dashboard
