@@ -61,7 +61,49 @@ h1 {
     display: flex;
     justify-content: space-around;
 }
-
+@media (max-width:1140px){
+    .equation{
+        .formula-img{
+            width:40rem
+        }
+        .equal-sign{
+            top:10rem
+        }
+    }  
+}
+@media (max-width:992px){
+    .equation{
+        .formula-img{
+            width:35rem;
+        }
+        .meshmark-text{
+            width: 15rem;
+        }
+        .equal-sign{
+            top:8rem;
+        }
+    }  
+}
+@media (max-width:850px){
+    .equation{
+        display: block;
+        .formula-img{
+            padding-left: 0;
+            width:100%;
+        }
+        .meshmark-text{
+            margin-left: auto;
+            margin-right: auto;
+            width: 15rem;
+        }
+        .equal-sign{
+            margin-left: auto;
+            margin-right: auto;
+            top:0.5rem;
+            left:0rem
+        }
+    }  
+}
 .description-point {
     margin-top: 2rem;
 }
@@ -107,6 +149,15 @@ h1 {
 .grid-container {
     display: grid;
     grid-template-columns: auto auto;
+}
+
+@media(max-width:992px){
+    .grid-container{
+        display: block;
+        .logo{
+            width: 70%;
+        }
+    }
 }
 
 .grid-item {
@@ -189,6 +240,11 @@ h1 {
     color: white p {
         margin: 0.94rem 0;
         color: white;
+    }
+}
+@media(max-width:550px){
+    .callout{
+        display: block;
     }
 }
 
