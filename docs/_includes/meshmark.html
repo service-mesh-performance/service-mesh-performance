@@ -65,6 +65,7 @@
         <img class="mue-description-image" src="../assets/img/mue-description.png" alt="MeshMark Utilization Efficiency" />
         <p>
             The example depicted is a simple ratio. The graph demonstrates that as that as the latency increases, your utilization efficiency lowers. In this example, latencies are increasing as the queries per second increases, indicating that the infrastructure and/or its configuration is sub-optimal.
+            The "1-CPU utilization" identifies what CPU cycles are left behind and not used. It is directly related to the latency KPI, so MUE ratios are more effective as a measure of efficiency, since the higher the utilization, the lower the latency will be. As with Power Utilization Efficiency (PUE), MUEs can be generated for any resource in the Datacenter hardware.
         </p>
         <p>
             Tooling that implements MeshMark includes <a href="https://meshery.io">Meshery</a>, the cloud native management plane. Users of Meshery can configure their Kubernetes deployments, any and every service mesh as well as onboard and offboard their workloads onto any given mesh. Once they have done so, Meshery will begin to calculate MeshMarks continuously.
