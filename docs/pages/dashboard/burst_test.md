@@ -1,5 +1,5 @@
 ---
-layout: dashboardPage
+layout: performanceProfile
 title: Project
 permalink: dashboard/burst
 redirect_from: dashboard/burst/

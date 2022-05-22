@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css"
+  />
+
+  <body id="dashboard-page-top">
+    {% include nav.html %}
+
+    <div id="contents">
+      <div id="sidebar" class="bottom fixed">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="/dashboard" class="nav-link text-light font-italic">
+              <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> All
+              Profiles
+            </a>
+          </li>
+        </ul>
+        <!-- <p
+          class="text-gray font-weight-bold text-uppercase px-2 small py-4 mb-0"
+        >
+          Performance Profiles
+        </p> -->
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i> Soak
+          </li>
+          <li class="nav-item">
+            <!-- <a class="nav-link text-light font-italic" style="cursor: default;opacity: 0.7;"> -->
+            <i
+              class="fa fa-bar-chart mr-3 text-primary fa-fw"
+              style="text-decoration: line-through"
+            ></i>
+            Burst
+          </li>
+          <li class="nav-item">
+            <i
+              class="fa fa-pie-chart mr-3 text-primary fa-fw"
+              style="text-decoration: line-through"
+            ></i>
+            JWT Revocation
+          </li>
+        </ul>
+      </div>
+      <!-- Page content holder -->
+      <section id="dashboardPagecontainer">
+        <div class="page-content p-5" id="content">
+          <!--content -->
+          <section class="resultsContainer">
+            {{content}}
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Profile</th>
+                  <th scope="col">Endpoints</th>
+                  <th scope="col">Last Run</th>
+                  <th scope="col">Service Mesh</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Extended Soak Test</td>
+                  <td>status.flight.org/healt</td>
+                  <td>Mar 12th, 2022 3:12AM</td>
+                  <td>LinkerD</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>             
+                  <td>Capacity: Major Release</td>     
+                  <td>status.flight.com/checkout</td>
+                  <td>Feb 9th, 2021 1:12PM</td>                                 
+                  <td>istio</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>                 
+                  <td>Intial SPike-eBPF</td>   
+                  <td>status.flight.org/health</td>
+                  <td>Feb 9th, 2021 1:12PM</td>
+                  <td>Open Service Mesh</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>     
+                  <td>Harris Load Profile</td>             
+                  <td>Feb 9th, 2021 1:12PM</td>                                 
+                  <td>status.flight.com/checkout</td>
+                  <td>Open Service Mesh</td>                  
+                </tr
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    {% include javascript_files.html %}
+    <!-- Custom scripts for this template -->
+    <script src="/assets/js/toggle.js"></script>
+
+    {% include footer.html %}
+  </body>
+</html>

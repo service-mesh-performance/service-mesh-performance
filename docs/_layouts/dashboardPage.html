@@ -16,7 +16,8 @@
         <ul class="nav flex-column">
           <li class="nav-item">
             <a href="/dashboard" class="nav-link text-light font-italic">
-              <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> All Profiles
+              <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> All
+              Profiles
             </a>
           </li>
         </ul>
@@ -27,20 +28,22 @@
         </p> -->
         <ul class="nav flex-column">
           <li class="nav-item">
-           
-              <i class="fa fa-area-chart mr-3 text-primary fa-fw" ></i> Soak
-
+            <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i> Soak
           </li>
           <li class="nav-item">
             <!-- <a class="nav-link text-light font-italic" style="cursor: default;opacity: 0.7;"> -->
-              <i class="fa fa-bar-chart mr-3 text-primary fa-fw" style="text-decoration:line-through;"></i> Burst
-
+            <i
+              class="fa fa-bar-chart mr-3 text-primary fa-fw"
+              style="text-decoration: line-through"
+            ></i>
+            Burst
           </li>
           <li class="nav-item">
-
-              <i class="fa fa-pie-chart mr-3 text-primary fa-fw" style="text-decoration:line-through;"></i> JWT
-              Revocation
-
+            <i
+              class="fa fa-pie-chart mr-3 text-primary fa-fw"
+              style="text-decoration: line-through"
+            ></i>
+            JWT Revocation
           </li>
         </ul>
       </div>
@@ -51,7 +54,9 @@
           <section class="resultsContainer">
             {{content}}
             <p>
-              Each performance profile containers environment and configuration details for the specific test scenario. Tests shown in SMP Dashboard are within the CNCF Lab.
+              Each performance profile containers environment and configuration
+              details for the specific test scenario. Tests shown in SMP
+              Dashboard are within the CNCF Lab.
             </p>
 
             {% include graph.html %}
@@ -102,14 +107,21 @@
                     </button>
 
                     <!-- Collapsed Items -->
-                    <div class="collapse" id="{{service_mesh.name}}-card" style="margin-bottom: 10px;">
+                    <div
+                      class="collapse"
+                      id="{{service_mesh.name}}-card"
+                      style="margin-bottom: 10px"
+                    >
                       <div
                         class="card card-body"
                         id="{{service_mesh.name}}-env"
                       ></div>
                     </div>
-
-                    <div class="collapse" id="{{service_mesh.name}}-card2" style="margin-bottom: 10px;">
+                    <div
+                      class="collapse"
+                      id="{{service_mesh.name}}-card2"
+                      style="margin-bottom: 10px"
+                    >
                       <div
                         class="card card-body"
                         id="{{service_mesh.name}}-env2"
