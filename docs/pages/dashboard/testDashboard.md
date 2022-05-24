@@ -1,7 +1,7 @@
 ---
-layout: dashboardPage
+layout: individualResults
 title: Test Dashboard
-permalink: dashboard/performance/:id
+permalink: dashboard/performance/individual
 language: en
 display-title: "false"
 list: exclude
