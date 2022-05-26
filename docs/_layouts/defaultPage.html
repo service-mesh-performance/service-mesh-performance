@@ -2,7 +2,8 @@
 <html>
 
   {% include head.html %}
-
+  
+  
   <style>
     #pagecontainer {
       padding-top: 170px;
@@ -18,8 +19,11 @@
   <body id="page-top">
 
 	{% include nav.html %}
+    
     <div class="container" id="pagecontainer">
         {{content}}
     </div>
+    {% include javascript_files.html %}
+
 
     {% include footer.html %}	
