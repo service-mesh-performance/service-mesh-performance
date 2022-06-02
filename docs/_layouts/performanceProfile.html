@@ -54,29 +54,8 @@
           <section class="resultsContainer">
             {{content}}
 
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Control Plane Test</h5>
-                    <p class="card-text">
-                      Control Plane tests are tests focused on testing control plane against loads.
-                    </p>
-                    <a href="{{site.baseurl}}/dashboard/performance" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Network Tests</h5>
-                    <p class="card-text">
-                      Network testing and traffic load test and surges. Performance Profiles under extremene Traffic tests
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
+            <div id="card-row" class="row">
+             
             </div>
           </section>
            <!-- Toggle button -->
@@ -101,7 +80,7 @@
     {% include javascript_files.html %}
     <!-- Custom scripts for this template -->
     <script src="/assets/js/toggle.js"></script>
-
+    <script src="/assets/js/profiles.js"></script>
     {% include footer.html %}
   </body>
 </html>

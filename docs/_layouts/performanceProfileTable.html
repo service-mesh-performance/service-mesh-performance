@@ -52,6 +52,7 @@
         <div class="page-content p-5" id="content">
           <!--content -->
           <section class="resultsContainer">
+            <button class="btn btn-secondary" type="button" value="Go Back" onclick="history.back(-1)" style="margin-bottom: 20px;">Go Back</button>
             {{content}}
             <table class="table">
               <thead>
@@ -63,36 +64,8 @@
                   <th scope="col">Service Mesh</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="table-body">
                
-                <tr>
-                  <th scope="row">1</th>
-                  <td> <a href="{{site.baseurl}}/dashboard/performance/individual">Extended Soak Test</a></td>
-                  <td>status.flight.org/healt</td>
-                  <td>Mar 12th, 2022 3:12AM</td>
-                  <td>LinkerD</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>             
-                  <td>Capacity: Major Release</td>     
-                  <td>status.flight.com/checkout</td>
-                  <td>Feb 9th, 2021 1:12PM</td>                                 
-                  <td>istio</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>                 
-                  <td>Intial SPike-eBPF</td>   
-                  <td>status.flight.org/health</td>
-                  <td>Feb 9th, 2021 1:12PM</td>
-                  <td>Open Service Mesh</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>     
-                  <td>Harris Load Profile</td>             
-                  <td>Feb 9th, 2021 1:12PM</td>                                 
-                  <td>status.flight.com/checkout</td>
-                  <td>Open Service Mesh</td>                  
-                </tr
               </tbody>
             </table>
           </section>
@@ -119,6 +92,7 @@
     {% include javascript_files.html %}
     <!-- Custom scripts for this template -->
     <script src="/assets/js/toggle.js"></script>
+    <script src="/assets/js/table.js"></script>
 
     {% include footer.html %}
   </body>

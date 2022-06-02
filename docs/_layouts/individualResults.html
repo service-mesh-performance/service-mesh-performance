@@ -52,6 +52,7 @@
         <div class="page-content p-5" id="content">
           <!--content -->
           <section class="resultsContainer">
+            <button class="btn btn-secondary" type="button" value="Go Back" onclick="history.back(-1)" style="margin-bottom: 20px;">Go Back</button>
             {{content}}
             <p>
               Each performance profile containers environment and configuration
@@ -72,10 +73,7 @@
                     <h5 class="card-title">Performance Overview</h5>
                     <p class="card-text" id="{{service_mesh.id}}">
                       <script type="text/javascript">
-                        renderSelectedChart(
-                          "{{service_mesh.name}}",
-                          "{{service_mesh.id}}"
-                        );
+                        renderSelectedChart();
                       </script>
                     </p>
 

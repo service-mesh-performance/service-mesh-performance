@@ -8,4 +8,4 @@ display-title: "false"
 list: exclude
 ---
 
-## Burst
+## Performance Profile

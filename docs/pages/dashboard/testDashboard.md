@@ -7,4 +7,4 @@ display-title: "false"
 list: exclude
 ---
 
-## Performance Profiles
+## Chart
