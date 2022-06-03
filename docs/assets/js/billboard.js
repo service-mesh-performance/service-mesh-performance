@@ -637,19 +637,31 @@ function fillTittle(rawdata,tmpData) {
 
 function renderSelectedChart() {
 
-  fetch("https://meshery.layer5.io/smp/performance/profiles/41b1c408-d251-4569-939f-2be756f7c080/results", { 
+  let URL = window.location.hash.substring(1)
+  let profileId = URL.slice(0,36)
+  let index = parseInt(URL.slice(37))
+
+  console.log("profileId",profileId)
+  console.log("index",index)
+
+  let cardTitle = document.getElementById("card-title")
+
+  fetch(`https://meshery.layer5.io/smp/performance/profiles/${profileId}/results`, { 
     method: "GET"
   }).then(function(response) {
     return response.json();
   }).then(function(data) {
-    let res = data.results[1];
+
+    cardTitle.innerHTML = data.results[index].name
+        
+    let res = data.results[index];
     // console.log(res)
     let rawdata = res;
     let datas = res.runner_results;
   
     let tmpData =
       typeof datas !== "undefined" ? datas : {};
-  
+    
     let chartData = singleChart(rawdata, tmpData);
     processChartData(chartData);
     console.log( data.results[0]);
