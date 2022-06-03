@@ -15,7 +15,7 @@ fetch("https://meshery.layer5.io/smp/performance/profiles/", {
                         <p class="card-text">
                             Performance profile number ${i+1}
                         </p>
-                         <a href="http://127.0.0.1:4000/dashboard/performance" class="btn btn-primary">Show Results</a>
+                         <a href="${location.origin}/dashboard/performance#${data.profiles[i].id}"  class="btn btn-primary">Show Results</a>
                     </div>
                  </div>
             </div>
