@@ -78,13 +78,14 @@
                     </p>
 
                     <button
+                      id="test-spec"
                       class="btn btn-primary"
                       type="button"
                       data-toggle="collapse"
                       data-target="#{{service_mesh.name}}-card2"
                       aria-expanded="false"
                       aria-controls="{{service_mesh.name}}-card2"
-                      onclick="processTestSpecificationClick(`{{service_mesh.name}}`, `{{service_mesh.name}}-env2` )"
+                      onclick="processTestSpecificationClick()"
                     >
                       Test Specifications
                     </button>
@@ -97,7 +98,7 @@
                       data-target="#{{service_mesh.name}}-card"
                       aria-expanded="false"
                       aria-controls="{{service_mesh.name}}-card"
-                      onclick="renderInfraDetails(`{{service_mesh.name}}-env`)"
+                      onclick="renderInfraDetails('Istio-env')"
                     >
                       Environment Details
                     </button>
