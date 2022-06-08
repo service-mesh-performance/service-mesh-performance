@@ -1,11 +1,12 @@
 ---
-layout: dashboardPage
-title: Project
-permalink: dashboard
-redirect_from: dashboard/
+layout: performanceProfile
+title: All Performance Profiles
+permalink: dashboard/all
+redirect_from: dashboard/all/
 language: en
 display-title: "false"
 list: exclude
+test_type: all
 ---
 
-## Performance Profiles
+## All Performance Profiles

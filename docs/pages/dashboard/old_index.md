@@ -1,11 +1,11 @@
 ---
 layout: dashboardPage
 title: Project
-permalink: dashboard/burst
-redirect_from: dashboard/burst/
+permalink: old_dashboard
+redirect_from: old_dashboard/
 language: en
 display-title: "false"
 list: exclude
 ---
 
-## Performance Profile
+## Performance Profiles

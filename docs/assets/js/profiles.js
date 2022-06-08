@@ -1,6 +1,20 @@
 cardRow = document.getElementById("card-row")
 pages = document.getElementById("pages")
 
+let test_type = cardRow.attributes[2].value
+
+console.log(test_type)
+
+if(window.location.pathname == "/dashboard/" || window.location.pathname == "/dashboard" ){
+  reloadFunction(1)
+}
+
+if(window.location.pathname == `/dashboard/${test_type}/` || window.location.pathname == `/dashboard/${test_type}` )
+{
+  reloadFunction(1)
+}
+console.log(window.location.pathname)
+
 let URL = window.location.href
 console.log(URL)
 let currentPage = parseInt(URL.slice(-1))
@@ -9,7 +23,11 @@ if(currentPage==="t"){
   currentPage = 1;
 }
 function reloadFunction(page){
-  window.location.replace(`${location.origin}/dashboard/burst/page=${page}`)
+  window.location.replace(`${location.origin}/dashboard/${test_type}/page=${page}`)
+}
+
+function hello(text){
+  console.log(text)
 }
 
 function createPagination(pages, page) {
@@ -86,7 +104,7 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/?page=${currentPage-1}
   }).then(function(response) {
     return response.json();
   }).then(function(data) {
-    
+    if(test_type=="all"){
     let content = " "
     for(let i = 0;i<data.profiles.length;i++){
         content += `
@@ -111,4 +129,36 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/?page=${currentPage-1}
 
     console.log(content);
     cardRow.innerHTML = content;
+  }
+  else {
+  let total_item = 0
+  let content = " "
+  for(let i = 0;i<data.profiles.length;i++){
+      let parse_test_type = data.profiles[i].name.split("-")[2]
+      if(parse_test_type==test_type){
+      total_item = total_item+1;
+      content += `
+          <div class="col-sm-6" style="margin-bottom: 20px" >
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title">${data.profiles[i].name}</h5>
+                      <p class="card-text">
+                          Performance profile number ${i+1}
+                      </p>
+                       <a href="${location.origin}/dashboard/performance#${data.profiles[i].id}/page=1"  class="btn btn-primary">Show Results</a>
+                  </div>
+               </div>
+          </div>
+          
+      `
+  }
+  let numberOfPages = Math.ceil(total_item/10);
+  console.log(numberOfPages)
+
+  document.getElementById('paginations').innerHTML = createPagination(numberOfPages, currentPage);
+
+  console.log(content);
+  cardRow.innerHTML = content;
+}
+}
   })
