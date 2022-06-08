@@ -12,41 +12,7 @@
     {% include nav.html %}
 
     <div id="contents">
-      <div id="sidebar" class="bottom fixed">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a href="/dashboard" class="nav-link text-light font-italic">
-              <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> All
-              Profiles
-            </a>
-          </li>
-        </ul>
-        <!-- <p
-          class="text-gray font-weight-bold text-uppercase px-2 small py-4 mb-0"
-        >
-          Performance Profiles
-        </p> -->
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i> Soak
-          </li>
-          <li class="nav-item">
-            <!-- <a class="nav-link text-light font-italic" style="cursor: default;opacity: 0.7;"> -->
-            <i
-              class="fa fa-bar-chart mr-3 text-primary fa-fw"
-              style="text-decoration: line-through"
-            ></i>
-            Burst
-          </li>
-          <li class="nav-item">
-            <i
-              class="fa fa-pie-chart mr-3 text-primary fa-fw"
-              style="text-decoration: line-through"
-            ></i>
-            JWT Revocation
-          </li>
-        </ul>
-      </div>
+      {% include sidebar.html %}
       <!-- Page content holder -->
       <section id="dashboardPagecontainer">
         <div class="page-content p-5" id="content">
