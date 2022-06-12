@@ -5,15 +5,16 @@ let test_type = cardRow.attributes[2].value
 
 console.log(test_type)
 
-if(window.location.pathname == "/dashboard/" || window.location.pathname == "/dashboard" ){
-  reloadFunction(1)
-}
+// if(window.location.pathname == "/dashboard/" || window.location.pathname == "/dashboard" ){
+//   reloadFunction(1)
+// }
+console.log(window.location.pathname.includes("#"))
 
-if(window.location.pathname == `/dashboard/${test_type}/` || window.location.pathname == `/dashboard/${test_type}` )
+if(window.location.hash == "" )
 {
-  reloadFunction(1)
+  reloadFunction(1,"start")
 }
-console.log(window.location.pathname)
+console.log(window.location)
 
 let URL = window.location.href
 console.log(URL)
@@ -22,8 +23,15 @@ let currentPage = parseInt(URL.slice(-1))
 if(currentPage==="t"){
   currentPage = 1;
 }
-function reloadFunction(page){
-  window.location.replace(`${location.origin}/dashboard/${test_type}/page=${page}`)
+function reloadFunction(page,status){
+  console.log(status)
+  if(status=="start")
+  window.location.replace(`${location.origin}/dashboard/${test_type}/#page=${page}`)
+  else{
+    window.location.replace(`${location.origin}/dashboard/${test_type}/#page=${page}`)
+    window.location.reload()
+  }
+  
 }
 
 function hello(text){
@@ -37,7 +45,7 @@ function createPagination(pages, page) {
   let pageCutHigh = page + 1;
   // Show the Previous button only if you are on a page other than the first
   if (page > 1) {
-    str += `<li class="page-item previous no"><a onclick="reloadFunction(${page-1})" class = "page-link" onclick="createPagination(${pages}, ${page-1})">Previous</a></li>`;
+    str += `<li class="page-item previous no"><a onclick="reloadFunction(${page-1},'pageChange')" class = "page-link" onclick="createPagination(${pages}, ${page-1})">Previous</a></li>`;
   }
   // Show all the pagination elements if there are less than 6 pages total
   if (pages < 6) {
