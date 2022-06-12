@@ -9,4 +9,4 @@ list: exclude
 test_type: load
 ---
 
-## Load Test Performance Profile
+## Load Test Performance Profiles

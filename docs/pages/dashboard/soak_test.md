@@ -9,4 +9,4 @@ list: exclude
 test_type: soak
 ---
 
-## Soak Test Performance Profile
+## Soak Test Performance Profiles
