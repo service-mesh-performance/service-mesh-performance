@@ -7,8 +7,10 @@ let currentPage = parseInt(URL.slice(42))
 
 console.log(profileId, currentPage)
 
+console.log(window.location)
+
 function reloadFunction(profileIds,page){
-  window.location.replace(`${location.origin}/dashboard/performance/#${profileIds}/page=${page}`)
+  window.location.replace(`${location.origin}/dashboard/performance/#${profileIds}?page=${page}`)
   window.location.reload()
 }
 
