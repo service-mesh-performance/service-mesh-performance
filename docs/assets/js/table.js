@@ -109,6 +109,18 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/${profileId}/results/?
              </thead>
              <tbody id="table-body">
     `
+    if(data.total_count==0){
+      content+=`
+          <tr>
+            <td colspan=5 style="text-align:center; font-size:25px">No results to show</td>
+          </tr>
+          </tbody>
+          </table>
+      
+      `
+      tableContainer.innerHTML = content;
+    }
+    else{
     for(let i = 0;i<data.results.length;i++){
         content += `
             <tr>
@@ -130,4 +142,5 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/${profileId}/results/?
           </table>
     `
     tableContainer.innerHTML = content;
+  }
   })
