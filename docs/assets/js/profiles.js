@@ -3,28 +3,18 @@ pages = document.getElementById("pages")
 
 let test_type = cardRow.attributes[2].value
 
-console.log(test_type)
-
-// if(window.location.pathname == "/dashboard/" || window.location.pathname == "/dashboard" ){
-//   reloadFunction(1)
-// }
-console.log(window.location.pathname.includes("#"))
-
 if(window.location.hash == "" )
 {
   reloadFunction(1,"start")
 }
-console.log(window.location)
 
 let URL = window.location.href
-console.log(URL)
 let currentPage = parseInt(URL.slice(-1))
 
 if(currentPage==="t"){
   currentPage = 1;
 }
 function reloadFunction(page,status){
-  console.log(status)
   if(status=="start")
   window.location.replace(`${location.origin}/dashboard/${test_type}#page=${page}`)
   else{
@@ -32,10 +22,6 @@ function reloadFunction(page,status){
     window.location.reload()
   }
   
-}
-
-function hello(text){
-  console.log(text)
 }
 
 function createPagination(pages, page) {
@@ -133,11 +119,9 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/?page=${currentPage-1}
         `
     }
     let numberOfPages = Math.ceil(data.total_count/10);
-    console.log(numberOfPages)
 
     document.getElementById('paginations').innerHTML = createPagination(numberOfPages, currentPage);
 
-    console.log(content);
     cardRow.innerHTML = content;
   }
   else {
@@ -163,11 +147,9 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/?page=${currentPage-1}
       `
   }
   let numberOfPages = Math.ceil(total_item/10);
-  console.log(numberOfPages)
 
   document.getElementById('paginations').innerHTML = createPagination(numberOfPages, currentPage);
 
-  console.log(content);
   cardRow.innerHTML = content;
 }
 }

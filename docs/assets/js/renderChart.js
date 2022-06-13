@@ -311,7 +311,6 @@ function myRound(v, digits = 2) {
                       } \nContainer runtime: ${node.container_runtime_version}`);
       });
     }
-    console.log(title);
     return title;
   }
   
@@ -663,7 +662,6 @@ function myRound(v, digits = 2) {
   }
   
   function tableRowCreator(machineSpec, title) {
-      console.log({machineSpec, title})
       function getTableRows() {
         return Object.keys(machineSpec).map((key) => `<tr>
       <th scope="row">${formattedName(key)}</th>

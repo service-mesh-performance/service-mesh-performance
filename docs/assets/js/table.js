@@ -6,10 +6,6 @@ let profileId = URL.slice(0,36)
 
 let currentPage = parseInt(URL.slice(42))
 
-console.log(profileId, currentPage)
-
-console.log(window.location)
-
 function reloadFunction(profileIds,page){
   window.location.replace(`${location.origin}/dashboard/performance/#${profileIds}?page=${page}`)
 
@@ -17,13 +13,11 @@ function reloadFunction(profileIds,page){
     window.location.reload()
   }, 3000);
   
-
-  
 }
 
 
 function createPagination(pages, page,profileIds) {
-  console.log(typeof(profileIds))
+  
   let str = '<ul class="pagination justify-content-center">';
   let active;
   let pageCutLow = page - 1;
@@ -128,7 +122,6 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/${profileId}/results/?
     }
 
     let numberOfPages = Math.ceil(data.total_count/10);
-    console.log(numberOfPages)
 
     document.getElementById('paginations').innerHTML = createPagination(numberOfPages, currentPage, profileId);
 
@@ -136,6 +129,5 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/${profileId}/results/?
           </tbody>
           </table>
     `
-    console.log(content);
     tableContainer.innerHTML = content;
   })
