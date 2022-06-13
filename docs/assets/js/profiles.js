@@ -26,9 +26,9 @@ if(currentPage==="t"){
 function reloadFunction(page,status){
   console.log(status)
   if(status=="start")
-  window.location.replace(`${location.origin}/dashboard/${test_type}/#page=${page}`)
+  window.location.replace(`${location.origin}/dashboard/${test_type}#page=${page}`)
   else{
-    window.location.replace(`${location.origin}/dashboard/${test_type}/#page=${page}`)
+    window.location.replace(`${location.origin}/dashboard/${test_type}#page=${page}`)
     window.location.reload()
   }
   
