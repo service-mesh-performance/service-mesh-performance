@@ -11,7 +11,13 @@ console.log(window.location)
 
 function reloadFunction(profileIds,page){
   window.location.replace(`${location.origin}/dashboard/performance/#${profileIds}?page=${page}`)
-  window.location.reload()
+  setTimeout(() => {
+    window.location.reload()
+  }, 3000);
+
+  // window.location.reload()
+
+  
 }
 
 
@@ -23,13 +29,13 @@ function createPagination(pages, page,profileIds) {
   let pageCutHigh = page + 1;
   // Show the Previous button only if you are on a page other than the first
   if (page > 1) {
-    str += `<li class="page-item previous no"><a onclick="reloadFunction('${profileIds}',${page-1})" href="${location.origin}/dashboard/performance/#${profileIds}/page=${page-1}" class = "page-link" onclick="createPagination(${pages}, ${page-1}, '${profileIds}')">Previous</a></li>`;
+    str += `<li class="page-item previous no"><a onclick="reloadFunction('${profileIds}',${page-1})" class = "page-link" onclick="createPagination(${pages}, ${page-1}, '${profileIds}')">Previous</a></li>`;
   }
   // Show all the pagination elements if there are less than 6 pages total
   if (pages < 6) {
     for (let p = 1; p <= pages; p++) {
       active = page == p ? "active" : "no";
-      str += `<li class="${active}"><a onclick="reloadFunction('${profileIds}',${p})" href="${location.origin}/dashboard/performance/#${profileIds}/${p}" class = "page-link" onclick="createPagination(${pages}, ${p}, '${profileIds}')"> ${p} </a></li>`;
+      str += `<li class="${active}"><a onclick="reloadFunction('${profileIds}',${p})" class = "page-link" onclick="createPagination(${pages}, ${p}, '${profileIds}')"> ${p} </a></li>`;
     }
   }
   // Use "..." to collapse pages outside of a certain range
