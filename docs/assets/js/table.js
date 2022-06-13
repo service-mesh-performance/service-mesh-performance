@@ -1,5 +1,6 @@
 
-tableBody = document.getElementById("table-body")
+// tableBody = document.getElementById("table-body")
+tableContainer = document.getElementById("tableContainer")
 let URL = window.location.hash.substring(1)
 let profileId = URL.slice(0,36)
 
@@ -11,11 +12,8 @@ console.log(window.location)
 
 function reloadFunction(profileIds,page){
   window.location.replace(`${location.origin}/dashboard/performance/#${profileIds}?page=${page}`)
-  setTimeout(() => {
-    window.location.reload()
-  }, 3000);
 
-  // window.location.reload()
+  window.location.reload()
 
   
 }
@@ -92,7 +90,8 @@ function createPagination(pages, page,profileIds) {
 }
 
 
-
+let loader = `<div class="spinnerContainer"><div class="spinner"></div></div>`;
+tableContainer.innerHTML = loader;
 
 fetch(`https://meshery.layer5.io/smp/performance/profiles/${profileId}/results/?page=${currentPage-1}`, { 
     method: "GET"
@@ -100,6 +99,19 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/${profileId}/results/?
     return response.json();
   }).then(function(data) {
     let content = " "
+    content += `
+           <table class="table"> 
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Profile</th>
+                  <th scope="col">Endpoints</th>
+                  <th scope="col">Last Run</th>
+                  <th scope="col">Service Mesh</th>
+                </tr>
+             </thead>
+             <tbody id="table-body">
+    `
     for(let i = 0;i<data.results.length;i++){
         content += `
             <tr>
@@ -117,6 +129,10 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/${profileId}/results/?
 
     document.getElementById('paginations').innerHTML = createPagination(numberOfPages, currentPage, profileId);
 
+    content+=`
+          </tbody>
+          </table>
+    `
     console.log(content);
-    tableBody.innerHTML = content;
+    tableContainer.innerHTML = content;
   })

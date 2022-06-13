@@ -107,6 +107,8 @@ function createPagination(pages, page) {
   return str;
 }
 
+let loader = `<div class="spinnerContainer"><div class="spinner"></div></div>`;
+cardRow.innerHTML = loader;
 fetch(`https://meshery.layer5.io/smp/performance/profiles/?page=${currentPage-1}`, { 
     method: "GET"
   }).then(function(response) {

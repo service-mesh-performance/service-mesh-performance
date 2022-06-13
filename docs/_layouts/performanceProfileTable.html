@@ -20,20 +20,10 @@
           <section class="resultsContainer">
             <button class="btn btn-secondary" type="button" value="Go Back" onclick="history.back(-1)" style="margin-bottom: 20px;">Go Back</button>
             {{content}}
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Profile</th>
-                  <th scope="col">Endpoints</th>
-                  <th scope="col">Last Run</th>
-                  <th scope="col">Service Mesh</th>
-                </tr>
-              </thead>
-              <tbody id="table-body">
-               
-              </tbody>
-            </table>
+            
+            <div id="tableContainer">
+
+            </div>
 
             <nav style="margin-top: 70px;" id = "paginations" class = "pagination-holder" aria-label="Page navigation example">
              

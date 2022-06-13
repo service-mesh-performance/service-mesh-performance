@@ -462,7 +462,6 @@ function myRound(v, digits = 2) {
   
   function processChartData(chartData) {
     if (chartData && chartData.data && chartData.options) {
-      console.log("inside if");
       const xAxes = [];
       const yAxes = [];
       const colors = {};
@@ -570,7 +569,7 @@ function myRound(v, digits = 2) {
         // title: {
         //   text: chartData.options.title.text.join('\n'),
         // },
-        bindto: "#istioDomId",
+        bindto: "#chart-id",
         type: "line",
         data: {
           // x: 'x',
@@ -604,11 +603,10 @@ function myRound(v, digits = 2) {
   
       chart = bb.generate(chartConfig);
     } else {
-      console.log("inside else");
       chart = bb.generate({
         type: "line",
         data: { columns: [] },
-        bindto: "#istioDomId",
+        bindto: "#chart-id",
       });
     }
   }
@@ -711,7 +709,7 @@ function myRound(v, digits = 2) {
     })
   }
     
-  function processTestSpecificationClick() {
+  function processTestSpecificationClick(appendToId) {
       let URL = window.location.hash.substring(1)
       let profileId = URL.slice(0,36)
       let index = parseInt(URL.slice(37))
@@ -730,7 +728,6 @@ function myRound(v, digits = 2) {
         typeof datas !== "undefined" ? datas : {};
       
       const chartData = makeTitle(rawdata,tmpData)
-      appendToId = "Istio-env2"
   
       renderTestSpecs(chartData, appendToId)
     })
@@ -751,7 +748,6 @@ function myRound(v, digits = 2) {
       document.getElementById(appendToId).innerHTML = tableRowCreator(changeStringToObj(titleString), "Test Specifications");
       hideOtherTab(appendToId);
     }
-  console.log(globalResult)
   
   
   

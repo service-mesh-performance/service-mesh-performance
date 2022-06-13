@@ -30,14 +30,13 @@
 
             <!-- List service mesh -->
             <div class="row">
-              {%- for service_mesh in site.data.service_meshes.service_meshes limit: 1 -%}
                 <div class="card" style="width: 100%;">
                   <div id="card-title" class="card-header" style="font-weight: 900">
                     
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">Performance Overview</h5>
-                    <p class="card-text" id="{{service_mesh.id}}">
+                    <p class="card-text" id="chart-id">
                       <script type="text/javascript">
                         renderSelectedChart();
                       </script>
@@ -48,10 +47,10 @@
                       class="btn btn-primary"
                       type="button"
                       data-toggle="collapse"
-                      data-target="#{{service_mesh.name}}-card2"
+                      data-target="#card2"
                       aria-expanded="false"
-                      aria-controls="{{service_mesh.name}}-card2"
-                      onclick="processTestSpecificationClick()"
+                      aria-controls="card2"
+                      onclick="processTestSpecificationClick('env2')"
                     >
                       Test Specifications
                     </button>
@@ -61,10 +60,10 @@
                       class="btn btn-primary"
                       type="button"
                       data-toggle="collapse"
-                      data-target="#{{service_mesh.name}}-card"
+                      data-target="#card"
                       aria-expanded="false"
-                      aria-controls="{{service_mesh.name}}-card"
-                      onclick="renderInfraDetails('Istio-env')"
+                      aria-controls="card"
+                      onclick="renderInfraDetails('env')"
                     >
                       Environment Details
                     </button>
@@ -72,27 +71,26 @@
                     <!-- Collapsed Items -->
                     <div
                       class="collapse"
-                      id="{{service_mesh.name}}-card"
+                      id="card"
                       style="margin-bottom: 10px"
                     >
                       <div
                         class="card card-body"
-                        id="{{service_mesh.name}}-env"
+                        id="env"
                       ></div>
                     </div>
                     <div
                       class="collapse"
-                      id="{{service_mesh.name}}-card2"
+                      id="card2"
                       style="margin-bottom: 10px"
                     >
                       <div
                         class="card card-body"
-                        id="{{service_mesh.name}}-env2"
+                        id="env2"
                       ></div>
                   </div>
                 </div>
               </div>
-              {% endfor %}
             </div>
           </section>
 

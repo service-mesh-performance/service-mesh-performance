@@ -134,3 +134,30 @@ body{
 		font-size: medium;
 	}
 }
+
+// loading animation
+.spinnerContainer{
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
+	/* Spinner 4 starts here */
+	.spinner {
+		animation: spinnerFour 1s linear infinite;
+		border: solid 7px transparent;
+		border-top: solid 7px #4DB6AC;
+		border-radius: 100%;
+		width: 5em;
+		height: 5em;
+	}
+	
+	@keyframes spinnerFour {
+		0% {
+		transform: rotate(0deg);
+		}
+		100% {
+		transform: rotate(360deg);
+		}
+	}
+	/* Spinner 4 ends here */
+}
