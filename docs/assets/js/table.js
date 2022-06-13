@@ -13,7 +13,10 @@ console.log(window.location)
 function reloadFunction(profileIds,page){
   window.location.replace(`${location.origin}/dashboard/performance/#${profileIds}?page=${page}`)
 
-  window.location.reload()
+  setTimeout(() => {
+    window.location.reload()
+  }, 3000);
+  
 
   
 }
