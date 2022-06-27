@@ -686,7 +686,10 @@ function myRound(v, digits = 2) {
       const alternate = alternateClassMap(id);
       document.getElementById(alternate).classList.remove("show");
     }
-    
+window.addEventListener('load',function(){
+    processTestSpecificationClick("env2")
+},false)
+
     function renderInfraDetails(appendToId) {
       let URL = window.location.hash.substring(1)
       let profileId = URL.slice(0,36)
@@ -731,7 +734,7 @@ function myRound(v, digits = 2) {
     })
   
   }
-      
+  
     
    function renderTestSpecs(titleString, appendToId) {
       function changeStringToObj(strArr) {
