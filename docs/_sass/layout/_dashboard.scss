@@ -1,7 +1,7 @@
 $color_1: #aaa;
 $background-color_1: #3C494E;
 $background-color_2: white;
-
+$background-color_3: #477E96;
 body{
 	margin: 0;
 }
@@ -11,7 +11,7 @@ body{
     position:relative;
 }
 #sidebar{
-	background-color: $background-color_1;
+	background-color: $background-color_3;
     height:100%;
 	margin-top: 5rem;
 	padding-top: 10rem;
@@ -75,8 +75,11 @@ body{
 	// bottom: 1.4rem;
 	text-align: right;
 	padding: 0.3rem;
-    background-color: $background-color_1;
-    border: #3C494E solid 1px;
+    background-color: #00B39F;
+    border: #7a878d solid 1px;
+	height: 3rem;
+	width: 1.2em;
+	border-radius: 3px;
 }
 
 .icon-left {
