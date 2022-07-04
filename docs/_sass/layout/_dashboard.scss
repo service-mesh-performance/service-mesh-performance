@@ -170,11 +170,13 @@ body{
 // }
 #test-specifications-tab.active{
 	background-color: #EBC017 !important;
+	border-left:#00B39F solid 2px !important;
+	border-top:#00B39F solid 2px !important;
 	border-right:#00B39F solid 2px !important;
-	border-bottom:#00B39F solid 2px !important
 }
 #env-details-tab.active{
 	background-color: #EBC017 !important;
 	border-left:#00B39F solid 2px !important;
-	border-bottom:#00B39F solid 2px !important
+	border-top:#00B39F solid 2px !important;
+	border-right:#00B39F solid 2px !important;
 }
