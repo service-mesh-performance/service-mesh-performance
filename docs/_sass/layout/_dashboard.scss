@@ -164,3 +164,17 @@ body{
 	}
 	/* Spinner 4 ends here */
 }
+
+// .nav-tabs{
+// 	border: #00B39F solid 2px;
+// }
+#test-specifications-tab.active{
+	background-color: #EBC017 !important;
+	border-right:#00B39F solid 2px !important;
+	border-bottom:#00B39F solid 2px !important
+}
+#env-details-tab.active{
+	background-color: #EBC017 !important;
+	border-left:#00B39F solid 2px !important;
+	border-bottom:#00B39F solid 2px !important
+}

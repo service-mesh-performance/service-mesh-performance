@@ -1,3 +1,4 @@
+<!-- http://127.0.0.1:4000/dashboard/performance/individual#41b1c408-d251-4569-939f-2be756f7c080#0 -->
 <!DOCTYPE html>
 <html>
   {% include head.html %}
@@ -42,53 +43,30 @@
                       </script>
                     </p>
 
-                    <button
-                      id="test-spec"
-                      class="btn btn-primary"
-                      type="button"
-                      data-toggle="collapse"
-                      data-target="#card2"
-                      aria-expanded="false"
-                      aria-controls="card2"
-                      onclick="processTestSpecificationClick('env2')"
-                    >
-                      Test Specifications
-                    </button>
 
-                    <!-- Environment Details -->
-                    <button
-                      class="btn btn-primary"
-                      type="button"
-                      data-toggle="collapse"
-                      data-target="#card"
-                      aria-expanded="false"
-                      aria-controls="card"
-                      onclick="renderInfraDetails('env')"
-                    >
-                      Environment Details
-                    </button>
-
-                    <!-- Collapsed Items -->
-                    <div
-                    class="collapse"
-                      id="card"
-                      style="margin-bottom: 10px"
-                    >
-                      <div
-                        class="card card-body"
-                        id="env"
-                      ></div>
-                    </div>
-                    <div
-                      class="collapse show"
-                      id="card2"
-                      style="margin-bottom: 10px"
-                    >
-                      <div
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="test-specifications-tab" data-toggle="tab" href="#test-specifications" role="tab" aria-controls="test-specifications" aria-selected="true" onclick="processTestSpecificationClick('env2')">Test Specifications</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="env-details-tab" data-toggle="tab" href="#env-details" role="tab" aria-controls="env-details" aria-selected="false" onclick="renderInfraDetails('env')">Environment Details</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="test-specifications" role="tabpanel" aria-labelledby="test-specifications-tab">
+                        <div
                         class="card card-body"
                         id="env2"
                       ></div>
-                  </div>
+                      </div>
+                      <div class="tab-pane fade" id="env-details" role="tabpanel" aria-labelledby="env-detauls-tab">
+                        <div
+                        class="card card-body"
+                        id="env"
+                      ></div>
+                      </div>
+                      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">this is contancx</div>
+        
                 </div>
               </div>
             </div>
