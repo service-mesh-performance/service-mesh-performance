@@ -16,4 +16,4 @@ nav:
     url: meshmark
   
   - title: "Dashboard"
-    url: dashboard/all/
+    url: dashboard/all
