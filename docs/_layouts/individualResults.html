@@ -1,0 +1,100 @@
+<!-- http://127.0.0.1:4000/dashboard/performance/individual#41b1c408-d251-4569-939f-2be756f7c080#0 -->
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css"
+  />
+
+  <body id="dashboard-page-top">
+    {% include nav.html %}
+
+    <div id="contents">
+      {% include sidebar.html %}
+      <!-- Page content holder -->
+      <section id="dashboardPagecontainer">
+        <div class="page-content p-5" id="content">
+          <!--content -->
+          <section class="resultsContainer">
+            <button class="btn btn-secondary" type="button" value="Go Back" onclick="history.back(-1)" style="margin-bottom: 20px;">Go Back</button>
+            {{content}}
+            <p>
+              Each performance profile containers environment and configuration
+              details for the specific test scenario. Tests shown in SMP
+              Dashboard are within the CNCF Lab.
+            </p>
+
+            {% include graph.html %}
+
+            <!-- List service mesh -->
+            <div class="row">
+                <div class="card" style="width: 100%;">
+                  <div id="card-title" class="card-header" style="font-weight: 900">
+                    
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Performance Overview</h5>
+                    <p class="card-text" id="chart-id">
+                      <script type="text/javascript">
+                        renderSelectedChart();
+                      </script>
+                    </p>
+
+
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="test-specifications-tab" data-toggle="tab" href="#test-specifications" role="tab" aria-controls="test-specifications" aria-selected="true" onclick="processTestSpecificationClick('env2')">Test Specifications</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="env-details-tab" data-toggle="tab" href="#env-details" role="tab" aria-controls="env-details" aria-selected="false" onclick="renderInfraDetails('env')">Environment Details</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="test-specifications" role="tabpanel" aria-labelledby="test-specifications-tab">
+                        <div
+                        class="card card-body"
+                        id="env2"
+                      ></div>
+                      </div>
+                      <div class="tab-pane fade" id="env-details" role="tabpanel" aria-labelledby="env-detauls-tab">
+                        <div
+                        class="card card-body"
+                        id="env"
+                      ></div>
+                      </div>
+                      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">this is contancx</div>
+        
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Toggle button -->
+          <button
+            id="sidebarCollapse"
+            type="button"
+            class="toggle-button text-light"
+          >
+            <i
+              class="icon-left fa fa-angle-left mr-2"
+              style="display: block"
+            ></i>
+            <i
+              class="icon-right fa fa-angle-right mr-2"
+              style="display: none"
+            ></i>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    {% include javascript_files.html %}
+    <!-- Custom scripts for this template -->
+    <script src="/assets/js/toggle.js"></script>
+
+    {% include footer.html %}
+  </body>
+</html>

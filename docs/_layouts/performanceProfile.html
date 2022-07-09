@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css"
+  />
+
+  <body id="dashboard-page-top">
+    {% include nav.html %}
+
+    <div id="contents">
+      {% include sidebar.html %}
+      <!-- Page content holder -->
+      <section id="dashboardPagecontainer">
+        <div class="page-content p-5" id="content">
+          <!--content -->
+          <section class="resultsContainer">
+            {{content}}
+
+            <div id="card-row" class="row" aria-label="{{page.test_type}}">
+              
+            </div>
+            
+            <nav id = "paginations" class = "pagination-holder" aria-label="Page navigation example">
+            </nav>
+
+          </section>
+           <!-- Toggle button -->
+           <button
+           id="sidebarCollapse"
+           type="button"
+           class="toggle-button text-light"
+         >
+           <i
+             class="icon-left fa fa-angle-left mr-2"
+             style="display: block"
+           ></i>
+           <i
+             class="icon-right fa fa-angle-right mr-2"
+             style="display: none"
+           ></i>
+         </button>
+        </div>
+      </section>
+    </div>
+
+    {% include javascript_files.html %}
+    <!-- Custom scripts for this template -->
+    <script src="/assets/js/toggle.js"></script>
+    <script src="/assets/js/profiles.js"></script>
+    {% include footer.html %}
+  </body>
+</html>

@@ -1,7 +1,7 @@
 $color_1: #aaa;
 $background-color_1: #3C494E;
 $background-color_2: white;
-
+$background-color_3: #B1B6B8;
 body{
 	margin: 0;
 }
@@ -11,7 +11,7 @@ body{
     position:relative;
 }
 #sidebar{
-	background-color: $background-color_1;
+	background-color: $background-color_3;
     height:100%;
 	margin-top: 5rem;
 	padding-top: 10rem;
@@ -69,14 +69,17 @@ body{
 	margin-top: 2rem;
 }
 .toggle-button {
-	margin-left: -3rem;
+	margin-left: -2rem;
 	position: sticky;
 	z-index: 3;
 	// bottom: 1.4rem;
 	text-align: right;
 	padding: 0.3rem;
-    background-color: $background-color_1;
-    border: #3C494E solid 1px;
+    background-color: #7a878d;
+    border: #7a878d solid 1px;
+	height: 3rem;
+	width: 1.2em;
+	border-radius: 0px 3px 3px 0px;
 }
 
 .icon-left {
@@ -133,4 +136,49 @@ body{
 		left:6rem;
 		font-size: medium;
 	}
+}
+
+// loading animation
+.spinnerContainer{
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
+	/* Spinner 4 starts here */
+	.spinner {
+		animation: spinnerFour 1s linear infinite;
+		border: solid 7px transparent;
+		border-top: solid 7px #4DB6AC;
+		border-radius: 100%;
+		width: 5em;
+		height: 5em;
+	}
+	
+	@keyframes spinnerFour {
+		0% {
+		transform: rotate(0deg);
+		}
+		100% {
+		transform: rotate(360deg);
+		}
+	}
+	/* Spinner 4 ends here */
+}
+
+// .nav-tabs{
+// 	border: #00B39F solid 2px;
+// }
+#test-specifications-tab.active{
+	color: white;
+	background-color: #7a878d !important;
+	box-shadow: inset;
+	// border-left:#00B39F solid 2px !important;
+	// border-top:#00B39F solid 2px !important;
+	// border-right:#00B39F solid 2px !important;
+}
+#env-details-tab.active{
+	color: white;
+	background-color: #7a878d !important;
+	box-shadow: inset;
+
 }
