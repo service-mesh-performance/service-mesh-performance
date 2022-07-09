@@ -1,7 +1,7 @@
 $color_1: #aaa;
 $background-color_1: #3C494E;
 $background-color_2: white;
-$background-color_3: #477E96;
+$background-color_3: #B1B6B8;
 body{
 	margin: 0;
 }
@@ -69,17 +69,17 @@ body{
 	margin-top: 2rem;
 }
 .toggle-button {
-	margin-left: -3rem;
+	margin-left: -2rem;
 	position: sticky;
 	z-index: 3;
 	// bottom: 1.4rem;
 	text-align: right;
 	padding: 0.3rem;
-    background-color: #00B39F;
+    background-color: #7a878d;
     border: #7a878d solid 1px;
 	height: 3rem;
 	width: 1.2em;
-	border-radius: 3px;
+	border-radius: 0px 3px 3px 0px;
 }
 
 .icon-left {
@@ -169,14 +169,16 @@ body{
 // 	border: #00B39F solid 2px;
 // }
 #test-specifications-tab.active{
-	background-color: #EBC017 !important;
-	border-left:#00B39F solid 2px !important;
-	border-top:#00B39F solid 2px !important;
-	border-right:#00B39F solid 2px !important;
+	color: white;
+	background-color: #7a878d !important;
+	box-shadow: inset;
+	// border-left:#00B39F solid 2px !important;
+	// border-top:#00B39F solid 2px !important;
+	// border-right:#00B39F solid 2px !important;
 }
 #env-details-tab.active{
-	background-color: #EBC017 !important;
-	border-left:#00B39F solid 2px !important;
-	border-top:#00B39F solid 2px !important;
-	border-right:#00B39F solid 2px !important;
+	color: white;
+	background-color: #7a878d !important;
+	box-shadow: inset;
+
 }
