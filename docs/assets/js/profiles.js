@@ -101,15 +101,26 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/?page=${currentPage-1}
     return response.json();
   }).then(function(data) {
     if(test_type=="all"){
-    let content = " "
+    let content = " ";
+    let total_item = 0;
+    let perfoProfileNo = 0;
     for(let i = 0;i<data.profiles.length;i++){
+        let display;
+        if(data.profiles[i].total_results){
+          display = "block";
+          total_item = total_item+1;
+          perfoProfileNo = perfoProfileNo+1;
+        }
+        else{
+          display = "none";
+        }
         content += `
-            <div class="col-sm-6" style="margin-bottom: 20px" >
-                <div class="card">
+            <div style = "display:${display}; margin-bottom: 20px" class="col-sm-6"  >
+                <div  class="card">
                     <div class="card-body">
                         <h5 class="card-title">${data.profiles[i].name}</h5>
                         <p class="card-text">
-                            Performance profile number ${i+1}
+                            Performance profile number ${perfoProfileNo}
                         </p>
                          <a href="${location.origin}/dashboard/performance#${data.profiles[i].id}?page=1"  class="btn btn-primary">Show Results</a>
                     </div>
@@ -118,7 +129,7 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/?page=${currentPage-1}
             
         `
     }
-    let numberOfPages = Math.ceil(data.total_count/10);
+    let numberOfPages = Math.ceil(total_item/10);
 
     document.getElementById('paginations').innerHTML = createPagination(numberOfPages, currentPage);
 
@@ -127,17 +138,27 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/?page=${currentPage-1}
   else {
   let total_item = 0
   let content = " "
+  let perfoProfileNo = 0;
   for(let i = 0;i<data.profiles.length;i++){
       let parse_test_type = data.profiles[i].name.split("-")[2]
       if(parse_test_type==test_type){
-      total_item = total_item+1;
+        let display;
+        if(data.profiles[i].total_results){
+          display = "block";
+          total_item = total_item+1;
+          perfoProfileNo = perfoProfileNo+1;
+        }
+        else{
+          display = "none";
+        }
+      
       content += `
-          <div class="col-sm-6" style="margin-bottom: 20px" >
+          <div style = "display:${display}; margin-bottom: 20px" class="col-sm-6" style="margin-bottom: 20px" >
               <div class="card">
                   <div class="card-body">
                       <h5 class="card-title">${data.profiles[i].name}</h5>
                       <p class="card-text">
-                          Performance profile number ${i+1}
+                          Performance profile number ${perfoProfileNo}
                       </p>
                        <a href="${location.origin}/dashboard/performance#${data.profiles[i].id}/page=1"  class="btn btn-primary">Show Results</a>
                   </div>
