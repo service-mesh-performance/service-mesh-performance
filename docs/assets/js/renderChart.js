@@ -225,13 +225,15 @@ function myRound(v, digits = 2) {
   }
   
   function makeTitle(rawdata, res) {
+    c
     var title = [];
     if (res.Labels !== "") {
       if (res.URL) {
         // http results
         // title.push(res.Labels + ' - ' + res.URL + ' - ' + formatDate(res.StartTime))
         // title.push(res.URL + ' - ' + formatDate(res.StartTime))
-        console.log(res.Labels);
+        console.log("hellooo",res.Labels);
+        
         var labels = res.Labels.split(" -_- ");
         // title.push(`Labels: ${labels.map(item => item + '\n')}`)
         title.push(`Title: ${rawdata ? rawdata.name : labels[0]}`);
@@ -670,7 +672,7 @@ function myRound(v, digits = 2) {
       }
     
       return `<table class="table">
-    <thead class="thead-dark">
+    <thead class="thead-light h5 rounded-top">
       <tr>
         <th scope="col">${title}</th>
         <th scope="col"></th>
@@ -682,10 +684,10 @@ function myRound(v, digits = 2) {
     </table>`
     }
     
-    function hideOtherTab(id) {
-      const alternate = alternateClassMap(id);
-      document.getElementById(alternate).classList.remove("show");
-    }
+    // function hideOtherTab(id) {
+    //   const alternate = alternateClassMap(id);
+    //   document.getElementById(alternate).classList.remove("show");
+    // }
 window.addEventListener('load',function(){
     processTestSpecificationClick("env2")
 },false)
@@ -706,7 +708,7 @@ window.addEventListener('load',function(){
       
       document.getElementById(appendToId).innerHTML = tableRowCreator(datas.kubernetes.nodes[0], "Environment Details");
   
-      hideOtherTab(appendToId);
+      // hideOtherTab(appendToId);
     })
   }
     
@@ -729,7 +731,7 @@ window.addEventListener('load',function(){
         typeof datas !== "undefined" ? datas : {};
       
       const chartData = makeTitle(rawdata,tmpData)
-  
+      console.log(chartData)
       renderTestSpecs(chartData, appendToId)
     })
   
@@ -740,14 +742,15 @@ window.addEventListener('load',function(){
       function changeStringToObj(strArr) {
         const obj = {};
         strArr.forEach(str => {
-          const [key, value] = str.split(":").map(word => word.trim())
+          const [key, value] = str.split("=").map(word => word.trim())
           obj[key] = value;
         })
+
         return obj;
       }
       
       document.getElementById(appendToId).innerHTML = tableRowCreator(changeStringToObj(titleString), "Test Specifications");
-      hideOtherTab(appendToId);
+      // hideOtherTab(appendToId);
     }
   
   
@@ -761,26 +764,26 @@ window.addEventListener('load',function(){
         // title.push(res.URL + ' - ' + formatDate(res.StartTime))
         var labels = res.Labels.split(" -_- ");
         // title.push(`Labels: ${labels.map(item => item + '\n')}`)
-        title.push(`Title: ${rawdata ? rawdata.name : labels[0]}`);
-        title.push(`URL: ${labels[1]}`);
-        title.push(`Start Time: ${formatDate(res.StartTime)}`);
+        title.push(`Title= ${rawdata ? rawdata.name : labels[0]}`);
+        title.push(`URL= ${labels[1]}`);
+        title.push(`Start Time= ${formatDate(res.StartTime)}`);
       } else {
         // grpc results
-        title.push(`Destination: ${res.Destination}`);
-        title.push(`Start Time: ${formatDate(res.StartTime)}`);
+        title.push(`Destination= ${res.Destination}`);
+        title.push(`Start Time= ${formatDate(res.StartTime)}`);
       }
     }
-    title.push(`Minimum: ${myRound(1000.0 * res.DurationHistogram.Min, 3)} ms`);
-    title.push(`Average: ${myRound(1000.0 * res.DurationHistogram.Avg, 3)} ms`);
-    title.push(`Maximum: ${myRound(1000.0 * res.DurationHistogram.Max, 3)} ms`);
-    var percStr = `Minimum: ${myRound(
+    title.push(`Minimum= ${myRound(1000.0 * res.DurationHistogram.Min, 3)} ms`);
+    title.push(`Average= ${myRound(1000.0 * res.DurationHistogram.Avg, 3)} ms`);
+    title.push(`Maximum= ${myRound(1000.0 * res.DurationHistogram.Max, 3)} ms`);
+    var percStr = `Minimum= ${myRound(
       1000.0 * res.DurationHistogram.Min,
       3
-    )} ms \nAverage: ${myRound(
+    )} ms \nAverage= ${myRound(
       1000.0 * res.DurationHistogram.Avg,
       3
-    )} ms \nMaximum: ${myRound(1000.0 * res.DurationHistogram.Max, 3)} ms\n`;
-    var percStr_2 = "Percentiles: ";
+    )} ms \nMaximum= ${myRound(1000.0 * res.DurationHistogram.Max, 3)} ms\n`;
+    var percStr_2 = "Percentiles= ";
     if (res.DurationHistogram.Percentiles) {
       for (var i = 0; i < res.DurationHistogram.Percentiles.length; i++) {
         var p = res.DurationHistogram.Percentiles[i];
@@ -810,23 +813,23 @@ window.addEventListener('load',function(){
       }
     }
     title.push(
-      `Target QPS: ${res.RequestedQPS} ( Actual QPS: ${myRound(
+      `Target QPS= ${res.RequestedQPS} ( Actual QPS: ${myRound(
         res.ActualQPS,
         1
       )} )`
     );
-    title.push(`No of Connections: ${res.NumThreads}`);
+    title.push(`No of Connections= ${res.NumThreads}`);
     title.push(
-      `Requested Duration: ${res.RequestedDuration} ( Actual Duration: ${myRound(
+      `Requested Duration= ${res.RequestedDuration} ( Actual Duration= ${myRound(
         res.ActualDuration / 1e9,
         1
       )} )`
     );
-    title.push(`Errors: ${errStr}`);
+    title.push(`Errors= ${errStr}`);
     title.push(percStr_2);
     if (res.kubernetes) {
-      title.push(`Kubernetes server version: ${res.kubernetes.server_version}`);
-      title.push("Nodes:");
+      title.push(`Kubernetes server version= ${res.kubernetes.server_version}`);
+      title.push("Nodes=");
       res.kubernetes?.nodes?.forEach((node, ind) => {
         title.push(`Node ${ind + 1} - \nHostname: ${node.hostname} \nCPU: ${node.allocatable_cpu
           } \nMemory: ${node.allocatable_memory} \nArch: ${node.architecture
