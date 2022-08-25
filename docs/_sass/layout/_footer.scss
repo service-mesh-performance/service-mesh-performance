@@ -60,16 +60,9 @@ footer p {
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 	padding-bottom: 20px;
 	margin-bottom: 20px;
-}
-.foot-up ul {
-	text-align: right;
 	margin-top: 30px;
 }
-.foot-up ul li {
-	display: inline-block;
-	margin-left: 30px;
-}
-.foot-up ul li a {
+.foot-up a {
 	color: #fff;
 	font-size: 13px;
 	font-weight: 600;
@@ -105,16 +98,14 @@ a {
 }
 // footer responsiveness
 @media (min-width:768px) and (max-width: 991px){
-  .foot-up ul li {
-    display: inline-block;
+  .foot-up{
     margin-left: 90px;
     margin-top: 25px;
     text-align: justify;
   }
 }
 @media (max-width: 767px){
-  .foot-up ul li {
-    display: inline-block;
+  .foot-up{
     margin-top: 25px;
     text-align: justify;
   }
@@ -149,10 +140,6 @@ html * {
   }
 }
 
-footer .pos-info ul h6 {
-	color: #fff;
-	font-weight: 600;
-}
 
 .smp-about {
   font-size: 15px;
