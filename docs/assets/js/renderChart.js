@@ -224,97 +224,97 @@ function myRound(v, digits = 2) {
     };
   }
   
-  function makeTitle(rawdata, res) {
-    c
-    var title = [];
-    if (res.Labels !== "") {
-      if (res.URL) {
-        // http results
-        // title.push(res.Labels + ' - ' + res.URL + ' - ' + formatDate(res.StartTime))
-        // title.push(res.URL + ' - ' + formatDate(res.StartTime))
-        console.log("hellooo",res.Labels);
+  // function makeTitle(rawdata, res) {
+  //   c
+  //   var title = [];
+  //   if (res.Labels !== "") {
+  //     if (res.URL) {
+  //       // http results
+  //       // title.push(res.Labels + ' - ' + res.URL + ' - ' + formatDate(res.StartTime))
+  //       // title.push(res.URL + ' - ' + formatDate(res.StartTime))
+  //       console.log("hellooo",res.Labels);
         
-        var labels = res.Labels.split(" -_- ");
-        // title.push(`Labels: ${labels.map(item => item + '\n')}`)
-        title.push(`Title: ${rawdata ? rawdata.name : labels[0]}`);
-        title.push(`URL: ${labels[1]}`);
-        title.push(`Start Time: ${formatDate(res.StartTime)}`);
-      } else {
-        // grpc results
-        title.push(`Destination: ${res.Destination}`);
-        title.push(`Start Time: ${formatDate(res.StartTime)}`);
-      }
-    }
-    title.push(`Minimum: ${myRound(1000.0 * res.DurationHistogram.Min, 3)} ms`);
-    title.push(`Average: ${myRound(1000.0 * res.DurationHistogram.Avg, 3)} ms`);
-    title.push(`Maximum: ${myRound(1000.0 * res.DurationHistogram.Max, 3)} ms`);
-    var percStr = `Minimum: ${myRound(
-      1000.0 * res.DurationHistogram.Min,
-      3
-    )} ms \nAverage: ${myRound(
-      1000.0 * res.DurationHistogram.Avg,
-      3
-    )} ms \nMaximum: ${myRound(1000.0 * res.DurationHistogram.Max, 3)} ms\n`;
-    var percStr_2 = "Percentiles: ";
-    if (res.DurationHistogram.Percentiles) {
-      for (var i = 0; i < res.DurationHistogram.Percentiles.length; i++) {
-        var p = res.DurationHistogram.Percentiles[i];
-        percStr_2 += `p${p.Percentile}: ${myRound(1000 * p.Value, 2)} ms; `;
-        percStr += `p${p.Percentile}: ${myRound(1000 * p.Value, 2)} ms; `;
-      }
-      percStr = percStr.slice(0, -2);
-    }
-    var statusOk =
-      typeof res.RetCodes !== "undefined" && res.RetCodes !== null
-        ? res.RetCodes[200]
-        : 0;
-    if (!statusOk) {
-      // grpc results
-      statusOk =
-        typeof res.RetCodes !== "undefined" && res.RetCodes !== null
-          ? res.RetCodes.SERVING
-          : 0;
-    }
-    var total = res.DurationHistogram.Count;
-    var errStr = "No Error";
-    if (statusOk !== total) {
-      if (statusOk) {
-        errStr = myRound((100.0 * (total - statusOk)) / total, 2) + "% errors";
-      } else {
-        errStr = "100% errors!";
-      }
-    }
-    title.push(
-      `Target QPS: ${res.RequestedQPS} ( Actual QPS: ${myRound(
-        res.ActualQPS,
-        1
-      )} )`
-    );
-    title.push(`No of Connections: ${res.NumThreads}`);
-    title.push(
-      `Requested Duration: ${res.RequestedDuration} ( Actual Duration: ${myRound(
-        res.ActualDuration / 1e9,
-        1
-      )} )`
-    );
-    title.push(`Errors: ${errStr}`);
-    title.push(percStr_2);
-    if (res.kubernetes) {
-      title.push(`Kubernetes server version: ${res.kubernetes.server_version}`);
-      title.push("Nodes:");
-      res.kubernetes?.nodes?.forEach((node, ind) => {
-        title.push(`Node ${ind + 1} - \nHostname: ${node.hostname} \nCPU: ${
-          node.allocatable_cpu
-        } \nMemory: ${node.allocatable_memory} \nArch: ${
-          node.architecture
-        } \nOS: ${node.os_image}
-                      \nKubelet version: ${
-                        node.kubelet_version
-                      } \nContainer runtime: ${node.container_runtime_version}`);
-      });
-    }
-    return title;
-  }
+  //       var labels = res.Labels.split(" -_- ");
+  //       // title.push(`Labels: ${labels.map(item => item + '\n')}`)
+  //       title.push(`Title: ${rawdata ? rawdata.name : labels[0]}`);
+  //       title.push(`URL: ${labels[1]}`);
+  //       title.push(`Start Time: ${formatDate(res.StartTime)}`);
+  //     } else {
+  //       // grpc results
+  //       title.push(`Destination: ${res.Destination}`);
+  //       title.push(`Start Time: ${formatDate(res.StartTime)}`);
+  //     }
+  //   }
+  //   title.push(`Minimum: ${myRound(1000.0 * res.DurationHistogram.Min, 3)} ms`);
+  //   title.push(`Average: ${myRound(1000.0 * res.DurationHistogram.Avg, 3)} ms`);
+  //   title.push(`Maximum: ${myRound(1000.0 * res.DurationHistogram.Max, 3)} ms`);
+  //   var percStr = `Minimum: ${myRound(
+  //     1000.0 * res.DurationHistogram.Min,
+  //     3
+  //   )} ms \nAverage: ${myRound(
+  //     1000.0 * res.DurationHistogram.Avg,
+  //     3
+  //   )} ms \nMaximum: ${myRound(1000.0 * res.DurationHistogram.Max, 3)} ms\n`;
+  //   var percStr_2 = "Percentiles: ";
+  //   if (res.DurationHistogram.Percentiles) {
+  //     for (var i = 0; i < res.DurationHistogram.Percentiles.length; i++) {
+  //       var p = res.DurationHistogram.Percentiles[i];
+  //       percStr_2 += `<strong>p${p.Percentile}</strong>: ${myRound(1000 * p.Value, 2)} ms; `;
+  //       percStr += `<strong>p${p.Percentile}</strong>: ${myRound(1000 * p.Value, 2)} ms; `;
+  //     }
+  //     percStr = percStr.slice(0, -2);
+  //   }
+  //   var statusOk =
+  //     typeof res.RetCodes !== "undefined" && res.RetCodes !== null
+  //       ? res.RetCodes[200]
+  //       : 0;
+  //   if (!statusOk) {
+  //     // grpc results
+  //     statusOk =
+  //       typeof res.RetCodes !== "undefined" && res.RetCodes !== null
+  //         ? res.RetCodes.SERVING
+  //         : 0;
+  //   }
+  //   var total = res.DurationHistogram.Count;
+  //   var errStr = "No Error";
+  //   if (statusOk !== total) {
+  //     if (statusOk) {
+  //       errStr = myRound((100.0 * (total - statusOk)) / total, 2) + "% errors";
+  //     } else {
+  //       errStr = "100% errors!";
+  //     }
+  //   }
+  //   title.push(
+  //     `Target QPS: ${res.RequestedQPS} ( Actual QPS: ${myRound(
+  //       res.ActualQPS,
+  //       1
+  //     )} )`
+  //   );
+  //   title.push(`No of Connections: ${res.NumThreads}`);
+  //   title.push(
+  //     `Requested Duration: ${res.RequestedDuration} ( Actual Duration: ${myRound(
+  //       res.ActualDuration / 1e9,
+  //       1
+  //     )} )`
+  //   );
+  //   title.push(`Errors: ${errStr}`);
+  //   title.push(percStr_2);
+  //   if (res.kubernetes) {
+  //     title.push(`Kubernetes server version: ${res.kubernetes.server_version}`);
+  //     title.push("Nodes:");
+  //     res.kubernetes?.nodes?.forEach((node, ind) => {
+  //       title.push(`Node ${ind + 1} - \nHostname: ${node.hostname} \nCPU: ${
+  //         node.allocatable_cpu
+  //       } \nMemory: ${node.allocatable_memory} \nArch: ${
+  //         node.architecture
+  //       } \nOS: ${node.os_image}
+  //                     \nKubelet version: ${
+  //                       node.kubelet_version
+  //                     } \nContainer runtime: ${node.container_runtime_version}`);
+  //     });
+  //   }
+  //   return title;
+  // }
   
   function fortioResultToJsChartData(rawdata, res) {
     var dataP = [
@@ -787,7 +787,7 @@ window.addEventListener('load',function(){
     if (res.DurationHistogram.Percentiles) {
       for (var i = 0; i < res.DurationHistogram.Percentiles.length; i++) {
         var p = res.DurationHistogram.Percentiles[i];
-        percStr_2 += `p${p.Percentile}: ${myRound(1000 * p.Value, 2)} ms; `;
+        percStr_2 += `<strong>p${p.Percentile}:</strong> &nbsp;  ${myRound(1000 * p.Value, 2)} ms;<br> `;
         percStr += `p${p.Percentile}: ${myRound(1000 * p.Value, 2)} ms; `;
       }
       percStr = percStr.slice(0, -2);
@@ -829,14 +829,16 @@ window.addEventListener('load',function(){
     title.push(percStr_2);
     if (res.kubernetes) {
       title.push(`Kubernetes server version= ${res.kubernetes.server_version}`);
-      title.push("Nodes=");
-      res.kubernetes?.nodes?.forEach((node, ind) => {
-        title.push(`Node ${ind + 1} - \nHostname: ${node.hostname} \nCPU: ${node.allocatable_cpu
-          } \nMemory: ${node.allocatable_memory} \nArch: ${node.architecture
-          } \nOS: ${node.os_image}
-                      \nKubelet version: ${node.kubelet_version
-          } \nContainer runtime: ${node.container_runtime_version}`);
-      });
+      
+      // let nodes;
+      // res.kubernetes?.nodes?.forEach((node, ind) => {
+      //   nodes=`Node ${ind + 1} - \nHostname: ${node.hostname} \nCPU: ${node.allocatable_cpu
+      //     } \nMemory: ${node.allocatable_memory} \nArch: ${node.architecture
+      //     } \nOS: ${node.os_image}
+      //                 \nKubelet version: ${node.kubelet_version
+      //     } \nContainer runtime: ${node.container_runtime_version}`;
+      // });
+      // title.push(`Nodes= ${nodes}`);
     }
     return title;
   }

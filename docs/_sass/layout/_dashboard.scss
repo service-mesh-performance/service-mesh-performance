@@ -187,3 +187,15 @@ body{
 	background-color: #343A3F;
 	color: white
 }
+.card-text{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	.information{
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	.dateInfo{
+		margin-bottom: 1rem;
+	}
+}
