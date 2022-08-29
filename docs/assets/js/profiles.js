@@ -172,6 +172,17 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/?page=${currentPage-1}
   for(let i = 0;i<data.profiles.length;i++){
       let parse_test_type = data.profiles[i].name.split("-")[2]
       if(parse_test_type==test_type){
+        let profileName = data.profiles[i].name;
+      let title;
+      let profileNameArray= profileName.split(".")[0].split("-")
+      let servMesh = profileNameArray[0]== 'osm'? 'OSM': profileNameArray[0][0].toUpperCase()+profileNameArray[0].slice(1);
+      let testType = profileNameArray[2][0].toUpperCase()+profileNameArray[2].slice(1);
+      let loadGen = profileNameArray[1]=='wrk2'?'WRK2':profileNameArray[1][0].toUpperCase()+profileNameArray[1].slice(1)
+      let createdDate = new Date(data.profiles[i].created_at)
+      let lastRun = new Date(data.profiles[i].last_run)
+
+      // Istio Load Test with Forito
+      title = ` ${servMesh} ${testType} Test with ${loadGen} `
         let display;
         if(data.profiles[i].total_results){
           display = "block";
@@ -183,17 +194,36 @@ fetch(`https://meshery.layer5.io/smp/performance/profiles/?page=${currentPage-1}
         }
       
       content += `
-          <div style = "display:${display}; margin-bottom: 20px" class="col-sm-6" style="margin-bottom: 20px" >
-              <div class="card">
-                  <div class="card-body">
-                      <h5 class="card-title">${data.profiles[i].name}</h5>
-                      <p class="card-text">
-                          Performance profile number ${perfoProfileNo}
-                      </p>
-                       <a href="${location.origin}/dashboard/performance#${data.profiles[i].id}/page=1"  class="btn btn-primary">Show Results</a>
+      <div style = "display:${display}; margin-bottom: 20px" class="col-sm-6"  >
+      <div  class="card">
+          <div class="card-body">
+              <h5 class="card-title">${title}</h5>
+              <div class="card-text">
+                <div class="information">
+                  <div>
+                    <h6 class="card-subtitle mb-2 text-muted 
+                    font-weight-bold
+                    font-italic">Service mesh:&nbsp;${servMesh}</h6>
                   </div>
-               </div>
+                  
+                  <div>
+                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold font-italic">Test Config:&nbsp;${testType} Test</h6>
+                  </div>
+                  <div>
+                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold font-italic">Load Generator:&nbsp;${loadGen}</h6>
+                  </div>
+                </div>
+                <div class="dateInfo">
+                  <h6 class="card-subtitle mb-2 text-muted font-italic" style="font-size:14px;">Date Created:&nbsp; ${createdDate.toUTCString()} </h6>
+
+                  <h6 class="card-subtitle mb-2 text-muted font-italic" style="font-size:14px;">Last Run:&nbsp;${lastRun.toUTCString()} </h6>
+                </div>
+              </div>
+               <a href="${location.origin}/dashboard/performance#${data.profiles[i].id}?page=1"  class="btn btn-primary">Show Results</a>
           </div>
+       </div>
+  </div>
+  
           
       `
   }
