@@ -17,7 +17,7 @@ Meshery is the canonical implementation of the Service Mesh Performance specific
 
 The [Service Mesh Performance GitHub Action](https://github.com/layer5io/meshery-smp-action) is available in the GitHub Marketplace. You can create your own performance profiles to run repeatable tests with Meshery via:
 - Configurable Benchmarking Test: Users can provide their own configuration, choose different service meshes and load generators.
-- Scheduled Benchmarking Test: The matrix of differenet serive meshes, load generators and configurations will be run perioically.
+- Scheduled Benchmarking Test: The matrix of different service meshes, load generators and configurations will be run periodically.
 
 ## Extending SMP to CNCF Community Infrastructure Lab
 
