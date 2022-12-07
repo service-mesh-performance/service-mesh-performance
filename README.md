@@ -55,9 +55,16 @@ See the <a href="docs/assets/spec/readme/service mesh performance result.yaml">s
 <h2><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/service-mesh-performance/service-mesh-performance/blob/master/CONTRIBUTING.md">Contributing</a></h2>
 Our projects are community-built and welcome collaboration. 👍 Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you and jump into our <a href="http://slack.layer5.io">Slack</a>! Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
 <br />
-<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="docs/assets/spec/readme/slack-128.png" style="margin-left:10px;padding-top:5px;" width="110px" align="right" /></a>
+<a href="https://slack.meshery.io">
 
-<a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src="docs/assets/spec/readme/community.svg" style="margin-right:8px;padding-top:5px;" width="140px" align="left" /></a>
+<picture align="right">
+  <source media="(prefers-color-scheme: dark)" srcset="docs\assets\spec\readme\slack-dark-128.png"  width="110px" align="right" style="margin-left:10px;margin-top:10px;">
+  <source media="(prefers-color-scheme: light)" srcset="docs\assets\spec\readme\slack-128.png" width="110px" align="right" style="margin-left:10px;padding-top:5px;">
+  <img alt="Shows an illustrated light mode meshery logo in light color mode and a dark mode meshery logo dark color mode." src="docs\assets\spec\readme\slack-128.png" width="110px" align="right" style="margin-left:10px;padding-top:13px;">
+</picture>
+</a>
+
+<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="docs/assets/spec/readme/community.svg" style="margin-right:8px;padding-top:5px;" width="140px" align="left" /></a>
 
 <p>
 ✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://calendar.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendar</a>.<br />
