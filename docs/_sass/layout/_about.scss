@@ -282,7 +282,8 @@ div.deckwrapper {
   display: flex;
   height: auto; 
   flex-direction: column;   
-  margin: 0 auto; 
+  margin: 0 auto;         
+  flex-flow: column; 
   vertical-align: top; 
   text-align: center;
   position: relative;
