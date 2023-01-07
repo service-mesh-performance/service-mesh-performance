@@ -281,8 +281,8 @@ div.deckwrapper {
 .slide-wrapping{
   display: flex;
   height: auto; 
-  flex-direction: column;            
-  flex-flow: column; 
+  flex-direction: column;   
+  margin: 0 auto; 
   vertical-align: top; 
   text-align: center;
   position: relative;
