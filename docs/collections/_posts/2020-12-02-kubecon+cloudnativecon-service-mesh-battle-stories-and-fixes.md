@@ -43,3 +43,5 @@ Among the variables in consideration, in addition to the service mesh itself, in
 
 
 **Read the full, [original post](https://thenewstack.io/kubeconcloudnativecon-service-mesh-battle-stories-and-fixes/).**
+
+{% include related-discussion.html tag="SMP"%}

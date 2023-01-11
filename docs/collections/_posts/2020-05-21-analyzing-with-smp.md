@@ -71,3 +71,5 @@ Consider that the more value you try to derive from service mesh, the more you w
 #### What SMP solves
 Measurement data may not provide a clear and simple picture of how well those applications are performing from a business point of view, a characteristic desired in metrics that are used as key performance indicators. Reporting several different kinds of data can cause confusion.
 MeshMark distills a variety of overhead signals and key performance indicators into a simple scale. Reducing measurement data to a single well understood metric is a convenient way to track and report on quality of experience. Its purpose is to convert measurements into insights about the value of functions a service mesh is providing. It does so by specifying a uniform way to analyze and report on the degree to which measured performance provides user value.
+
+{% include related-discussion.html tag="SMP"%}

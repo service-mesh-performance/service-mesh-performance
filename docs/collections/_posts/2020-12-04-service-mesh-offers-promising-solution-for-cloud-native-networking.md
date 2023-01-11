@@ -39,3 +39,5 @@ As such, operators can make changes to infrastructure independent of developers.
 "We live within a software defined network landscape, and service meshes in some respects are sort of a next-gen SDN," Calcote said.
 
 **Read the full article on [Enterprise Networking Planet](http://www.enterprisenetworkingplanet.com/datacenter/datacenter-blog/service-mesh-cloud-native-networking.html)**
+
+{% include related-discussion.html tag="SMP"%}
