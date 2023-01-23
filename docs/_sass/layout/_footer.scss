@@ -96,6 +96,11 @@ a {
 	text-decoration: none;
 	color: #141414;
 }
+
+.newlink:hover {
+  border-bottom: 2px solid #5A5A5A;
+}
+
 // footer responsiveness
 @media (min-width:768px) and (max-width: 991px){
   .foot-up{
