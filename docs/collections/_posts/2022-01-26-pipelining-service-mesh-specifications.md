@@ -180,3 +180,5 @@ The results from the tests are updated on the Performance Management dashboard i
 
 Stay meshy!
 
+{% include related-discussion.html tag="SMP"%}
+

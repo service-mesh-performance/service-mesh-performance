@@ -1,0 +1,121 @@
+{%if include.location=="homePage"%}
+<style>
+    .posts{
+      /* list-style-image: url("../assets/img/logo/smp.svg"); */
+      background-color:#343a40 ;
+      color:white
+    }
+    .post{
+      padding: 0.3rem 0.4rem ;
+      text-align: left;
+      background-color: #343a40;
+    
+    }
+    .discussLink{
+      background-color: none !important;
+      text-decoration: underline;
+      color: #eeca3a;
+    }
+    .discussLink:hover{
+      color:#eeca3a !important
+    }
+    .content{
+      justify-content: center;
+      
+    }
+  </style>
+  <!-- subscribe -->
+
+  <section class="page-section" id="discussion">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-lg-center">
+          <h2 class="section-heading text-uppercase">Discussions on "{{ include.tag }}"</h2>
+          <!-- <h3 class="section-subheading text-muted">{{ site.data.sitetext.subscribe.text | default: "" }}</h3> -->
+        </div>
+      </div>
+      <div class="row content">
+        <ul class="posts ">
+            {% assign item = site.data.discuss.smp -%}
+            <!-- -->
+            {% assign users = item.users %}
+            <!-- -->
+            {% assign topics = item.topic_list.topics %}
+            <!-- -->
+            {% for post in topics limit:10 %}
+            <!-- -->
+            <li class="post text-lg-left">
+              <span class="post-date text-light"> {{ post.created_at | date: "%b %d" }} | </span>
+              <a class="discussLink" href="https://discuss.layer5.io/t/{{ post.topics[0].slug }}/{{ post.id }}"> {{ post.title }}</a>
+              <span id="author" class="poost-author text-light"> 
+                {%for user in users%}
+                {% if(post.posters[0].user_id == user.id)%}
+                  {% if user.name %}
+                    {%assign author = user.name%}
+                  {% else %}
+                    {%assign author = user.username%}
+                  {% endif %}
+                  {%break%}
+                {%endif%}
+              {%endfor%}
+              by {{author}}
+              </span>
+            </li>
+            {% endfor %}
+          </ul>
+        
+
+          <div class="mailing-container">
+            <h1>More Questions?</h1>
+            <p  class="text-muted">Fear not we have an amazing discussion forum to get your doubts solved, ask away.</p>
+            <div class="mailing-btn-container">
+                <a href="https://groups.google.com/a/smp-spec.io/g/user-group" class="btn btn-primary btn-xl text-uppercase ">Go to discussion forum</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      
+
+    </div>
+
+  </section>
+  {%else%}
+  <style>
+    .post{
+      padding: 0.3rem 0.4rem ;
+      text-align: left;
+    }
+  </style>
+  <h3 class="section-heading text-uppercase text-center">Discussions on "{{ include.tag }}{{include.location}}"</h3>
+  <ul class="posts">
+    {% assign item = site.data.discuss.smp -%}
+    <!-- -->
+    {% assign users = item.users %}
+    <!-- -->
+    {% assign topics = item.topic_list.topics %}
+    <!-- -->
+    {% for post in topics limit:10 %}
+    <!-- -->
+    <li class="post">
+      <span class="post-date"> {{ post.created_at | date: "%b %d" }} | </span>
+      <a href="https://discuss.layer5.io/t/{{ post.topics[0].slug }}/{{ post.id }}"> {{ post.title }}</a>
+      <span id="author" class="poost-author"> 
+        {%for user in users%}
+        {% if(post.posters[0].user_id == user.id)%}
+        {% if user.name %}
+          {%assign author = user.name%}
+        {% else %}
+          {%assign author = user.username%}
+        {% endif %}
+        {%break%}
+      {%endif%}
+    {%endfor%}
+    by {{author}}
+      </span>
+    </li>
+    {% endfor %}
+  </ul>
+  {%endif%}
