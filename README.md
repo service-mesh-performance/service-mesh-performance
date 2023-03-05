@@ -53,7 +53,7 @@ See the <a href="docs/assets/spec/readme/service mesh performance result.yaml">s
 
 <p style="clear:both;">
 <h2><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/service-mesh-performance/service-mesh-performance/blob/master/CONTRIBUTING.md">Contributing</a></h2>
-Our projects are community-built and welcome collaboration. 👍 Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you and jump into our <a href="http://slack.layer5.io">Slack</a>! Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
+Our projects are community-built and welcome collaboration. 👍 Be sure to see the <a href="https://layer5.io/community/newcomers">Layer5 Newcomers' Guide</a> for a tour of resources available to you and jump into our <a href="http://slack.layer5.io">Slack</a>to engage! Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
 <br />
 <a href="https://slack.meshery.io">
 
