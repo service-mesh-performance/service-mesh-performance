@@ -87,7 +87,7 @@ function createPagination(pages, page,profileIds) {
 let loader = `<div class="spinnerContainer"><div class="spinner"></div></div>`;
 tableContainer.innerHTML = loader;
 
-fetch(`https://meshery.layer5.io/smp/performance/profiles/${profileId}/results/?page=${currentPage-1}`, { 
+fetch(`https://meshery.layer5.io/api/performance/smp/profiles/${profileId}/results/?page=${currentPage-1}`, { 
     method: "GET"
   }).then(function(response) {
     return response.json();
