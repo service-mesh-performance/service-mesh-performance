@@ -1,7 +1,7 @@
 ---
 layout: performanceProfile
 title: All Performance Profiles
-permalink: dashboard
+permalink: /dashboard/
 redirect_from: dashboard/
 language: en
 display-title: "false"
