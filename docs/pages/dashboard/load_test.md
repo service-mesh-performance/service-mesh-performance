@@ -1,7 +1,7 @@
 ---
 layout: performanceProfile
 title: Load test Performance Profiles
-permalink: /dashboard/load/
+permalink: dashboard/load
 redirect_from: dashboard/load/
 language: en
 display-title: "false"
