@@ -105,9 +105,17 @@ fetch(`https://meshery.layer5.io/api/performance/smp/profiles/?page=${currentPag
     let total_item = 0;
     let perfoProfileNo = 0;
     for(let i = 0;i<data.profiles.length;i++){
-      let profileName = data.profiles[i].name;
+      let profileName = data.profiles[i].name
       let title;
-      let profileNameArray= profileName.split(".")[0].split("-")
+      let smpProfileName= profileName.split(".")[0];
+      let smpProfileNameArray = smpProfileName.split("-");
+      let profileNameArray;
+      if(smpProfileNameArray[0]==="smp"){
+        profileNameArray=smpProfileName.split("smp-")[1].split("-");
+      }
+      else{
+        profileNameArray=smpProfileName.split("-");
+      }
       let servMesh = profileNameArray[0]== 'osm'? 'OSM': profileNameArray[0][0].toUpperCase()+profileNameArray[0].slice(1);
       let testType = profileNameArray[2][0].toUpperCase()+profileNameArray[2].slice(1);
       let loadGen = profileNameArray[1]=='wrk2'?'WRK2':profileNameArray[1][0].toUpperCase()+profileNameArray[1].slice(1)
