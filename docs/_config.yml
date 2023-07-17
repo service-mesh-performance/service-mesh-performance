@@ -30,9 +30,6 @@ defaults:
     values:
       sitemap: false
 
-analytics:
-  google: UA-152604689-2
-
 paginate: 10
 paginate_path: "/blog/:num/"
 permalink: pretty
