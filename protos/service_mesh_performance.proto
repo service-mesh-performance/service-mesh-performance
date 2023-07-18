@@ -3,7 +3,7 @@ syntax = "proto3";
 package smp;
 
 option csharp_namespace = "Smp";
-option go_package = "spec;smp";
+option go_package = "./spec;smp";
 option java_multiple_files = true;
 option java_outer_classname = "ServiceMeshPerformanceProto";
 option java_package = "com.smp";
@@ -34,6 +34,8 @@ message PerformanceTestConfig {
     string body = 8;
     string content_type = 9;
     repeated string endpoint_urls = 10;
+    string ssl_certificate = 11;
+    string additional_options = 12;
   }
   // Spec version
   string smp_version = 1;
