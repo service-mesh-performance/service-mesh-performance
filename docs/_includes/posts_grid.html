@@ -10,7 +10,7 @@
     </div>
     <div class="row">
 	{% for posts in site.posts %}
-      <div class="col-md-4 col-sm-6 posts-item">
+      <div class="col-lg-6 col-md-4 col-sm-6 posts-item">
         <a class="posts-link"  href="{{ site.baseurl }}/blog/{{ posts.category | slugify }}/{{ posts.slug | slugify }}">
           <div class="posts-hover">
             <div class="posts-hover-content">
@@ -19,7 +19,7 @@
           </div>
           <img class="img-fluid" src="{{ posts.caption.thumbnail }}" alt="">
         </a>
-        <div class="posts-caption">
+        <div class="posts-caption h-60">
           <h4>{{ posts.caption.title }}</h4>
           <p>{{ posts.caption.subtitle }}</p>
           <p
