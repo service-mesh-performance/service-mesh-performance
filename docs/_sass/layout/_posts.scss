@@ -31,6 +31,10 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+.hover-up-blog:hover {
+	box-shadow: 0 20px 40px rgba(38, 44, 73, 0.25);
+	top: -3px;
+}
 
 
 @media(min-width: 720px) {
