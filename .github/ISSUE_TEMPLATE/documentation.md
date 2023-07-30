@@ -1,9 +1,9 @@
 ---
 name: Documentation issue
 about: Issues related to documentation.
-title: "[Docs]"
-labels: "docs"
-assignees: ""
+title: '[Docs]'
+labels: 'docs'
+assignees: ''
 ---
 
 **Current State:**
