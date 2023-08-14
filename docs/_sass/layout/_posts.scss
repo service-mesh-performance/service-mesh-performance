@@ -106,11 +106,11 @@ cursor: pointer;
       }
     }
 
+ 
     .posts-caption {
       max-width: 400px;
       padding: 20px 10px;
       height: 100%;
-      
       text-align: center;
       color: $white;
       background-color: $secondary-brand-color;
@@ -121,12 +121,16 @@ cursor: pointer;
       }
 
       p {
+        text-transform: none;
         font-size: 1.1em;
         color: $gray-700;
         font-style: italic;
         margin: 0;
+        font-weight: 400;
         @include serif-font;
       }
+
+
     }
   }
 

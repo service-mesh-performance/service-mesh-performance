@@ -1,57 +1,52 @@
 <!-- posts Grid -->
 <div class="posts py-2">
-<section class="page-section" id="{{ site.data.sitetext.posts.section | default: "posts" }}">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">{{ site.data.sitetext.posts.title | markdownify | default: "posts" }}</h2>
-        <h3 class="section-subheading">{{ site.data.sitetext.posts.text | markdownify }}</h3>
+  <section class="page-section" id="{{ site.data.sitetext.posts.section | default: " posts" }}">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">{{ site.data.sitetext.posts.title | markdownify | default: "posts"
+            }}</h2>
+          <h3 class="section-subheading">{{ site.data.sitetext.posts.text | markdownify }}</h3>
+        </div>
       </div>
-    </div>
-    <div class="row">
-	{% for posts in site.posts %}
+      <div class="row">
+        {% for posts in site.posts %}
 
-      <div class="col-md-4 p-2  hover-up-blog  col-sm-6 posts-item ">
+        <div class="col-md-4 p-2  hover-up-blog  col-sm-6 posts-item ">
 
-        <a class="posts-link"  href="{{ site.baseurl }}/blog/{{ posts.category | slugify }}/{{ posts.slug | slugify }}">
-          <div class="posts-hover">
-            <div class="posts-hover-content">
-              <i class="{{ site.data.style.posts-icon | default: "fas fa-eye fa-3x" }}"></i>
+          <a class="posts-link"
+            href="{{ site.baseurl }}/blog/{{ posts.category | slugify }}/{{ posts.slug | slugify }}">
+            <div class="posts-hover">
+              <div class="posts-hover-content">
+                <i class="{{ site.data.style.posts-icon | default: " fas fa-eye fa-3x" }}"></i>
+              </div>
             </div>
-          </div>
-          <img class="img-fluid"  src="{{ posts.caption.thumbnail }}" alt="">
-        </a>
-        <a   href="{{ site.baseurl }}/blog/{{ posts.category | slugify }}/{{ posts.slug | slugify }}">
+            <img class="img-fluid" src="{{ posts.caption.thumbnail }}" alt="">
+          </a>
+          <a href="{{ site.baseurl }}/blog/{{ posts.category | slugify }}/{{ posts.slug | slugify }}">
 
-        <div class="posts-caption">
-         
-          <h4>{{ posts.caption.title }}</h4>
-          <p class="hover:none">{{ posts.caption.subtitle }}</p>
-          <p
-            class="grey-text text-darken-2"
-            style="padding-top: 1em;
+            <div class="posts-caption">
+
+              <h4>{{ posts.caption.title }}</h4>
+              <p>{{ posts.caption.subtitle }}</p>
+              <p class="grey-text text-darken-2" style="padding-top: 1em;
             bottom: 0;
-            padding-bottom: 0.75em; font-size: 14px"
-          >
-            <time
-              style="float: left;"
-              datetime="{{ page.date | date_to_xmlschema }}"
-              itemprop="datePublished"
-            >
-              {% assign date_format = site.minima.date_format | default: "%b %-d,
-              %Y" %} {{ posts.date | date: date_format }}
-            </time>
-            <span style="float: right;">by {{posts.author}}</span>
-          </p>
-       
+            padding-bottom: 0.75em; font-size: 14px">
+                <time style="float: left;" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                  {% assign date_format = site.minima.date_format | default: "%b %-d,
+                  %Y" %} {{ posts.date | date: date_format }}
+                </time>
+                <span style="float: right;">by {{posts.author}}</span>
+              </p>
+
+
+            </div>
+          </a>
 
         </div>
-      </a>
-      
+        {% endfor %}
       </div>
-	{% endfor %}
     </div>
-  </div>
-</section>
+  </section>
 </div>
 {% include modals.html %}
