@@ -1,15 +1,17 @@
 ---
 name: Site Update
 about: Suggest an update to the service-mesh-performance site
-title: ""
-labels: "area/website"
-assignees: ""
+title: ''
+labels: 'area/website'
+assignees: ''
 ---
 
 #### Current State of the service-mesh-performance site
+
 A brief description of what the problem is.
 
 #### Desired State of the service-mesh-performance site
+
 A brief description of the change you are requesting.
 
 ---
@@ -21,3 +23,4 @@ A brief description of the change you are requesting.
   - Meshery documentation [site](https://docs.meshery.io/) and [source](https://github.com/meshery/meshery/tree/master/docs)
 - 🎨 Wireframes and designs for Meshery UI in [Figma](https://www.figma.com/file/SMP3zxOjZztdOLtgN4dS2W/Meshery-UI)
 - 🙋🏾🙋🏼 Questions: [Layer5 Discussion Forum](https://discuss.layer5.io) and [Layer5 Community Slack](http://slack.layer5.io)
+- 🎨 Wireframes and [designs for Meshery UI](https://www.figma.com/file/SMP3zxOjZztdOLtgN4dS2W/Meshery-UI) in Figma [(open invite)](https://www.figma.com/team_invite/redeem/qJy1c95qirjgWQODApilR9)
