@@ -1,33 +1,76 @@
 // Styling for the posts section
 .posts {
-    background: #fff;
-    .page-section, section {
-      padding: 0px;
-      margin-top: 30px;
-      margin-bottom: 40px;
-    }  
-    h2.section-heading {
-      margin: 0px;
-      padding: 0px;
-      text-align: center;
-    } 
-    h3.section-subheading {
-      padding: 0px;
-      position: relative;
-      top: -10px;
-      margin: 0px;
-      color: $gray-600;
-      font-style: italic;
-    }
+  background: #fff;
+
+  .page-section,
+  section {
+    padding: 0px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  h2.section-heading {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+
+  h3.section-subheading {
+    padding: 0px;
+    position: relative;
+    top: -10px;
+    margin: 0px;
+    color: $gray-600;
+    font-style: italic;
+  }
+.posts-item img{
+  object-fit: fill;
+  height: 200px;
+  width: 100% !important;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.hover-up-blog {
+	top: 0;
+	position: relative;
+	transition: all 0.1s ease-in-out;
+}
+
+.hover-up-blog:hover {
+	box-shadow: 0 20px 40px rgba(213, 220, 255, 0.25);
+	top: -6px;
+}
+
+@media(min-width: 720px) {
+  .posts-item img{
+    object-fit: fill;
+    min-height: 150px;
+    max-height: 200px;
+    width: 100%;
+  }
+}
+.posts-item{
+  padding: 2px;
+  margin-top: 20px;
+  box-shadow: inset;
+}
+
   .posts-item {
     right: 0;
-    margin: 0 0 15px;
+    
+    height: auto;
+    overflow: hidden;
+    cursor: pointer;
+    
     .posts-link {
       position: relative;
       display: block;
       max-width: 400px;
       margin: 0 auto;
       cursor: pointer;
+
       .posts-hover {
         position: absolute;
         width: 100%;
@@ -37,9 +80,11 @@
         transition: all ease 0.5s;
         opacity: 0;
         background: fade-out($secondary-brand-color, .1);
+
         &:hover {
           opacity: 0.6;
         }
+
         .posts-hover-content {
           font-size: 20px;
           position: absolute;
@@ -49,9 +94,11 @@
           margin-top: -12px;
           text-align: center;
           color: white;
+
           i {
             margin-top: -12px;
           }
+
           h3,
           h4 {
             margin: 0;
@@ -59,34 +106,48 @@
         }
       }
     }
+
+ 
     .posts-caption {
       max-width: 400px;
-      margin: 0 auto;
-      padding: 25px;
+      padding: 20px 10px;
+      height: 100%;
       text-align: center;
       color: $white;
       background-color: $secondary-brand-color;
+
       h4 {
         margin: 0;
         text-transform: none;
       }
+
       p {
+        text-transform: none;
         font-size: 1.1em;
         color: $gray-700;
         font-style: italic;
         margin: 0;
+        font-weight: 400;
         @include serif-font;
       }
+
+
     }
   }
+
   * {
     z-index: 2;
   }
 }
+
 @media(min-width:767px) {
   #posts {
     .posts-item {
       margin: 0 0 10px;
+      
+    }
+    .img-fluid{
+      bottom: 0;
     }
   }
 }
@@ -96,34 +157,42 @@
     margin: 1rem;
     max-width: 100vw;
   }
+
   .modal-content {
     padding: 10px 0;
     text-align: left;
+
     h2 {
       font-size: 3em;
       margin-bottom: 15px;
     }
+
     p {
       margin-bottom: 20px;
     }
+
     p.item-intro {
       font-size: 1.35em;
       font-style: italic;
       margin-bottom: 10px;
       @include serif-font;
     }
+
     ul.list-inline {
       margin-top: 0;
       margin-bottom: 30px;
     }
+
     img {
       margin-bottom: 20px;
+    
     }
+
     button {
       cursor: pointer;
     }
   }
-  
+
   .close-modal {
     position: absolute;
     top: 25px;
@@ -132,9 +201,12 @@
     height: 35px;
     cursor: pointer;
     background-color: transparent;
+
     &:hover {
       opacity: 0.3;
+      
     }
+
     .lr {
       /* Safari and Chrome */
       z-index: 1051;
@@ -146,6 +218,7 @@
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
       background-color: $gray-600;
+
       .rl {
         /* Safari and Chrome */
         z-index: 1052;
@@ -160,9 +233,10 @@
     }
   }
 }
+
 .posts-subtitle-gray {
-  color:gray;
+  color: gray;
   display: block;
-  top:-10px;
-  font-size:2.25em;
+  top: -10px;
+  font-size: 2.25em;
 }
