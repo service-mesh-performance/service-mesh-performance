@@ -9,8 +9,7 @@
   />
 
   <body id="dashboard-page-top">
-    {% include analytics_body.html %}
-    {% include nav.html %}
+    {% include analytics_body.html %} {% include nav.html %}
 
     <div id="contents">
       {% include sidebar.html %}
@@ -19,33 +18,42 @@
         <div class="page-content p-5" id="content">
           <!--content -->
           <section class="resultsContainer">
-            <button class="btn btn-secondary" type="button" value="Go Back" onclick="history.back(-1)" style="margin-bottom: 20px;">Go Back</button>
+            <button
+              class="btn btn-secondary"
+              type="button"
+              value="Go Back"
+              onclick="history.back(-1)"
+              style="margin-bottom: 20px"
+            >
+              Go Back
+            </button>
             {{content}}
-            
-            <div id="tableContainer">
 
-            </div>
+            <div id="tableContainer" style="overflow-x: auto"></div>
 
-            <nav style="margin-top: 70px; cursor: pointer;" id = "paginations" class = "pagination-holder" aria-label="Page navigation example">
-             
-            </nav>
+            <nav
+              style="margin-top: 70px; cursor: pointer"
+              id="paginations"
+              class="pagination-holder"
+              aria-label="Page navigation example"
+            ></nav>
           </section>
-          
-           <!-- Toggle button -->
-           <button
-           id="sidebarCollapse"
-           type="button"
-           class="toggle-button text-light"
-         >
-           <i
-             class="icon-left fa fa-angle-left mr-2"
-             style="display: block"
-           ></i>
-           <i
-             class="icon-right fa fa-angle-right mr-2"
-             style="display: none"
-           ></i>
-         </button>
+
+          <!-- Toggle button -->
+          <button
+            id="sidebarCollapse"
+            type="button"
+            class="toggle-button text-light"
+          >
+            <i
+              class="icon-left fa fa-angle-left mr-2"
+              style="display: block"
+            ></i>
+            <i
+              class="icon-right fa fa-angle-right mr-2"
+              style="display: none"
+            ></i>
+          </button>
         </div>
       </section>
     </div>
