@@ -116,7 +116,7 @@ The <a href="https://github.com/marketplace/actions/performance-testing-with-mes
 
 <div class="codewrapper">
   <pre><code>
- name: Meshery SMP Action
+name: Meshery SMP Action
 on:
   push:
     branches:
