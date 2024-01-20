@@ -10,6 +10,7 @@ group :jekyll_plugins do
     gem "nokogiri", ">= 1.12.5"
     gem 'jekyll-coffeescript', '~> 2.0'
     gem 'jekyll-manager' if ENV['ADMIN'] == 'on'
+    gem 'kramdown-parser-gfm'
   end
 
 # Delete the following lines if not on Windows:
