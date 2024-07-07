@@ -1,8 +1,9 @@
 // Styling for the navbar
-#mainNav,#dashBoardNav {
+#mainNav,
+#dashBoardNav {
   background-color: $background-color;
   .navbar-toggler {
-    font-size: .85rem;
+    font-size: 0.85rem;
     right: 0;
     padding: 1rem;
     color: $gray-100;
@@ -21,32 +22,27 @@
     }
   }
   .navbar-nav {
-    text-align: right;
+    text-align: left;
     .nav-item {
       .nav-link {
-        padding: 0.25em 0;
         letter-spacing: 0.75px;
         color: $white;
-        
         width: fit-content;
-        margin-right: 0;
-        margin-left: auto;
         @include heading-font;
         &.active,
         &:hover {
-          color:#EBC017;
+          color: #ebc017;
         }
       }
       .dashboardLink {
         border: 1px solid yellow;
-        padding: 5px;
+        padding: 8px;
       }
     }
   }
 }
-@media(min-width:992px) {
+@media (min-width: 992px) and (max-width: 1200px) {
   #mainNav {
-   
     padding-top: 25px;
     padding-bottom: 25px;
     -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
@@ -55,7 +51,7 @@
     border: none;
     background-color: $background-color;
     .navbar-brand {
-      font-size: 1.50em;
+      font-size: 1.5rem;
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       transition: all 0.3s;
@@ -63,9 +59,8 @@
     .navbar-nav {
       .nav-item {
         .nav-link {
-          font-size: 1.2em;
-          padding: 0.80em 0.80em !important;
-          
+          font-size: 1em;
+          padding: 0.8em 0.8em !important;
         }
       }
     }
@@ -78,31 +73,47 @@
         transition: all 600ms;
       }
       .navbar-brand {
-        font-size: 1.50em;
+        font-size: 1.5em;
         padding: 12px 0;
+      }
+    }
+    .logoDetails {
+      height: 80px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        font-size: 1.2em;
+        padding: 0.8em 0.8em !important;
       }
     }
   }
 }
 
 .logoDetails {
-float:left;
-height:100px;
-
+  float: left;
+  height: 100px;
 }
 
-.dashboard-logo{
-  margin-left:-10rem;
+.dashboard-logo {
+  margin-left: -10rem;
 }
 
-@media(max-width:992px) {
+@media (max-width: 768px) {
   .logoDetails {
-    height: 80px;
+    height: 70px;
   }
 }
 
-@media(max-width:768px) {
-  .logoDetails {
-    height: 60px;
+@media (max-width: 992px) {
+  .dashboardLink {
+    margin-top: 10px;
+  }
+  .navbar-collapse {
+    padding: 10px 0px;
   }
 }
