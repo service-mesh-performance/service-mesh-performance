@@ -37,7 +37,10 @@
     width: 260px;
   }
   .slides{
-    width:280px ;
+    width: 280px ;
+  }
+  #twitter-widget-0{
+    width: none;
   }
 
 }
@@ -54,18 +57,17 @@
     height:310px ;
     width:370px ;
   }
-
 }
- @media (min-width:481px) and (max-width: 574px){
-   #cncf-img{
-     height:200px;
-     width:480px;
-   }
-  .slides{
-    height:450px ;
-    width:480px ;
-  }
 
+@media (min-width:481px) and (max-width: 574px){
+  #cncf-img{
+    height:200px;
+    width:430px;
+  }
+  .slides{
+    height:430px ;
+    width:450px ;
+  }
 } 
 
 @media (min-width:771px )  and (max-width: 992px) {
@@ -100,7 +102,7 @@
 @media (min-width:993px )  and (max-width: 1080px) {
   .slides{
     height:632px ;
-    width:960px ;
+    width:930px ;
   }
   .ico {
       text-align: center;
