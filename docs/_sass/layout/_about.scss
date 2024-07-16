@@ -188,7 +188,7 @@ div.about-body {
       &.about-inverted > .about-panel {
         padding: 0 20px 20px;
       }
-    }
+    } 
   }
 }
 @media(min-width:1200px) {
@@ -239,17 +239,17 @@ pre code {
 div.codewrapper {
   min-width: 60%;
   height: auto;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   display: block;
-  > .code-caption {
+
+  .codewrapper > .code-caption {
     font-style: italic;
     font-size: 1em;
     color: $gray-600;
   }
 }
-
 div.videowrapper {
   min-width: 80%;
   height: auto;
@@ -288,4 +288,23 @@ div.deckwrapper {
   text-align: center;
   position: relative;
   justify-content:center;
+}
+
+
+@media (max-width: 991px){
+  div.codewrapper{
+    margin-left:0;
+    margin-right: 0;
+    background-color: #111;
+  }
+
+  .code-caption{
+    background-color: white;
+    padding: 30px 0px;
+  }
+
+  div.deckwrapper{
+    margin-top: -65px;
+
+  }
 }
