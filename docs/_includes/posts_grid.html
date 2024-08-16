@@ -12,37 +12,36 @@
       <div class="row">
         {% for posts in site.posts %}
 
-        <div class="col-md-4 p-2  hover-up-blog  col-sm-6 posts-item ">
-
-          <a class="posts-link"
-            href="{{ site.baseurl }}/blog/{{ posts.category | slugify }}/{{ posts.slug | slugify }}">
-            <div class="posts-hover">
-              <div class="posts-hover-content">
-                <i class="{{ site.data.style.posts-icon | default: " fas fa-eye fa-3x" }}"></i>
+        <div class="col-md-4 p-2  hover-up-blog  col-sm-12 posts-item " style="height: 450px;">
+            <a class="posts-link"
+              href="{{ site.baseurl }}/blog/{{ posts.category | slugify }}/{{ posts.slug | slugify }}">
+              <div class="posts-hover">
+                <div class="posts-hover-content">
+                  <i class="{{ site.data.style.posts-icon | default: " fas fa-eye fa-3x" }}"></i>
+                </div>
               </div>
-            </div>
-            <img class="img-fluid" src="{{ posts.caption.thumbnail }}" alt="">
-          </a>
-          <a href="{{ site.baseurl }}/blog/{{ posts.category | slugify }}/{{ posts.slug | slugify }}">
+              <img class="img-fluid" src="{{ posts.caption.thumbnail }}" alt="">
+            </a>
+            <a class="posts-link" style="height: 100%;"
+            href="{{ site.baseurl }}/blog/{{ posts.category | slugify }}/{{ posts.slug | slugify }}">
 
-            <div class="posts-caption">
+              <div class="posts-caption">
 
-              <h4>{{ posts.caption.title }}</h4>
-              <p>{{ posts.caption.subtitle }}</p>
-              <p class="grey-text text-darken-2" style="padding-top: 1em;
-            bottom: 0;
-            padding-bottom: 0.75em; font-size: 14px">
-                <time style="float: left;" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-                  {% assign date_format = site.minima.date_format | default: "%b %-d,
-                  %Y" %} {{ posts.date | date: date_format }}
-                </time>
-                <span style="float: right;">by {{posts.author}}</span>
-              </p>
+                <h4>{{ posts.caption.title }}</h4>
+                <p>{{ posts.caption.subtitle }}</p>
+                <p class="grey-text text-darken-2" style="padding-top: 1em;
+              bottom: 0;
+              padding-bottom: 0.75em; font-size: 14px">
+                  <time style="float: left;" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                    {% assign date_format = site.minima.date_format | default: "%b %-d,
+                    %Y" %} {{ posts.date | date: date_format }}
+                  </time>
+                  <span style="float: right;">by {{posts.author}}</span>
+                </p>
 
 
-            </div>
-          </a>
-
+              </div>
+            </a>
         </div>
         {% endfor %}
       </div>
