@@ -24,15 +24,8 @@ jobs:
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v6
         with:
-          version: v1.59
-          working-directory: protos
-          args: --timeout 10m --verbose
-          skip-cache: true
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v6
-        with:
-          version: v1.59
-          working-directory: service
+          version: v1.60.3
+          working-directory: ./...
           args: --timeout 10m --verbose
           skip-cache: true
   error_check:
