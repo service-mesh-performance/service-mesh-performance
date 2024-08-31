@@ -21,11 +21,13 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: ${{ secrets.GO_VERSION }}
+      - run: |
+          GOPROXY=direct GOSUMDB=off GO111MODULE=on go mod tidy
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v6
         with:
           version: v1.60.3
-          working-directory: ./...
+          working-directory: service
           args: --timeout 10m --verbose
           skip-cache: true
   error_check:
