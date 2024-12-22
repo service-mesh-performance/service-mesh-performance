@@ -697,7 +697,7 @@ window.addEventListener('load',function(){
       let profileId = URL.slice(0,36)
       let index = parseInt(URL.slice(37))
   
-    fetch(`https://meshery.layer5.io/api/performance/smp/profiles/${profileId}/results`, { 
+    fetch(`https://cloud.layer5.io/api/performance/smp/profiles/${profileId}/results`, { 
       method: "GET"
     }).then(function(response) {
       return response.json();
