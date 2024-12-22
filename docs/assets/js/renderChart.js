@@ -642,7 +642,7 @@ function myRound(v, digits = 2) {
   
     let cardTitle = document.getElementById("card-title")
   
-    fetch(`https://meshery.layer5.io/api/performance/smp/profiles/${profileId}/results`, { 
+    fetch(`https://cloud.layer5.io/api/performance/smp/profiles/${profileId}/results`, { 
       method: "GET"
     }).then(function(response) {
       return response.json();
