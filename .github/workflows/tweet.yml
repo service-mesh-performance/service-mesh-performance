@@ -1,0 +1,25 @@
+name: Send a Tweet
+
+on:
+  issues:
+    types: [labeled]
+  pull_request:
+    types: [labeled]
+
+jobs:
+  tweet:
+    if: >-
+      (
+        contains(github.event.pull_request.labels.*.name, 'issue/tweet') ||
+        contains(github.event.issue.labels.*.name, 'issue/tweet')
+      )
+    runs-on: ubuntu-latest
+    steps:
+      - uses: crazy-max/ghaction-dump-context@v1
+      - uses: ethomson/send-tweet-action@v1
+        with:
+          status: ${{github.event.pull_request.title || github.event.issue.title}} ${{github.event.issue.html_url || github.event.pull_request.html_url}} "#opensource"
+          consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
