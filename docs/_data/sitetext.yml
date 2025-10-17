@@ -90,7 +90,7 @@ footer:
       - url: http://slack.layer5.io/
         icon: "fab fa-slack"
       - url: https://twitter.com/smp_spec
-        icon: "fab fa-x-twitter"
+        icon: "fab fa-twitter"
       - url: https://www.linkedin.com/company/layer5
         icon: "fab fa-linkedin"
       - url: https://layer5.io/community
