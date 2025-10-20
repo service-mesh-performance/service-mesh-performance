@@ -1,6 +1,6 @@
 # After any changes to the Gemfile, execute bundle update!
 source "https://rubygems.org"
-ruby "~> 3.3.0"
+ruby "~> 3.2.6"
 # Jekyll plugins and dependencies
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.17.0"
