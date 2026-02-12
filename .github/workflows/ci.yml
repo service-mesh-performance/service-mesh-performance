@@ -5,9 +5,23 @@ on:
       - "*"
     tags:
       - "v*"
+    paths:
+      - '**.go'
+      - 'go.mod'
+      - 'go.sum'
+      - '**.proto'
+      - 'Makefile'
+      - '.github/workflows/ci.yml'
   pull_request:
     branches:
       - master
+    paths:
+      - '**.go'
+      - 'go.mod'
+      - 'go.sum'
+      - '**.proto'
+      - 'Makefile'
+      - '.github/workflows/ci.yml'
 jobs:
   lint:
     name: Check & Review code
