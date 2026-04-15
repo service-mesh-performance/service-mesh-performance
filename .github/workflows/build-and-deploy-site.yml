@@ -34,7 +34,9 @@ jobs:
         run: make site-setup
 
       - name: Build site
-        run: make site-build
+        run: |
+          make site-build
+          echo "smp-spec.io" > docs/_site/CNAME
 
       - name: Deploy site to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
