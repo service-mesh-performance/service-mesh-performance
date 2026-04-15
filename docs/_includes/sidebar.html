@@ -1,8 +1,8 @@
 <div id="sidebar" class="bottom fixed">
   <ul class="nav flex-column">
     <li class="nav-item">
-      <a href="/dashboard/all" class="nav-link" style="margin-top: 1rem;margin-left: -.5rem; font-size:larger;">
-        <img src="/assets/img/logo/smp-gray.png" height="44px" />
+      <a href="{{ '/dashboard/all' | relative_url }}" class="nav-link" style="margin-top: 1rem;margin-left: -.5rem; font-size:larger;">
+        <img src="{{ '/assets/img/logo/smp-gray.png' | relative_url }}" height="44px" />
         All Profiles
       </a>
     </li>
@@ -10,29 +10,29 @@
 
   <ul class="nav flex-column">
     <li class="nav-item">
-      <a href="/dashboard/soak" class="nav-link" style="margin-left:.5rem">
-        <img src="/assets/img/logo/smp-gray.png" height="26px" /> Soak
+      <a href="{{ '/dashboard/soak' | relative_url }}" class="nav-link" style="margin-left:.5rem">
+        <img src="{{ '/assets/img/logo/smp-gray.png' | relative_url }}" height="26px" /> Soak
       </a>
     </li>
 
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a href="/dashboard/load" class="nav-link" style="margin-left:.5rem">
-          <img src="/assets/img/logo/smp-gray.png" height="26px" /> Load
+        <a href="{{ '/dashboard/load' | relative_url }}" class="nav-link" style="margin-left:.5rem">
+          <img src="{{ '/assets/img/logo/smp-gray.png' | relative_url }}" height="26px" /> Load
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="margin-top:.5rem; color: gray;"><img src="/assets/img/logo/smp-gray.png" height="26px" />
+        <a class="nav-link" style="margin-top:.5rem; color: gray;"><img src="{{ '/assets/img/logo/smp-gray.png' | relative_url }}" height="26px" />
           Burst
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="margin-top:.5rem; color: gray;"><img src="/assets/img/logo/smp-gray.png" height="26px" />
+        <a class="nav-link" style="margin-top:.5rem; color: gray;"><img src="{{ '/assets/img/logo/smp-gray.png' | relative_url }}" height="26px" />
           Capacity
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="margin-top:.5rem; color: gray;"><img src="/assets/img/logo/smp-gray.png" height="26px" />
+        <a class="nav-link" style="margin-top:.5rem; color: gray;"><img src="{{ '/assets/img/logo/smp-gray.png' | relative_url }}" height="26px" />
           Spike
         </a>
       </li>
@@ -54,7 +54,7 @@
    <ul class="nav flex-coloumn" style="padding-top:1rem; margin-left:.5rem;">
      <a class='newlink'
      style="font-size:1.3rem; margin-top: 2rem;"
-     href="/dashboard/methodology">
+     href="{{ '/dashboard/methodology' | relative_url }}">
        Methodology
      </a>
    </ul>

@@ -50,8 +50,8 @@
 
     {% include javascript_files.html %}
     <!-- Custom scripts for this template -->
-    <script src="/assets/js/toggle.js"></script>
-    <script src="/assets/js/profiles.js"></script>
+    <script src="{{ '/assets/js/toggle.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/profiles.js' | relative_url }}"></script>
     {% include footer.html %}
   </body>
 </html>
