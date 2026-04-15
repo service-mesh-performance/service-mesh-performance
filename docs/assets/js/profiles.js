@@ -2,6 +2,14 @@ cardRow = document.getElementById("card-row")
 pages = document.getElementById("pages")
 
 let test_type = cardRow.attributes[2].value
+let siteBasePath = window.SMP_BASEURL || ""
+
+function withBasePath(path) {
+  if (!path.startsWith("/")) {
+    path = `/${path}`
+  }
+  return `${siteBasePath}${path}`
+}
 
 if(window.location.hash == "" )
 {
@@ -16,9 +24,9 @@ if(currentPage==="t"){
 }
 function reloadFunction(page,status){
   if(status=="start")
-  window.location.replace(`${location.origin}/dashboard/${test_type}#page=${page}`)
+  window.location.replace(`${location.origin}${withBasePath(`/dashboard/${test_type}`)}#page=${page}`)
   else{
-    window.location.replace(`${location.origin}/dashboard/${test_type}#page=${page}`)
+    window.location.replace(`${location.origin}${withBasePath(`/dashboard/${test_type}`)}#page=${page}`)
     window.location.reload()
   }
   
@@ -160,7 +168,7 @@ fetch(`https://cloud.meshery.io/api/performance/smp/profiles?page=${currentPage-
                             <h6 class="card-subtitle mb-2 text-muted font-italic" style="font-size:14px;">Last Run:&nbsp;${lastRun.toUTCString()} </h6>
                           </div>
                         </div>
-                         <a href="${location.origin}/dashboard/performance#${data.profiles[i].id}?page=1"  class="btn btn-primary">Show Results</a>
+                         <a href="${location.origin}${withBasePath('/dashboard/performance')}#${data.profiles[i].id}?page=1"  class="btn btn-primary">Show Results</a>
                     </div>
                  </div>
             </div>
@@ -227,7 +235,7 @@ fetch(`https://cloud.meshery.io/api/performance/smp/profiles?page=${currentPage-
                   <h6 class="card-subtitle mb-2 text-muted font-italic" style="font-size:14px;">Last Run:&nbsp;${lastRun.toUTCString()} </h6>
                 </div>
               </div>
-               <a href="${location.origin}/dashboard/performance#${data.profiles[i].id}?page=1"  class="btn btn-primary">Show Results</a>
+               <a href="${location.origin}${withBasePath('/dashboard/performance')}#${data.profiles[i].id}?page=1"  class="btn btn-primary">Show Results</a>
           </div>
        </div>
   </div>

@@ -3,11 +3,19 @@
 tableContainer = document.getElementById("tableContainer")
 let URL = window.location.hash.substring(1)
 let profileId = URL.slice(0,36)
+let siteBasePath = window.SMP_BASEURL || ""
 
 let currentPage = parseInt(URL.slice(42))
 
+function withBasePath(path) {
+  if (!path.startsWith("/")) {
+    path = `/${path}`
+  }
+  return `${siteBasePath}${path}`
+}
+
 function reloadFunction(profileIds,page){
-  window.location.replace(`${location.origin}/dashboard/performance#${profileIds}?page=${page}`)
+  window.location.replace(`${location.origin}${withBasePath('/dashboard/performance')}#${profileIds}?page=${page}`)
   window.location.reload()
   
 }
@@ -122,7 +130,7 @@ fetch(`https://cloud.meshery.io/api/performance/smp/profiles/${profileId}/result
         content += `
             <tr>
                 <th scope="row">${i+1}</th>
-                <td>  <a href="${location.origin}/dashboard/performance/individual#${profileId}#${i}">${data.results[i].name}</a></td>
+                <td>  <a href="${location.origin}${withBasePath('/dashboard/performance/individual')}#${profileId}#${i}">${data.results[i].name}</a></td>
                 <td>${data.results[i].runner_results.URL}</td>
                 <td>${data.results[i].updated_at}</td>
                 <td>${data.results[i].mesh}</td>
