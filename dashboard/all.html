@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- Google Tag Manager tracking code -->
+  <!-- Google Tag Manager -->
+
+<!-- End Google Tag Manager -->
+
+
+  
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Service Mesh Performance (SMP): Measure your service mesh performance using SMP. SMP provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.">
+  <meta name="author" content="Layer5 Authors">
+  <link rel="icon" href="/assets/img/logo/smp.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/logo/smp.png">
+  <link rel="canonical" href="https://smp-spec.io/dashboard/all">
+  
+
+  <title>All Performance Profiles | Standardizing Service Mesh Value Measurement</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="image" property="og:image" content="https://smp-spec.io/assets/img/logo/smp.png" />
+  <meta property="og:url" content="https://smp-spec.io/dashboard/all" />
+  <meta name="title" property="og:title" content="Service Mesh Performance" />
+  <meta property="og:description" content="Service Mesh Performance (SMP): Measure your service mesh performance using SMP. SMP provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments." />
+  <meta name="twitter:url" content="https://smp-spec.io/dashboard/all" />
+  <meta name="twitter:image" content="https://smp-spec.io/assets/img/logo/smp.png" />
+  
+
+  <!-- Custom fonts for this template -->
+  <link href="/assets/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this theme -->
+  <!--<link href="assets/css/agency.min.css" rel="stylesheet">-->
+  <link href="/assets/css/agency.css" rel="stylesheet">
+  <script>
+    window.SMP_BASEURL = "";
+  </script>
+
+  <!-- Page container change top padding when nav shrinks -->
+  
+
+
+   <!-- Schema.org schemas for better SEO results -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "softwareApplication",
+      "name": "Service Mesh Performance",
+      "alternateName": "SMP",
+      "description": "Service Mesh Performance is a standard for capturing and characterizing the details of infrastructure capacity, service mesh configuration, and workload metadata.",
+      "abstract" :"Standardizing Service Mesh Value Measurement",
+      "url": "https://smp-spec.io/",
+      "screenshot": "https://smp-spec.io/assets/spec/readme/service%20mesh%20performance%20example.gif",
+      "thumbnailUrl": "https://smp-spec.io/assets/img/logo/smp.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/layer5/",
+        "https://github.com/service-mesh-performance/service-mesh-performance",
+        "https://www.youtube.com/c/Layer5io?sub_confirmation=1"
+      ],
+      "isPartOf": "Cloud Native Computing Foundation (CNCF)",
+      "maintainer": "Layer5",
+      "contributor": [
+        "Layer5",
+        "HashiCorp",
+        "CNCF",
+        "UT Austin",
+        "Red Hat",
+        "Fiserv",
+        "Intel",
+        "Solarwinds"
+      ]
+    }
+    </script>
+
+</head>
+
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css"
+  />
+
+  <body id="dashboard-page-top">
+    
+
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="/#page-top">
+        <img class="logoDetails header_logo" src="/assets/img/logo/smp-white.svg"/>
+      </a>       
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#about">What is SMP?</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#engage">Resources</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#implementation">Implementation</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#subscribe">Connect</a></li>
+		  <li class="nav-item">
+         <a class="nav-link" href="/meshmark">MeshMark</a>
+        </li>
+		  <li class="nav-item">
+		      <a class="nav-link dashboardLink rounded-pill" href="/dashboard/all">Dashboard</a>
+        </li>
+		  
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navigation -->
+
+
+    <div id="contents">
+      <div id="sidebar" class="bottom fixed">
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a href="/dashboard/all" class="nav-link" style="margin-top: 1rem;margin-left: -.5rem; font-size:larger;">
+        <img src="/assets/img/logo/smp-gray.png" height="44px" />
+        All Profiles
+      </a>
+    </li>
+  </ul>
+
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a href="/dashboard/soak" class="nav-link" style="margin-left:.5rem">
+        <img src="/assets/img/logo/smp-gray.png" height="26px" /> Soak
+      </a>
+    </li>
+
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a href="/dashboard/load" class="nav-link" style="margin-left:.5rem">
+          <img src="/assets/img/logo/smp-gray.png" height="26px" /> Load
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="margin-top:.5rem; color: gray;"><img src="/assets/img/logo/smp-gray.png" height="26px" />
+          Burst
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="margin-top:.5rem; color: gray;"><img src="/assets/img/logo/smp-gray.png" height="26px" />
+          Capacity
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="margin-top:.5rem; color: gray;"><img src="/assets/img/logo/smp-gray.png" height="26px" />
+          Spike
+        </a>
+      </li>
+    </ul>
+
+    <ul class="nav flex-column" style="border-top:3px solid darkgray;padding-top:.5rem; margin-left:.5rem;">
+      Network Functions
+      <li class="nav-item" style="margin-top:.5rem; margin-left:.05rem; font-size:smaller; color: gray;">
+        <i>JWT Revocation</i>
+      </li>
+      <li class="nav-item" style="margin-top:.5rem; margin-left:.05rem; font-size:smaller; color: gray;">
+        <i>JWT Re-authorization</i>
+      </li>
+      <li class="nav-item" style="margin-top:.5rem; margin-left:.05rem; font-size:smaller; color: gray;">
+        <i>JWT Rewrite</i>
+      </li>
+    </ul>
+
+   <ul class="nav flex-coloumn" style="padding-top:1rem; margin-left:.5rem;">
+     <a class='newlink'
+     style="font-size:1.3rem; margin-top: 2rem;"
+     href="/dashboard/methodology">
+       Methodology
+     </a>
+   </ul>
+
+</div>
+
+      <!-- Page content holder -->
+      <section id="dashboardPagecontainer">
+        <div class="page-content p-5" id="content">
+          <!--content -->
+          <section class="resultsContainer">
+            <h2 id="all-performance-profiles">All Performance Profiles</h2>
+
+
+            <div id="card-row" class="row" aria-label="all">
+              
+            </div>
+            
+            <nav id = "paginations" class = "pagination-holder" aria-label="Page navigation example">
+            </nav>
+
+          </section>
+           <!-- Toggle button -->
+           <button
+           id="sidebarCollapse"
+           type="button"
+           class="toggle-button text-light"
+         >
+           <i
+             class="icon-left fa fa-angle-left mr-2"
+             style="display: block"
+           ></i>
+           <i
+             class="icon-right fa fa-angle-right mr-2"
+             style="display: none"
+           ></i>
+         </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="/assets/js/jquery.easing.min.js"></script>
+<!-- Contact form JavaScript -->
+<script src="/assets/js/jqBootstrapValidation.js"></script>
+<script src="/assets/js/contact_me.js"></script>
+<!-- Custom scripts for this template -->
+<script src="/assets/js/agency.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/assets/js/toggle.js"></script>
+    <script src="/assets/js/profiles.js"></script>
+      <!-- Footer -->
+<footer class="footer" id="footer" style="background-color:#222">
+    <div class="container p-4">
+      <div class="foot-up">
+        <div class="row">
+          <div class="col-lg-4 col-md-10 mb-4"> <img class="foot-logo" src="/assets/img/logo/smp-light-text-side.png" height="100" width="230" alt="SMP" > </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h6 class="rspnsv" style="color: #fff; font-weight: 600; text-align: center; font-size: larger;">Service Mesh Performance</h6>
+                  <p class="smp-about rspnsv">Created by Layer5 in collaboration with service mesh maintainers, Service Mesh Performance is hosted within the CNCF. 
+                  </p><p>
+                  Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency. </p>
+          </div>
+          <div class="col-lg-5 col-md-6 mb-4">
+          </div>
+                  <!-- <li class="col-sm-4">
+                  <p class="ntlfy">
+			<a href="https://www.netlify.com">
+			<img class="netlify-icon" src="https://www.netlify.com/img/global/badges/netlify-dark.svg">
+			</a>
+		        </p> 
+               	</li> -->
+          </div>
+        </div>
+      </div>
+    <div class="foot-down">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 text-left">
+            <p class="l5-text">Copyright © The Service Mesh Performance Authors <script>document.write(new Date().getFullYear());</script>.
+            <br/>
+              The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, 
+              please see our <a class="trademarks" href="https://www.linuxfoundation.org/legal/trademark-usage">Trademark Usage page</a>.</p>
+          </div>
+          <!--Social media icons -->
+          <div class="col-sm-6"> <ul class="list-inline social-buttons ico">
+		      
+          <li class="list-inline-item">
+			    
+              <a href="https://github.com/service-mesh-performance/service-mesh-performance">
+                <i class="fab fa-github"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="http://slack.layer5.io/">
+                <i class="fab fa-slack"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="https://www.linkedin.com/company/layer5">
+                <i class="fab fa-linkedin"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="https://layer5.io/community">
+                <i class="fas fa-users"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="https://www.youtube.com/embed/LxP-yHrKL4M">
+                <i class="fab fa-youtube"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="https://calendar.google.com/calendar/b/1/r?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">
+                <i class="far fa-calendar-alt"></i>
+              </a>
+			    
+          </li>
+			    
+          </ul> </div> 
+          <!--Social media icons end -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<link rel="stylesheet" href="/assets/css/responsive.css">
+<script src="/assets/js/back-to-top-smp.js"></script>
+<script>smpBackToTop()</script>
+  <!-- End Footer -->
+
+  </body>
+</html>

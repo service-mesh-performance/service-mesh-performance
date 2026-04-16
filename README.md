@@ -1,77 +1,47 @@
-<p style="text-align:center;" align="center">
-  <img align="center" src="https://raw.githubusercontent.com/layer5io/service-mesh-performance/master/docs/assets/spec/readme/smp-dark-text-side.svg" width="55%" /></p>
+# Contributing to the Service Mesh Performance Documentation
 
-<div align="center">
+Before contributing, please review the [Documentation Contribution Flow](https://github.com/layer5io/service-mesh-performance/blob/master/CONTRIBUTING.md#documentation-contribution-flow). The following steps will guide you on how to set up your development environment, fork and clone the repository, run the site locally, and finally commit, sign-off, and push any changes made for review. 
 
-[![GitHub](https://img.shields.io/github/license/service-mesh-performance/service-mesh-performance.svg)](LICENSE)
-[![GitHub issues by-label](https://img.shields.io/github/issues/layer5io/service-mesh-performance/help%20wanted.svg)](https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+")
-[![Website](https://img.shields.io/website/https/layer5.io/meshery.svg)](https://smp-spec.io)
-[![Join Slack](https://img.shields.io/badge/Slack-@layer5.svg?logo=slack)](http://slack.meshery.io)
-[![CLI Best Practices](https://bestpractices.coreinfrastructure.org/projects/5054/badge)](https://bestpractices.coreinfrastructure.org/projects/5054)
+### 1. Set up your development environment
 
-</div>
+* *The Service-Mesh-Performance Docs site is built using Jekyll - a simple static site generator! You can learn more about Jekyll and setting up your development environment in the [Jekyll Docs](https://jekyllrb.com/docs/).*
 
-<p align="center"><i>If you’re using Cloud Native Performance or if you like the project, please <a href="https://github.com/layer5io/service-mesh-performance/stargazers">★</a> star this repository to show your support! 🤩</i></p>
+* First [install Ruby](https://jekyllrb.com/docs/installation/), then install Jekyll and Bundler.
 
-<p align="center">Community Meetings are the 3rd Thursday of every month at 9 AM Pacific Time. (<a href="https://docs.google.com/document/d/18hYemFKK_PC_KbT_TDBUgb0rknOuIhikkRxer4_bv4Q/edit">Meeting Minutes</a> | <a href="https://zoom.us/my/cncftagnetwork">Zoom</a>)</p>
+### 2. Get the code
 
-# [Cloud Native Performance](https://smp-spec.io)
-A common format for capturing and describing:
+* Fork and then clone the [Service Mesh Performance repository](https://github.com/layer5io/service-mesh-performance)
+  ```bash
+  $ git clone https://github.com/YOUR-USERNAME/service-mesh-performance
+  ```
+* Change to the docs directory
+  ```bash
+  $ cd docs
+  ```
+* Install any Ruby dependencies
+  ```bash
+  $ bundle install
+  ```
 
-1. performance test configuration
-1. service mesh configuration
-1. environment configuration
-1. workload configuration
-1. performance test results
+### 3. Serve the site
 
-This specification is currently being advanced through the CNCF [Service Mesh WG](https://github.com/cncf/sig-network/tree/master/service-mesh-wg) and the [Meshery](https://meshery.io) project. See a [screenshot](docs/assets/spec/readme/meshery_benchmark_screen.png) of SMP's canonical implementation.
+* Serve the code locally
+  ```bash
+  $ make site
+  ```
+  *Note: From the Makefile, this command is running `$ bundle exec jekyll serve --drafts --livereload`*
 
-## Overview
+### 4. Create a Pull Request
 
-<a href="https://docs.google.com/presentation/d/1fm7Eu1T3JSBPVmdFYyyevqQLSmAMLXqzWqC7QxTHGX8/edit#"><img src="docs/assets/spec/readme/smp-overview-slides.png" /></a>
-<a href="https://docs.google.com/presentation/d/1fm7Eu1T3JSBPVmdFYyyevqQLSmAMLXqzWqC7QxTHGX8/edit#"><i>Project Overview Presentation</i></a>
+* After making changes, don't forget to commit with the sign-off flag (-s)!
+  ```bash
+  $ commit -s -m “my commit message w/signoff”
+  ```
+* Once all changes have been committed, push the changes.
+  ```bash
+  $ git push origin <branch-name>
+  ```
+* Then on Github, navigate to the [Service-Mesh-Performance repository](https://github.com/layer5io/service-mesh-performance) and create a pull request from your recently pushed changes!
 
-<p style="clear:both;">
-<h2>Implementations</h2>
-The following projects or products are compatible with / have implemented SMP.
-
-<h3><a href="https://layer5.io/meshery">Meshery</a></h3>
-<a href="https://meshery.io"><img src="docs/assets/spec/readme/meshery-logo-light-text.svg"
-style="margin:10px;" width="125px"
-alt="Meshery - the Cloud Native Manager" align="left" /></a>
-<a href="https://meshery.io">Meshery</a> As a self-service engineering platform, Meshery enables collaborative design and operation of cloud and cloud native infrastructure.<br /><br />
-
-<a href="docs/assets/spec/readme/service mesh performance example.gif"><img src="docs/assets/spec/readme/service mesh performance example.gif" /></a>
-See the <a href="docs/assets/spec/readme/service mesh performance result.yaml">sample results</a> file.
-<hr />
-<br /><br /><p align="center"><i>If you’re using Service Mesh Performance or if you like the project, please <a href="https://github.com/service-mesh-performance/service-mesh-performance/stargazers">★</a> star this repository to show your support! 🤩</i></p>
-</p>
-
-<p style="clear:both;">
-<h2><a name="contributing"></a><a name="community"></a> <a href="https://communityinviter.com/apps/cloud-native/cncf">Community</a> and <a href="https://github.com/service-mesh-performance/service-mesh-performance/blob/master/CONTRIBUTING.md">Contributing</a></h2>
-Our projects are community-built and welcome collaboration. 👍 Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
-<br />
-<a href="https://communityinviter.com/apps/cloud-native/cncf">
-
-<picture align="right">
-  <source media="(prefers-color-scheme: dark)" srcset="docs\assets\spec\readme\slack-dark-128.png"  width="110px" align="right" style="margin-left:10px;margin-top:10px;">
-  <source media="(prefers-color-scheme: light)" srcset="docs\assets\spec\readme\slack-128.png" width="110px" align="right" style="margin-left:10px;padding-top:5px;">
-  <img alt="Shows an illustrated light mode meshery logo in light color mode and a dark mode meshery logo dark color mode." src="docs\assets\spec\readme\slack-128.png" width="110px" align="right" style="margin-left:10px;padding-top:13px;">
-</picture>
-</a>
-
-
-<!-- <p>
-✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://calendar.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendar</a>.<br />
-✔️ <em><strong>Watch</strong></em> community <a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1">meeting recordings</a>.<br />
-✔️ <em><strong>To Access Community Drive,</strong></em> fill <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMLeZY6hZ46yYNkoKKV5OM-jCypjbYcqptbUNltEE73EqCjA/viewform">Community Member Form</a>.<br />
-✔️ <em><strong>Discuss</strong></em> in the <a href="https://discuss.layer5.io">Community Forum</a>.<br />
-✔️ <em><strong>Browse</strong></em> the <a href="https://layer5.io/community/handbook">Community Handbook</a>.<br />
-</p> -->
-<p align="center">
-<i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">help-wanted label</a>.
-</p>
-
-**License**
-
-This repository and site are available as open source under the terms of the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
+---
+*See the [Service-Mesh-Performance Documentation Google Doc](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit) for additional reference.*
