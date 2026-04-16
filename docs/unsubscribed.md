@@ -14,7 +14,7 @@ image:
 <br />
 <hr />
 <div style="display:flex;align-items:center;justify-content:center;">
-<img src="/assets/img/visual-topology.svg" width="20%" />
+<img src="{{ '/assets/img/visual-topology.svg' | relative_url }}" width="20%" />
 <div style="text-align:center;justify-content:center;">
 <h3 style="width:100%;margin-left:1.5rem;"><a href="https://layer5.io/learn/service-mesh-labs">Learn to Service Mesh with Interactive Labs</a></h3>
 

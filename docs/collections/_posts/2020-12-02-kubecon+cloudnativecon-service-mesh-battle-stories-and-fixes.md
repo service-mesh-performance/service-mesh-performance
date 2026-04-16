@@ -14,7 +14,7 @@ caption:
 ---
 
 <div style="text-align:center;margin-bottom:2rem;">
-    <img src="/assets/img/service-mesh-implementations.png" alt="service-mesh-implementations" width="100%" />    
+    <img src="{{ '/assets/img/service-mesh-implementations.png' | relative_url }}" alt="service-mesh-implementations" width="100%" />
 </div>
 
 As more organizations implement service meshes, they are finding what works and what needs more work, and they are creating new management practices around this knowledge. A few tried-and-tested best practices were detailed last month during KubeCon+CloudNativeCon.
@@ -29,11 +29,11 @@ Organizations will likely look to use at least more than one API service layer a
 
 “How many specifications, how many standards are there that have come to the rescue, so to speak, for understanding and interoperating with the various service meshes that are out there?” Calcote said.
 
-<img src="/assets/img/service-mesh-abstractions.png" alt="service-mesh-abstractions" width="100%" />
+<img src="{{ '/assets/img/service-mesh-abstractions.png' | relative_url }}" alt="service-mesh-abstractions" width="100%" />
 
 A service mesh can be used for testing router performance, service latency and other variables. However, determining service mesh performance in an apples-to-apples way can be challenging. When studying “published results from some of the service meshes [from providers] that do publish results about performance… what you’ll find is that they’re probably using an environment that isn’t necessarily like yours,” Calcote said. “They’re also using different statistics and metrics to measure [their service meshes] … and it doesn’t help.”
 
-<img src="/assets/img/service-mesh-performance.png" alt="service-mesh-performance" width="100%" />
+<img src="{{ '/assets/img/service-mesh-performance.png' | relative_url }}" alt="service-mesh-performance" width="100%" />
 
 Service mesh performance (SMP) was created in an attempt to establish a way of comparing the performance of different services. “The SMP was born in combination with engaging with a few of those different service mesh maintainers and creating a standard way of articulating a performance of a mesh,” Calcote said.
 

@@ -25,6 +25,6 @@ CNCF Community Infrastructure Lab resources is contributed and managed by [Equin
  
 ### SMP Github Action Sequence Diagram:
 
-<a href="/pages/dashboard/methodology/smp-action-sequence-diagram.jpg"><img src="/pages/dashboard/methodology/smp-action-sequence-diagram.jpg" width="100%" /></a>
+<a href="{{ '/pages/dashboard/methodology/smp-action-sequence-diagram.jpg' | relative_url }}"><img src="{{ '/pages/dashboard/methodology/smp-action-sequence-diagram.jpg' | relative_url }}" width="100%" /></a>
 
 The results from the tests are updated on the Performance Management dashboard in Meshery. To learn more about interpreting the test results, check out this guide. You can always checkout the [Meshery User Guides](https://docs.meshery.io) to dive-deep into these features.

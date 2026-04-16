@@ -2,6 +2,7 @@ title: Standardizing Service Mesh Value Measurement
 email: community@layer5.io #this is also the email contact forms will go
 description: "Service Mesh Performance (SMP): Measure your service mesh performance using SMP. SMP provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments."
 baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://smp-spec.io"
 
 author: Layer5 Authors
 github_username: l5io

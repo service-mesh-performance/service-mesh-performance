@@ -2,26 +2,36 @@
   <!-- Google Tag Manager tracking code -->
   {% include analytics_head.html %}
 
+  {% assign absolute_page_url = page.url | replace:'index.html','' | absolute_url %}
+  {% assign absolute_default_image = '/assets/img/logo/smp.png' | absolute_url %}
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="{{ site.description }}">
   <meta name="author" content="{{ site.author }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="icon" href="{{ '/assets/img/logo/smp.png' | relative_url }}" type="image/png">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/logo/smp.png' | relative_url }}">
+  <link rel="canonical" href="{{ absolute_page_url }}">
+  {% if jekyll.environment == "preview" %}
+  <meta name="robots" content="noindex, nofollow">
+  {% endif %}
 
   <title>{% if page.title %}{{ page.title | append: " | " | append: site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ '/assets/css/bootstrap.min.css' | relative_url }}" rel="stylesheet">
 
   <meta name="twitter:card" content="summary" />
-  <meta name="image" property="og:image" content="https://smp-spec.io/assets/img/logo/smp.png" />
+  <meta name="image" property="og:image" content="{{ absolute_default_image }}" />
+  <meta property="og:url" content="{{ absolute_page_url }}" />
   <meta name="title" property="og:title" content="Service Mesh Performance" />
   <meta property="og:description" content="Service Mesh Performance (SMP): Measure your service mesh performance using SMP. SMP provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments." />
+  <meta name="twitter:url" content="{{ absolute_page_url }}" />
+  <meta name="twitter:image" content="{{ absolute_default_image }}" />
   
 
   <!-- Custom fonts for this template -->
-  <link href="/assets/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="{{ '/assets/css/all.min.css' | relative_url }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -30,7 +40,10 @@
 
   <!-- Custom styles for this theme -->
   <!--<link href="assets/css/agency.min.css" rel="stylesheet">-->
-  <link href="/assets/css/agency.css" rel="stylesheet">
+  <link href="{{ '/assets/css/agency.css' | relative_url }}" rel="stylesheet">
+  <script>
+    window.SMP_BASEURL = {{ site.baseurl | jsonify }};
+  </script>
 
   <!-- Page container change top padding when nav shrinks -->
   {% if page.layout == "post" %}
@@ -53,9 +66,9 @@
       "alternateName": "SMP",
       "description": "Service Mesh Performance is a standard for capturing and characterizing the details of infrastructure capacity, service mesh configuration, and workload metadata.",
       "abstract" :"Standardizing Service Mesh Value Measurement",
-      "url": "https://smp-spec.io/",
-      "screenshot": "https://smp-spec.io/assets/spec/readme/service%20mesh%20performance%20example.gif",
-      "thumbnailUrl": "https://raw.githubusercontent.com/service-mesh-performance/service-mesh-performance/master/docs/assets/img/logo/smp.png",
+      "url": "{{ site.url | append: site.baseurl | append: '/' }}",
+      "screenshot": "{{ '/assets/spec/readme/service mesh performance example.gif' | absolute_url }}",
+      "thumbnailUrl": "{{ absolute_default_image }}",
       "sameAs": [
         "https://www.linkedin.com/company/layer5/",
         "https://github.com/service-mesh-performance/service-mesh-performance",

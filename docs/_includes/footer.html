@@ -3,7 +3,7 @@
     <div class="container p-4">
       <div class="foot-up">
         <div class="row">
-          <div class="col-lg-4 col-md-10 mb-4"> <img class="foot-logo" src="/assets/img/logo/smp-light-text-side.png" height="100" width="230" alt="SMP" > </div>
+          <div class="col-lg-4 col-md-10 mb-4"> <img class="foot-logo" src="{{ '/assets/img/logo/smp-light-text-side.png' | relative_url }}" height="100" width="230" alt="SMP" > </div>
           <div class="col-lg-3 col-md-6 mb-4">
             <h6 class="rspnsv" style="color: #fff; font-weight: 600; text-align: center; font-size: larger;">Service Mesh Performance</h6>
                   <p class="smp-about rspnsv">Created by Layer5 in collaboration with service mesh maintainers, Service Mesh Performance is hosted within the CNCF. 
@@ -63,7 +63,7 @@ function fixPageShort() {
 }
 </script>
 {% endif %}
-<link rel="stylesheet" href={{ '/assets/css/responsive.css' | absolute_url }}>
-<script src={{ '/assets/js/back-to-top-smp.js' | absolute_url }}></script>
+<link rel="stylesheet" href="{{ '/assets/css/responsive.css' | relative_url }}">
+<script src="{{ '/assets/js/back-to-top-smp.js' | relative_url }}"></script>
 <script>smpBackToTop()</script>
   <!-- End Footer -->

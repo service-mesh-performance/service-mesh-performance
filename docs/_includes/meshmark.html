@@ -2,7 +2,7 @@
     <div class="hero-section">
         <div class="grid-container">
             <div class="grid-item">
-                <img class="logo" src="../assets/img/logo/meshmark-dark-full.svg">
+                <img class="logo" src="{{ '/assets/img/logo/meshmark-dark-full.svg' | relative_url }}">
             </div>
             <div class="grid-item">
                 <div class="description">
@@ -39,7 +39,7 @@
             MeshMark is a performance index that measures the value and overhead of your cloud native environment. By converting performance measurements into insights about the value of individual, cloud native application networking functions, MeshMark distills
             a variety of overhead signals and key performance indicators into a simple index.
         </p>
-        <img class="mue-description-image" style="border: 0;" src="../assets/img/MeshMark-Score.png" alt="MeshMark Demo inside MeshMap" />
+        <img class="mue-description-image" style="border: 0;" src="{{ '/assets/img/MeshMark-Score.png' | relative_url }}" alt="MeshMark Demo inside MeshMap" />
         
     </section>
 
@@ -50,11 +50,11 @@
             for in it. MeshMark’s scoring system ranges from 0 to 100 and incorporates collections of resource utilization efficiency calculations, categorized into similar consumption classes.
         </p>
         <div class="equation">
-            <img class="meshmark-text" src="../assets/img/logo/meshmark-dark-text.svg">
+            <img class="meshmark-text" src="{{ '/assets/img/logo/meshmark-dark-text.svg' | relative_url }}">
             <div class="equal">
                 <h1 class="equal-sign">=</h1>
             </div>
-            <img class="formula-img" src="../assets/img/mark-formula.png" alt="">
+            <img class="formula-img" src="{{ '/assets/img/mark-formula.png' | relative_url }}" alt="">
         </div>
     </section>
     <section class="section-4">
@@ -62,7 +62,7 @@
         <p>
             <strong>MeshMark Utilization Efficiency</strong> is a calculated, combined ratio of specific infrastructure resource utilizations to assigned resources to cloud native infrastructure.
         </p>
-        <img class="mue-description-image" src="../assets/img/mue-description.png" alt="MeshMark Utilization Efficiency" />
+        <img class="mue-description-image" src="{{ '/assets/img/mue-description.png' | relative_url }}" alt="MeshMark Utilization Efficiency" />
         <p>
             The example depicted is a simple ratio. The graph demonstrates that as that as the latency increases, your utilization efficiency lowers. In this example, latencies are increasing as the queries per second increases, indicating that the infrastructure and/or its configuration is sub-optimal.
             The "1-CPU utilization" identifies what CPU cycles are left behind and not used. It is directly related to the latency KPI, so MUE ratios are more effective as a measure of efficiency, the latency P99 gets higher as MUE gets lower and the throughputs get higher as MUE gets lower. As with Power Utilization Efficiency (PUE), MUEs can be generated for any resource in the Datacenter hardware.
@@ -83,7 +83,7 @@
 </div>
 <section class="footer">
     <div class="callout">
-        <img class="callout-img" src="../assets/img/cncf-white.svg" alt="CNCF" />
+        <img class="callout-img" src="{{ '/assets/img/cncf-white.svg' | relative_url }}" alt="CNCF" />
         <p class="callout-text" style="color:white;display: flex;justify-content: center;">Participated in the state of the art. <br /> Read the blog about ServiceMeshCon EU 2022</p>
         <button class="btn-join" onclick="location.href='https://layer5.io/community/events/servicemeshcon-eu-2022'" type="button">Read</button>
     </div>
