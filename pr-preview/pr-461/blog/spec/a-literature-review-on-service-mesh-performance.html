@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+   <!-- Google Tag Manager tracking code -->
+  <!-- Google Tag Manager -->
+
+<!-- End Google Tag Manager -->
+
+  
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Service Mesh Performance (SMP): Measure your service mesh performance using SMP. SMP provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.">
+  <meta name="author" content="Layer5 Authors">
+  <link rel="icon" href="/pr-preview/pr-461/assets/img/logo/smp.png" type="image/png">
+  <link rel="apple-touch-icon" href="/pr-preview/pr-461/assets/img/logo/smp.png">
+  <link rel="canonical" href="https://smp-spec.io/pr-preview/pr-461/blog/spec/a-literature-review-on-service-mesh-performance">
+  
+  <meta name="robots" content="noindex, nofollow">
+  
+
+  <title>Exploring Analyzing And Tuning Service Mesh Performance | Standardizing Service Mesh Value Measurement
+  </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/pr-preview/pr-461/assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="image" property="og:image" content="https://smp-spec.io/pr-preview/pr-461/assets/img/logo/smp.png" />
+  <meta property="og:url" content="https://smp-spec.io/pr-preview/pr-461/blog/spec/a-literature-review-on-service-mesh-performance" />
+  <meta name="title" property="og:title" content="Service Mesh Performance" />
+  <meta property="og:description"
+    content="Service Mesh Performance (SMP): Measure your service mesh performance using SMP. SMP provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments." />
+
+
+  <!-- Custom fonts for this template -->
+  <link href="/pr-preview/pr-461/assets/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this theme -->
+  <!--<link href="assets/css/agency.min.css" rel="stylesheet">-->
+  <link href="/pr-preview/pr-461/assets/css/agency.css" rel="stylesheet">
+  <link rel="stylesheet" href="/pr-preview/pr-461/assets/css/responsive.css">
+
+  <!-- Page container change top padding when nav shrinks -->
+  
+  <style>
+    #pagecontainer {
+      padding-top: 150px;
+    }
+
+    @media only screen and (max-width: 991px) {
+      #pagecontainer {
+        padding-top: 100px;
+      }
+    }
+  </style>
+
+  
+</head>
+
+
+<body id="page-top">
+
+  
+
+    <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="/pr-preview/pr-461/#page-top">
+        <img class="logoDetails header_logo" src="/pr-preview/pr-461/assets/img/logo/smp-white.svg"/>
+      </a>       
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pr-preview/pr-461/#about">What is SMP?</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pr-preview/pr-461/#engage">Resources</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pr-preview/pr-461/#implementation">Implementation</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pr-preview/pr-461/#subscribe">Connect</a></li>
+		  <li class="nav-item">
+         <a class="nav-link" href="/pr-preview/pr-461/meshmark">MeshMark</a>
+        </li>
+		  <li class="nav-item">
+		      <a class="nav-link dashboardLink rounded-pill" href="/pr-preview/pr-461/dashboard/all">Dashboard</a>
+        </li>
+		  
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navigation -->
+
+
+  
+
+  <div class="container" id="pagecontainer">
+
+    <h2 class="post-title" itemprop="name headline" style="text-align: center;padding-top:1em;padding-bottom:.5em;">
+      A Literature Review on Service Mesh Performance
+    </h2>
+    
+    <span style="color: #999;float: right;">by The Newsroom</span>
+    
+
+    <p class="post-meta" style="color: #999; display: inline-flex;">
+      <time datetime="2023-07-26T12:00:00+00:00" itemprop="datePublished">
+         Jul 26, 2023
+      </time>
+    </p>
+    <div class="card mt-1 mb-5 p-5 shadow-lg">
+      <h2 id="abstract">Abstract</h2>
+
+<p>With the recent advancement of software development methodologies and frameworks, service meshes has been rapidly gaining the lime light. In this paper, we provide an introduction to service meshes and discuss their key use cases in modern cloud-native architectures. We also explore the challenges associated with performance analysis of service meshes and present a survey of recent research in this area. To address these challenges, we propose the use of soft computing techniques and tools like Meshery for performance analysis of service meshes. Our study includes a comparative analysis of different service mesh platforms and their performance under varying workloads. This paper provides insights into the benefits and limitations of service meshes and highlights the importance of performance analysis in ensuring the reliability and scalability of micro-services based applications.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Service meshes is like a software defined network where the operators gets complete control over the different set of activities that is occurring within their application. Its a dedicated infrastructure layer that oversees service-to-service communication. It’s responsible for the reliable delivery of requests through the complex topology of services that comprise a modern, cloud native application. In practice, the service mesh is typically implemented as an array of lightweight network proxies that are deployed alongside application code, without the application needing to be aware.</p>
+
+<p>Each part of an app, called a “service” relies on other services to give users what they want. If a user of an online e-commerce store wants to buy groceries, they need to know if the items they want, say “tomatoes” is in stock. So, the service that communicates with the e-commerce site’s inventory database needs to communicate with the product webpage, which itself needs to communicate with the users’s online shopping cart. To add business value, the owner of the site might eventually build a new service that gives users in-app product recommendation. Now this new service should also be cognizant of user’s shopping cart, and must be able to communicate with inventory database that the product page needed—it’s a lot of reusable, moving parts.</p>
+
+<p>The above definition and use case example can further be mingled with the architecture depicted in Figure 1. In most cases, a service mesh in general is known to have two types of planes: Control Plane and Data Plane. Data plane is composed of intelligent proxies that are deployed as sidecars, basically an extra container deployed under the same Pod as the application container. These proxies regulate the flow of network communication between different microservices. Non-exhaustive list of activities managed by this data plane includes service discovery, health checking, routing, load balancing, authentication/authorization, and observability. While the control plane, sometimes referred to as brain of a service mesh, manages and configure corresponding components to enforce policies and collect telemetry.
+A survey of <a href="https://www.cncf.io">Cloud Native Computing Foundation (CNCF)</a> community found that 68% of the organization are already using or planning to use service meshes in the next 12 months. In production, use of service meshes has been growing 40-50% annually. Service meshes are popular because they solve critical problems related to communication between loosely coupled services (also referred as microservices), which are widely adopted by enterprise companies due to their ease of management/development for production workloads.</p>
+
+<p><strong>Read the full article on <a href="https://www.techrxiv.org/articles/preprint/Exploring_Analyzing_and_Tuning_Service_Mesh_Performance_A_Literature_Review/22776119">TechRxiv</a></strong></p>
+
+<style>
+    .post{
+      padding: 0.3rem 0.4rem ;
+      text-align: left;
+    }
+  </style>
+
+<h3 class="section-heading text-uppercase text-center">Discussions on "SMP"</h3>
+<ul class="posts">
+    <!-- -->
+    
+    <!-- -->
+    
+    <!-- -->
+    
+    <!-- -->
+    <li class="post">
+      <span class="post-date"> Feb 08 | </span>
+      <a href="https://discuss.layer5.io/t//534"> Just curious to understand about SMI and Conformance</a>
+      <span id="author" class="poost-author"> 
+        
+        
+        
+        
+    by Samir Parhi
+      </span>
+    </li>
+    
+    <!-- -->
+    <li class="post">
+      <span class="post-date"> Jan 14 | </span>
+      <a href="https://discuss.layer5.io/t//480"> Design of Extending SMP to CNCF Community Infrastructure Lab</a>
+      <span id="author" class="poost-author"> 
+        
+        
+    
+        
+    
+        
+        
+        
+    by Xin Huang
+      </span>
+    </li>
+    
+    <!-- -->
+    <li class="post">
+      <span class="post-date"> Jul 14 | </span>
+      <a href="https://discuss.layer5.io/t//131"> Sample Configuration file for running performance test</a>
+      <span id="author" class="poost-author"> 
+        
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        
+        
+    by kumarabd
+      </span>
+    </li>
+    
+    <!-- -->
+    <li class="post">
+      <span class="post-date"> Jul 01 | </span>
+      <a href="https://discuss.layer5.io/t//114"> Service Mesh Performance makes its way to CNCF Sandbox Projects 🥳</a>
+      <span id="author" class="poost-author"> 
+        
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        
+        
+    by Sayantan Bose
+      </span>
+    </li>
+    
+    <!-- -->
+    <li class="post">
+      <span class="post-date"> May 28 | </span>
+      <a href="https://discuss.layer5.io/t//19"> About the Service Mesh Performance category</a>
+      <span id="author" class="poost-author"> 
+        
+        
+    
+        
+    
+        
+    
+        
+        
+        
+    by Lee Calcote
+      </span>
+    </li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+
+    <!-- Footer -->
+<footer class="footer" id="footer" style="background-color:#222">
+    <div class="container p-4">
+      <div class="foot-up">
+        <div class="row">
+          <div class="col-lg-4 col-md-10 mb-4"> <img class="foot-logo" src="/pr-preview/pr-461/assets/img/logo/smp-light-text-side.png" height="100" width="230" alt="SMP" > </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h6 class="rspnsv" style="color: #fff; font-weight: 600; text-align: center; font-size: larger;">Service Mesh Performance</h6>
+                  <p class="smp-about rspnsv">Created by Layer5 in collaboration with service mesh maintainers, Service Mesh Performance is hosted within the CNCF. 
+                  </p><p>
+                  Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency. </p>
+          </div>
+          <div class="col-lg-5 col-md-6 mb-4">
+          </div>
+                  <!-- <li class="col-sm-4">
+                  <p class="ntlfy">
+			<a href="https://www.netlify.com">
+			<img class="netlify-icon" src="https://www.netlify.com/img/global/badges/netlify-dark.svg">
+			</a>
+		        </p> 
+               	</li> -->
+          </div>
+        </div>
+      </div>
+    <div class="foot-down">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 text-left">
+            <p class="l5-text">Copyright © The Service Mesh Performance Authors <script>document.write(new Date().getFullYear());</script>.
+            <br/>
+              The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, 
+              please see our <a class="trademarks" href="https://www.linuxfoundation.org/legal/trademark-usage">Trademark Usage page</a>.</p>
+          </div>
+          <!--Social media icons -->
+          <div class="col-sm-6"> <ul class="list-inline social-buttons ico">
+		      
+          <li class="list-inline-item">
+			    
+              <a href="https://github.com/service-mesh-performance/service-mesh-performance">
+                <i class="fab fa-github"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="http://slack.layer5.io/">
+                <i class="fab fa-slack"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="https://www.linkedin.com/company/layer5">
+                <i class="fab fa-linkedin"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="https://layer5.io/community">
+                <i class="fas fa-users"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="https://www.youtube.com/embed/LxP-yHrKL4M">
+                <i class="fab fa-youtube"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="https://calendar.google.com/calendar/b/1/r?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">
+                <i class="far fa-calendar-alt"></i>
+              </a>
+			    
+          </li>
+			    
+          </ul> </div> 
+          <!--Social media icons end -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script>
+fixPageShort();
+function fixPageShort() {
+  if(window.innerHeight > document.body.offsetHeight) {
+    document.getElementById("footer").style.position="fixed";
+    document.getElementById("footer").style.bottom=0;
+    document.getElementById("footer").style.right=0;
+    document.getElementById("footer").style.left=0;
+    document.getElementById("footer").style.width="100%";
+  }
+}
+</script>
+
+<link rel="stylesheet" href="/pr-preview/pr-461/assets/css/responsive.css">
+<script src="/pr-preview/pr-461/assets/js/back-to-top-smp.js"></script>
+<script>smpBackToTop()</script>
+  <!-- End Footer -->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/pr-preview/pr-461/assets/js/jquery.min.js"></script>
+  <script src="/pr-preview/pr-461/assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/pr-preview/pr-461/assets/js/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <script src="/pr-preview/pr-461/assets/js/jqBootstrapValidation.js"></script>
+  <script src="/pr-preview/pr-461/assets/js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/pr-preview/pr-461/assets/js/agency.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+
+
+@-webkit-keyframes scroll {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-250px * 8.2));
+              transform: translateX(calc(-250px * 8.2));
+    }
+  }
+
+  @keyframes scroll {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-250px * 8.2));
+              transform: translateX(calc(-250px * 8.2));
+    }
+  }
+  .client-slider {
+    background: #EAEAEA;
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+  }
+  .client-slider::before, .client-slider::after {
+    background: -webkit-gradient(linear, left top, right top, from(#EAEAEA), to(rgba(255, 255, 255, 0)));
+    background: linear-gradient(to right, #EAEAEA 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 250px;
+    z-index: 2;
+  }
+  .client-slider::after {
+    right: 0;
+    top: 0;
+    -webkit-transform: rotateZ(-180deg);
+            transform: rotateZ(-180deg);
+  }
+  .client-slider::before {
+    left: 0;
+    top: 0;
+  }
+  .client-slider .client-slide-track {
+    -webkit-animation: scroll 40s linear infinite;
+            animation: scroll 40s linear infinite;
+    display: -webkit-box;
+    display: flex;
+    width: calc(250px * 16);
+  }
+  .client-slider .client-slide {
+    height: 100px;
+    width: 250px;
+  }
+
+ /* Space between two svg's */
+ .svg-space {
+
+    border-right: 60px solid #EAEAEA;
+  }
+
+  .svg-spaces {
+    border-right: 60px solid #EAEAEA;
+    border-right: 60px solid #EAEAEA;
+  }
+
+  /* Styling for individual svg's */
+
+  .uem1 {
+    margin-top: 25px;
+    padding-left: 20px;
+  }
+
+  .hashicorp1 {
+    padding-left: 15px;
+    padding-right: 10px;
+  }
+
+  .cncf1 {
+    margin-top: 07px;
+  }
+
+  .ut1 {
+    margin-left: 12px;
+  }
+
+  .uem2 {
+    margin-top: 25px;
+    padding-left: 25px;
+  }
+
+  .cncf2 {
+    margin-top: 10px;
+  }
+
+  .redhat1 {
+    margin-top: -10px;
+    padding-left: 25px;
+  }
+
+  .fiserv1 {
+    margin-top: 20px;
+    padding-left: 15px;
+  }
+
+  .intel1 {
+    margin-top: 20px;
+    padding-left: 15px;
+  }
+
+  .solarwinds1 {
+    margin-top: -15px;
+    padding-left: 15px;
+  }
