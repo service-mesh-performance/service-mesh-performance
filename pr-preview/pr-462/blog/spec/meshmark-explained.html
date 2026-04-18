@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+   <!-- Google Tag Manager tracking code -->
+  <!-- Google Tag Manager -->
+
+<!-- End Google Tag Manager -->
+
+  
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Service Mesh Performance (SMP): Measure your service mesh performance using SMP. SMP provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.">
+  <meta name="author" content="Layer5 Authors">
+  <link rel="icon" href="/pr-preview/pr-462/assets/img/logo/smp.png" type="image/png">
+  <link rel="apple-touch-icon" href="/pr-preview/pr-462/assets/img/logo/smp.png">
+  <link rel="canonical" href="https://smp-spec.io/pr-preview/pr-462/blog/spec/meshmark-explained">
+  
+  <meta name="robots" content="noindex, nofollow">
+  
+
+  <title>Meshmark Explained | Standardizing Service Mesh Value Measurement
+  </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/pr-preview/pr-462/assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="image" property="og:image" content="https://smp-spec.io/pr-preview/pr-462/assets/img/logo/smp.png" />
+  <meta property="og:url" content="https://smp-spec.io/pr-preview/pr-462/blog/spec/meshmark-explained" />
+  <meta name="title" property="og:title" content="Service Mesh Performance" />
+  <meta property="og:description"
+    content="Service Mesh Performance (SMP): Measure your service mesh performance using SMP. SMP provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments." />
+
+
+  <!-- Custom fonts for this template -->
+  <link href="/pr-preview/pr-462/assets/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this theme -->
+  <!--<link href="assets/css/agency.min.css" rel="stylesheet">-->
+  <link href="/pr-preview/pr-462/assets/css/agency.css" rel="stylesheet">
+  <link rel="stylesheet" href="/pr-preview/pr-462/assets/css/responsive.css">
+
+  <!-- Page container change top padding when nav shrinks -->
+  
+  <style>
+    #pagecontainer {
+      padding-top: 150px;
+    }
+
+    @media only screen and (max-width: 991px) {
+      #pagecontainer {
+        padding-top: 100px;
+      }
+    }
+  </style>
+
+  
+</head>
+
+
+<body id="page-top">
+
+  
+
+    <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="/pr-preview/pr-462/#page-top">
+        <img class="logoDetails header_logo" src="/pr-preview/pr-462/assets/img/logo/smp-white.svg"/>
+      </a>       
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pr-preview/pr-462/#about">What is SMP?</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pr-preview/pr-462/#engage">Resources</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pr-preview/pr-462/#implementation">Implementation</a></li>
+		  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pr-preview/pr-462/#subscribe">Connect</a></li>
+		  <li class="nav-item">
+         <a class="nav-link" href="/pr-preview/pr-462/meshmark">MeshMark</a>
+        </li>
+		  <li class="nav-item">
+		      <a class="nav-link dashboardLink rounded-pill" href="/pr-preview/pr-462/dashboard/all">Dashboard</a>
+        </li>
+		  
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navigation -->
+
+
+  
+
+  <div class="container" id="pagecontainer">
+
+    <h2 class="post-title" itemprop="name headline" style="text-align: center;padding-top:1em;padding-bottom:.5em;">
+      MeshMark explained
+    </h2>
+    
+    <span style="color: #999;float: right;">by Lee Calcote</span>
+    
+
+    <p class="post-meta" style="color: #999; display: inline-flex;">
+      <time datetime="2020-05-21T12:15:05+00:00" itemprop="datePublished">
+         May 21, 2020
+      </time>
+    </p>
+    <div class="card mt-1 mb-5 p-5 shadow-lg">
+      <p>An introduction to MeshMark might be best explained through a simple story that we can all relate to. As a consumer, when you make a purchase, there are generically two methods by which we determine our happiness about making any given purchase.</p>
+
+<p>We ask ourselves:</p>
+
+<ol>
+  <li>Do I feel that this widget is worth its cost to me (the sales price)? The intrinsic weight that we assign to this feeling of value; to how valuable to consider a given item is based on many factors:
+    <ul>
+      <li>As a detractant of the value: cost (dollars, interest on a loan, mental stress of a loan)</li>
+      <li>As an additive of value: feature/function (usefulness to me and relative to how great my need is for such a   widget), goodwill (to the brand), and psychology (peace of mind, social status, immediate satisfaction of purchase),</li>
+    </ul>
+  </li>
+</ol>
+
+<p>It’s in this context that we compare how this widget functionally compares to other widgets and how much it costs compared to other widgets (using the factors described in #1). When you consider this and relate it to infrastructure (when you relate it to service meshes), ask yourself, “do I feel that this network function is worth its cost to me?”. Then, the computation that you do in our heads today is again based on a set of factors:</p>
+
+<ul>
+  <li>Criticality
+    <ul>
+      <li>How important is this function? How much would it cost me to get it elsewhere?</li>
+    </ul>
+  </li>
+  <li>Risk
+    <ul>
+      <li>Positive: how much am I leaving exposed without this service mesh feature?</li>
+      <li>Negative: how concerned am I that this service mesh feature will fail?</li>
+    </ul>
+  </li>
+</ul>
+
+<p>MeshMark functions as a service mesh performance index (a scale) to provide people the ability to weigh the value of their service mesh versus the overhead of their service mesh and assess whether they are getting out of the mesh what they are “paying” for in it.</p>
+
+<p>The scoring system ranges from 0 to 100.</p>
+
+<p><img class="image-right" src="/pr-preview/pr-462/assets/img/distributed-performance_green.svg" />
+Another aspect here is the need for distributed, multi-mesh and workload performance management. Distributed load testing offers insight into system behaviors that arguably more accurately represent real world behaviors of services under load as that load comes from any number of sources. This aim of enhancing the current load generation and analysis techniques to include distributed load testing is hoped to be achieved by the <a href="https://layer5.io/projects/nighthawk">Distributed Performance Management of Service Meshes</a> project, by analyzing and working hand ii n hand with Nighthawk, a versatile HTTP load testing tool.</p>
+
+<style>
+    .post{
+      padding: 0.3rem 0.4rem ;
+      text-align: left;
+    }
+  </style>
+
+<h3 class="section-heading text-uppercase text-center">Discussions on "SMP"</h3>
+<ul class="posts">
+    <!-- -->
+    
+    <!-- -->
+    
+    <!-- -->
+    
+    <!-- -->
+    <li class="post">
+      <span class="post-date"> Feb 08 | </span>
+      <a href="https://discuss.layer5.io/t//534"> Just curious to understand about SMI and Conformance</a>
+      <span id="author" class="poost-author"> 
+        
+        
+        
+        
+    by Samir Parhi
+      </span>
+    </li>
+    
+    <!-- -->
+    <li class="post">
+      <span class="post-date"> Jan 14 | </span>
+      <a href="https://discuss.layer5.io/t//480"> Design of Extending SMP to CNCF Community Infrastructure Lab</a>
+      <span id="author" class="poost-author"> 
+        
+        
+    
+        
+    
+        
+        
+        
+    by Xin Huang
+      </span>
+    </li>
+    
+    <!-- -->
+    <li class="post">
+      <span class="post-date"> Jul 14 | </span>
+      <a href="https://discuss.layer5.io/t//131"> Sample Configuration file for running performance test</a>
+      <span id="author" class="poost-author"> 
+        
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        
+        
+    by kumarabd
+      </span>
+    </li>
+    
+    <!-- -->
+    <li class="post">
+      <span class="post-date"> Jul 01 | </span>
+      <a href="https://discuss.layer5.io/t//114"> Service Mesh Performance makes its way to CNCF Sandbox Projects 🥳</a>
+      <span id="author" class="poost-author"> 
+        
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        
+        
+    by Sayantan Bose
+      </span>
+    </li>
+    
+    <!-- -->
+    <li class="post">
+      <span class="post-date"> May 28 | </span>
+      <a href="https://discuss.layer5.io/t//19"> About the Service Mesh Performance category</a>
+      <span id="author" class="poost-author"> 
+        
+        
+    
+        
+    
+        
+    
+        
+        
+        
+    by Lee Calcote
+      </span>
+    </li>
+    
+  </ul>
+
+
+    </div>
+  </div>
+
+    <!-- Footer -->
+<footer class="footer" id="footer" style="background-color:#222">
+    <div class="container p-4">
+      <div class="foot-up">
+        <div class="row">
+          <div class="col-lg-4 col-md-10 mb-4"> <img class="foot-logo" src="/pr-preview/pr-462/assets/img/logo/smp-light-text-side.png" height="100" width="230" alt="SMP" > </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h6 class="rspnsv" style="color: #fff; font-weight: 600; text-align: center; font-size: larger;">Service Mesh Performance</h6>
+                  <p class="smp-about rspnsv">Created by Layer5 in collaboration with service mesh maintainers, Service Mesh Performance is hosted within the CNCF. 
+                  </p><p>
+                  Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency. </p>
+          </div>
+          <div class="col-lg-5 col-md-6 mb-4">
+          </div>
+                  <!-- <li class="col-sm-4">
+                  <p class="ntlfy">
+			<a href="https://www.netlify.com">
+			<img class="netlify-icon" src="https://www.netlify.com/img/global/badges/netlify-dark.svg">
+			</a>
+		        </p> 
+               	</li> -->
+          </div>
+        </div>
+      </div>
+    <div class="foot-down">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 text-left">
+            <p class="l5-text">Copyright © The Service Mesh Performance Authors <script>document.write(new Date().getFullYear());</script>.
+            <br/>
+              The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, 
+              please see our <a class="trademarks" href="https://www.linuxfoundation.org/legal/trademark-usage">Trademark Usage page</a>.</p>
+          </div>
+          <!--Social media icons -->
+          <div class="col-sm-6"> <ul class="list-inline social-buttons ico">
+		      
+          <li class="list-inline-item">
+			    
+              <a href="https://github.com/service-mesh-performance/service-mesh-performance">
+                <i class="fab fa-github"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="http://slack.layer5.io/">
+                <i class="fab fa-slack"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="https://www.linkedin.com/company/layer5">
+                <i class="fab fa-linkedin"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="https://layer5.io/community">
+                <i class="fas fa-users"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="https://www.youtube.com/embed/LxP-yHrKL4M">
+                <i class="fab fa-youtube"></i>
+              </a>
+			    
+          </li>
+			    
+          <li class="list-inline-item">
+			    
+              <a href="https://calendar.google.com/calendar/b/1/r?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">
+                <i class="far fa-calendar-alt"></i>
+              </a>
+			    
+          </li>
+			    
+          </ul> </div> 
+          <!--Social media icons end -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+<script>
+fixPageShort();
+function fixPageShort() {
+  if(window.innerHeight > document.body.offsetHeight) {
+    document.getElementById("footer").style.position="fixed";
+    document.getElementById("footer").style.bottom=0;
+    document.getElementById("footer").style.right=0;
+    document.getElementById("footer").style.left=0;
+    document.getElementById("footer").style.width="100%";
+  }
+}
+</script>
+
+<link rel="stylesheet" href="/pr-preview/pr-462/assets/css/responsive.css">
+<script src="/pr-preview/pr-462/assets/js/back-to-top-smp.js"></script>
+<script>smpBackToTop()</script>
+  <!-- End Footer -->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/pr-preview/pr-462/assets/js/jquery.min.js"></script>
+  <script src="/pr-preview/pr-462/assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/pr-preview/pr-462/assets/js/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <script src="/pr-preview/pr-462/assets/js/jqBootstrapValidation.js"></script>
+  <script src="/pr-preview/pr-462/assets/js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/pr-preview/pr-462/assets/js/agency.min.js"></script>
+
+</body>
+
+</html>
